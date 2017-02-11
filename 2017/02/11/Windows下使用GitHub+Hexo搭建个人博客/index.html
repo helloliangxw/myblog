@@ -11,12 +11,39 @@
     
 
     
-    <meta property="og:type" content="website">
+    <meta name="description" content="创建GitHub仓库
+注册GtiHub
+新建公共仓库，仓库命名规则为：*.github.io。以我的为例：myblog.github.io
+
+环境准备安装Git下载地址：GitHub for windows安装完成后包括GitHub客户端和GitShell： 
+
+打开GitHub客户端，输入账户名和密码，登录GitHub
+在本地新建GitHub目录（可以是任意位置），将之前创建的远程仓库clone">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/02/11/Windows下使用GitHub+Hexo搭建个人博客/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="创建GitHub仓库
+注册GtiHub
+新建公共仓库，仓库命名规则为：*.github.io。以我的为例：myblog.github.io
+
+环境准备安装Git下载地址：GitHub for windows安装完成后包括GitHub客户端和GitShell： 
+
+打开GitHub客户端，输入账户名和密码，登录GitHub
+在本地新建GitHub目录（可以是任意位置），将之前创建的远程仓库clone">
+<meta property="og:image" content="http://ol7omzc4x.bkt.clouddn.com/1.png">
+<meta property="og:updated_time" content="2017-02-11T15:39:15.633Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="创建GitHub仓库
+注册GtiHub
+新建公共仓库，仓库命名规则为：*.github.io。以我的为例：myblog.github.io
+
+环境准备安装Git下载地址：GitHub for windows安装完成后包括GitHub客户端和GitShell： 
+
+打开GitHub客户端，输入账户名和密码，登录GitHub
+在本地新建GitHub目录（可以是任意位置），将之前创建的远程仓库clone">
+<meta name="twitter:image" content="http://ol7omzc4x.bkt.clouddn.com/1.png">
 
     
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -70,12 +97,10 @@
 </div>
     </header>
     <div id="container">
-      <div id="main">
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
   <h1 itemprop="name">
     
       <a href="/2017/02/11/Windows下使用GitHub+Hexo搭建个人博客/" title="" itemprop="url"></a>
@@ -89,9 +114,16 @@
     
   </p>
 </header>
-    <div class="article-content">
-        
-        <h1 id="创建GitHub仓库"><a href="#创建GitHub仓库" class="headerlink" title="创建GitHub仓库"></a>创建GitHub仓库</h1><ol>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#创建GitHub仓库"><span class="toc-number">1.</span> <span class="toc-text">创建GitHub仓库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#环境准备"><span class="toc-number">2.</span> <span class="toc-text">环境准备</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Git"><span class="toc-number">2.1.</span> <span class="toc-text">安装Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Node-js"><span class="toc-number">2.2.</span> <span class="toc-text">安装Node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Hexo"><span class="toc-number">2.3.</span> <span class="toc-text">安装Hexo</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#部署本地博客"><span class="toc-number">3.</span> <span class="toc-text">部署本地博客</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#部署远程博客"><span class="toc-number">4.</span> <span class="toc-text">部署远程博客</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#购买域名"><span class="toc-number">5.</span> <span class="toc-text">购买域名</span></a></li></ol>
+		
+		</div>
+		
+		<h1 id="创建GitHub仓库"><a href="#创建GitHub仓库" class="headerlink" title="创建GitHub仓库"></a>创建GitHub仓库</h1><ol>
 <li>注册GtiHub</li>
 <li>新建<strong>公共</strong>仓库，仓库命名规则为：<strong>*.github.io</strong>。以我的为例：<a href="https://github.com/helloliangxw/myblog.github.io" target="_blank" rel="external">myblog.github.io</a></li>
 </ol>
@@ -119,14 +151,9 @@
 <p>如果提示<code>Deployer not found</code>错误，在本地仓库下执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
 <p>之后重新部署hexo服务器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g -d</div></pre></td></tr></table></figure></p>
 <p>此时可以通过<code>https://helloliangxw.github.io/myblog.github.io/</code>访问该博客。</p>
-<h1 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h1>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
+<h1 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h1>  
+	</div>
+		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 
@@ -134,107 +161,43 @@
 
 
 
-
-<div class="comments-count">
+	<div class="article-share" id="share">
 	
-</div>
+	  <div data-url="http://yoursite.com/2017/02/11/Windows下使用GitHub+Hexo搭建个人博客/" data-title="Hexo" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
 
 </footer>
 
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/02/11/myfirstblog/" title="Hi! Liang! 我的第一篇独立博客！" itemprop="url">Hi! Liang! 我的第一篇独立博客！</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
-		
-  <p class="article-time">
-    <time datetime="2017-02-11T08:53:00.000Z" itemprop="datePublished"> Published 2017-02-11</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="搭建初衷"><a href="#搭建初衷" class="headerlink" title="搭建初衷"></a>搭建初衷</h1><blockquote>
-<p>“<strong>搭建一个只属于我自己的博客！</strong>”</p>
-</blockquote>
-<p>去年就在考虑这个事。期间百度、谷歌了很多教程，但是一般还没准备动手，就已经放弃了。一方面觉得搭建个人博客是一个非常花时间花精力的事情；另外，对于我这个半路出家的半吊子码农来说，未知的东西实在太多，什么GitHub，还有那一堆眼花缭乱的html标签、JS、CSS代码（虽然不知道在具体搭建博客时会不会用到，但还是生畏，这就是对于未知的恐惧吧），实在是看不下去。。。</p>
-<p>2017年，对于我来说，注定是不平凡的一年！（后续更新）</p>
-<p>既然想干，那就先从我的独立博客开始吧。</p>
-<p>从GitHub建仓到买域名再到整个博客初具雏形，花了整整一个白天（也没想象中那么困难、那么费时间），整个过程还是挺有意思的。</p>
-<p>之前我也在CSDN、博客园、简书、FarBox上写过博客，但是只在FarBox上坚持了将近半年，其他的现在连帐号都忘了（好个不专一的男人……）。写博客主要是将自己在学习过程中遇到的难题的解决方案记录下来、方便日后查看。之所以坚持要搭建一个独立博客，我觉得有以下几个原因：</p>
-<ol>
-<li>简洁。没有广告。</li>
-<li>装逼。拥有专属自己的域名。即使是helloliangxw.farbox.com，那也不是我的，那只是租的别人的地。一定要是<strong>helloliangxw.com</strong>，那才是咱家的自留地（郑重声明：本质上还是国家的6666）。</li>
-<li>发扬共享精神。新一代的国家栋梁（我目前还不算，查阅本文的你肯定是23333）就应该有这个精神！我们不断地从开源社区获得那么多的便利与知识，当然也要回馈社区。</li>
-<li>成长记录。任何一个大神都是从菜鸟、小白成长起来的。想想10年后的我，再次打开这些博客，看到这些傻逼的文字、让人失笑的水文，一定会感动到哭的55555555</li>
-<li>决心！既然准备出发，那就从搭建博客开始吧（犹豫了一年多的事情，也该有个了结），算是壮行了！</li>
-</ol>
-<h1 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h1><p><strong>建站工具</strong>，选择Hexo也是无意中的事情（搜索关键词“GitHub”+“博客博客”，几乎所有教程都是用Hexo）。</p>
-<p><strong>域名购买</strong>，根据教程选择了Godaddy。花了55￥。DNS服务商选的dnspod。</p>
-<p><strong>博客托管</strong>，GitHub。PS：博客搭建完成后，想换成国内的<a href="https://coding.net/user" target="_blank" rel="external">coding</a>以提高访问速度，试了半个小时左右没有迁移成功。算了，那就忘了它吧。</p>
-<p><strong>Markdown</strong>，写博客必须用这个。语法很简单。如果您热爱码字但还不知道MarkDown，墙裂建议您学习一下，保证让您眼前一亮：原来码字可以这么优雅！</p>
-<p>PS: 有时间将详细的搭建过程写下来！</p>
-<h1 id="今后"><a href="#今后" class="headerlink" title="今后"></a>今后</h1><p><strong>关于博客</strong>，学习一些网页设计知识，完善博客页面效果</p>
-<p><strong>关于未来</strong>，学习一些机器学习算法，让自己的路走得更广更远</p>
-<p>花了钱，也花了时间，希望自己能够坚持下去！也以此为动力，驱动自己去深入学习一些技术，锻炼自己的总结能力，如果在此过程中能够帮助到其他人，那也算是行善积德了。</p>
-<p>特别致谢：<a href="http://wuchong.me/" target="_blank" rel="external">wuchong</a>。有幸，希望能与您共事。</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/随笔生活/">随笔生活</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/随笔/">随笔</a><a href="/tags/博客搭建/">博客搭建</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
+   	       
+	</article>
 	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2017/02/11/myfirstblog/"  title="Hi! Liang! 我的第一篇独立博客！">
+ <strong>下一篇：</strong><br/> 
+ <span>Hi! Liang! 我的第一篇独立博客！
+</span>
+</a>
 </div>
 
-</footer>
+</nav>
 
+	
 
-    </article>
-
-
-
-
-
-
-
-</div>
+</div>  
       <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#创建GitHub仓库"><span class="toc-number">1.</span> <span class="toc-text">创建GitHub仓库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#环境准备"><span class="toc-number">2.</span> <span class="toc-text">环境准备</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Git"><span class="toc-number">2.1.</span> <span class="toc-text">安装Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Node-js"><span class="toc-number">2.2.</span> <span class="toc-text">安装Node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Hexo"><span class="toc-number">2.3.</span> <span class="toc-text">安装Hexo</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#部署本地博客"><span class="toc-number">3.</span> <span class="toc-text">部署本地博客</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#部署远程博客"><span class="toc-number">4.</span> <span class="toc-text">部署远程博客</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#购买域名"><span class="toc-number">5.</span> <span class="toc-text">购买域名</span></a></li></ol>
+ 
+  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
@@ -391,12 +354,89 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
 
 
 
@@ -467,4 +507,4 @@ var _hmt = _hmt || [];
 <!-- Tiny_search End -->
 
   </body>
- </html>
+</html>
