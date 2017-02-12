@@ -4,22 +4,22 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hexo</title>
+    <title>helloliangxw</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
-    <meta name="author" content="John Doe">
+    <meta name="author" content="liangxw">
     
 
     
     <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="helloliangxw">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="helloliangxw">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="helloliangxw">
 
     
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="helloliangxw" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -37,11 +37,11 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/logo.png" alt="Hexo" title="Hexo"/></a>
+				<a href="/"><img src="/img/logo.png" alt="helloliangxw" title="helloliangxw"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Hexo">Hexo</a></h1>
+				<h1 class="site-name"><a href="/" title="helloliangxw">helloliangxw</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
@@ -72,205 +72,50 @@
     <div id="container">
       <div id="main">
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/02/11/Windows下使用GitHub+Hexo搭建个人博客/" title="Windows下使用GitHub+Hexo搭建个人博客" itemprop="url">Windows下使用GitHub+Hexo搭建个人博客</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
-		
-  <p class="article-time">
-    <time datetime="2017-02-11T15:43:00.000Z" itemprop="datePublished"> Published 2017-02-11</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="创建GitHub仓库"><a href="#创建GitHub仓库" class="headerlink" title="创建GitHub仓库"></a><strong>创建GitHub仓库</strong></h1><ol>
-<li>注册GtiHub</li>
-<li>新建<strong>公共</strong>仓库，仓库命名规则为：<strong>*.github.io</strong>。以我的为例：<a href="https://github.com/helloliangxw/myblog.github.io" target="_blank" rel="external">myblog.github.io</a></li>
-</ol>
-<h1 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a><strong>环境准备</strong></h1><h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><p><a href="https://desktop.github.com/" target="_blank" rel="external">下载地址：GitHub for windows</a></p>
-<p>安装完成后包括<strong>GitHub</strong>客户端和<strong>GitShell</strong>：<br><img src="http://static.zybuluo.com/liangxw/h21zi12rbbxegp6i7y3jyk2x/GitHub%E5%92%8CGitShell.png" alt="GitHub和GitShell"></p>
-<ol>
-<li>打开GitHub客户端，输入账户名和密码，登录GitHub</li>
-<li>在本地新建<code>GitHub</code>目录（可以是任意位置），将之前创建的远程仓库clone到该目录下（如：<code>E:\MyDocuments\GitHub\myblog.github.io</code>），即为本地仓库</li>
-</ol>
-<p>PS：无需配置SSH密钥</p>
-<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p><a href="https://nodejs.org/en/" target="_blank" rel="external">下载地址：Node.js for windows</a> </p>
-<p>下载后直接安装即可</p>
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>打开<strong>GitShell</strong>，输入：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo</div></pre></td></tr></table></figure></p>
-<p>如果提示找不到<code>npm</code>命令，请首先安装Node.js</p>
-<h1 id="部署本地博客"><a href="#部署本地博客" class="headerlink" title="部署本地博客"></a><strong>部署本地博客</strong></h1><ol>
-<li>在<code>GitHub</code>下新建<code>hexo</code>目录</li>
-<li>打开<strong>GitShell</strong>，定位到<code>hexo</code>目录。输入<code>hexo init</code>，对hexo进行初始化。运行结束后，<code>hexo</code>文件夹下会生成一系列的文件。</li>
-<li>将第2步中<code>hexo</code>文件夹下生成的所有的目录和文件拷贝至本地仓库</li>
-</ol>
-<p>至此，本地hexo博客已经搭建好了。</p>
-<p>本地博客查看方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g  ## generate，生成public文件夹</div><div class="line">hexo s ## server，开启hexo服务</div></pre></td></tr></table></figure></p>
-<p>打开<code>http://localhost:4000/</code>，即可看到本地博客。</p>
-<h1 id="部署远程博客"><a href="#部署远程博客" class="headerlink" title="部署远程博客"></a><strong>部署远程博客</strong></h1><p>打开本地仓库下的配置文件<code>_config.yml</code>，修改<code>deployment</code>选项：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy: </div><div class="line">  type: git</div><div class="line">  repo: https://github.com/helloliangxw/myblog.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
-<p>PS：注意冒号后面有空格。<code>repo</code>为远程仓库地址。</p>
-<p>修改完毕后，对hexo服务进行部署：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">hexo clean ## 清除上次生成的public文件夹</div><div class="line">hexo g  ## generate，生成public文件夹</div><div class="line">hexo d ## deploy，部署服务器。实际上是将public文件夹下的文件push至远程仓库</div><div class="line"></div><div class="line"># 或者使用组合命令</div><div class="line">hexo g -d</div></pre></td></tr></table></figure>
-<p>如果提示<code>Deployer not found</code>错误，在本地仓库下执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
-<p>之后重新部署hexo服务器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g -d</div></pre></td></tr></table></figure></p>
-<p>此时可以通过远程仓库名<code>https://helloliangxw.github.io/myblog.github.io/</code>访问该博客。</p>
-<p>PS：该名称略土，因此可以购买域名装逼。</p>
-<h1 id="购买域名及DNS解析"><a href="#购买域名及DNS解析" class="headerlink" title="购买域名及DNS解析"></a><strong>购买域名及DNS解析</strong></h1><p>在<a href="https://sg.godaddy.com/zh?isc=gennbacn29&amp;countrview=1&amp;currencytype=CNY&amp;mkwid=WFSMCUdy&amp;cvosrc=ppc.baidu" target="_blank" rel="external">狗爹</a>上购买域名：<a href="http://helloliangxw.com" target="_blank" rel="external">helloliangxw.com</a>，买了一年，花了55￥。</p>
-<p>之后在DNSPOD上设置域名解析：</p>
-<p><img src="http://static.zybuluo.com/liangxw/y48w8306fuwwrsmikew75tnx/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90.png" alt="域名解析"></p>
-<p>其中类型为A的两条记录指向的ip地址是GitHub Pages的提供的ip：</p>
-<ul>
-<li>192.30.252.153</li>
-<li>192.30.252.154<br>如博客不能登录，有可能是GitHub更改了空间服务的ip地址，到在GitHub Pages查看最新的ip即可。<br>www类型指定的记录是GitHub注册的远程仓库</li>
-</ul>
-<p>然后后去Godaddy修改DNS地址：<br><img src="http://static.zybuluo.com/liangxw/es9vggxlbz54fbf7zkvkqpwr/DNS%E5%9C%B0%E5%9D%80.png" alt="DNS地址"></p>
-<h1 id="将独立域名与GitHub空间绑定"><a href="#将独立域名与GitHub空间绑定" class="headerlink" title="将独立域名与GitHub空间绑定"></a><strong>将独立域名与GitHub空间绑定</strong></h1><p><strong>方法一</strong>：在远程仓库的根目录下面，新建一个名为<code>CNAME</code>的文本文件，里面写入要绑定的域名，比如<code>helloliangxw.com</code>。<br><strong>方法二</strong>：将<code>CNAME</code>文件放进本地仓库<code>source</code>目录下，这样每次使用<code>hexo g -d</code>命令后，hexo都会将<code>CNAME</code>文件提交至远程仓库根目录。同样可以将<code>README</code>文件放在<code>source</code>目录下。</p>
-<p>如此，就可以通过域名访问博客。</p>
-<blockquote>
-<p><strong>当然，我们还可以复制他人的主题！我们首先看下Hexo的使用</strong></p>
-</blockquote>
-<h1 id="关于Hexo"><a href="#关于Hexo" class="headerlink" title="关于Hexo"></a><strong>关于Hexo</strong></h1><h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── .deploy #需要部署的文件</div><div class="line">├── node_modules #Hexo插件</div><div class="line">├── public #生成的静态网页文件</div><div class="line">├── scaffolds #模板</div><div class="line">├── source #博客正文和其他源文件，404、favicon、CNAME 都应该放在这里</div><div class="line">| ├── _drafts #草稿</div><div class="line">| └── _posts #文章</div><div class="line">├── themes #主题</div><div class="line">├── _config.yml #全局配置文件</div><div class="line">└── package.json</div></pre></td></tr></table></figure>
-<h2 id="全局配置-config-yml"><a href="#全局配置-config-yml" class="headerlink" title="全局配置 _config.yml"></a>全局配置 _config.yml</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"># Hexo Configuration</div><div class="line">## Docs: http://hexo.io/docs/configuration.html</div><div class="line">## Source: https://github.com/hexojs/hexo/</div><div class="line"># Site #站点信息</div><div class="line">title:  #标题</div><div class="line">subtitle:  #副标题</div><div class="line">description:  #站点描述，给搜索引擎看的</div><div class="line">author:  #作者</div><div class="line">email:  #电子邮箱</div><div class="line">language: zh-CN #语言</div><div class="line"># URL #链接格式</div><div class="line">url:  #网址</div><div class="line">root: / #根目录</div><div class="line">permalink: :year/:month/:day/:title/ #文章的链接格式</div><div class="line">tag_dir: tags #标签目录</div><div class="line">archive_dir: archives #存档目录</div><div class="line">category_dir: categories #分类目录</div><div class="line">code_dir: downloads/code</div><div class="line">permalink_defaults:</div><div class="line"># Directory #目录</div><div class="line">source_dir: source #源文件目录</div><div class="line">public_dir: public #生成的网页文件目录</div><div class="line"># Writing #写作</div><div class="line">new_post_name: :title.md #新文章标题</div><div class="line">default_layout: post #默认的模板，包括 post、page、photo、draft（文章、页面、照片、草稿）</div><div class="line">titlecase: false #标题转换成大写</div><div class="line">external_link: true #在新选项卡中打开连接</div><div class="line">filename_case: 0</div><div class="line">render_drafts: false</div><div class="line">post_asset_folder: false</div><div class="line">relative_link: false</div><div class="line">highlight: #语法高亮</div><div class="line">  enable: true #是否启用</div><div class="line">  line_number: true #显示行号</div><div class="line">  tab_replace:</div><div class="line"># Category &amp; Tag #分类和标签</div><div class="line">default_category: uncategorized #默认分类</div><div class="line">category_map:</div><div class="line">tag_map:</div><div class="line"># Archives</div><div class="line">2: 开启分页</div><div class="line">1: 禁用分页</div><div class="line">0: 全部禁用</div><div class="line">archive: 2</div><div class="line">category: 2</div><div class="line">tag: 2</div><div class="line"># Server #本地服务器</div><div class="line">port: 4000 #端口号</div><div class="line">server_ip: localhost #IP 地址</div><div class="line">logger: false</div><div class="line">logger_format: dev</div><div class="line"># Date / Time format #日期时间格式</div><div class="line">date_format: YYYY-MM-DD #参考http://momentjs.com/docs/#/displaying/format/</div><div class="line">time_format: H:mm:ss</div><div class="line"># Pagination #分页</div><div class="line">per_page: 10 #每页文章数，设置成 0 禁用分页</div><div class="line">pagination_dir: page</div><div class="line"># Disqus #Disqus评论，替换为多说</div><div class="line">disqus_shortname:</div><div class="line"># Extensions #拓展插件</div><div class="line">theme: landscape-plus #主题</div><div class="line">exclude_generator:</div><div class="line">plugins: #插件，例如生成 RSS 和站点地图的</div><div class="line">- hexo-generator-feed</div><div class="line">- hexo-generator-sitemap</div><div class="line"># Deployment #部署，将 lmintlcx 改成用户名</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: 刚刚github创库地址.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">hexo help <span class="comment">#查看帮助</span></div><div class="line">hexo init <span class="comment">#初始化一个目录</span></div><div class="line">hexo new <span class="string">"postName"</span> <span class="comment">#新建文章</span></div><div class="line">hexo new page <span class="string">"pageName"</span> <span class="comment">#新建页面</span></div><div class="line">hexo generate <span class="comment">#生成网页，可以在 public 目录查看整个网站的文件</span></div><div class="line">hexo server <span class="comment">#本地预览，'Ctrl+C'关闭</span></div><div class="line">hexo deploy <span class="comment">#部署.deploy目录</span></div><div class="line">hexo clean <span class="comment">#清除缓存，**强烈建议每次执行命令前先清理缓存，每次部署前先删除 .deploy 文件夹**</span></div><div class="line"></div><div class="line"><span class="comment">## 简写：</span></div><div class="line">hexo n == hexo new</div><div class="line">hexo g == hexo generate</div><div class="line">hexo s == hexo server</div><div class="line">hexo d == hexo deploy</div></pre></td></tr></table></figure>
-<h1 id="主题修改"><a href="#主题修改" class="headerlink" title="主题修改"></a><strong>主题修改</strong></h1><p><a href="http://jacman.wuchong.me/2014/11/20/how-to-use-jacman/" target="_blank" rel="external">请参考：如何使用Jacman主题 </a></p>
-<p>作者写的挺详细的，我就不班门弄斧了。</p>
-<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a><strong>最后</strong></h1><p>当您看到这儿的时候，您的个人博客已经搭建的差不多了，剩下的就是一些页面元素的修改了。我还在努力学习中。有机会再来分享！</p>
-<h1 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a><strong>参考地址</strong></h1><ol>
-<li><a href="http://blog.csdn.net/poem_of_sunshine/article/details/29369785" target="_blank" rel="external">如何搭建一个独立博客——简明Github Pages与Hexo教程</a></li>
-<li><a href="http://www.jianshu.com/p/701b1095da11" target="_blank" rel="external">手把手教你建github技术博客</a></li>
-<li><a href="http://jacman.wuchong.me/2014/11/20/how-to-use-jacman/" target="_blank" rel="external">如何使用Jacman主题</a></li>
-</ol>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/教程/">教程</a>
-</div>
-
-
-  <div class="article-tags">
   
-  <span></span> <a href="/tags/GitHub/">GitHub</a><a href="/tags/Hexo/">Hexo</a><a href="/tags/博客搭建/">博客搭建</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2017/02/11/Windows下使用GitHub+Hexo搭建个人博客/#comments" class="ds-thread-count comments-count-link" data-thread-key="2017/02/11/Windows下使用GitHub+Hexo搭建个人博客/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/02/11/我的第一篇博客/" title="Hi! Liang! 我的第一篇独立博客！" itemprop="url">Hi! Liang! 我的第一篇独立博客！</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
-		
-  <p class="article-time">
-    <time datetime="2017-02-11T08:53:00.000Z" itemprop="datePublished"> Published 2017-02-11</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="搭建初衷"><a href="#搭建初衷" class="headerlink" title="搭建初衷"></a>搭建初衷</h1><blockquote>
-<p>“<strong>搭建一个只属于我自己的博客！</strong>”</p>
-</blockquote>
-<p>去年就在考虑这个事。期间百度、谷歌了很多教程，但是一般还没准备动手，就已经放弃了。一方面觉得搭建个人博客是一个非常花时间花精力的事情；另外，对于我这个半路出家的半吊子码农来说，未知的东西实在太多，什么GitHub，还有那一堆眼花缭乱的html标签、JS、CSS代码（虽然不知道在具体搭建博客时会不会用到，但还是生畏，这就是对于未知的恐惧吧），实在是看不下去。。。</p>
-<p>2017年，对于我来说，注定是不平凡的一年！（后续更新）</p>
-<p>既然想干，那就先从我的独立博客开始吧。</p>
-<p>从GitHub建仓到买域名再到整个博客初具雏形，花了整整一个白天（也没想象中那么困难、那么费时间），整个过程还是挺有意思的。</p>
-<p>之前我也在CSDN、博客园、简书、FarBox上写过博客，但是只在FarBox上坚持了将近半年，其他的现在连帐号都忘了（好个不专一的男人……）。写博客主要是将自己在学习过程中遇到的难题的解决方案记录下来、方便日后查看。之所以坚持要搭建一个独立博客，我觉得有以下几个原因：</p>
-<ol>
-<li>简洁。没有广告。</li>
-<li>装逼。拥有专属自己的域名。即使是helloliangxw.farbox.com，那也不是我的，那只是租的别人的地。一定要是<strong>helloliangxw.com</strong>，那才是咱家的自留地（郑重声明：本质上还是国家的6666）。</li>
-<li>发扬共享精神。新一代的国家栋梁（我目前还不算，查阅本文的你肯定是23333）就应该有这个精神！我们不断地从开源社区获得那么多的便利与知识，当然也要回馈社区。</li>
-<li>成长记录。任何一个大神都是从菜鸟、小白成长起来的。想想10年后的我，再次打开这些博客，看到这些傻逼的文字、让人失笑的水文，一定会感动到哭的55555555</li>
-<li>决心！既然准备出发，那就从搭建博客开始吧（犹豫了一年多的事情，也该有个了结），算是壮行了！</li>
-</ol>
-<h1 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h1><p><strong>建站工具</strong>，选择Hexo也是无意中的事情（搜索关键词“GitHub”+“博客博客”，几乎所有教程都是用Hexo）。</p>
-<p><strong>域名购买</strong>，根据教程选择了Godaddy。花了55￥。DNS服务商选的dnspod。</p>
-<p><strong>博客托管</strong>，GitHub。PS：博客搭建完成后，想换成国内的<a href="https://coding.net/user" target="_blank" rel="external">coding</a>以提高访问速度，试了半个小时左右没有迁移成功。算了，那就忘了它吧。</p>
-<p><strong>Markdown</strong>，写博客必须用这个。语法很简单。如果您热爱码字但还不知道MarkDown，墙裂建议您学习一下，保证让您眼前一亮：原来码字可以这么优雅！</p>
-<p>PS: 有时间将详细的搭建过程写下来！</p>
-<h1 id="今后"><a href="#今后" class="headerlink" title="今后"></a>今后</h1><p><strong>关于博客</strong>，学习一些网页设计知识，完善博客页面效果</p>
-<p><strong>关于未来</strong>，学习一些机器学习算法，让自己的路走得更广更远</p>
-<p>花了钱，也花了时间，希望自己能够坚持下去！也以此为动力，驱动自己去深入学习一些技术，锻炼自己的总结能力，如果在此过程中能够帮助到其他人，那也算是行善积德了。</p>
-<p>特别致谢：<a href="http://wuchong.me/" target="_blank" rel="external">wuchong</a>。有幸，希望能与您共事。</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/随笔生活/">随笔生活</a>
-</div>
-
-
-  <div class="article-tags">
+<section class="post" itemscope itemprop="blogitem">
   
-  <span></span> <a href="/tags/博客搭建/">博客搭建</a><a href="/tags/随笔/">随笔</a>
-  </div>
+    <a href="/2017/02/11/Windows下使用GitHub+Hexo搭建个人博客/" title="Windows下使用GitHub+Hexo搭建个人博客" itemprop="url">
+  
+    <h1 itemprop="name">Windows下使用GitHub+Hexo搭建个人博客</h1>
+    
+     
+           <p itemprop="description" >创建GitHub仓库
+注册GtiHub
+新建公共仓库，仓库命名规则为：*.github.io。以我的为例：myblog.github.io
 
-</div>
+环境准备安装Git下载地址：GitHub for windows
+安装完成后包括GitHub客户端和GitShell：
+
+打开GitHub</p>
+        
+    
+    <time datetime="2017-02-11T15:43:00.000Z" itemprop="datePublished">2017-02-11</time>
+  </a>
+</section>
 
 
 
 
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2017/02/11/我的第一篇博客/#comments" class="ds-thread-count comments-count-link" data-thread-key="2017/02/11/我的第一篇博客/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
 
 
-    </article>
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2017/02/11/我的第一篇博客/" title="Hi! Liang! 我的第一篇独立博客！" itemprop="url">
+  
+    <h1 itemprop="name">Hi! Liang! 我的第一篇独立博客！</h1>
+    
+     
+           <p itemprop="description" >搭建初衷
+“搭建一个只属于我自己的博客！”
+
+去年就在考虑这个事。期间百度、谷歌了很多教程，但是一般还没准备动手，就已经放弃了。一方面觉得搭建个人博客是一个非常花时间花精力的事情；另外，对于我这个半路出家的半吊子码农来说，未知的东西实在太多，什么GitHub，还有那一堆眼花缭乱的</p>
+        
+    
+    <time datetime="2017-02-11T08:53:00.000Z" itemprop="datePublished">2017-02-11</time>
+  </a>
+</section>
 
 
 
@@ -284,16 +129,6 @@
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
-
-  
-<div class="github-card">
-<p class="asidetitle">Github Card</p>
-<div class="github-card" data-github="https://github.com/helloliangxw" data-width="220" data-height="119" data-theme="medium">
-<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
-</div>
-  </div>
-
-
 
   
 <div class="categorieslist">
@@ -322,15 +157,15 @@
 			
 		
 			
+				<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/GitHub/" title="GitHub">GitHub<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
 			
 		
 		</ul>
@@ -343,21 +178,12 @@
         
           <li>
             
-            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
-            
-          </li>
-        
-          <li>
-            
-            	<a href="http://helloliangxw.com" target="_blank" title="liangxw&#39;s Blog">liangxw&#39;s Blog</a>
+            	<a href="http://www.nuist.edu.cn/" target="_blank" title="气象人才的摇篮，博主的母校">南京信息工程大学</a>
             
           </li>
         
     </ul>
 </div>
-
-  
-
 
   <div class="rsspart">
 	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
@@ -365,7 +191,7 @@
 
   <div class="weiboshow">
   <p class="asidetitle">Weibo</p>
-    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2516944510&verifier=b3593ceb&dpc=1"></iframe>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2516944510&verifier=3a15cbd5&dpc=1"></iframe>
 </div>
 
 
@@ -387,10 +213,10 @@
 	 
 	<div class="social-font" class="clearfix">
 		
-		<a href="http://weibo.com/2516944510" target="_blank" class="icon-weibo" title="微博"></a>
+		<a href="http://weibo.com/helloliangxw" target="_blank" class="icon-weibo" title="微博"></a>
 		
 		
-		<a href="https://github.com/https://github.com/helloliangxw" target="_blank" class="icon-github" title="github"></a>
+		<a href="https://github.com/helloliangxw" target="_blank" class="icon-github" title="github"></a>
 		
 		
 		
@@ -409,7 +235,7 @@
 		<p class="copyright">
 		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
 		
-		<a href="/about" target="_blank" title="John Doe">John Doe</a>
+		<a href="/about" target="_blank" title="liangxw">liangxw</a>
 		
 		
 		</p>
