@@ -96,7 +96,7 @@
 <li>新建<strong>公共</strong>仓库，仓库命名规则为：<strong>*.github.io</strong>。以我的为例：<a href="https://github.com/helloliangxw/myblog.github.io" target="_blank" rel="external">myblog.github.io</a></li>
 </ol>
 <h1 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a><strong>环境准备</strong></h1><h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><p><a href="https://desktop.github.com/" target="_blank" rel="external">下载地址：GitHub for windows</a></p>
-<p>安装完成后包括<strong>GitHub</strong>客户端和<strong>GitShell</strong>：<br><img src="http://static.zybuluo.com/liangxw/h21zi12rbbxegp6i7y3jyk2x/GitHub%E5%92%8CGitShell.png" alt="GitHub和GitShell.png-12.9kB"></p>
+<p>安装完成后包括<strong>GitHub</strong>客户端和<strong>GitShell</strong>：<br><img src="http://static.zybuluo.com/liangxw/h21zi12rbbxegp6i7y3jyk2x/GitHub%E5%92%8CGitShell.png" alt="GitHub和GitShell"></p>
 <ol>
 <li>打开GitHub客户端，输入账户名和密码，登录GitHub</li>
 <li>在本地新建<code>GitHub</code>目录（可以是任意位置），将之前创建的远程仓库clone到该目录下（如：<code>E:\MyDocuments\GitHub\myblog.github.io</code>），即为本地仓库</li>
@@ -123,15 +123,15 @@
 <p>之后重新部署hexo服务器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g -d</div></pre></td></tr></table></figure></p>
 <p>此时可以通过远程仓库名<code>https://helloliangxw.github.io/myblog.github.io/</code>访问该博客。</p>
 <p>PS：该名称略土，因此可以购买域名装逼。</p>
-<h1 id="购买域名及DNS解析"><a href="#购买域名及DNS解析" class="headerlink" title="购买域名及DNS解析"></a><strong>购买域名及DNS解析</strong></h1><p>在<a href="http://https://sg.godaddy.com/zh?ci=" target="_blank" rel="external">狗爹</a>上购买域名：<a href="http://helloliangxw.com" target="_blank" rel="external">helloliangxw.com</a>，买了一年，花了55￥。</p>
+<h1 id="购买域名及DNS解析"><a href="#购买域名及DNS解析" class="headerlink" title="购买域名及DNS解析"></a><strong>购买域名及DNS解析</strong></h1><p>在<a href="https://sg.godaddy.com/zh?isc=gennbacn29&amp;countrview=1&amp;currencytype=CNY&amp;mkwid=WFSMCUdy&amp;cvosrc=ppc.baidu" target="_blank" rel="external">狗爹</a>上购买域名：<a href="http://helloliangxw.com" target="_blank" rel="external">helloliangxw.com</a>，买了一年，花了55￥。</p>
 <p>之后在DNSPOD上设置域名解析：</p>
-<p><img src="http://static.zybuluo.com/liangxw/y48w8306fuwwrsmikew75tnx/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90.png" alt="域名解析.png-93kB"></p>
+<p><img src="http://static.zybuluo.com/liangxw/y48w8306fuwwrsmikew75tnx/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90.png" alt="域名解析"></p>
 <p>其中类型为A的两条记录指向的ip地址是GitHub Pages的提供的ip：</p>
 <ul>
 <li>192.30.252.153</li>
 <li>192.30.252.154<br>如博客不能登录，有可能是GitHub更改了空间服务的ip地址，到在GitHub Pages查看最新的ip即可。<br>www类型指定的记录是GitHub注册的远程仓库</li>
 </ul>
-<p>然后后去Godaddy修改DNS地址：<br><img src="http://static.zybuluo.com/liangxw/es9vggxlbz54fbf7zkvkqpwr/DNS%E5%9C%B0%E5%9D%80.png" alt="DNS地址.png-17.6kB"></p>
+<p>然后后去Godaddy修改DNS地址：<br><img src="http://static.zybuluo.com/liangxw/es9vggxlbz54fbf7zkvkqpwr/DNS%E5%9C%B0%E5%9D%80.png" alt="DNS地址"></p>
 <h1 id="将独立域名与GitHub空间绑定"><a href="#将独立域名与GitHub空间绑定" class="headerlink" title="将独立域名与GitHub空间绑定"></a><strong>将独立域名与GitHub空间绑定</strong></h1><p><strong>方法一</strong>：在远程仓库的根目录下面，新建一个名为<code>CNAME</code>的文本文件，里面写入要绑定的域名，比如<code>helloliangxw.com</code>。<br><strong>方法二</strong>：将<code>CNAME</code>文件放进本地仓库<code>source</code>目录下，这样每次使用<code>hexo g -d</code>命令后，hexo都会将<code>CNAME</code>文件提交至远程仓库根目录。同样可以将<code>README</code>文件放在<code>source</code>目录下。</p>
 <p>如此，就可以通过域名访问博客。</p>
 <blockquote>
