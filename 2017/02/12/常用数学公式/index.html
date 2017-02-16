@@ -11,24 +11,27 @@
     
 
     
-    <meta name="description" content="数量积又称内积、点积。
-如果\(\textbf{x}\)和\(\textbf{y}\)是\(R^{n}\)中的向量，
-$$\textbf{x}=\begin{bmatrix}x_{1} \\ x_{2} \\ … \\ x_{n} \end{bmatrix} ,\textbf{y}=\begin{bmatrix}y_{1} \\ y_{2} \\ … \\ y_{n} \end{bmatrix}$">
+    <meta name="description" content="向量的范数范数又称欧几里德范数、欧几里德距离
+在\(R^{2}\)中，如果\(\textbf{x}=\begin{bmatrix}x_{1} \\ x_{2} \end{bmatrix}\)，则\(\textbf{x}\)的模为 \(\sqrt{x_{1}^{2}+x_{2}^{2}}\)，记为\(\left \| \textbf{x} \right \| \)。
+同理：
+在\(R^{n}\)中的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用数学公式">
 <meta property="og:url" content="http://yoursite.com/2017/02/12/常用数学公式/index.html">
 <meta property="og:site_name" content="helloliangxw">
-<meta property="og:description" content="数量积又称内积、点积。
-如果\(\textbf{x}\)和\(\textbf{y}\)是\(R^{n}\)中的向量，
-$$\textbf{x}=\begin{bmatrix}x_{1} \\ x_{2} \\ … \\ x_{n} \end{bmatrix} ,\textbf{y}=\begin{bmatrix}y_{1} \\ y_{2} \\ … \\ y_{n} \end{bmatrix}$">
+<meta property="og:description" content="向量的范数范数又称欧几里德范数、欧几里德距离
+在\(R^{2}\)中，如果\(\textbf{x}=\begin{bmatrix}x_{1} \\ x_{2} \end{bmatrix}\)，则\(\textbf{x}\)的模为 \(\sqrt{x_{1}^{2}+x_{2}^{2}}\)，记为\(\left \| \textbf{x} \right \| \)。
+同理：
+在\(R^{n}\)中的">
 <meta property="og:image" content="http://static.zybuluo.com/liangxw/716v651mcttmy1n42wt6idmp/image_1b8ooes0eq45v747lp1qup1v0u9.png">
 <meta property="og:image" content="http://static.zybuluo.com/liangxw/54gmlz3va620qmwpr5amq4iw/image_1b8oq205m9vn1fv21447vpq1blem.png">
-<meta property="og:updated_time" content="2017-02-14T12:48:33.123Z">
+<meta property="og:updated_time" content="2017-02-16T04:12:42.655Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用数学公式">
-<meta name="twitter:description" content="数量积又称内积、点积。
-如果\(\textbf{x}\)和\(\textbf{y}\)是\(R^{n}\)中的向量，
-$$\textbf{x}=\begin{bmatrix}x_{1} \\ x_{2} \\ … \\ x_{n} \end{bmatrix} ,\textbf{y}=\begin{bmatrix}y_{1} \\ y_{2} \\ … \\ y_{n} \end{bmatrix}$">
+<meta name="twitter:description" content="向量的范数范数又称欧几里德范数、欧几里德距离
+在\(R^{2}\)中，如果\(\textbf{x}=\begin{bmatrix}x_{1} \\ x_{2} \end{bmatrix}\)，则\(\textbf{x}\)的模为 \(\sqrt{x_{1}^{2}+x_{2}^{2}}\)，记为\(\left \| \textbf{x} \right \| \)。
+同理：
+在\(R^{n}\)中的">
 <meta name="twitter:image" content="http://static.zybuluo.com/liangxw/716v651mcttmy1n42wt6idmp/image_1b8ooes0eq45v747lp1qup1v0u9.png">
 
     
@@ -105,11 +108,17 @@ $$\textbf{x}=\begin{bmatrix}x_{1} \\ x_{2} \\ … \\ x_{n} \end{bmatrix} ,\textb
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#数量积"><span class="toc-number">1.</span> <span class="toc-text">数量积</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#范数"><span class="toc-number">2.</span> <span class="toc-text">范数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#夹角余弦"><span class="toc-number">3.</span> <span class="toc-text">夹角余弦</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#向量外积-向量积-叉乘"><span class="toc-number">4.</span> <span class="toc-text">向量外积/向量积/叉乘</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#向量的范数"><span class="toc-number">1.</span> <span class="toc-text">向量的范数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#单位向量"><span class="toc-number">2.</span> <span class="toc-text">单位向量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数量积"><span class="toc-number">3.</span> <span class="toc-text">数量积</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#夹角余弦"><span class="toc-number">4.</span> <span class="toc-text">夹角余弦</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#向量外积-向量积-叉乘"><span class="toc-number">5.</span> <span class="toc-text">向量外积/向量积/叉乘</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="数量积"><a href="#数量积" class="headerlink" title="数量积"></a><strong>数量积</strong></h1><p>又称<strong>内积、点积</strong>。</p>
+		<h1 id="向量的范数"><a href="#向量的范数" class="headerlink" title="向量的范数"></a><strong>向量的范数</strong></h1><p>范数又称<strong>欧几里德范数、欧几里德距离</strong></p>
+<p>在\(R^{2}\)中，如果\(\textbf{x}=\begin{bmatrix}x_{1} \\ x_{2} \end{bmatrix}\)，则\(\textbf{x}\)的模为 \(\sqrt{x_{1}^{2}+x_{2}^{2}}\)，记为\(\left \| \textbf{x} \right \| \)。</p>
+<p>同理：</p>
+<p>在\(R^{n}\)中的一个向量\(\textbf{x}=\begin{bmatrix}x_{1} \\ x_{2} \\ … \\ x_{n} \end{bmatrix}\)，</p>
+<p>它的范数为：\(\left \| \textbf{x} \right \| = \sqrt{x_{1}^{2}+x_{2}^{2}+…+x_{n}^{2}}\)</p>
+<h1 id="单位向量"><a href="#单位向量" class="headerlink" title="单位向量"></a><strong>单位向量</strong></h1><p>范数为1的向量为单位向量，\(\textbf{w}\)=1。<br>如果\(\textbf{u}\)为任意非零向量，则与\(\textbf{u<br>}\)同方向的单位向量为：<br>$$\textbf{w}=\frac{\textbf{u}}{\left \\| \textbf{u} \right \\|}$$</p>
+<h1 id="数量积"><a href="#数量积" class="headerlink" title="数量积"></a><strong>数量积</strong></h1><p>又称<strong>内积、点积</strong>。</p>
 <p>如果\(\textbf{x}\)和\(\textbf{y}\)是\(R^{n}\)中的向量，</p>
 <p>$$\textbf{x}=\begin{bmatrix}x_{1} \\ x_{2} \\ … \\ x_{n} \end{bmatrix} ,<br>\textbf{y}=\begin{bmatrix}y_{1} \\ y_{2} \\ … \\ y_{n} \end{bmatrix}$$</p>
 <p>则数量积的定义为：<br>$$\textbf{x}\cdot\textbf{y}=\textbf{x}^{T}\textbf{y}=\sum_{i=1}^{n}x_{i}y_{i}$$</p>
@@ -118,11 +127,6 @@ $$\textbf{x}=\begin{bmatrix}x_{1} \\ x_{2} \\ … \\ x_{n} \end{bmatrix} ,\textb
 <blockquote>
 <p>\(\textbf{x}\cdot\textbf{y}\)表示：\(\textbf{x}\)在\(\textbf{y}\)方向上的投影，与\(\left \| \textbf{y} \right \|\)的乘积</p>
 </blockquote>
-<h1 id="范数"><a href="#范数" class="headerlink" title="范数"></a><strong>范数</strong></h1><p>又称<strong>欧几里德范数、欧几里德距离</strong></p>
-<p>\(R^{2}\)中，如果\(\textbf{x}=\begin{bmatrix}x_{1} \\ x_{2} \end{bmatrix}\)，则有\(\left \| \textbf{x} \right \| = \sqrt{x_{1}^{2}+x_{2}^{2}}\)，即\(\textbf{x}\)的模。</p>
-<p>同理：</p>
-<p>在\(R^{n}\)中的一个向量\(\textbf{x}=\begin{bmatrix}x_{1} \\ x_{2} \\ … \\ x_{n} \end{bmatrix}\)，</p>
-<p>它的范数为：\(\left \| \textbf{x} \right \| = \sqrt{x_{1}^{2}+x_{2}^{2}+…+x_{n}^{2}}\)</p>
 <h1 id="夹角余弦"><a href="#夹角余弦" class="headerlink" title="夹角余弦"></a><strong>夹角余弦</strong></h1><p>若两个向量\(\textbf{x}\)和\(\textbf{y}\)的夹角为\(\theta\)(\(0\leqslant \theta \leqslant \pi\))，则两者的夹角余弦为:</p>
 <p>$$\cos\theta=\frac{\textbf{x} \cdot  \textbf{y} }{\left \| \textbf{x} \right \| \cdot \left \| \textbf{y} \right \|}$$</p>
 <p>可以根据余弦定理证明得到：</p>
@@ -170,6 +174,14 @@ $$\textbf{x}=\begin{bmatrix}x_{1} \\ x_{2} \\ … \\ x_{n} \end{bmatrix} ,\textb
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2017/02/16/线性方程组的解/" title="线性方程组的解">
+  <strong>上一篇：</strong><br/>
+  <span>
+  线性方程组的解</span>
+</a>
+</div>
+
 
 <div class="next">
 <a href="/2017/02/11/Windows下使用GitHub+Hexo搭建个人博客/"  title="Windows下使用GitHub+Hexo搭建个人博客">
@@ -193,7 +205,7 @@ $$\textbf{x}=\begin{bmatrix}x_{1} \\ x_{2} \\ … \\ x_{n} \end{bmatrix} ,\textb
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#数量积"><span class="toc-number">1.</span> <span class="toc-text">数量积</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#范数"><span class="toc-number">2.</span> <span class="toc-text">范数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#夹角余弦"><span class="toc-number">3.</span> <span class="toc-text">夹角余弦</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#向量外积-向量积-叉乘"><span class="toc-number">4.</span> <span class="toc-text">向量外积/向量积/叉乘</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#向量的范数"><span class="toc-number">1.</span> <span class="toc-text">向量的范数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#单位向量"><span class="toc-number">2.</span> <span class="toc-text">单位向量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数量积"><span class="toc-number">3.</span> <span class="toc-text">数量积</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#夹角余弦"><span class="toc-number">4.</span> <span class="toc-text">夹角余弦</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#向量外积-向量积-叉乘"><span class="toc-number">5.</span> <span class="toc-text">向量外积/向量积/叉乘</span></a></li></ol>
  
   </div>
 
@@ -211,7 +223,7 @@ $$\textbf{x}=\begin{bmatrix}x_{1} \\ x_{2} \\ … \\ x_{n} \end{bmatrix} ,\textb
 		  
 		
 		  
-			<li><a href="/categories/数学基础/" title="数学基础">数学基础<sup>1</sup></a></li>
+			<li><a href="/categories/数学基础/" title="数学基础">数学基础<sup>2</sup></a></li>
 		  
 		
 		  
@@ -232,6 +244,10 @@ $$\textbf{x}=\begin{bmatrix}x_{1} \\ x_{2} \\ … \\ x_{n} \end{bmatrix} ,\textb
 			
 		
 			
+				<li><a href="/tags/数学/" title="数学">数学<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/GitHub/" title="GitHub">GitHub<sup>1</sup></a></li>
 			
 		
@@ -240,15 +256,15 @@ $$\textbf{x}=\begin{bmatrix}x_{1} \\ x_{2} \\ … \\ x_{n} \end{bmatrix} ,\textb
 			
 		
 			
+				<li><a href="/tags/公式/" title="公式">公式<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/数学/" title="数学">数学<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/公式/" title="公式">公式<sup>1</sup></a></li>
+				<li><a href="/tags/线性方程组/" title="线性方程组">线性方程组<sup>1</sup></a></li>
 			
 		
 		</ul>
