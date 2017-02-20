@@ -1,0 +1,605 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>线性代数-向量空间(1) | helloliangxw</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="liangxw">
+    
+
+    
+    <meta name="description" content="向量空间当一个向量集合\(V\)满足以下条件时，称\(\textbf{V}\)为一个向量空间：
+
+\(\textbf{0} \in V\)
+若\(\textbf{x, y} \in V\)，则\(\textbf{x+y} \in V\)
+若\(\textbf{x} \in V, a \in R\)，则\(a\textbf{x} \in V\)
+
+
+定理：对于每个正整数\(n\)，\(\textbf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性代数-向量空间(1)">
+<meta property="og:url" content="http://yoursite.com/2017/02/20/线性代数-向量空间(1)/index.html">
+<meta property="og:site_name" content="helloliangxw">
+<meta property="og:description" content="向量空间当一个向量集合\(V\)满足以下条件时，称\(\textbf{V}\)为一个向量空间：
+
+\(\textbf{0} \in V\)
+若\(\textbf{x, y} \in V\)，则\(\textbf{x+y} \in V\)
+若\(\textbf{x} \in V, a \in R\)，则\(a\textbf{x} \in V\)
+
+
+定理：对于每个正整数\(n\)，\(\textbf">
+<meta property="og:updated_time" content="2017-02-20T13:59:52.840Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="线性代数-向量空间(1)">
+<meta name="twitter:description" content="向量空间当一个向量集合\(V\)满足以下条件时，称\(\textbf{V}\)为一个向量空间：
+
+\(\textbf{0} \in V\)
+若\(\textbf{x, y} \in V\)，则\(\textbf{x+y} \in V\)
+若\(\textbf{x} \in V, a \in R\)，则\(a\textbf{x} \in V\)
+
+
+定理：对于每个正整数\(n\)，\(\textbf">
+
+    
+    <link rel="alternative" href="/atom.xml" title="helloliangxw" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="helloliangxw" title="helloliangxw"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="helloliangxw">helloliangxw</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/02/20/线性代数-向量空间(1)/" title="线性代数-向量空间(1)" itemprop="url">线性代数-向量空间(1)</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="liangxw" target="_blank" itemprop="author">liangxw</a>
+		
+  <p class="article-time">
+    <time datetime="2017-02-20T06:38:00.000Z" itemprop="datePublished"> Published 2017-02-20</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#向量空间"><span class="toc-number">1.</span> <span class="toc-text">向量空间</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#子空间"><span class="toc-number">2.</span> <span class="toc-text">子空间</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#特殊子空间"><span class="toc-number">3.</span> <span class="toc-text">特殊子空间</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#子集的生成空间"><span class="toc-number">3.1.</span> <span class="toc-text">子集的生成空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#零空间"><span class="toc-number">3.2.</span> <span class="toc-text">零空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列空间"><span class="toc-number">3.3.</span> <span class="toc-text">列空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#行空间"><span class="toc-number">3.4.</span> <span class="toc-text">行空间</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#子空间的基"><span class="toc-number">4.</span> <span class="toc-text">子空间的基</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#构造基：自然基"><span class="toc-number">4.1.</span> <span class="toc-text">构造基：自然基</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构造基：将子空间用代数描述"><span class="toc-number">4.2.</span> <span class="toc-text">构造基：将子空间用代数描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构造基：构造线性无关的向量组"><span class="toc-number">4.3.</span> <span class="toc-text">构造基：构造线性无关的向量组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构造基：利用行等价"><span class="toc-number">4.4.</span> <span class="toc-text">构造基：利用行等价</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<h1 id="向量空间"><a href="#向量空间" class="headerlink" title="向量空间"></a><strong>向量空间</strong></h1><p>当一个向量集合\(V\)满足以下条件时，称\(\textbf{V}\)为一个<strong>向量空间</strong>：</p>
+<ol>
+<li>\(\textbf{0} \in V\)</li>
+<li>若\(\textbf{x, y} \in V\)，则\(\textbf{x+y} \in V\)</li>
+<li>若\(\textbf{x} \in V, a \in R\)，则\(a\textbf{x} \in V\)</li>
+</ol>
+<blockquote>
+<p><strong>定理：</strong>对于每个正整数\(n\)，\(\textbf{R}^n\)都是向量空间。</p>
+</blockquote>
+<h1 id="子空间"><a href="#子空间" class="headerlink" title="子空间"></a><strong>子空间</strong></h1><p>\(W\)是\(\textbf{R}^{n}\)的子集，当\(W\)满足以下条件时，\(W\)就是\(\textbf{R}^{n}\)的子空间：</p>
+<ol>
+<li>\(\textbf{0} \in W\)</li>
+<li>若\(\textbf{x, y} \in W\)，则\(\textbf{x+y} \in W\)</li>
+<li>若\(\textbf{x} \in W, a \in R\)，则\(a\textbf{x} \in W\)</li>
+</ol>
+<h1 id="特殊子空间"><a href="#特殊子空间" class="headerlink" title="特殊子空间"></a><strong>特殊子空间</strong></h1><h2 id="子集的生成空间"><a href="#子集的生成空间" class="headerlink" title="子集的生成空间"></a>子集的生成空间</h2><p>若\(\textbf{S}=\left \{   v_{1},v_{2}…,v_{n} \right \} \)是\(\textbf{R}^{n}\)的子集，\(v_{1},v_{2}…,v_{n}\)的所有线性组合的集合\(W\)一定是\(\textbf{R}^{n}\)的子空间，\(W\)称为<strong>由\(\textbf{S}\)生成的子空间</strong>，记为：<br>$$ Sp(\textbf{S})  或 Sp \left \{  v_{1},v_{2}…,v_{n} \right \} $$</p>
+<h2 id="零空间"><a href="#零空间" class="headerlink" title="零空间"></a>零空间</h2><p>设\(\textbf{A}\)为\((m×n)\)的矩阵，则\(\textbf{A}\)的零空间\(N(\textbf{A})\)为：<br>$$N(\textbf{A})=\left \{ x:\textbf{Ax}=\textbf{0},\textbf{x}\in\textbf{R}^{n} \right \}$$<br>即\(\textbf{Ax}=\textbf{0}\)解集的生成空间。<br>可以证明\(N(\textbf{A})\)是\(\textbf{R}^n\)的子空间。</p>
+<blockquote>
+<p>例1：描述\(N(\textbf{A})\)，其中：<br>$$ \textbf{A}=<br>\begin{bmatrix}<br> 1 &amp; 1 &amp; 3 &amp; 1 \\<br> 2 &amp; 1 &amp; 5 &amp; 4 \\<br> 1 &amp; 2 &amp; 4 &amp; -1<br>\end{bmatrix}$$<br>解：\(N(\textbf{A})\)是\(\textbf{Ax}=\textbf{0}\)解集的生成空间，所以我们主要关注\(\textbf{x}\)。<br>将增广矩阵化简为行阶梯形：<br>$$ (\textbf{A}|\textbf{0}) \sim<br>\begin{bmatrix}<br> 1 &amp; 0 &amp; 2 &amp; 3  &amp; 0\\<br> 0 &amp; 1 &amp; 1 &amp; -2 &amp; 0\\<br> 0 &amp; 0 &amp; 0 &amp; 0  &amp; 0<br>\end{bmatrix}$$<br>得到：<br>$$\begin{matrix}<br>x_{1}=-2x_{3}-3x_{4}\\<br>x_{2}=-x_{3}+2x_{4}<br>\end{matrix}$$<br>则\(\textbf{Ax}=\textbf{0}\)的解为：<br>$$ \textbf{x}=<br>\begin{bmatrix}<br> x_{1}  \\<br> x_{2}  \\<br> x_{3}  \\<br> x_{4}<br>\end{bmatrix}=x_3<br>\begin{bmatrix}<br> -2  \\<br> -1  \\<br> 1  \\<br> 0<br>\end{bmatrix}+x_4<br>\begin{bmatrix}<br> -3  \\<br> 2  \\<br> 0  \\<br> 1<br>\end{bmatrix}<br>$$<br>从而：<br>$$ N(\textbf{A})=\left \{ \textbf{x}:\textbf{x}= x_3<br>\begin{bmatrix}<br> -2  \\<br> -1  \\<br> 1  \\<br> 0<br>\end{bmatrix}+x_4<br>\begin{bmatrix}<br> -3  \\<br> 2  \\<br> 0  \\<br> 1<br>\end{bmatrix} , x_3和x_4为任意实数        \right \}$$</p>
+</blockquote>
+<h2 id="列空间"><a href="#列空间" class="headerlink" title="列空间"></a>列空间</h2><p>设\(\textbf{A}\)为\((m×n)\)的矩阵，则\(\textbf{A}\)的列空间\(R(\textbf{A})\)为：<br>$$R(\textbf{A})=\left \{ \textbf{b}:\textbf{Ax}=\textbf{b},\textbf{x}\in\textbf{R}^{n} \right \}$$<br>即由\(\textbf{A}\)生成的子空间(\(\textbf{A}\)的列向量的所有线性组合)：</p>
+<p>$$R(\textbf{A})=Sp \left \{  \textbf{A}_{1},\textbf{A}_{2}…,\textbf{A}_{n} \right \}  $$</p>
+<blockquote>
+<p>例2：描述\(R(\textbf{A})\)，其中：<br>$$ \textbf{A}=<br>\begin{bmatrix}<br> 1 &amp; 1 &amp; 3 &amp; 1 \\<br> 2 &amp; 1 &amp; 5 &amp; 4 \\<br> 1 &amp; 2 &amp; 4 &amp; -1<br>\end{bmatrix}$$<br>解：\(R(\textbf{A})\)是满足\(\textbf{Ax}=\textbf{b}\)的所有\(\textbf{b}\)的集合，所以我们主要关注\(\textbf{b}\)。<br>设：<br>$$\textbf{b}=\begin{bmatrix}<br> b_{1}  \\<br> b_{2}  \\<br> b_{3}<br> \end{bmatrix}$$<br>将增广矩阵化简为行阶梯形：<br>$$ (\textbf{A}|\textbf{b}) \sim<br>\begin{bmatrix}<br> 1 &amp; 0 &amp; 2 &amp; 3  &amp; b_2-b_1\\<br> 0 &amp; 1 &amp; 1 &amp; -2 &amp; 2b_1-b_2\\<br> 0 &amp; 0 &amp; 0 &amp; 0  &amp; -3b_1+b_2+b_3<br>\end{bmatrix}$$<br>若\(\textbf{Ax}=\textbf{b}\)有解，则：\(-3b_1+b_2+b_3=0\)，因此：<br>$$ R(\textbf{A})=\left \{ \textbf{b}:\textbf{b}= b_1<br>\begin{bmatrix}<br> 1  \\<br> 0  \\<br> 3<br>\end{bmatrix}+b_2<br>\begin{bmatrix}<br> 0  \\<br> 1  \\<br> -1<br>\end{bmatrix} , b_1和b_2为任意实数        \right \}$$</p>
+</blockquote>
+<h2 id="行空间"><a href="#行空间" class="headerlink" title="行空间"></a>行空间</h2><p>设\(\textbf{A}\)为\((m×n)\)的矩阵，与列空间类似，定义矩阵\(\textbf{A}\)的行空间为：<br>$$Sp \left \{  \textbf{a}_{1},\textbf{a}_{2}…,\textbf{a}_{m} \right \}  $$<br>其中\( \textbf{a}_{1},\textbf{a}_{2}…,\textbf{a}_{m}\)为\(\textbf{A}\)的行。</p>
+<blockquote>
+<p><strong>定理：</strong>若\(\textbf{A}\)行等价于\(\textbf{B}\)，则\(\textbf{A}\)和\(\textbf{B}\)有相同的行空间。 </p>
+</blockquote>
+<h1 id="子空间的基"><a href="#子空间的基" class="headerlink" title="子空间的基"></a><strong>子空间的基</strong></h1><p>\(W\)是\(\textbf{R}^{n}\)的非零子空间，若\( W=Sp(\textbf{S})=Sp \left \{  v_{1},v_{2}…,v_{n} \right \} \)，则\(\textbf{S}\)称为\(W\)的一个<strong>生成集合</strong>。<br>\(W\)有若干个生成集合。其中一个线性无关的生成集合，称为\(W\)的一个<strong>基</strong>。\(W\)中的每一个向量都可以用基进行唯一的表示。</p>
+<h2 id="构造基：自然基"><a href="#构造基：自然基" class="headerlink" title="构造基：自然基"></a>构造基：自然基</h2><p>\(n\)维向量\(\textbf{e}_1,\textbf{e}_2,…,\textbf{e}_n\)构成了\(\textbf{R}^n\)的一个基，称为<strong>自然基</strong>。</p>
+<h2 id="构造基：将子空间用代数描述"><a href="#构造基：将子空间用代数描述" class="headerlink" title="构造基：将子空间用代数描述"></a>构造基：将子空间用代数描述</h2><p>见例1和例2。</p>
+<h2 id="构造基：构造线性无关的向量组"><a href="#构造基：构造线性无关的向量组" class="headerlink" title="构造基：构造线性无关的向量组"></a>构造基：构造线性无关的向量组</h2><blockquote>
+<p>例3：设\(W\)为\(\textbf{R}^4\)的子空间，由集合\(\textbf{S}= \left \{  \textbf{v}_{1},\textbf{v}_{2},\textbf{v}_{3},\textbf{v}_{4},\textbf{v}_{5} \right \} \)生成，其中:<br>$$\textbf{v}_1=\begin{bmatrix} 1 \\ 1 \\ 2 \\ -1 \end{bmatrix},<br>\textbf{v}_2=\begin{bmatrix} 1 \\ 2 \\ 1 \\ 1 \end{bmatrix},<br>\textbf{v}_3=\begin{bmatrix} 1 \\ 4 \\ -1 \\ 5 \end{bmatrix},<br>\textbf{v}_4=\begin{bmatrix} 1 \\ 0 \\ 4 \\ -1 \end{bmatrix}<br>\textbf{v}_5=\begin{bmatrix} 2 \\ 5 \\ 0 \\ 2 \end{bmatrix}$$<br>求\(\textbf{S}\)的一个子集，使它成为\(W\)的基。<br>解：基是线性无关的，因此需要从\(\textbf{S}\)中消去某个（些）向量，使得剩余的向量为线性无关组。<br>$$ (  \textbf{v}_{1},\textbf{v}_{2},\textbf{v}_{3},\textbf{v}_{4},\textbf{v}_{5} ) \sim<br>\begin{bmatrix}<br> 1 &amp; 0 &amp; -2 &amp; 0 &amp; 1\\<br> 0 &amp; 1 &amp; 3 &amp; 0 &amp; 2 \\<br> 0 &amp; 0 &amp; 0 &amp; 1 &amp; -1\\<br> 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0<br>\end{bmatrix}$$<br>其中第1、2、4列有主元，因此第3、5列可以用第1、2、4列进行线性表示。<br>所以：\(  \left \{  \textbf{v}_{1},\textbf{v}_{2},\textbf{v}_{4}   \right \}  \)是线性无关组，从而也是\(W\)的基。</p>
+</blockquote>
+<h2 id="构造基：利用行等价"><a href="#构造基：利用行等价" class="headerlink" title="构造基：利用行等价"></a>构造基：利用行等价</h2><blockquote>
+<p><strong>定理：</strong>若非零矩阵\(\textbf{A}\)行等价于行阶梯形矩阵\(\textbf{B}\)，则\(\textbf{B}\)的非零行构成了\(\textbf{A}\)的行空间的一个基。</p>
+</blockquote>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/线性代数/">线性代数</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/向量空间/">向量空间</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2017/02/20/线性代数-向量空间(1)/" data-title="线性代数-向量空间(1) | helloliangxw" data-tsina="2516944510" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2017/02/19/读书笔记-上帝掷骰子吗？量子物理史话（1）/"  title="上帝掷骰子吗？量子物理史话（1）">
+ <strong>下一篇：</strong><br/> 
+ <span>上帝掷骰子吗？量子物理史话（1）
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2017/02/20/线性代数-向量空间(1)/" data-title="线性代数-向量空间(1)" data-url="http://yoursite.com/2017/02/20/线性代数-向量空间(1)/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#向量空间"><span class="toc-number">1.</span> <span class="toc-text">向量空间</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#子空间"><span class="toc-number">2.</span> <span class="toc-text">子空间</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#特殊子空间"><span class="toc-number">3.</span> <span class="toc-text">特殊子空间</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#子集的生成空间"><span class="toc-number">3.1.</span> <span class="toc-text">子集的生成空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#零空间"><span class="toc-number">3.2.</span> <span class="toc-text">零空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列空间"><span class="toc-number">3.3.</span> <span class="toc-text">列空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#行空间"><span class="toc-number">3.4.</span> <span class="toc-text">行空间</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#子空间的基"><span class="toc-number">4.</span> <span class="toc-text">子空间的基</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#构造基：自然基"><span class="toc-number">4.1.</span> <span class="toc-text">构造基：自然基</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构造基：将子空间用代数描述"><span class="toc-number">4.2.</span> <span class="toc-text">构造基：将子空间用代数描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构造基：构造线性无关的向量组"><span class="toc-number">4.3.</span> <span class="toc-text">构造基：构造线性无关的向量组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构造基：利用行等价"><span class="toc-number">4.4.</span> <span class="toc-text">构造基：利用行等价</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/教程/" title="教程">教程<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/线性代数/" title="线性代数">线性代数<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/随笔生活/" title="随笔生活">随笔生活<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/博客搭建/" title="博客搭建">博客搭建<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/GitHub/" title="GitHub">GitHub<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/向量/" title="向量">向量<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/线性方程组/" title="线性方程组">线性方程组<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/量子物理/" title="量子物理">量子物理<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/波粒战争/" title="波粒战争">波粒战争<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/向量空间/" title="向量空间">向量空间<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://www.nuist.edu.cn/" target="_blank" title="气象人才的摇篮，博主的母校">南京信息工程大学</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2516944510&verifier=3a15cbd5&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Liang Xuewei！ <br/>
+			This is my blog！</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/helloliangxw" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/helloliangxw" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:liangxw1990@163.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
+		
+		<a href="/about" target="_blank" title="liangxw">liangxw</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"helloliangxw"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

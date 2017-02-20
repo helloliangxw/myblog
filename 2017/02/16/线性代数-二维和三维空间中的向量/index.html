@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>线性代数-向量 | helloliangxw</title>
+    <title>线性代数-二维和三维空间中的向量 | helloliangxw</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="liangxw">
@@ -13,24 +13,24 @@
     
     <meta name="description" content="向量范数范数又称欧几里德范数、欧几里德距离
 在\(R^{2}\)中，如果\(\textbf{u}=\begin{bmatrix}u_{1} \\ u_{2} \end{bmatrix}\)，则\(\textbf{u}\)的模为 \(\sqrt{u_{1}^{2}+u_{2}^{2}}\)，记为\(\left \| \textbf{u} \right \| \)。
-同理：
-在\(R^{n}\)中的一">
+同理：   
+在\(R^{n}\)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线性代数-向量">
-<meta property="og:url" content="http://yoursite.com/2017/02/16/线性代数-向量/index.html">
+<meta property="og:title" content="线性代数-二维和三维空间中的向量">
+<meta property="og:url" content="http://yoursite.com/2017/02/16/线性代数-二维和三维空间中的向量/index.html">
 <meta property="og:site_name" content="helloliangxw">
 <meta property="og:description" content="向量范数范数又称欧几里德范数、欧几里德距离
 在\(R^{2}\)中，如果\(\textbf{u}=\begin{bmatrix}u_{1} \\ u_{2} \end{bmatrix}\)，则\(\textbf{u}\)的模为 \(\sqrt{u_{1}^{2}+u_{2}^{2}}\)，记为\(\left \| \textbf{u} \right \| \)。
-同理：
-在\(R^{n}\)中的一">
+同理：   
+在\(R^{n}\)">
 <meta property="og:image" content="http://static.zybuluo.com/liangxw/u2yac6syc5clocegxgk48te7/%E6%8A%95%E5%BD%B1.jpg">
-<meta property="og:updated_time" content="2017-02-16T07:40:20.065Z">
+<meta property="og:updated_time" content="2017-02-20T08:21:51.793Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线性代数-向量">
+<meta name="twitter:title" content="线性代数-二维和三维空间中的向量">
 <meta name="twitter:description" content="向量范数范数又称欧几里德范数、欧几里德距离
 在\(R^{2}\)中，如果\(\textbf{u}=\begin{bmatrix}u_{1} \\ u_{2} \end{bmatrix}\)，则\(\textbf{u}\)的模为 \(\sqrt{u_{1}^{2}+u_{2}^{2}}\)，记为\(\left \| \textbf{u} \right \| \)。
-同理：
-在\(R^{n}\)中的一">
+同理：   
+在\(R^{n}\)">
 <meta name="twitter:image" content="http://static.zybuluo.com/liangxw/u2yac6syc5clocegxgk48te7/%E6%8A%95%E5%BD%B1.jpg">
 
     
@@ -59,7 +59,7 @@
 				<h1 class="site-name"><a href="/" title="helloliangxw">helloliangxw</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -75,7 +75,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:yoursite.com">
 					</form>
 					
@@ -91,21 +91,21 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/02/16/线性代数-向量/" title="线性代数-向量" itemprop="url">线性代数-向量</a>
+      <a href="/2017/02/16/线性代数-二维和三维空间中的向量/" title="线性代数-二维和三维空间中的向量" itemprop="url">线性代数-二维和三维空间中的向量</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="liangxw" target="_blank" itemprop="author">liangxw</a>
 		
   <p class="article-time">
-    <time datetime="2017-02-16T06:38:00.000Z" itemprop="datePublished"> 发表于 2017-02-16</time>
+    <time datetime="2017-02-16T06:38:00.000Z" itemprop="datePublished"> Published 2017-02-16</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目录</strong>
+			<strong class="toc-title">Contents</strong>
 		
 			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#向量范数"><span class="toc-number">1.</span> <span class="toc-text">向量范数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#单位向量"><span class="toc-number">2.</span> <span class="toc-text">单位向量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#向量点积"><span class="toc-number">3.</span> <span class="toc-text">向量点积</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#夹角余弦"><span class="toc-number">4.</span> <span class="toc-text">夹角余弦</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#向量投影"><span class="toc-number">5.</span> <span class="toc-text">向量投影</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#向量叉积"><span class="toc-number">6.</span> <span class="toc-text">向量叉积</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#向量三重积"><span class="toc-number">7.</span> <span class="toc-text">向量三重积</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#向量正交、平行、共面"><span class="toc-number">8.</span> <span class="toc-text">向量正交、平行、共面</span></a></li></ol>
 		
@@ -113,7 +113,7 @@
 		
 		<h1 id="向量范数"><a href="#向量范数" class="headerlink" title="向量范数"></a><strong>向量范数</strong></h1><p>范数又称<strong>欧几里德范数、欧几里德距离</strong></p>
 <p>在\(R^{2}\)中，如果\(\textbf{u}=\begin{bmatrix}u_{1} \\ u_{2} \end{bmatrix}\)，则\(\textbf{u}\)的模为 \(\sqrt{u_{1}^{2}+u_{2}^{2}}\)，记为\(\left \| \textbf{u} \right \| \)。</p>
-<p>同理：</p>
+<p>同理：   </p>
 <p>在\(R^{n}\)中的一个向量\(\textbf{u}=\begin{bmatrix}u_{1} \\ u_{2} \\ … \\ u_{n} \end{bmatrix}\)，</p>
 <p>它的范数为：\(\left \| \textbf{u} \right \| = \sqrt{u_{1}^{2}+u_{2}^{2}+…+u_{n}^{2}}\)</p>
 <h1 id="单位向量"><a href="#单位向量" class="headerlink" title="单位向量"></a><strong>单位向量</strong></h1><p>单位向量即范数为1的向量，即\(\left \| \textbf{w} \right \|\)=1。</p>
@@ -154,13 +154,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/数学基础/">数学基础</a>
+  <a class="article-category-link" href="/categories/线性代数/">线性代数</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/线性代数/">线性代数</a><a href="/tags/向量/">向量</a>
+  <span></span> <a href="/tags/向量/">向量</a>
   </div>
 
 </div>
@@ -169,7 +169,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2017/02/16/线性代数-向量/" data-title="线性代数-向量 | helloliangxw" data-tsina="2516944510" class="share clearfix">
+	  <div data-url="http://yoursite.com/2017/02/16/线性代数-二维和三维空间中的向量/" data-title="线性代数-二维和三维空间中的向量 | helloliangxw" data-tsina="2516944510" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -192,7 +192,7 @@
 
 
 <div class="next">
-<a href="/2017/02/16/线性方程组的解/"  title="线性代数-线性方程组">
+<a href="/2017/02/16/线性代数-矩阵与线性方程组/"  title="线性代数-线性方程组">
  <strong>下一篇：</strong><br/> 
  <span>线性代数-线性方程组
 </span>
@@ -203,27 +203,27 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2017/02/16/线性代数-向量/" data-title="线性代数-向量" data-url="http://yoursite.com/2017/02/16/线性代数-向量/"></div>
+	<div class="ds-thread" data-thread-key="2017/02/16/线性代数-二维和三维空间中的向量/" data-title="线性代数-二维和三维空间中的向量" data-url="http://yoursite.com/2017/02/16/线性代数-二维和三维空间中的向量/"></div>
 </section>
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目录</strong>
+  <strong class="toc-title">Contents</strong>
  
  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#向量范数"><span class="toc-number">1.</span> <span class="toc-text">向量范数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#单位向量"><span class="toc-number">2.</span> <span class="toc-text">单位向量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#向量点积"><span class="toc-number">3.</span> <span class="toc-text">向量点积</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#夹角余弦"><span class="toc-number">4.</span> <span class="toc-text">夹角余弦</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#向量投影"><span class="toc-number">5.</span> <span class="toc-text">向量投影</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#向量叉积"><span class="toc-number">6.</span> <span class="toc-text">向量叉积</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#向量三重积"><span class="toc-number">7.</span> <span class="toc-text">向量三重积</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#向量正交、平行、共面"><span class="toc-number">8.</span> <span class="toc-text">向量正交、平行、共面</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分类</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -231,7 +231,7 @@
 		  
 		
 		  
-			<li><a href="/categories/数学基础/" title="数学基础">数学基础<sup>2</sup></a></li>
+			<li><a href="/categories/线性代数/" title="线性代数">线性代数<sup>3</sup></a></li>
 		  
 		
 		  
@@ -248,15 +248,11 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">标签</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
 				<li><a href="/tags/博客搭建/" title="博客搭建">博客搭建<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/线性代数/" title="线性代数">线性代数<sup>2</sup></a></li>
 			
 		
 			
@@ -287,12 +283,16 @@
 				<li><a href="/tags/波粒战争/" title="波粒战争">波粒战争<sup>1</sup></a></li>
 			
 		
+			
+				<li><a href="/tags/向量空间/" title="向量空间">向量空间<sup>1</sup></a></li>
+			
+		
 		</ul>
 </div>
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情链接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -305,11 +305,11 @@
 </div>
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2516944510&verifier=3a15cbd5&dpc=1"></iframe>
 </div>
 
@@ -552,7 +552,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
