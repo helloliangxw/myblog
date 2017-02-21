@@ -31,7 +31,7 @@
 
 
 定理：对于每个正整数\(n\)，\(\textbf">
-<meta property="og:updated_time" content="2017-02-21T07:53:11.976Z">
+<meta property="og:updated_time" content="2017-02-21T07:57:08.891Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性代数-向量空间(1)">
 <meta name="twitter:description" content="向量空间当一个向量集合\(V\)满足以下条件时，称\(\textbf{V}\)为一个向量空间：
@@ -184,11 +184,11 @@
 </ol>
 <h1 id="子空间的正交基"><a href="#子空间的正交基" class="headerlink" title="子空间的正交基"></a><strong>子空间的正交基</strong></h1><h2 id="正交组"><a href="#正交组" class="headerlink" title="正交组"></a>正交组</h2><p>\(\textbf{u}\)和\(\textbf{v}\)是\(\textbf{R}^n\)中的向量，当\(\textbf{u}^T\textbf{v}=0\)时，称\(\textbf{u}\)和\(\textbf{v}\)是<strong>正交</strong>的（类似于二维和三维中的垂直）。</p>
 <p>设\(\textbf{S}=\left \{ \textbf{u}_1,\textbf{u}_2,…,\textbf{u}_p  \right \} \)是\(\textbf{R}^n\)中的一个向量组，且\(S\)中的向量两两正交，则向量组\(S\)称为<strong>正交组</strong>。</p>
-<p>特别的，当\(\left \| \textbf{u_i} \right \|=1, 1 \leqslant  i \leqslant p\)时，\(\textbf{S}\)称为<strong>标准正交基</strong>。</p>
+<p>特别的，当\(\left \| \textbf{u}_i \right \|=1, 1 \leqslant  i \leqslant p\)时，\(\textbf{S}\)称为<strong>标准正交基</strong>。</p>
 <blockquote>
 <p><strong>定理：</strong>如果正交向量组\(\textbf{S}\)中不包含零向量，则\(\textbf{S}\)一定是线性无关组。</p>
 </blockquote>
-<h2 id="正交基"><a href="#正交基" class="headerlink" title="正交基"></a>正交基</h2><p>\(W\)是\(\textbf{R}^n\)的子空间，设\(\textbf{B}=\left \{ \textbf{u}_1,\textbf{u}_2,…,\textbf{u}_p  \right \} \)是\(W\)的一个基，并且\(\textbf{B}\)也是正交组，那么\(\textbf{B}\)称为\(W\)的一个<strong>正交基</strong>。<br>特别的，当\(\left \| \textbf{u_i} \right \|=1, 1 \leqslant  i \leqslant p\)时，\(\textbf{B}\)称为\(W\)的一个<strong>标准正交基</strong>。</p>
+<h2 id="正交基"><a href="#正交基" class="headerlink" title="正交基"></a>正交基</h2><p>\(W\)是\(\textbf{R}^n\)的子空间，设\(\textbf{B}=\left \{ \textbf{u}_1,\textbf{u}_2,…,\textbf{u}_p  \right \} \)是\(W\)的一个基，并且\(\textbf{B}\)也是正交组，那么\(\textbf{B}\)称为\(W\)的一个<strong>正交基</strong>。<br>特别的，当\(\left \| \textbf{u}_i \right \|=1, 1 \leqslant  i \leqslant p\)时，\(\textbf{B}\)称为\(W\)的一个<strong>标准正交基</strong>。</p>
 <h2 id="坐标"><a href="#坐标" class="headerlink" title="坐标"></a>坐标</h2><p>设\(W\)是\(\textbf{R}^n\)的一个\(p\)维子空间，\(\textbf{S}=\left \{ \textbf{u}_1,\textbf{u}_2,…,\textbf{u}_p  \right \} \)是\(W\)的一个基，那么\(W\)中任意一个向量\(\textbf{v}\)都可以用该基进行唯一的表示：<br>$$\textbf{v}=a_1\textbf{u}_1+a_2\textbf{u}_2+…+a_p\textbf{u}_p$$<br>其中\(a_1,a_2,…,a_p\)称为\(\textbf{v}\)关于基\(\textbf{S}\)的<strong>坐标</strong>。</p>
 <h3 id="正交基的坐标"><a href="#正交基的坐标" class="headerlink" title="正交基的坐标"></a>正交基的坐标</h3><p>确定一个向量关于正交基的坐标是非常容易的。</p>
 <blockquote>
@@ -197,7 +197,7 @@
 <p>一般的，设\(W\)是\(\textbf{R}^n\)的一个\(p\)维子空间，\(\textbf{B}=\left \{ \textbf{u}_1,\textbf{u}_2,…,\textbf{u}_p  \right \} \)是\(W\)的一个基，\(W\)中任意一个向量\(\textbf{v}\)可以用该基进行唯一的表示：<br>$$\textbf{v}=a_1\textbf{u}_1+a_2\textbf{u}_2+…+a_p\textbf{u}_p$$<br>其中:<br>$$a_i=\frac{\textbf{u}_i^T\textbf{v}}{\textbf{u}_i^T\textbf{u}_i}, 1 \leqslant i \leqslant p $$</p>
 <h2 id="构造正交基"><a href="#构造正交基" class="headerlink" title="构造正交基"></a>构造正交基</h2><p><strong>格拉姆-施密特过程：</strong>设\(W\)是\(\textbf{R}^n\)的一个\(p\)维子空间，\(\left \{ \textbf{w}_1,\textbf{w}_2,…,\textbf{w}_p  \right \} \)是\(W\)的一个基，则\(\left \{ \textbf{u}_1,\textbf{u}_2,…,\textbf{u}_p  \right \} \)是\(W\)的一个正交基，其中：</p>
 <p>\(\textbf{u}_1=\textbf{w}_1\)</p>
-<p>\(\textbf{u}_2=\textbf{w}_2-\frac{\textbf{u_1}^T\textbf{w}_2}{\textbf{u_1}^T\textbf{u_1}} \textbf{u_1}\)</p>
+<p>\(\textbf{u}_2=\textbf{w}_2-\frac{\textbf{u}_1^T\textbf{w}_2}{\textbf{u}_1^T\textbf{u}_1} \textbf{u}_1\)</p>
 <p>\(\textbf{u}_3=\textbf{w}_3-\frac{\textbf{u}_1^T\textbf{w}_3}{\textbf{u}_1^T\textbf{u}_1} \textbf{u}_1-\frac{\textbf{u}_2^T\textbf{w}_3}{\textbf{u}_2^T\textbf{u}_2} \textbf{u}_2\)</p>
 <p>一般的：<br>$$\textbf{u}_i=\textbf{w}_i-\sum_{k=1}^{i-1}<br>\frac{\textbf{u}_k^T\textbf{w}_i}{\textbf{u}_k^T\textbf{u}_k} \textbf{u}_k, 1 \leqslant i \leqslant p$$</p>
 <p>对于该过程，无需手算，可以按照下面的样式，从基\(\left \{ \textbf{w}_1,\textbf{w}_2,…,\textbf{w}_p  \right \} \)到正交基\(\left \{ \textbf{u}_1,\textbf{u}_2,…,\textbf{u}_p  \right \} \)：<br>\(\textbf{u}_1=\textbf{w}_1\)<br>\(\textbf{u}_2=\textbf{w}_2+a\textbf{u}_1\)<br>\(\textbf{u}_3=\textbf{w}_3+b\textbf{u}_1+c\textbf{u}_2\)<br>\(\textbf{u}_4=\textbf{w}_4+d\textbf{u}_1+e\textbf{u}_2+f\textbf{u}_3\)<br>  \(\cdot\)<br>  \(\cdot\)<br>  \(\cdot\)<br>利用\(\textbf{u}_1^T\textbf{u}_2=0\)确定\(a\)；<br>利用\(\textbf{u}_1^T\textbf{u}_3=0\)和\(\textbf{u}_2^T\textbf{u}_3=0\)确定\(b\)和\(c\)；<br>依次类推。</p>
@@ -302,10 +302,6 @@
 			
 		
 			
-				<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/GitHub/" title="GitHub">GitHub<sup>1</sup></a></li>
 			
 		
@@ -314,15 +310,19 @@
 			
 		
 			
+				<li><a href="/tags/向量/" title="向量">向量<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/子空间/" title="子空间">子空间<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/向量的基/" title="向量的基">向量的基<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/向量/" title="向量">向量<sup>1</sup></a></li>
 			
 		
 			
