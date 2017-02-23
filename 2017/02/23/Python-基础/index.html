@@ -33,7 +33,7 @@ intfloatstr
 NoneType
 
 1234567# 包括类class也是一种类型class MyClass():    passmyClass=MyClass()type(MyClass)type(myClass)">
-<meta property="og:updated_time" content="2017-02-23T01:47:56.481Z">
+<meta property="og:updated_time" content="2017-02-23T01:50:13.289Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python-基础">
 <meta name="twitter:description" content="类型12345# 所有的类型都是类type(123)type(1.23)type(&apos;123&apos;)
@@ -120,11 +120,11 @@ NoneType
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#类型"><span class="toc-number">1.</span> <span class="toc-text">类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#字符串"><span class="toc-number">2.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常见字符串处理"><span class="toc-number">3.</span> <span class="toc-text">常见字符串处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条件判断"><span class="toc-number">4.</span> <span class="toc-text">条件判断</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#函数"><span class="toc-number">5.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#递归"><span class="toc-number">6.</span> <span class="toc-text">递归</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#类型"><span class="toc-number">1.</span> <span class="toc-text">类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#字符串"><span class="toc-number">2.</span> <span class="toc-text">字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用字符串处理"><span class="toc-number">2.1.</span> <span class="toc-text">常用字符串处理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条件判断"><span class="toc-number">3.</span> <span class="toc-text">条件判断</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#函数"><span class="toc-number">4.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#递归"><span class="toc-number">5.</span> <span class="toc-text">递归</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 所有的类型都是类</span></div><div class="line"></div><div class="line">type(<span class="number">123</span>)</div><div class="line">type(<span class="number">1.23</span>)</div><div class="line">type(<span class="string">'123'</span>)</div></pre></td></tr></table></figure>
+		<h1 id="类型"><a href="#类型" class="headerlink" title="类型"></a><strong>类型</strong></h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 所有的类型都是类</span></div><div class="line"></div><div class="line">type(<span class="number">123</span>)</div><div class="line">type(<span class="number">1.23</span>)</div><div class="line">type(<span class="string">'123'</span>)</div></pre></td></tr></table></figure>
 <blockquote>
 <p>int<br>float<br>str</p>
 </blockquote>
@@ -136,7 +136,7 @@ NoneType
 <blockquote>
 <p>classobj<br>instance</p>
 </blockquote>
-<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 单引号和双引号</span></div><div class="line">s0=<span class="string">"a'b'c"</span></div><div class="line">s1=<span class="string">'a\'b\'c'</span></div><div class="line"></div><div class="line">s0</div><div class="line">s1</div></pre></td></tr></table></figure>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a><strong>字符串</strong></h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 单引号和双引号</span></div><div class="line">s0=<span class="string">"a'b'c"</span></div><div class="line">s1=<span class="string">'a\'b\'c'</span></div><div class="line"></div><div class="line">s0</div><div class="line">s1</div></pre></td></tr></table></figure>
 <blockquote>
 <p>“a’b’c”<br>“a’b’c”</p>
 </blockquote>
@@ -148,7 +148,7 @@ NoneType
 <blockquote>
 <p>a<br>12<br>10<br>0b1010<br>     hello<br>15</p>
 </blockquote>
-<h1 id="常见字符串处理"><a href="#常见字符串处理" class="headerlink" title="常见字符串处理"></a>常见字符串处理</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 字符串不能被修改</span></div><div class="line">s=<span class="string">'abc'</span></div><div class="line">s[<span class="number">0</span>]=<span class="string">'x'</span></div></pre></td></tr></table></figure>
+<h2 id="常用字符串处理"><a href="#常用字符串处理" class="headerlink" title="常用字符串处理"></a>常用字符串处理</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 字符串不能被修改</span></div><div class="line">s=<span class="string">'abc'</span></div><div class="line">s[<span class="number">0</span>]=<span class="string">'x'</span></div></pre></td></tr></table></figure>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-----------</div><div class="line"></div><div class="line">TypeError                                 Traceback (most recent call last)</div><div class="line"></div><div class="line">&lt;ipython-input-80-4ac105e98300&gt; in &lt;module&gt;()</div><div class="line">      1 s='abc'</div><div class="line">----&gt; 2 s[0]='x'</div><div class="line"></div><div class="line"></div><div class="line">TypeError: 'str' object does not support item assignment</div></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 去除空格</span></div><div class="line">s=<span class="string">'   abc '</span></div><div class="line">s.strip()</div><div class="line">s.lstrip()</div><div class="line">s.rstrip()</div></pre></td></tr></table></figure>
 <blockquote>
@@ -202,7 +202,7 @@ NoneType
 <blockquote>
 <p>[‘a’, ‘b’, ‘c’, ‘d’, ‘e’, ‘f’]</p>
 </blockquote>
-<h1 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 条件判断</span></div><div class="line">a = <span class="number">100</span></div><div class="line">b = <span class="number">200</span></div><div class="line">c = <span class="number">300</span></div><div class="line"><span class="keyword">if</span> a==<span class="number">100</span>:</div><div class="line">    a</div><div class="line"><span class="keyword">elif</span> b==<span class="number">200</span>:</div><div class="line">    b</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    c</div></pre></td></tr></table></figure>
+<h1 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a><strong>条件判断</strong></h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 条件判断</span></div><div class="line">a = <span class="number">100</span></div><div class="line">b = <span class="number">200</span></div><div class="line">c = <span class="number">300</span></div><div class="line"><span class="keyword">if</span> a==<span class="number">100</span>:</div><div class="line">    a</div><div class="line"><span class="keyword">elif</span> b==<span class="number">200</span>:</div><div class="line">    b</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    c</div></pre></td></tr></table></figure>
 <blockquote>
 <p>100</p>
 </blockquote>
@@ -218,7 +218,7 @@ NoneType
 <blockquote>
 <p>1<br>3</p>
 </blockquote>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(arg1, arg2)</span>:</span></div><div class="line">    <span class="keyword">return</span> arg1, arg2</div><div class="line"></div><div class="line">t = func(<span class="number">1</span>, <span class="number">2</span>)</div><div class="line">t</div><div class="line">type(t)</div></pre></td></tr></table></figure>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a><strong>函数</strong></h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(arg1, arg2)</span>:</span></div><div class="line">    <span class="keyword">return</span> arg1, arg2</div><div class="line"></div><div class="line">t = func(<span class="number">1</span>, <span class="number">2</span>)</div><div class="line">t</div><div class="line">type(t)</div></pre></td></tr></table></figure>
 <blockquote>
 <p>(1, 2)<br>tuple</p>
 </blockquote>
@@ -256,7 +256,7 @@ NoneType
 <blockquote>
 <p>6</p>
 </blockquote>
-<h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 递归</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">MySum</span><span class="params">(i)</span>:</span></div><div class="line">    <span class="keyword">if</span> i &lt; <span class="number">0</span>:</div><div class="line">        <span class="keyword">raise</span> ValueError</div><div class="line">    <span class="keyword">elif</span> i &lt;= <span class="number">1</span>:</div><div class="line">        <span class="keyword">return</span> i</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> i + MySum(i<span class="number">-1</span>)</div><div class="line"></div><div class="line">MySum(<span class="number">1</span>)</div><div class="line">MySum(<span class="number">2</span>)</div><div class="line">MySum(<span class="number">3</span>)</div><div class="line">MySum(<span class="number">100</span>)</div></pre></td></tr></table></figure>
+<h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a><strong>递归</strong></h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 递归</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">MySum</span><span class="params">(i)</span>:</span></div><div class="line">    <span class="keyword">if</span> i &lt; <span class="number">0</span>:</div><div class="line">        <span class="keyword">raise</span> ValueError</div><div class="line">    <span class="keyword">elif</span> i &lt;= <span class="number">1</span>:</div><div class="line">        <span class="keyword">return</span> i</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> i + MySum(i<span class="number">-1</span>)</div><div class="line"></div><div class="line">MySum(<span class="number">1</span>)</div><div class="line">MySum(<span class="number">2</span>)</div><div class="line">MySum(<span class="number">3</span>)</div><div class="line">MySum(<span class="number">100</span>)</div></pre></td></tr></table></figure>
 <blockquote>
 <p>1<br>3<br>6<br>5050</p>
 </blockquote>
@@ -326,7 +326,7 @@ NoneType
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#类型"><span class="toc-number">1.</span> <span class="toc-text">类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#字符串"><span class="toc-number">2.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常见字符串处理"><span class="toc-number">3.</span> <span class="toc-text">常见字符串处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条件判断"><span class="toc-number">4.</span> <span class="toc-text">条件判断</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#函数"><span class="toc-number">5.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#递归"><span class="toc-number">6.</span> <span class="toc-text">递归</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#类型"><span class="toc-number">1.</span> <span class="toc-text">类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#字符串"><span class="toc-number">2.</span> <span class="toc-text">字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用字符串处理"><span class="toc-number">2.1.</span> <span class="toc-text">常用字符串处理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条件判断"><span class="toc-number">3.</span> <span class="toc-text">条件判断</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#函数"><span class="toc-number">4.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#递归"><span class="toc-number">5.</span> <span class="toc-text">递归</span></a></li></ol>
  
   </div>
 
@@ -373,15 +373,7 @@ NoneType
 			
 		
 			
-				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/代码碎片/" title="代码碎片">代码碎片<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/字符串/" title="字符串">字符串<sup>1</sup></a></li>
+				<li><a href="/tags/范数与投影/" title="范数与投影">范数与投影<sup>1</sup></a></li>
 			
 		
 			
@@ -397,7 +389,15 @@ NoneType
 			
 		
 			
-				<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/代码碎片/" title="代码碎片">代码碎片<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/字符串/" title="字符串">字符串<sup>1</sup></a></li>
 			
 		
 			
@@ -409,15 +409,7 @@ NoneType
 			
 		
 			
-				<li><a href="/tags/范数与投影/" title="范数与投影">范数与投影<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/量子物理/" title="量子物理">量子物理<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/波粒战争/" title="波粒战争">波粒战争<sup>1</sup></a></li>
+				<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
 			
 		
 			
@@ -426,6 +418,14 @@ NoneType
 		
 			
 				<li><a href="/tags/行列式/" title="行列式">行列式<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/量子物理/" title="量子物理">量子物理<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/波粒战争/" title="波粒战争">波粒战争<sup>1</sup></a></li>
 			
 		
 		</ul>
