@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/02/23/Python-代码碎片/index.html">
 <meta property="og:site_name" content="helloliangxw">
 <meta property="og:description" content="字符串反转12345678910111213def reverse(lst, start, end):    &apos;&apos;&apos;    实现列表反转    &apos;&apos;&apos;    while start &amp;lt; end:        lst[start], lst[end] = lst[end], lst[start]        start += 1        end -= 1sentence = &apos;">
-<meta property="og:updated_time" content="2017-02-23T13:16:30.393Z">
+<meta property="og:updated_time" content="2017-02-23T13:20:27.221Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python-代码碎片">
 <meta name="twitter:description" content="字符串反转12345678910111213def reverse(lst, start, end):    &apos;&apos;&apos;    实现列表反转    &apos;&apos;&apos;    while start &amp;lt; end:        lst[start], lst[end] = lst[end], lst[start]        start += 1        end -= 1sentence = &apos;">
@@ -140,11 +140,11 @@
 澳门 /aomen/
 香港 /xianggang/
 </code></pre><h1 id="螺旋矩阵"><a href="#螺旋矩阵" class="headerlink" title="螺旋矩阵"></a>螺旋矩阵</h1><p>给定一个\((m×n)\)的矩阵，按照螺旋顺序，返回该矩阵的所有要素。</p>
-<p>如：<br>\(\textbf{A}=\begin{bmatrix}<br>1 &amp; 2 &amp; 3 \\<br>4 &amp; 5 &amp; 6\\<br>7 &amp; 8 &amp; 9<br>\end{bmatrix}\)，返回：[1, 2, 3, 6, 9, 8, 7, 4, 5]。</p>
+<p>如：<br>\(\textbf{A}=\begin{bmatrix}<br>1 &amp; 2 &amp; 3 \\<br>4 &amp; 5 &amp; 6\\<br>7 &amp; 8 &amp; 9<br>\end{bmatrix}\)，返回：\([1, 2, 3, 6, 9, 8, 7, 4, 5]\)。</p>
 <p>思路：</p>
 <ol>
 <li>首先打印第一行，去掉第一行后剩余的矩阵记为temp</li>
-<li>将temp逆时针翻转\(90^。\)，打印第一行</li>
+<li>将temp逆时针翻转\(90^o\)，打印第一行</li>
 <li>重复1-2步骤，直到矩阵temp的元素个数为0</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 构造矩阵A，方便测试</span></div><div class="line">ROW, COL = <span class="number">4</span>, <span class="number">3</span> <span class="comment"># 行数，列数</span></div><div class="line">listA = [[ i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span> + j * COL, COL + j * COL)] <span class="keyword">for</span> j <span class="keyword">in</span> range(ROW)]</div><div class="line"><span class="comment"># 打印A</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> listA:</div><div class="line">    <span class="keyword">print</span> i</div><div class="line"></div><div class="line"><span class="keyword">print</span> <span class="string">"----------------------------------------------"</span></div><div class="line"></div><div class="line"></div><div class="line">listB=[]</div><div class="line"></div><div class="line">listTemp = listA</div><div class="line">    </div><div class="line"><span class="keyword">while</span> len(listTemp) &gt; <span class="number">0</span>:</div><div class="line">    <span class="comment"># 首先加入第一行</span></div><div class="line">    listB.extend(listA[<span class="number">0</span>])</div><div class="line">    </div><div class="line">    <span class="comment"># 去掉第一行后，剩余矩阵的行数和列数</span></div><div class="line">    m = len(listA) - <span class="number">1</span></div><div class="line">    n = len(listA[<span class="number">0</span>])</div><div class="line"></div><div class="line">    listTemp = [[<span class="number">0</span>] <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</div><div class="line">    </div><div class="line">    <span class="comment"># 对剩余的矩阵进行逆时针旋转</span></div><div class="line">    <span class="keyword">for</span> l <span class="keyword">in</span> range(n - <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</div><div class="line">        t = []</div><div class="line">        <span class="keyword">for</span> r <span class="keyword">in</span> range(<span class="number">1</span>, m + <span class="number">1</span>):</div><div class="line">            t.append(listA[r][l])</div><div class="line">        listTemp[n-l<span class="number">-1</span>]=t</div><div class="line">    </div><div class="line">    listA = listTemp</div><div class="line"></div><div class="line">    </div><div class="line"><span class="keyword">print</span> listB</div></pre></td></tr></table></figure>
@@ -154,7 +154,7 @@
 [9, 10, 11]
 ----------------------------------------------
 [0, 1, 2, 5, 8, 11, 10, 9, 6, 3, 4, 7]
-</code></pre><h1 id="矩阵转换"><a href="#矩阵转换" class="headerlink" title="矩阵转换"></a>矩阵转换</h1><p>给定矩阵\(\textbf{A}\)，令矩阵\(\textbf{B}\)里每个元素\(\textbf{B}_{i,j}\)（与\(\textbf{A}\)同型）的值等于\(\textbf{A}_{1,1}\)到\(\textbf{A}_{i,j}\)子矩阵元素的和。</p>
+</code></pre><h1 id="矩阵转换"><a href="#矩阵转换" class="headerlink" title="矩阵转换"></a>矩阵转换</h1><p>给定矩阵\(\textbf{A}\)，令矩阵\(\textbf{B}\)（与\(\textbf{A}\)同型）里每个元素\(\textbf{B}_{i,j}\)的值等于\(\textbf{A}_{1,1}\)到\(\textbf{A}_{i,j}\)子矩阵元素的和。</p>
 <p>思路：</p>
 <ol>
 <li>\(\textbf{B}_{1,1} = \textbf{A}_{1,1}\)</li>
@@ -297,15 +297,15 @@
 			
 		
 			
-				<li><a href="/tags/字符串/" title="字符串">字符串<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/函数/" title="函数">函数<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/递归/" title="递归">递归<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/容器/" title="容器">容器<sup>1</sup></a></li>
 			
 		
 			
@@ -321,15 +321,7 @@
 			
 		
 			
-				<li><a href="/tags/容器/" title="容器">容器<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/范数与投影/" title="范数与投影">范数与投影<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/线性方程组/" title="线性方程组">线性方程组<sup>1</sup></a></li>
+				<li><a href="/tags/字符串/" title="字符串">字符串<sup>1</sup></a></li>
 			
 		
 			
@@ -338,6 +330,14 @@
 		
 			
 				<li><a href="/tags/向量的基/" title="向量的基">向量的基<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/范数与投影/" title="范数与投影">范数与投影<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/线性方程组/" title="线性方程组">线性方程组<sup>1</sup></a></li>
 			
 		
 			
