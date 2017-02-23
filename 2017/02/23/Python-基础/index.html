@@ -1,0 +1,734 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Python-基础 | helloliangxw</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="liangxw">
+    
+
+    
+    <meta name="description" content="类型12345# 所有的类型都是类type(123)type(1.23)type(&apos;123&apos;)
+int
+float
+str
+123def func():    passtype(func())
+NoneType
+1234567# 包括类class也是一种类型class MyClass():    passmyClass=MyClass()type(MyClass)type(myClass)
+cla">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python-基础">
+<meta property="og:url" content="http://yoursite.com/2017/02/23/Python-基础/index.html">
+<meta property="og:site_name" content="helloliangxw">
+<meta property="og:description" content="类型12345# 所有的类型都是类type(123)type(1.23)type(&apos;123&apos;)
+int
+float
+str
+123def func():    passtype(func())
+NoneType
+1234567# 包括类class也是一种类型class MyClass():    passmyClass=MyClass()type(MyClass)type(myClass)
+cla">
+<meta property="og:updated_time" content="2017-02-23T01:31:18.936Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python-基础">
+<meta name="twitter:description" content="类型12345# 所有的类型都是类type(123)type(1.23)type(&apos;123&apos;)
+int
+float
+str
+123def func():    passtype(func())
+NoneType
+1234567# 包括类class也是一种类型class MyClass():    passmyClass=MyClass()type(MyClass)type(myClass)
+cla">
+
+    
+    <link rel="alternative" href="/atom.xml" title="helloliangxw" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="helloliangxw" title="helloliangxw"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="helloliangxw">helloliangxw</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/02/23/Python-基础/" title="Python-基础" itemprop="url">Python-基础</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="liangxw" target="_blank" itemprop="author">liangxw</a>
+		
+  <p class="article-time">
+    <time datetime="2017-02-23T01:30:00.000Z" itemprop="datePublished"> Published 2017-02-23</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#类型"><span class="toc-number">1.</span> <span class="toc-text">类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#字符串"><span class="toc-number">2.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常见字符串处理"><span class="toc-number">3.</span> <span class="toc-text">常见字符串处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条件判断"><span class="toc-number">4.</span> <span class="toc-text">条件判断</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#函数"><span class="toc-number">5.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#递归"><span class="toc-number">6.</span> <span class="toc-text">递归</span></a></li></ol>
+		
+		</div>
+		
+		<h1 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 所有的类型都是类</span></div><div class="line"></div><div class="line">type(<span class="number">123</span>)</div><div class="line">type(<span class="number">1.23</span>)</div><div class="line">type(<span class="string">'123'</span>)</div></pre></td></tr></table></figure>
+<pre><code>int
+float
+str
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">pass</span></div><div class="line">type(func())</div></pre></td></tr></table></figure>
+<pre><code>NoneType
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 包括类class也是一种类型</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">pass</span></div><div class="line"></div><div class="line">myClass=MyClass()</div><div class="line">type(MyClass)</div><div class="line">type(myClass)</div></pre></td></tr></table></figure>
+<pre><code>classobj
+instance
+</code></pre><h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 单引号和双引号</span></div><div class="line">s0=<span class="string">"a'b'c"</span></div><div class="line">s1=<span class="string">'a\'b\'c'</span></div><div class="line"></div><div class="line">s0</div><div class="line">s1</div></pre></td></tr></table></figure>
+<pre><code>&quot;a&apos;b&apos;c&quot;
+&quot;a&apos;b&apos;c&quot;
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 多行字符</span></div><div class="line">s0=<span class="string">"hello"</span> \</div><div class="line"><span class="string">"world"</span></div><div class="line">s1=<span class="string">"""hello</span></div><div class="line">world"""</div><div class="line"><span class="keyword">print</span> s0</div><div class="line"><span class="keyword">print</span> <span class="string">'------------'</span></div><div class="line"><span class="keyword">print</span> s1</div></pre></td></tr></table></figure>
+<pre><code>helloworld
+------------
+hello
+world
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">'%x'</span> % <span class="number">10</span>) <span class="comment"># 十六进制</span></div><div class="line">print(<span class="string">'%o'</span> % <span class="number">10</span>) <span class="comment"># 八进制</span></div><div class="line">print(<span class="string">'%d'</span> % <span class="number">10</span>) <span class="comment"># 十进制</span></div><div class="line"><span class="keyword">print</span> bin(<span class="number">10</span>) <span class="comment"># 十进制转二进制</span></div><div class="line">print(<span class="string">'%10s'</span> % <span class="string">"hello"</span>)</div></pre></td></tr></table></figure>
+<pre><code>a
+12
+10
+0b1010
+     hello
+15
+</code></pre><h1 id="常见字符串处理"><a href="#常见字符串处理" class="headerlink" title="常见字符串处理"></a>常见字符串处理</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 字符串不能被修改</span></div><div class="line">s=<span class="string">'abc'</span></div><div class="line">s[<span class="number">0</span>]=<span class="string">'x'</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">---------------------------------------------------------------------------</div><div class="line"></div><div class="line">TypeError                                 Traceback (most recent call last)</div><div class="line"></div><div class="line">&lt;ipython-input-80-4ac105e98300&gt; in &lt;module&gt;()</div><div class="line">      1 s='abc'</div><div class="line">----&gt; 2 s[0]='x'</div><div class="line"></div><div class="line"></div><div class="line">TypeError: 'str' object does not support item assignment</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 去除空格</span></div><div class="line">s=<span class="string">'   abc '</span></div><div class="line">s.strip()</div><div class="line">s.lstrip()</div><div class="line">s.rstrip()</div></pre></td></tr></table></figure>
+<pre><code>&apos;abc&apos;
+&apos;abc &apos;
+&apos;   abc&apos;
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 大小写转换</span></div><div class="line">s=<span class="string">'abc'</span></div><div class="line">s.upper()</div><div class="line">s.capitalize()</div><div class="line">s.upper().lower()</div></pre></td></tr></table></figure>
+<pre><code>&apos;ABC&apos;
+&apos;Abc&apos;
+&apos;abc&apos;
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 自字符串位置</span></div><div class="line">s1=<span class="string">'abcdef'</span></div><div class="line">s2=<span class="string">'bcdef'</span></div><div class="line"></div><div class="line">s1.index(<span class="string">'abc'</span>)</div><div class="line"></div><div class="line"><span class="keyword">try</span> :</div><div class="line">    <span class="keyword">print</span> s2.index(<span class="string">'abc'</span>)</div><div class="line"><span class="keyword">except</span> ValueError:</div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure>
+<pre><code>0
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 比较大小</span></div><div class="line"><span class="comment"># cmp()函数在python 3.x中被移除</span></div><div class="line">s1 &lt; s2</div></pre></td></tr></table></figure>
+<pre><code>True
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 字符串长度</span></div><div class="line">len(s1)</div><div class="line">len(s2)</div></pre></td></tr></table></figure>
+<pre><code>6
+5
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 空字符串</span></div><div class="line"><span class="comment"># None是空指针，空字符串在内存中是分配了空间的</span></div><div class="line"><span class="comment"># 空字符串等价于False</span></div><div class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="string">''</span>:</div><div class="line">    <span class="keyword">print</span> <span class="string">'empty'</span></div></pre></td></tr></table></figure>
+<pre><code>empty
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 分隔与连接</span></div><div class="line">s=<span class="string">'abc,def,ghi'</span></div><div class="line">splittedS=s.split(<span class="string">','</span>)</div><div class="line"></div><div class="line">type(splittedS)</div><div class="line">splittedS</div></pre></td></tr></table></figure>
+<pre><code>list
+[&apos;abc&apos;, &apos;def&apos;, &apos;ghi&apos;]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 按行分隔</span></div><div class="line">s=<span class="string">'''abc</span></div><div class="line">def</div><div class="line">ghi'''</div><div class="line"></div><div class="line">s.split(<span class="string">'\n'</span>)</div><div class="line">s.splitlines()</div></pre></td></tr></table></figure>
+<pre><code>[&apos;abc&apos;, &apos;def&apos;, &apos;ghi&apos;]
+[&apos;abc&apos;, &apos;def&apos;, &apos;ghi&apos;]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 连接</span></div><div class="line">s=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]</div><div class="line"><span class="string">','</span>.join(s)</div></pre></td></tr></table></figure>
+<pre><code>&apos;a,b,c&apos;
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 常用判断</span></div><div class="line"><span class="string">'abc'</span>.startswith(<span class="string">'a'</span>) <span class="comment"># 判断字符串开头</span></div><div class="line"><span class="string">'def'</span>.endswith(<span class="string">'ef'</span>) <span class="comment"># 判断字符串结尾</span></div><div class="line"><span class="string">'123abc'</span>.isalnum() <span class="comment"># 是否全是字母和数字，并至少有一个字符。</span></div><div class="line"><span class="string">'abc'</span>.isalpha() <span class="comment"># 是否全是字母，并至少有一个字符。</span></div><div class="line"><span class="string">'123'</span>.isdigit() <span class="comment"># 是否全是数字，并至少有一个字符。</span></div><div class="line"><span class="string">' '</span>.isspace() <span class="comment"># 是否全是空白字符，并至少有一个字符。</span></div><div class="line"><span class="string">'abc'</span>.islower() <span class="comment"># 字母是否全是小写</span></div><div class="line"><span class="string">'ABC'</span>.isupper() <span class="comment"># 字母是否全是大写</span></div><div class="line"><span class="string">'Abc'</span>.istitle() <span class="comment"># 首字母是否大写</span></div></pre></td></tr></table></figure>
+<pre><code>True
+True
+True
+True
+True
+True
+True
+True
+True
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 数字到字符串</span></div><div class="line"><span class="string">'%d'</span> %<span class="number">4</span></div><div class="line"><span class="string">'%3.1f'</span> %<span class="number">5.2</span></div></pre></td></tr></table></figure>
+<pre><code>&apos;4&apos;
+&apos;5.2&apos;
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 字符串到数字</span></div><div class="line">int(<span class="string">'4'</span>)</div><div class="line">float(<span class="string">'4.5'</span>)</div><div class="line">int(<span class="string">'1111'</span>,<span class="number">2</span>) <span class="comment"># 第一个参数是以2进制表示的</span></div><div class="line">int(<span class="string">'ffff'</span>,<span class="number">16</span>) <span class="comment"># 第一个参数是以16进制表示的</span></div><div class="line">int(<span class="string">'7777'</span>,<span class="number">8</span>) <span class="comment"># 第一个参数是以8进制表示的</span></div></pre></td></tr></table></figure>
+<pre><code>4
+4.5
+15
+65535
+4095
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 字符串到列表</span></div><div class="line">s=<span class="string">'abcdef'</span></div><div class="line">list(s)</div></pre></td></tr></table></figure>
+<pre><code>[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos;, &apos;f&apos;]
+</code></pre><h1 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 条件判断</span></div><div class="line">a = <span class="number">100</span></div><div class="line">b = <span class="number">200</span></div><div class="line">c = <span class="number">300</span></div><div class="line"><span class="keyword">if</span> a==<span class="number">100</span>:</div><div class="line">    a</div><div class="line"><span class="keyword">elif</span> b==<span class="number">200</span>:</div><div class="line">    b</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    c</div></pre></td></tr></table></figure>
+<pre><code>100
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># None的判断</span></div><div class="line">x=<span class="keyword">None</span></div><div class="line"><span class="keyword">if</span> x <span class="keyword">is</span> <span class="keyword">None</span>: <span class="comment">#使用 x == None判断也行，但不推荐</span></div><div class="line">    <span class="keyword">print</span> <span class="string">'x is None'</span></div><div class="line"><span class="keyword">elif</span> <span class="keyword">not</span> x: <span class="comment"># 或者x is not None</span></div><div class="line">    <span class="keyword">print</span> <span class="string">'x is not None'</span></div></pre></td></tr></table></figure>
+<pre><code>x is None
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 空值判断</span></div><div class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="string">''</span>:</div><div class="line">    <span class="keyword">print</span> <span class="string">'not empty'</span></div></pre></td></tr></table></figure>
+<pre><code>not empty
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># for循环</span></div><div class="line"><span class="comment"># Python 2.x中推荐使用xrange（效率高）</span></div><div class="line"><span class="comment"># Python 3.x中废弃了xrange，range和xrange效率一样高</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">5</span>,<span class="number">2</span>):</div><div class="line">    <span class="keyword">print</span> i</div></pre></td></tr></table></figure>
+<pre><code>1
+3
+</code></pre><h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(arg1, arg2)</span>:</span></div><div class="line">    <span class="keyword">return</span> arg1, arg2</div><div class="line"></div><div class="line">t = func(<span class="number">1</span>, <span class="number">2</span>)</div><div class="line">t</div><div class="line">type(t)</div></pre></td></tr></table></figure>
+<pre><code>(1, 2)
+tuple
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 参数的默认值</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(arg1, arg2 = <span class="number">200</span>)</span>:</span></div><div class="line">    <span class="keyword">return</span> arg1, arg2</div><div class="line"></div><div class="line">func(<span class="number">1</span>)</div><div class="line">func(<span class="number">1</span>, <span class="number">2</span>)</div></pre></td></tr></table></figure>
+<pre><code>(1, 200)
+(1, 2)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(arg1, arg2 = <span class="number">200</span>)</span>:</span></div><div class="line">    <span class="keyword">print</span> <span class="string">'arg1:'</span>, arg1, <span class="string">'; arg2:'</span>, arg2</div><div class="line">    <span class="keyword">return</span> <span class="keyword">None</span></div><div class="line"></div><div class="line"><span class="comment"># 调用时可以改变参数顺序</span></div><div class="line">func(<span class="number">10</span>, arg2 = <span class="number">2</span>)</div><div class="line">func(arg2 = <span class="number">2</span>, arg1 = <span class="number">1</span>)</div></pre></td></tr></table></figure>
+<pre><code>arg1: 10 ; arg2: 2
+arg1: 1 ; arg2: 2
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 这种调用方式会出错</span></div><div class="line">func(arg2 = <span class="number">2</span>, <span class="number">10</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">  File <span class="string">"&lt;ipython-input-200-2aaba6527843&gt;"</span>, line <span class="number">2</span></div><div class="line">    func(arg2 = <span class="number">2</span>, <span class="number">10</span>)</div><div class="line">SyntaxError: non-keyword arg after keyword arg</div><div class="line">``` </div><div class="line"></div><div class="line">```python</div><div class="line"><span class="comment"># 变长参数</span></div><div class="line"><span class="comment"># 变长参数必须放在参数列表的最后</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(name, *args)</span>:</span></div><div class="line">    <span class="comment"># 变长参数自动包装成tuple&lt;==&gt;只读数组</span></div><div class="line">    <span class="keyword">print</span> type(args)</div><div class="line">    <span class="keyword">print</span> args</div><div class="line">    <span class="keyword">print</span> args[<span class="number">0</span>]</div><div class="line"></div><div class="line">func(<span class="string">'Tom'</span>, <span class="number">1</span>, <span class="number">2</span> ,<span class="string">'abc'</span>)</div></pre></td></tr></table></figure>
+<pre><code>&lt;type &apos;tuple&apos;&gt;
+(1, 2, &apos;abc&apos;)
+1
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(name, **args)</span>:</span></div><div class="line">    <span class="keyword">print</span> type(args)</div><div class="line">    <span class="keyword">print</span> args</div><div class="line">    <span class="keyword">print</span> args[<span class="string">'China'</span>]</div><div class="line">    </div><div class="line">func(<span class="string">'Tom'</span>, China=<span class="string">'Beijing'</span>, UK=<span class="string">'London'</span>)</div></pre></td></tr></table></figure>
+<pre><code>&lt;type &apos;dict&apos;&gt;
+{&apos;China&apos;: &apos;Beijing&apos;, &apos;UK&apos;: &apos;London&apos;}
+Beijing
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a, b, c = <span class="number">0</span>, *args0, **args1)</span>:</span></div><div class="line">    <span class="keyword">print</span> a, b, c</div><div class="line">    <span class="keyword">print</span> args0</div><div class="line">    <span class="keyword">print</span> args1</div><div class="line"></div><div class="line">func(<span class="number">1</span>, <span class="number">2</span>)</div><div class="line"><span class="keyword">print</span> <span class="string">"----------------"</span></div><div class="line">func(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</div><div class="line"><span class="keyword">print</span> <span class="string">"----------------"</span></div><div class="line">func(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>)</div><div class="line"><span class="keyword">print</span> <span class="string">"----------------"</span></div><div class="line">func(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="string">'a'</span>, <span class="string">'b'</span>,  China=<span class="string">'Beijing'</span>, UK=<span class="string">'London'</span>)</div><div class="line"><span class="keyword">print</span> <span class="string">"----------------"</span></div><div class="line">func(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, *(<span class="string">'a'</span>, <span class="string">'b'</span>),  **&#123;<span class="string">'China'</span>:<span class="string">'Beijing'</span>, <span class="string">'UK'</span>:<span class="string">'London'</span>&#125;)</div></pre></td></tr></table></figure>
+<pre><code>1 2 0
+()
+{}
+----------------
+1 2 3
+()
+{}
+----------------
+1 2 3
+(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;)
+{}
+----------------
+1 2 3
+(&apos;a&apos;, &apos;b&apos;)
+{&apos;China&apos;: &apos;Beijing&apos;, &apos;UK&apos;: &apos;London&apos;}
+----------------
+1 2 3
+(&apos;a&apos;, &apos;b&apos;)
+{&apos;China&apos;: &apos;Beijing&apos;, &apos;UK&apos;: &apos;London&apos;}
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Python 3.x中的命名关键字参数</span></div><div class="line"><span class="comment"># Python 2.x中不支持</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a, b, c, *, China, UK)</span>:</span></div><div class="line">    <span class="keyword">print</span> China, UK</div><div class="line"></div><div class="line">func(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, China = <span class="string">'Beijing'</span>, UK = <span class="string">'London'</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 函数作为变量</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(args)</span>:</span></div><div class="line">    <span class="keyword">print</span> args*<span class="number">2</span></div><div class="line"></div><div class="line">f = func</div><div class="line">f(<span class="string">'1'</span>)</div></pre></td></tr></table></figure>
+<pre><code>11
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 函数作为参数</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">theSort</span><span class="params">(dataList, cmpMethod = None)</span>:</span></div><div class="line">    <span class="keyword">if</span> <span class="keyword">not</span> cmpMethod:</div><div class="line">        <span class="keyword">return</span> dataList</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> cmpMethod(dataList)</div><div class="line"></div><div class="line">    </div><div class="line"><span class="comment"># 从小到大排序（冒泡排序）</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubbleSortAscent</span><span class="params">(dataList)</span>:</span></div><div class="line">    length = len(dataList)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, length):</div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i + <span class="number">1</span>, length):</div><div class="line">            <span class="keyword">if</span> dataList[j] &lt; dataList[i]:</div><div class="line">                temp = dataList[i]</div><div class="line">                dataList[i] = dataList[j]</div><div class="line">                dataList[j] = temp</div><div class="line">    <span class="keyword">return</span> dataList</div><div class="line"></div><div class="line"><span class="comment"># 从大到小排序（冒泡排序）</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubbleSortDescent</span><span class="params">(dataList)</span>:</span></div><div class="line">    length = len(dataList)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, length):</div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i + <span class="number">1</span>, length):</div><div class="line">            <span class="keyword">if</span> dataList[j] &gt; dataList[i]:</div><div class="line">                temp = dataList[i]</div><div class="line">                dataList[i] = dataList[j]</div><div class="line">                dataList[j] = temp</div><div class="line">    <span class="keyword">return</span> dataList</div><div class="line"></div><div class="line">theSort([<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">0</span>])</div><div class="line">theSort([<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">0</span>], bubbleSortAscent)</div><div class="line">theSort([<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">0</span>], bubbleSortDescent)</div></pre></td></tr></table></figure>
+<pre><code>[1, 3, 2, 5, 0]
+[0, 1, 2, 3, 5]
+[5, 3, 2, 1, 0]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">DoSum</span><span class="params">(datas, sumMethod)</span>:</span></div><div class="line">    <span class="keyword">return</span> sumMethod(datas)</div><div class="line"></div><div class="line">DoSum([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], sum)</div></pre></td></tr></table></figure>
+<pre><code>6
+</code></pre><h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 递归</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">MySum</span><span class="params">(i)</span>:</span></div><div class="line">    <span class="keyword">if</span> i &lt; <span class="number">0</span>:</div><div class="line">        <span class="keyword">raise</span> ValueError</div><div class="line">    <span class="keyword">elif</span> i &lt;= <span class="number">1</span>:</div><div class="line">        <span class="keyword">return</span> i</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> i + MySum(i<span class="number">-1</span>)</div><div class="line"></div><div class="line">MySum(<span class="number">1</span>)</div><div class="line">MySum(<span class="number">2</span>)</div><div class="line">MySum(<span class="number">3</span>)</div><div class="line">MySum(<span class="number">100</span>)</div></pre></td></tr></table></figure>
+<pre><code>1
+3
+6
+5050
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 斐波那契数列</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(n)</span>:</span></div><div class="line">    <span class="keyword">if</span> n &lt; <span class="number">1</span>:</div><div class="line">        <span class="keyword">raise</span> ValueError</div><div class="line">    <span class="keyword">elif</span> n &lt;= <span class="number">2</span>:</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> fib(n<span class="number">-1</span>) + fib(n<span class="number">-2</span>)</div><div class="line"></div><div class="line"><span class="keyword">print</span> fib(<span class="number">1</span>), fib(<span class="number">2</span>), fib(<span class="number">3</span>), fib(<span class="number">4</span>), fib(<span class="number">5</span>), fib(<span class="number">6</span>), fib(<span class="number">7</span>)</div></pre></td></tr></table></figure>
+<pre><code>1 1 2 3 5 8 13
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 汉诺塔问题</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">hnt</span><span class="params">(n, source, target, helper)</span>:</span></div><div class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</div><div class="line">        <span class="keyword">print</span> source + <span class="string">'=&gt;'</span> + target</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        hnt(n<span class="number">-1</span>, source, helper, target)</div><div class="line">        <span class="keyword">print</span> source + <span class="string">'=&gt;'</span> + target</div><div class="line">        hnt(n<span class="number">-1</span>, helper, target, source)</div><div class="line"></div><div class="line">hnt(<span class="number">3</span>, <span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>)</div></pre></td></tr></table></figure>
+<pre><code>A=&gt;B
+A=&gt;C
+B=&gt;C
+A=&gt;B
+C=&gt;A
+C=&gt;B
+A=&gt;B
+</code></pre>  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Python/">Python</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/字符串/">字符串</a><a href="/tags/条件判断/">条件判断</a><a href="/tags/迭代/">迭代</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2017/02/23/Python-基础/" data-title="Python-基础 | helloliangxw" data-tsina="2516944510" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2017/02/23/Python-代码碎片/"  title="Python-代码碎片">
+ <strong>下一篇：</strong><br/> 
+ <span>Python-代码碎片
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2017/02/23/Python-基础/" data-title="Python-基础" data-url="http://yoursite.com/2017/02/23/Python-基础/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#类型"><span class="toc-number">1.</span> <span class="toc-text">类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#字符串"><span class="toc-number">2.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常见字符串处理"><span class="toc-number">3.</span> <span class="toc-text">常见字符串处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条件判断"><span class="toc-number">4.</span> <span class="toc-text">条件判断</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#函数"><span class="toc-number">5.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#递归"><span class="toc-number">6.</span> <span class="toc-text">递归</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Python/" title="Python">Python<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/教程/" title="教程">教程<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/线性代数/" title="线性代数">线性代数<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/随笔生活/" title="随笔生活">随笔生活<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/博客搭建/" title="博客搭建">博客搭建<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/范数与投影/" title="范数与投影">范数与投影<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/条件判断/" title="条件判断">条件判断<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/迭代/" title="迭代">迭代<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/GitHub/" title="GitHub">GitHub<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/代码碎片/" title="代码碎片">代码碎片<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/字符串/" title="字符串">字符串<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/子空间/" title="子空间">子空间<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/向量的基/" title="向量的基">向量的基<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/线性方程组/" title="线性方程组">线性方程组<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/行列式/" title="行列式">行列式<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/量子物理/" title="量子物理">量子物理<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/波粒战争/" title="波粒战争">波粒战争<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://www.nuist.edu.cn/" target="_blank" title="气象人才的摇篮">南京信息工程大学</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2516944510&verifier=3a15cbd5&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Liang Xuewei！ <br/>
+			This is my blog！</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/helloliangxw" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/helloliangxw" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:liangxw1990@163.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
+		
+		<a href="/about" target="_blank" title="liangxw">liangxw</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"helloliangxw"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
