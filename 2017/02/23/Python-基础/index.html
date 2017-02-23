@@ -33,7 +33,7 @@ intfloatstr
 NoneType
 
 1234567# 包括类class也是一种类型class MyClass():    passmyClass=MyClass()type(MyClass)type(myClass)">
-<meta property="og:updated_time" content="2017-02-23T01:42:11.459Z">
+<meta property="og:updated_time" content="2017-02-23T01:47:56.481Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python-基础">
 <meta name="twitter:description" content="类型12345# 所有的类型都是类type(123)type(1.23)type(&apos;123&apos;)
@@ -140,16 +140,16 @@ NoneType
 <blockquote>
 <p>“a’b’c”<br>“a’b’c”</p>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 多行字符</span></div><div class="line">s0=<span class="string">"hello"</span> \</div><div class="line"><span class="string">"world"</span></div><div class="line">s1=<span class="string">"""hello</span></div><div class="line">world"""</div><div class="line"><span class="keyword">print</span> s0</div><div class="line"><span class="keyword">print</span> <span class="string">'------------'</span></div><div class="line"><span class="keyword">print</span> s1</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 多行字符</span></div><div class="line">s0=<span class="string">"hello"</span> \</div><div class="line"><span class="string">"world"</span></div><div class="line">s1=<span class="string">"""hello</span></div><div class="line">world"""</div><div class="line"><span class="keyword">print</span> s0</div><div class="line"><span class="keyword">print</span> <span class="string">'%%%%%%%%%%%%%%%%%%%%%%%%%%%'</span></div><div class="line"><span class="keyword">print</span> s1</div></pre></td></tr></table></figure>
 <blockquote>
-<p>helloworld<br>-———–<br>hello<br>world</p>
+<p>helloworld<br>%%%%%%%%%%%%%%%%%%%%%%%%%%%<br>hello<br>world</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">'%x'</span> % <span class="number">10</span>) <span class="comment"># 十六进制</span></div><div class="line">print(<span class="string">'%o'</span> % <span class="number">10</span>) <span class="comment"># 八进制</span></div><div class="line">print(<span class="string">'%d'</span> % <span class="number">10</span>) <span class="comment"># 十进制</span></div><div class="line"><span class="keyword">print</span> bin(<span class="number">10</span>) <span class="comment"># 十进制转二进制</span></div><div class="line">print(<span class="string">'%10s'</span> % <span class="string">"hello"</span>)</div></pre></td></tr></table></figure>
 <blockquote>
 <p>a<br>12<br>10<br>0b1010<br>     hello<br>15</p>
 </blockquote>
 <h1 id="常见字符串处理"><a href="#常见字符串处理" class="headerlink" title="常见字符串处理"></a>常见字符串处理</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 字符串不能被修改</span></div><div class="line">s=<span class="string">'abc'</span></div><div class="line">s[<span class="number">0</span>]=<span class="string">'x'</span></div></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">---------------------------------------------------------------------------</div><div class="line"></div><div class="line">TypeError                                 Traceback (most recent call last)</div><div class="line"></div><div class="line">&lt;ipython-input-80-4ac105e98300&gt; in &lt;module&gt;()</div><div class="line">      1 s='abc'</div><div class="line">----&gt; 2 s[0]='x'</div><div class="line"></div><div class="line"></div><div class="line">TypeError: 'str' object does not support item assignment</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-----------</div><div class="line"></div><div class="line">TypeError                                 Traceback (most recent call last)</div><div class="line"></div><div class="line">&lt;ipython-input-80-4ac105e98300&gt; in &lt;module&gt;()</div><div class="line">      1 s='abc'</div><div class="line">----&gt; 2 s[0]='x'</div><div class="line"></div><div class="line"></div><div class="line">TypeError: 'str' object does not support item assignment</div></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 去除空格</span></div><div class="line">s=<span class="string">'   abc '</span></div><div class="line">s.strip()</div><div class="line">s.lstrip()</div><div class="line">s.rstrip()</div></pre></td></tr></table></figure>
 <blockquote>
 <p>‘abc’<br>‘abc ‘<br>‘   abc’</p>
@@ -239,9 +239,9 @@ NoneType
 <blockquote>
 <p><type 'dict'=""><br>{‘China’: ‘Beijing’, ‘UK’: ‘London’}<br>Beijing</type></p>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a, b, c = <span class="number">0</span>, *args0, **args1)</span>:</span></div><div class="line">    <span class="keyword">print</span> a, b, c</div><div class="line">    <span class="keyword">print</span> args0</div><div class="line">    <span class="keyword">print</span> args1</div><div class="line"></div><div class="line">func(<span class="number">1</span>, <span class="number">2</span>)</div><div class="line"><span class="keyword">print</span> <span class="string">"----------------"</span></div><div class="line">func(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</div><div class="line"><span class="keyword">print</span> <span class="string">"----------------"</span></div><div class="line">func(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>)</div><div class="line"><span class="keyword">print</span> <span class="string">"----------------"</span></div><div class="line">func(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="string">'a'</span>, <span class="string">'b'</span>,  China=<span class="string">'Beijing'</span>, UK=<span class="string">'London'</span>)</div><div class="line"><span class="keyword">print</span> <span class="string">"----------------"</span></div><div class="line">func(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, *(<span class="string">'a'</span>, <span class="string">'b'</span>),  **&#123;<span class="string">'China'</span>:<span class="string">'Beijing'</span>, <span class="string">'UK'</span>:<span class="string">'London'</span>&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a, b, c = <span class="number">0</span>, *args0, **args1)</span>:</span></div><div class="line">    <span class="keyword">print</span> a, b, c</div><div class="line">    <span class="keyword">print</span> args0</div><div class="line">    <span class="keyword">print</span> args1</div><div class="line"></div><div class="line">func(<span class="number">1</span>, <span class="number">2</span>)</div><div class="line"><span class="keyword">print</span> <span class="string">"%%%%%%%%%%%%%%%%%%%%%%%%%%%"</span></div><div class="line">func(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</div><div class="line"><span class="keyword">print</span> <span class="string">"%%%%%%%%%%%%%%%%%%%%%%%%%%%"</span></div><div class="line">func(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>)</div><div class="line"><span class="keyword">print</span> <span class="string">"%%%%%%%%%%%%%%%%%%%%%%%%%%%"</span></div><div class="line">func(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="string">'a'</span>, <span class="string">'b'</span>,  China=<span class="string">'Beijing'</span>, UK=<span class="string">'London'</span>)</div><div class="line"><span class="keyword">print</span> <span class="string">"%%%%%%%%%%%%%%%%%%%%%%%%%%%"</span></div><div class="line">func(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, *(<span class="string">'a'</span>, <span class="string">'b'</span>),  **&#123;<span class="string">'China'</span>:<span class="string">'Beijing'</span>, <span class="string">'UK'</span>:<span class="string">'London'</span>&#125;)</div></pre></td></tr></table></figure>
 <blockquote>
-<p>1 2 0<br>()<br>{}<br>-—————<br>1 2 3<br>()<br>{}<br>-—————<br>1 2 3<br>(‘a’, ‘b’, ‘c’)<br>{}<br>-—————<br>1 2 3<br>(‘a’, ‘b’)<br>{‘China’: ‘Beijing’, ‘UK’: ‘London’}<br>-—————<br>1 2 3<br>(‘a’, ‘b’)<br>{‘China’: ‘Beijing’, ‘UK’: ‘London’}</p>
+<p>1 2 0<br>()<br>{}<br>%%%%%%%%%%%%%%%%%%%%%%%%%%%<br>1 2 3<br>()<br>{}<br>%%%%%%%%%%%%%%%%%%%%%%%%%%%<br>1 2 3<br>(‘a’, ‘b’, ‘c’)<br>{}<br>%%%%%%%%%%%%%%%%%%%%%%%%%%%<br>1 2 3<br>(‘a’, ‘b’)<br>{‘China’: ‘Beijing’, ‘UK’: ‘London’}<br>%%%%%%%%%%%%%%%%%%%%%%%%%%%<br>1 2 3<br>(‘a’, ‘b’)<br>{‘China’: ‘Beijing’, ‘UK’: ‘London’}</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Python 3.x中的命名关键字参数</span></div><div class="line"><span class="comment"># Python 2.x中不支持</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a, b, c, *, China, UK)</span>:</span></div><div class="line">    <span class="keyword">print</span> China, UK</div><div class="line"></div><div class="line">func(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, China = <span class="string">'Beijing'</span>, UK = <span class="string">'London'</span>)</div></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 函数作为变量</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(args)</span>:</span></div><div class="line">    <span class="keyword">print</span> args*<span class="number">2</span></div><div class="line"></div><div class="line">f = func</div><div class="line">f(<span class="string">'1'</span>)</div></pre></td></tr></table></figure>
@@ -373,7 +373,15 @@ NoneType
 			
 		
 			
-				<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/代码碎片/" title="代码碎片">代码碎片<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/字符串/" title="字符串">字符串<sup>1</sup></a></li>
 			
 		
 			
@@ -389,19 +397,7 @@ NoneType
 			
 		
 			
-				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/代码碎片/" title="代码碎片">代码碎片<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/字符串/" title="字符串">字符串<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/范数与投影/" title="范数与投影">范数与投影<sup>1</sup></a></li>
+				<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
 			
 		
 			
@@ -413,11 +409,7 @@ NoneType
 			
 		
 			
-				<li><a href="/tags/线性方程组/" title="线性方程组">线性方程组<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/行列式/" title="行列式">行列式<sup>1</sup></a></li>
+				<li><a href="/tags/范数与投影/" title="范数与投影">范数与投影<sup>1</sup></a></li>
 			
 		
 			
@@ -426,6 +418,14 @@ NoneType
 		
 			
 				<li><a href="/tags/波粒战争/" title="波粒战争">波粒战争<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/线性方程组/" title="线性方程组">线性方程组<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/行列式/" title="行列式">行列式<sup>1</sup></a></li>
 			
 		
 		</ul>
