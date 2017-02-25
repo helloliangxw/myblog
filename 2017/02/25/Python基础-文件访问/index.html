@@ -1,0 +1,622 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Python基础-目录操作与文件访问 | helloliangxw</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="liangxw">
+    
+
+    
+    <meta name="description" content="文本文件读写直接读入1234567891011121314file1 = open(&quot;input.txt&quot;) file2 = open(&quot;output.txt&quot;,&quot;w&quot;) while True:     line = file1.readline()        #这里可以进行逻辑处理     file2.write(line)     if not line:         break">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python基础-目录操作与文件访问">
+<meta property="og:url" content="http://yoursite.com/2017/02/25/Python基础-文件访问/index.html">
+<meta property="og:site_name" content="helloliangxw">
+<meta property="og:description" content="文本文件读写直接读入1234567891011121314file1 = open(&quot;input.txt&quot;) file2 = open(&quot;output.txt&quot;,&quot;w&quot;) while True:     line = file1.readline()        #这里可以进行逻辑处理     file2.write(line)     if not line:         break">
+<meta property="og:updated_time" content="2017-02-25T01:55:10.448Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python基础-目录操作与文件访问">
+<meta name="twitter:description" content="文本文件读写直接读入1234567891011121314file1 = open(&quot;input.txt&quot;) file2 = open(&quot;output.txt&quot;,&quot;w&quot;) while True:     line = file1.readline()        #这里可以进行逻辑处理     file2.write(line)     if not line:         break">
+
+    
+    <link rel="alternative" href="/atom.xml" title="helloliangxw" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="helloliangxw" title="helloliangxw"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="helloliangxw">helloliangxw</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/02/25/Python基础-文件访问/" title="Python基础-目录操作与文件访问" itemprop="url">Python基础-目录操作与文件访问</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="liangxw" target="_blank" itemprop="author">liangxw</a>
+		
+  <p class="article-time">
+    <time datetime="2017-02-25T00:28:00.000Z" itemprop="datePublished"> Published 2017-02-25</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#文本文件读写"><span class="toc-number">1.</span> <span class="toc-text">文本文件读写</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#直接读入"><span class="toc-number">1.1.</span> <span class="toc-text">直接读入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件迭代器"><span class="toc-number">1.2.</span> <span class="toc-text">文件迭代器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上下文管理器"><span class="toc-number">1.3.</span> <span class="toc-text">上下文管理器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二进制文件读写"><span class="toc-number">2.</span> <span class="toc-text">二进制文件读写</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文件和目录操作"><span class="toc-number">3.</span> <span class="toc-text">文件和目录操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本操作"><span class="toc-number">3.1.</span> <span class="toc-text">基本操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作文件与目录"><span class="toc-number">3.2.</span> <span class="toc-text">操作文件与目录</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<h1 id="文本文件读写"><a href="#文本文件读写" class="headerlink" title="文本文件读写"></a><strong>文本文件读写</strong></h1><h2 id="直接读入"><a href="#直接读入" class="headerlink" title="直接读入"></a>直接读入</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">file1 = open(<span class="string">"input.txt"</span>) </div><div class="line">file2 = open(<span class="string">"output.txt"</span>,<span class="string">"w"</span>) </div><div class="line"></div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>: </div><div class="line">    line = file1.readline()</div><div class="line">    </div><div class="line">    <span class="comment">#这里可以进行逻辑处理 </span></div><div class="line">    file2.write(line) </div><div class="line">    <span class="keyword">if</span> <span class="keyword">not</span> line: </div><div class="line">        <span class="keyword">break</span> </div><div class="line">        </div><div class="line"><span class="comment">#记住文件处理完，关闭是个好习惯 </span></div><div class="line">file1.close() </div><div class="line">file2.close()</div></pre></td></tr></table></figure>
+<p><strong>读写模式：</strong></p>
+<ul>
+<li>r只读,r+读写</li>
+<li>w新建(会覆盖原有文件)</li>
+<li>a追加</li>
+<li>b二进制文件</li>
+</ul>
+<p>常用模式如:<code>rb</code>,<code>wb</code>,<code>r+b</code>等等。</p>
+<p><strong>读文件有3种方法：</strong></p>
+<ol>
+<li>read()<br> 将文本文件所有行读到一个字符串中</li>
+<li>readline()<br> 一行一行的读。<br> 优点：可以在读行过程中跳过特定行。</li>
+<li>readlines()<br> 将文本文件中所有行读到一个list中，文本文件每一行是list的一个元素。 </li>
+</ol>
+<h2 id="文件迭代器"><a href="#文件迭代器" class="headerlink" title="文件迭代器"></a>文件迭代器</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">file2 = open(<span class="string">"output.txt"</span>,<span class="string">"w"</span>) </div><div class="line"><span class="keyword">for</span> line <span class="keyword">in</span> open(<span class="string">"input.txt"</span>): </div><div class="line">      <span class="comment">#这里可以进行逻辑处理 </span></div><div class="line">    file2.write(line)</div></pre></td></tr></table></figure>
+<h2 id="上下文管理器"><a href="#上下文管理器" class="headerlink" title="上下文管理器"></a>上下文管理器</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># with.open自带关闭文本的功能</span></div><div class="line"><span class="keyword">with</span> open(<span class="string">'somefile.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f: </div><div class="line">    data = f.read() </div><div class="line"></div><div class="line"><span class="comment"># loop整个文档</span></div><div class="line"><span class="keyword">with</span> open(<span class="string">'somefile.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f: </div><div class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f: </div><div class="line">        <span class="comment"># 处理每一行</span></div><div class="line"></div><div class="line"><span class="comment"># 写入文本 </span></div><div class="line"><span class="keyword">with</span> open(<span class="string">'somefile.txt'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f: </div><div class="line">    f.write(text1) </div><div class="line">    f.write(text2) </div><div class="line">    ... </div><div class="line"></div><div class="line"><span class="comment"># 把要打印的line写入文件中 </span></div><div class="line"><span class="keyword">with</span> open(<span class="string">'somefile.txt'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f: </div><div class="line">    print(line1, file = f) </div><div class="line">    print(line2, file = f)</div></pre></td></tr></table></figure>
+<h1 id="二进制文件读写"><a href="#二进制文件读写" class="headerlink" title="二进制文件读写"></a><strong>二进制文件读写</strong></h1><p>Python默认读取的都是文本文件。要是想要读取二进制文件，需要把刚刚的<code>r</code>改成<code>rb</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">f = open(<span class="string">'EDC.jpg'</span>, <span class="string">'rb'</span>)</div><div class="line">print(f.read())</div><div class="line"><span class="comment"># 输出 '\xff\xd8\xff\xe1\x00\x18Exif\x00\x00...' # 十六进制表示的字节</span></div></pre></td></tr></table></figure>
+<p>简单说就是，任何非标准的文本文件（对于Python 2来说，标准是ASCII，对于Python 3来说，标准是unicode），你就需要用二进制读入这个文件，然后再用 <code>.decode(&#39;...&#39;)</code>的方法来解码这个二进制文件。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">f = open(<span class="string">'DegangGuo.txt'</span>, <span class="string">'rb'</span>)</div><div class="line"><span class="comment"># 读入郭德纲老师的作文, 但是郭老师用的是"DeyunCode"的繁体编码</span></div><div class="line"><span class="comment"># 那么你读入以后，就需要用它来解码</span></div><div class="line">u = f.read().decode(<span class="string">'DeyunCode'</span>)</div></pre></td></tr></table></figure>
+<h1 id="文件和目录操作"><a href="#文件和目录操作" class="headerlink" title="文件和目录操作"></a><strong>文件和目录操作</strong></h1><p>在图形界面的操作系统下，这个很简单，就是右键/拖拽等等。<br>但是在Python的代码内该怎么做呢？</p>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><p>用Python内置的<code>os</code>模块直接调用操作系统提供的接口函数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="comment"># 查看操作系统的名字，如果是`posix`，说明系统是#nix族，如果是`nt`，就是Windows。</span></div><div class="line">os.name</div><div class="line"><span class="comment"># 在操作系统中定义的环境变量，全部保存在os.environ这个列表中，可以直接查看</span></div><div class="line">os.environ</div><div class="line"><span class="comment"># 当前工作目录</span></div><div class="line">os.getcwd()</div></pre></td></tr></table></figure>
+<h2 id="操作文件与目录"><a href="#操作文件与目录" class="headerlink" title="操作文件与目录"></a>操作文件与目录</h2><p>查看、创建和删除目录。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 返回当前目录的绝对路径</span></div><div class="line"><span class="keyword">print</span> os.path.abspath(<span class="string">'.'</span>)</div><div class="line"><span class="keyword">print</span> os.getcwd()</div><div class="line"></div><div class="line"><span class="comment"># 列出当前目录下的所有目录</span></div><div class="line"><span class="keyword">print</span> [x <span class="keyword">for</span> x <span class="keyword">in</span> os.listdir(<span class="string">'.'</span>) <span class="keyword">if</span> os.path.isdir(x)]</div><div class="line"></div><div class="line"><span class="comment"># 列出所有的py文件</span></div><div class="line"><span class="keyword">print</span> [y <span class="keyword">for</span> y <span class="keyword">in</span> os.listdir(<span class="string">'.'</span>) <span class="keyword">if</span> os.path.isfile(y) <span class="keyword">and</span> os.path.splitext(y)[<span class="number">1</span>]==<span class="string">'.txt'</span>]</div></pre></td></tr></table></figure>
+<pre><code>E:\MyDocuments\Jupyter
+E:\MyDocuments\Jupyter
+[&apos;.ipynb_checkpoints&apos;]
+[&apos;a.txt&apos;]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 创建目录</span></div><div class="line"></div><div class="line"><span class="comment"># 首先把新目录的完整路径表示出来:</span></div><div class="line">myPath = os.path.join(<span class="string">'.'</span>, <span class="string">'Pictures'</span>)</div><div class="line"><span class="keyword">print</span> myPath</div><div class="line"><span class="comment"># 这里你得到的是一个字符串，代表了新的文件夹是这个位置：E:\MyDocuments\Jupyter\Pictures</span></div><div class="line"><span class="comment"># 自己也可以拼起来，但是怕不同操作系统下的区分符问题，最好是用OS接口</span></div><div class="line"></div><div class="line"><span class="comment"># 使用mkdir创建：</span></div><div class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(myPath):<span class="comment"># 判断目录是否存在</span></div><div class="line">    os.mkdir(myPath)</div><div class="line">    </div><div class="line"><span class="comment"># 删除目录</span></div><div class="line">os.rmdir(myPath)</div></pre></td></tr></table></figure>
+<pre><code>.\Pictures
+</code></pre><p>同样的道理，要拆分路径时，也不要直接去拆字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 把一个路径拆分为两部分，第二部分总是最后级别的目录或文件名</span></div><div class="line"><span class="keyword">print</span> (os.path.split(<span class="string">'C:/Users/EDC/Pictures/AJiao.jpg'</span>))</div><div class="line"></div><div class="line"><span class="comment"># 得到文件扩展名</span></div><div class="line"><span class="keyword">print</span> (os.path.splitext(<span class="string">'C:/Users/EDC/Pictures/AJiao.jpg'</span>))</div></pre></td></tr></table></figure>
+<pre><code>(&apos;C:/Users/EDC/Pictures&apos;, &apos;AJiao.jpg&apos;)
+(&apos;C:/Users/EDC/Pictures/AJiao&apos;, &apos;.jpg&apos;)
+</code></pre><p>操作文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 文件重命名：</span></div><div class="line">os.rename(<span class="string">'JAV-001.avi'</span>, <span class="string">'学习资料'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 删除文件</span></div><div class="line">os.remove(<span class="string">'学习资料'</span>)</div></pre></td></tr></table></figure>
+<p>尴尬的是。。复制文件并不存在于os里。。(⊙﹏⊙)b<br>原因是复制这个操作，不是由操作系统提供的系统调用。<br>我们可以用上面的代码，读入一个文件，再写入一个文件，来达到复制的目的。<br>当然，Python作为一个<code>Glue Language</code>的调性，总有第三方库来帮我们stay lazy：<br><code>Shutil</code>就是其中一个。基本上可以看做是os的补充。这个库用起来比os爽很多。比较简单易用。<br>它提供<code>copyfile()</code>方法，来复制你的文件。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> shutil  </div><div class="line">shutil.copyfile(<span class="string">'/path/to/file'</span>, <span class="string">'/path/to/other/file'</span>)</div></pre></td></tr></table></figure>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Python/">Python</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/文件访问/">文件访问</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2017/02/25/Python基础-文件访问/" data-title="Python基础-目录操作与文件访问 | helloliangxw" data-tsina="2516944510" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2017/02/24/Python基础-面向对象（1）/"  title="Python基础-面向对象（1）">
+ <strong>下一篇：</strong><br/> 
+ <span>Python基础-面向对象（1）
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2017/02/25/Python基础-文件访问/" data-title="Python基础-目录操作与文件访问" data-url="http://yoursite.com/2017/02/25/Python基础-文件访问/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#文本文件读写"><span class="toc-number">1.</span> <span class="toc-text">文本文件读写</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#直接读入"><span class="toc-number">1.1.</span> <span class="toc-text">直接读入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件迭代器"><span class="toc-number">1.2.</span> <span class="toc-text">文件迭代器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上下文管理器"><span class="toc-number">1.3.</span> <span class="toc-text">上下文管理器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二进制文件读写"><span class="toc-number">2.</span> <span class="toc-text">二进制文件读写</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文件和目录操作"><span class="toc-number">3.</span> <span class="toc-text">文件和目录操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本操作"><span class="toc-number">3.1.</span> <span class="toc-text">基本操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作文件与目录"><span class="toc-number">3.2.</span> <span class="toc-text">操作文件与目录</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Python/" title="Python">Python<sup>5</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/教程/" title="教程">教程<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/线性代数/" title="线性代数">线性代数<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/随笔生活/" title="随笔生活">随笔生活<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/博客搭建/" title="博客搭建">博客搭建<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/代码碎片/" title="代码碎片">代码碎片<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/函数/" title="函数">函数<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/递归/" title="递归">递归<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/容器/" title="容器">容器<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/文件访问/" title="文件访问">文件访问<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/面向对象/" title="面向对象">面向对象<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/GitHub/" title="GitHub">GitHub<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/字符串/" title="字符串">字符串<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/子空间/" title="子空间">子空间<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/向量的基/" title="向量的基">向量的基<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/范数与投影/" title="范数与投影">范数与投影<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/线性方程组/" title="线性方程组">线性方程组<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/行列式/" title="行列式">行列式<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/量子物理/" title="量子物理">量子物理<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/波粒战争/" title="波粒战争">波粒战争<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://www.nuist.edu.cn/" target="_blank" title="气象人才的摇篮">南京信息工程大学</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2516944510&verifier=3a15cbd5&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Liang Xuewei！ <br/>
+			This is my blog！</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/helloliangxw" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/helloliangxw" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:liangxw1990@163.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
+		
+		<a href="/about" target="_blank" title="liangxw">liangxw</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"helloliangxw"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
