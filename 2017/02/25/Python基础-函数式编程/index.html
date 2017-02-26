@@ -29,7 +29,7 @@
 9
 既然函数本身就可以作为一个变量，那函数也可以作为另一个函数的参数。
 1234de">
-<meta property="og:updated_time" content="2017-02-26T03:00:28.245Z">
+<meta property="og:updated_time" content="2017-02-26T06:26:44.527Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python基础-函数式编程">
 <meta name="twitter:description" content="高阶函数将其他函数作为参数传入的函数叫高阶函数。
@@ -114,7 +114,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#高阶函数"><span class="toc-number">1.</span> <span class="toc-text">高阶函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#匿名函数"><span class="toc-number">2.</span> <span class="toc-text">匿名函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#语法"><span class="toc-number">2.1.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reduce"><span class="toc-number">2.2.</span> <span class="toc-text">reduce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#map"><span class="toc-number">2.3.</span> <span class="toc-text">map</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#filter"><span class="toc-number">2.4.</span> <span class="toc-text">filter</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#装饰器"><span class="toc-number">3.</span> <span class="toc-text">装饰器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#函数装饰器"><span class="toc-number">3.1.</span> <span class="toc-text">函数装饰器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类装饰器"><span class="toc-number">3.2.</span> <span class="toc-text">类装饰器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#经典案例"><span class="toc-number">3.3.</span> <span class="toc-text">经典案例</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#高阶函数"><span class="toc-number">1.</span> <span class="toc-text">高阶函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#匿名函数"><span class="toc-number">2.</span> <span class="toc-text">匿名函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#语法"><span class="toc-number">2.1.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reduce"><span class="toc-number">2.2.</span> <span class="toc-text">reduce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#map"><span class="toc-number">2.3.</span> <span class="toc-text">map</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#filter"><span class="toc-number">2.4.</span> <span class="toc-text">filter</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#装饰器"><span class="toc-number">3.</span> <span class="toc-text">装饰器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#函数装饰器"><span class="toc-number">3.1.</span> <span class="toc-text">函数装饰器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类装饰器"><span class="toc-number">3.2.</span> <span class="toc-text">类装饰器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#经典案例"><span class="toc-number">3.3.</span> <span class="toc-text">经典案例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#偏函数"><span class="toc-number">4.</span> <span class="toc-text">偏函数</span></a></li></ol>
 		
 		</div>
 		
@@ -229,11 +229,35 @@ foo help doc
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</div><div class="line"></div><div class="line">cache = &#123;&#125;</div><div class="line">miss = object()</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">memory</span><span class="params">(fn)</span>:</span></div><div class="line"></div><div class="line"><span class="meta">    @wraps(fn)</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args)</span>:</span></div><div class="line">        result = cache.get(args, miss)</div><div class="line">        <span class="keyword">if</span> result <span class="keyword">is</span> miss:</div><div class="line">            result = fn(*args)</div><div class="line">            cache[args] = result</div><div class="line">        <span class="keyword">return</span> result</div><div class="line"> </div><div class="line">    <span class="keyword">return</span> wrapper</div><div class="line"> </div><div class="line"><span class="meta">@memory</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(n)</span>:</span></div><div class="line">    <span class="keyword">if</span> n &lt; <span class="number">2</span>:</div><div class="line">        <span class="keyword">return</span> n</div><div class="line">    <span class="keyword">return</span> fib(n - <span class="number">1</span>) + fib(n - <span class="number">2</span>)</div><div class="line"></div><div class="line"><span class="keyword">print</span> fib(<span class="number">10</span>)</div></pre></td></tr></table></figure>
 <pre><code>55
 </code></pre><p>我们知道，这个递归是相当没有效率的，因为会重复调用。比如：我们要计算fib(5)，于是其分解成fib(4) + fib(3)，而fib(4)分解成fib(3)+fib(2)，fib(3)又分解成fib(2)+fib(1)…… 你可看到，基本上来说，fib(3), fib(2), fib(1)在整个递归过程中被调用了两次。<br>而我们用装饰器，在调用函数前查询一下缓存，如果没有再调用，如果有就从缓存中返回值。<br>这样，这个递归从二叉树式的递归成了线性的递归。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-  
+<h1 id="偏函数"><a href="#偏函数" class="headerlink" title="偏函数"></a>偏函数</h1><p>Python的<code>functools</code>模块提供了很多有用的功能，其中一个就是偏函数（<code>Partial function</code>）。要注意，这里的偏函数和数学意义上的偏函数不一样。</p>
+<p>在介绍函数参数的时候，我们讲到，通过设定参数的默认值，可以降低函数调用的难度。而偏函数也可以做到这一点。举例如下：</p>
+<p><code>int()</code>函数可以把字符串转换为整数，当仅传入字符串时，<code>int()</code>函数默认按十进制转换：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span> int(<span class="string">'110'</span>)</div></pre></td></tr></table></figure>
+<pre><code>110
+</code></pre><p>但<code>int()</code>函数还提供额外的<code>base</code>参数，默认值为10。如果传入<code>base</code>参数，就可以做N进制的转换：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span> int(<span class="string">'110'</span>, base = <span class="number">2</span>)</div></pre></td></tr></table></figure>
+<pre><code>6
+</code></pre><p>假设要转换大量的二进制字符串，每次都传入<code>int(x, base=2)</code>非常麻烦，于是，我们想到，可以定义一个<code>int2()</code>的函数，默认把<code>base=2</code>传进去：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">int2</span><span class="params">(x, base=<span class="number">2</span>)</span>:</span></div><div class="line">    <span class="keyword">return</span> int(x, base)</div><div class="line"></div><div class="line"><span class="keyword">print</span> int2(<span class="string">'1000'</span>)</div><div class="line"><span class="keyword">print</span> int2(<span class="string">'1111'</span>)</div></pre></td></tr></table></figure>
+<pre><code>8
+15
+</code></pre><p><code>functools.partial</code>就是帮助我们创建一个偏函数的，不需要我们自己定义<code>int2()</code>，可以直接使用下面的代码创建一个新的函数<code>int2</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> functools</div><div class="line">int2 = functools.partial(int, base=<span class="number">2</span>)</div><div class="line"><span class="keyword">print</span> int2(<span class="string">'1000000'</span>)</div><div class="line"><span class="keyword">print</span> int2(<span class="string">'1010101'</span>)</div></pre></td></tr></table></figure>
+<pre><code>64
+85
+</code></pre><p>所以，简单总结<code>functools.partial</code>的作用就是，把一个函数的某些参数给固定住（也就是设置默认值），返回一个新的函数，调用这个新函数会更简单。</p>
+<p>注意到上面的新的<code>int2</code>函数，仅仅是把<code>base</code>参数重新设定默认值为2，但也可以在函数调用时传入其他值：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span> int2(<span class="string">'1000000'</span>, base=<span class="number">10</span>)</div></pre></td></tr></table></figure>
+<pre><code>1000000
+</code></pre><p>最后，创建偏函数时，实际上可以接收3个参数：</p>
+<ol>
+<li>函数对象</li>
+<li><code>*args</code></li>
+<li><code>**kwds</code></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">int2 = functools.partial(int, base=<span class="number">2</span>) <span class="comment"># 接收的是**kwds</span></div><div class="line">max10 = functools.partial(max, <span class="number">10</span>) <span class="comment"># 接收的是*args</span></div><div class="line"></div><div class="line"><span class="keyword">print</span> max10(<span class="number">5</span>, <span class="number">7</span>, <span class="number">6</span>)</div></pre></td></tr></table></figure>
+<pre><code>10
+</code></pre>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -291,7 +315,7 @@ foo help doc
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#高阶函数"><span class="toc-number">1.</span> <span class="toc-text">高阶函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#匿名函数"><span class="toc-number">2.</span> <span class="toc-text">匿名函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#语法"><span class="toc-number">2.1.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reduce"><span class="toc-number">2.2.</span> <span class="toc-text">reduce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#map"><span class="toc-number">2.3.</span> <span class="toc-text">map</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#filter"><span class="toc-number">2.4.</span> <span class="toc-text">filter</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#装饰器"><span class="toc-number">3.</span> <span class="toc-text">装饰器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#函数装饰器"><span class="toc-number">3.1.</span> <span class="toc-text">函数装饰器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类装饰器"><span class="toc-number">3.2.</span> <span class="toc-text">类装饰器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#经典案例"><span class="toc-number">3.3.</span> <span class="toc-text">经典案例</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#高阶函数"><span class="toc-number">1.</span> <span class="toc-text">高阶函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#匿名函数"><span class="toc-number">2.</span> <span class="toc-text">匿名函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#语法"><span class="toc-number">2.1.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reduce"><span class="toc-number">2.2.</span> <span class="toc-text">reduce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#map"><span class="toc-number">2.3.</span> <span class="toc-text">map</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#filter"><span class="toc-number">2.4.</span> <span class="toc-text">filter</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#装饰器"><span class="toc-number">3.</span> <span class="toc-text">装饰器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#函数装饰器"><span class="toc-number">3.1.</span> <span class="toc-text">函数装饰器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类装饰器"><span class="toc-number">3.2.</span> <span class="toc-text">类装饰器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#经典案例"><span class="toc-number">3.3.</span> <span class="toc-text">经典案例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#偏函数"><span class="toc-number">4.</span> <span class="toc-text">偏函数</span></a></li></ol>
  
   </div>
 
@@ -338,7 +362,23 @@ foo help doc
 			
 		
 			
+				<li><a href="/tags/面向对象/" title="面向对象">面向对象<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/函数/" title="函数">函数<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/递归/" title="递归">递归<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/容器/" title="容器">容器<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/高阶函数/" title="高阶函数">高阶函数<sup>1</sup></a></li>
 			
 		
 			
@@ -366,23 +406,19 @@ foo help doc
 			
 		
 			
-				<li><a href="/tags/面向对象/" title="面向对象">面向对象<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/字符串/" title="字符串">字符串<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/函数/" title="函数">函数<sup>1</sup></a></li>
+				<li><a href="/tags/GitHub/" title="GitHub">GitHub<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/递归/" title="递归">递归<sup>1</sup></a></li>
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/高阶函数/" title="高阶函数">高阶函数<sup>1</sup></a></li>
+				<li><a href="/tags/代码碎片/" title="代码碎片">代码碎片<sup>1</sup></a></li>
 			
 		
 			
@@ -390,7 +426,7 @@ foo help doc
 			
 		
 			
-				<li><a href="/tags/代码碎片/" title="代码碎片">代码碎片<sup>1</sup></a></li>
+				<li><a href="/tags/范数与投影/" title="范数与投影">范数与投影<sup>1</sup></a></li>
 			
 		
 			
@@ -399,18 +435,6 @@ foo help doc
 		
 			
 				<li><a href="/tags/向量的基/" title="向量的基">向量的基<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/线性方程组/" title="线性方程组">线性方程组<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/范数与投影/" title="范数与投影">范数与投影<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/行列式/" title="行列式">行列式<sup>1</sup></a></li>
 			
 		
 		</ul>
