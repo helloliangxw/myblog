@@ -1,0 +1,689 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>数字图像处理-二值图像连通区域标记 | helloliangxw</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="liangxw">
+    
+
+    
+    <meta name="description" content="二值图像连通域标记原像素矩阵M为：
+算法流程第一步：首先要确定是标记8邻域连通还是4邻域连通，如果是8邻域连通，就用模板1，如果是4邻域连通，就用模板2。中间像素记为目标像素，模版其余像素记为包围像素。
+
+
+
+
+
+
+
+
+
+模版1
+模版2
+
+
+
+第二步：若原像素矩阵M中，包围像素均为0，则labelM中目标像素标记号+1；如果不全为0，则labelM中目标像素标记号取labelM中周围像素标记号的最">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数字图像处理-二值图像连通区域标记">
+<meta property="og:url" content="http://yoursite.com/2017/02/27/数字图像处理-二值图像连通区域标记/index.html">
+<meta property="og:site_name" content="helloliangxw">
+<meta property="og:description" content="二值图像连通域标记原像素矩阵M为：
+算法流程第一步：首先要确定是标记8邻域连通还是4邻域连通，如果是8邻域连通，就用模板1，如果是4邻域连通，就用模板2。中间像素记为目标像素，模版其余像素记为包围像素。
+
+
+
+
+
+
+
+
+
+模版1
+模版2
+
+
+
+第二步：若原像素矩阵M中，包围像素均为0，则labelM中目标像素标记号+1；如果不全为0，则labelM中目标像素标记号取labelM中周围像素标记号的最">
+<meta property="og:image" content="http://static.zybuluo.com/liangxw/oe9f17fskewtesqb6jt9c44h/1.jpg">
+<meta property="og:image" content="http://static.zybuluo.com/liangxw/8t1luafwg0ttpdqsz2diwgps/2.png">
+<meta property="og:image" content="http://static.zybuluo.com/liangxw/q2sgmiice7pymyhyp3a1xrzo/3.png">
+<meta property="og:image" content="http://static.zybuluo.com/liangxw/3woqgyy6c842vilmypfxiv2g/4.png">
+<meta property="og:image" content="http://static.zybuluo.com/liangxw/gwv639kihz7gd55h3tkq9tbx/5.png">
+<meta property="og:image" content="http://static.zybuluo.com/liangxw/qpggnrv88q5nhe2h08c64c0o/6.png">
+<meta property="og:image" content="http://static.zybuluo.com/liangxw/um7tn2k7hjgymhb12nc8xv8s/7.jpg">
+<meta property="og:image" content="http://static.zybuluo.com/liangxw/pctnvcd1qovot91j8cf4owoo/8.jpg">
+<meta property="og:image" content="http://static.zybuluo.com/liangxw/kngdmohkipu1sgpkeg4spm3v/9.jpg">
+<meta property="og:updated_time" content="2017-02-27T09:13:39.558Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数字图像处理-二值图像连通区域标记">
+<meta name="twitter:description" content="二值图像连通域标记原像素矩阵M为：
+算法流程第一步：首先要确定是标记8邻域连通还是4邻域连通，如果是8邻域连通，就用模板1，如果是4邻域连通，就用模板2。中间像素记为目标像素，模版其余像素记为包围像素。
+
+
+
+
+
+
+
+
+
+模版1
+模版2
+
+
+
+第二步：若原像素矩阵M中，包围像素均为0，则labelM中目标像素标记号+1；如果不全为0，则labelM中目标像素标记号取labelM中周围像素标记号的最">
+<meta name="twitter:image" content="http://static.zybuluo.com/liangxw/oe9f17fskewtesqb6jt9c44h/1.jpg">
+
+    
+    <link rel="alternative" href="/atom.xml" title="helloliangxw" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="helloliangxw" title="helloliangxw"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="helloliangxw">helloliangxw</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/02/27/数字图像处理-二值图像连通区域标记/" title="数字图像处理-二值图像连通区域标记" itemprop="url">数字图像处理-二值图像连通区域标记</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="liangxw" target="_blank" itemprop="author">liangxw</a>
+		
+  <p class="article-time">
+    <time datetime="2017-02-27T06:41:00.000Z" itemprop="datePublished"> Published 2017-02-27</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#二值图像连通域标记"><span class="toc-number">1.</span> <span class="toc-text">二值图像连通域标记</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#算法流程"><span class="toc-number">2.</span> <span class="toc-text">算法流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#算法的python实现"><span class="toc-number">3.</span> <span class="toc-text">算法的python实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#处理结果"><span class="toc-number">4.</span> <span class="toc-text">处理结果</span></a></li></ol>
+		
+		</div>
+		
+		<h1 id="二值图像连通域标记"><a href="#二值图像连通域标记" class="headerlink" title="二值图像连通域标记"></a><strong>二值图像连通域标记</strong></h1><p>原像素矩阵M为：<br><img src="http://static.zybuluo.com/liangxw/oe9f17fskewtesqb6jt9c44h/1.jpg" alt="1"></p>
+<h1 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a><strong>算法流程</strong></h1><p>第一步：首先要确定是标记8邻域连通还是4邻域连通，如果是8邻域连通，就用模板1，如果是4邻域连通，就用模板2。中间像素记为目标像素，模版其余像素记为包围像素。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="http://static.zybuluo.com/liangxw/8t1luafwg0ttpdqsz2diwgps/2.png" alt=""></th>
+<th style="text-align:center"><img src="http://static.zybuluo.com/liangxw/q2sgmiice7pymyhyp3a1xrzo/3.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">模版1</td>
+<td style="text-align:center">模版2</td>
+</tr>
+</tbody>
+</table>
+<p>第二步：若原像素矩阵M中，包围像素均为0，则labelM中目标像素标记号+1；如果不全为0，则labelM中目标像素标记号取labelM中周围像素标记号的最小值；将labelM中周围像素不同标记号的并集记为等价对。</p>
+<p>第三步：处理等价对</p>
+<blockquote>
+<p>假设有如下等价对：<br>(1,2),(1,6),(3,7),(9-3),(8,1),(8,10),(11,5),(11,8),(11,12),(11,13),(11,14),(15,11)<br>我们需要得到最终序列是：<br><img src="http://static.zybuluo.com/liangxw/3woqgyy6c842vilmypfxiv2g/4.png" alt=""><br><img src="http://static.zybuluo.com/liangxw/gwv639kihz7gd55h3tkq9tbx/5.png" alt=""><br><img src="http://static.zybuluo.com/liangxw/qpggnrv88q5nhe2h08c64c0o/6.png" alt=""><br>最终1-2-5-6-8-10-11-12-13-14-15均标记为1；3-7-9标记为2；4标记为3。</p>
+</blockquote>
+<h1 id="算法的python实现"><a href="#算法的python实现" class="headerlink" title="算法的python实现"></a><strong>算法的python实现</strong></h1><p><code>LableConnectedRagion4( M, labelM, eqLable )</code>用于4邻域连通，获得等价对</p>
+<p><code>LableConnectedRagion8( M, labelM, eqLable )</code>用于8邻域连通，获得等价对</p>
+<p><code>EquivalentLabelPairs( N, labelM, eqLabel )</code>用于处理等价，并重新编号</p>
+<p>(<code>labelM</code>为初始化标记矩阵，与<code>M</code>同型，且所有元素均初始化为0）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">EquivalentLabelPairs</span><span class="params">( N, labelM, eqLable)</span>:</span></div><div class="line">    L=&#123;&#125;</div><div class="line">    invalidLabel=[]    <span class="comment">#the invalid label number in equivalent label pairs</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, N+<span class="number">1</span>):</div><div class="line">        </div><div class="line">        <span class="keyword">if</span> i <span class="keyword">in</span> invalidLabel:    <span class="comment">#if i is an invalid label</span></div><div class="line">            <span class="keyword">continue</span></div><div class="line">        </div><div class="line">        L[i]=[]</div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, len(eqLable)):</div><div class="line">            <span class="keyword">if</span> i <span class="keyword">in</span> eqLable[j]:</div><div class="line">                invalidLabel.append(max(eqLable[j]))</div><div class="line">                L[i].append(max(eqLable[j]))</div><div class="line">                </div><div class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> L[i]:    <span class="comment">#deep search</span></div><div class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, len(eqLable)):</div><div class="line">                <span class="keyword">if</span> (k <span class="keyword">in</span> eqLable[j]) &amp; (max(eqLable[j])!=k):</div><div class="line">                    invalidLabel.append(max(eqLable[j]))</div><div class="line">                    L[i].append(max(eqLable[j]))  </div><div class="line">    </div><div class="line">    trueLable = <span class="number">1</span>    </div><div class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> L:</div><div class="line">        labelM[labelM==k]=trueLable</div><div class="line">        <span class="keyword">for</span> labelNo <span class="keyword">in</span> L[k]:</div><div class="line">            labelM[labelM==labelNo]=trueLable</div><div class="line">        trueLable+=<span class="number">1</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">LableConnectedRagion8</span><span class="params">(M, labelM, eqLabel)</span>:</span></div><div class="line">    row = M.shape[<span class="number">0</span>]</div><div class="line">    col = M.shape[<span class="number">1</span>]</div><div class="line">    </div><div class="line">    label = <span class="number">0</span></div><div class="line">    R = <span class="number">0</span>    <span class="comment">#the first row</span></div><div class="line">    <span class="keyword">for</span> C <span class="keyword">in</span> range(<span class="number">0</span>, col):</div><div class="line">        <span class="keyword">if</span> M[R, C]==<span class="number">1</span>:</div><div class="line">            <span class="keyword">if</span> C==<span class="number">0</span>:</div><div class="line">                label+=<span class="number">1</span></div><div class="line">                labelM[R, C]=label</div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                <span class="keyword">if</span> labelM[R, C<span class="number">-1</span>]!=<span class="number">0</span>:</div><div class="line">                    labelM[R, C]=labelM[R, C<span class="number">-1</span>]</div><div class="line">                <span class="keyword">elif</span> labelM[R, C<span class="number">-1</span>]==<span class="number">0</span>:</div><div class="line">                    label+=<span class="number">1</span></div><div class="line">                    labelM[R, C]=label</div><div class="line">    </div><div class="line">    <span class="keyword">for</span> R <span class="keyword">in</span> range(<span class="number">1</span>, row):    <span class="comment">#the rest rows</span></div><div class="line">        <span class="keyword">for</span> C <span class="keyword">in</span> range(<span class="number">0</span>, col):</div><div class="line">            <span class="keyword">if</span> M[R, C]==<span class="number">1</span>:</div><div class="line">                <span class="keyword">if</span> C==<span class="number">0</span>:    <span class="comment">#the first column</span></div><div class="line">                    <span class="keyword">if</span>  (M[R<span class="number">-1</span>, C]==<span class="number">0</span>) &amp; (M[R<span class="number">-1</span>, C+<span class="number">1</span>]==<span class="number">0</span>) :</div><div class="line">                        label+=<span class="number">1</span></div><div class="line">                        labelM[R, C]=label</div><div class="line">                    <span class="keyword">elif</span> M[R<span class="number">-1</span>, C] + M[R<span class="number">-1</span>, C+<span class="number">1</span>]==<span class="number">1</span>:</div><div class="line">                        labelM[R, C]=max(labelM[R<span class="number">-1</span>, C],labelM[R<span class="number">-1</span>, C+<span class="number">1</span>])</div><div class="line">                    <span class="keyword">else</span>:</div><div class="line">                        labelM[R, C]=min(labelM[R<span class="number">-1</span>, C], labelM[R<span class="number">-1</span>, C+<span class="number">1</span>])</div><div class="line">                        <span class="keyword">if</span> labelM[R<span class="number">-1</span>, C] != labelM[R<span class="number">-1</span>, C+<span class="number">1</span>]:</div><div class="line">                            <span class="keyword">if</span> [labelM[R<span class="number">-1</span>, C], labelM[R<span class="number">-1</span>, C+<span class="number">1</span>]] <span class="keyword">not</span> <span class="keyword">in</span> eqLabel:</div><div class="line">                                eqLabel.append([labelM[R<span class="number">-1</span>, C], labelM[R<span class="number">-1</span>, C+<span class="number">1</span>]])   </div><div class="line">                </div><div class="line">                <span class="keyword">elif</span> C!=col<span class="number">-1</span>:    <span class="comment">#columns except the first and the last</span></div><div class="line">                    <span class="keyword">if</span>  M[R<span class="number">-1</span>, C<span class="number">-1</span>]+M[R<span class="number">-1</span>, C]+M[R<span class="number">-1</span>,C+<span class="number">1</span>]+M[R,C<span class="number">-1</span>]==<span class="number">0</span> :</div><div class="line">                        label+=<span class="number">1</span></div><div class="line">                        labelM[R, C]=label</div><div class="line">                    <span class="keyword">elif</span> M[R<span class="number">-1</span>, C<span class="number">-1</span>]+M[R<span class="number">-1</span>, C]+M[R<span class="number">-1</span>,C+<span class="number">1</span>]+M[R,C<span class="number">-1</span>]==<span class="number">1</span>:</div><div class="line">                        labelM[R, C]=max(labelM[R<span class="number">-1</span>, C<span class="number">-1</span>], labelM[R<span class="number">-1</span>, C], labelM[R<span class="number">-1</span>,C+<span class="number">1</span>], labelM[R,C<span class="number">-1</span>])</div><div class="line">                    <span class="keyword">else</span>:</div><div class="line">                        listLabelM=[ labelM[R<span class="number">-1</span>, C<span class="number">-1</span>], labelM[R<span class="number">-1</span>, C], labelM[R<span class="number">-1</span>,C+<span class="number">1</span>], labelM[R,C<span class="number">-1</span>] ]</div><div class="line">                        listLabelM=list(set(listLabelM))</div><div class="line">                        </div><div class="line">                        <span class="keyword">if</span> <span class="number">0</span> <span class="keyword">in</span> listLabelM:</div><div class="line">                            listLabelM.remove(<span class="number">0</span>)</div><div class="line">                        labelM[R, C]=min(listLabelM)</div><div class="line">                        <span class="keyword">if</span> len(listLabelM)!=<span class="number">1</span>:</div><div class="line">                            <span class="keyword">if</span> listLabelM <span class="keyword">not</span> <span class="keyword">in</span> eqLabel:</div><div class="line">                                eqLabel.append(listLabelM)</div><div class="line">               </div><div class="line">               <span class="keyword">else</span>:    <span class="comment">#the last column</span></div><div class="line">                    <span class="keyword">if</span> M[R<span class="number">-1</span>, C<span class="number">-1</span>]+M[R<span class="number">-1</span>, C]+M[R,C<span class="number">-1</span>]==<span class="number">0</span> :</div><div class="line">                        label+=<span class="number">1</span></div><div class="line">                        labelM[R, C]=label</div><div class="line">                    <span class="keyword">elif</span> M[R<span class="number">-1</span>, C<span class="number">-1</span>]+M[R<span class="number">-1</span>, C]+M[R,C<span class="number">-1</span>]==<span class="number">1</span>:</div><div class="line">                        labelM[R, C]=max(labelM[R<span class="number">-1</span>, C<span class="number">-1</span>], labelM[R<span class="number">-1</span>, C], labelM[R,C<span class="number">-1</span>])</div><div class="line">                    <span class="keyword">else</span>:</div><div class="line">                        listLabelM=[ labelM[R<span class="number">-1</span>, C<span class="number">-1</span>], labelM[R<span class="number">-1</span>, C], labelM[R,C<span class="number">-1</span>] ]</div><div class="line">                        listLabelM=list(set(listLabelM))</div><div class="line">                        </div><div class="line">                        <span class="keyword">if</span> <span class="number">0</span> <span class="keyword">in</span> listLabelM:</div><div class="line">                            listLabelM.remove(<span class="number">0</span>)</div><div class="line">                        labelM[R, C]=min(listLabelM)</div><div class="line">                        <span class="keyword">if</span> len(listLabelM)!=<span class="number">1</span>:</div><div class="line">                            <span class="keyword">if</span> listLabelM <span class="keyword">not</span> <span class="keyword">in</span> eqLabel:</div><div class="line">                                eqLabel.append(listLabelM)</div><div class="line">    <span class="keyword">return</span> label</div><div class="line">    </div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">LableConnectedRagion4</span><span class="params">(M, labelM, eqLable)</span>:</span></div><div class="line">    row = M.shape[<span class="number">0</span>]</div><div class="line">    col = M.shape[<span class="number">1</span>]</div><div class="line">    </div><div class="line">    labelNo = <span class="number">0</span></div><div class="line">    R = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> C <span class="keyword">in</span> range(<span class="number">0</span>, col):</div><div class="line">        <span class="keyword">if</span> M[R, C]==<span class="number">1</span>:</div><div class="line">            <span class="keyword">if</span> C==<span class="number">0</span>:</div><div class="line">                labelNo+=<span class="number">1</span></div><div class="line">                labelM[R, C]=labelNo</div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                <span class="keyword">if</span> labelM[R, C<span class="number">-1</span>]!=<span class="number">0</span>:</div><div class="line">                    labelM[R, C]=labelM[R, C<span class="number">-1</span>]</div><div class="line">                <span class="keyword">elif</span> labelM[R, C<span class="number">-1</span>]==<span class="number">0</span>:</div><div class="line">                    labelNo+=<span class="number">1</span></div><div class="line">                    labelM[R, C]=labelNo</div><div class="line">    </div><div class="line">    <span class="keyword">for</span> R <span class="keyword">in</span> range(<span class="number">1</span>, row):</div><div class="line">        <span class="keyword">for</span> C <span class="keyword">in</span> range(<span class="number">0</span>, col):</div><div class="line">            <span class="keyword">if</span> M[R, C]==<span class="number">1</span>:</div><div class="line">                <span class="keyword">if</span> C==<span class="number">0</span>:</div><div class="line">                    <span class="keyword">if</span>  M[R<span class="number">-1</span>, C]==<span class="number">0</span> :</div><div class="line">                        labelNo+=<span class="number">1</span></div><div class="line">                        labelM[R, C]=labelNo</div><div class="line">                    <span class="keyword">else</span>:</div><div class="line">                        labelM[R, C]=labelM[R<span class="number">-1</span>, C]    </div><div class="line">                <span class="keyword">else</span>:  </div><div class="line">                    <span class="keyword">if</span>  M[R<span class="number">-1</span>, C]+M[R, C<span class="number">-1</span>]==<span class="number">0</span>:</div><div class="line">                        labelNo+=<span class="number">1</span></div><div class="line">                        labelM[R, C]=labelNo</div><div class="line">                    <span class="keyword">elif</span> M[R<span class="number">-1</span>, C]+M[R, C<span class="number">-1</span>]==<span class="number">1</span>:</div><div class="line">                        labelM[R, C]=max(labelM[R<span class="number">-1</span>, C], labelM[R, C<span class="number">-1</span>])</div><div class="line">                    <span class="keyword">else</span>:</div><div class="line">                        labelM[R, C]=min(labelM[R<span class="number">-1</span>, C], labelM[R, C<span class="number">-1</span>])</div><div class="line">                        <span class="keyword">if</span> labelM[R<span class="number">-1</span>, C] != labelM[R, C<span class="number">-1</span>]:</div><div class="line">                            <span class="keyword">if</span> [labelM[R<span class="number">-1</span>, C], labelM[R, C<span class="number">-1</span>]] <span class="keyword">not</span> <span class="keyword">in</span> eqLable:</div><div class="line">                                eqLable.append([labelM[R<span class="number">-1</span>, C], labelM[R, C<span class="number">-1</span>]])</div><div class="line"></div><div class="line">    <span class="keyword">return</span> labelNo</div></pre></td></tr></table></figure>
+<h1 id="处理结果"><a href="#处理结果" class="headerlink" title="处理结果"></a><strong>处理结果</strong></h1><p>对于8邻域联通，未处理等价对时：<br><img src="http://static.zybuluo.com/liangxw/um7tn2k7hjgymhb12nc8xv8s/7.jpg" alt=""></p>
+<p>所有的等价对为：<br><img src="http://static.zybuluo.com/liangxw/pctnvcd1qovot91j8cf4owoo/8.jpg" alt=""></p>
+<p>处理等价对并重新编号：<br><img src="http://static.zybuluo.com/liangxw/kngdmohkipu1sgpkeg4spm3v/9.jpg" alt=""></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/图像处理/">图像处理</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/连通域/">连通域</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2017/02/27/数字图像处理-二值图像连通区域标记/" data-title="数字图像处理-二值图像连通区域标记 | helloliangxw" data-tsina="2516944510" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2017/02/27/Python-常用模块/" title="Python-常用模块">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Python-常用模块</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2017/02/26/Python基础-面向对象（2）/"  title="Python基础-面向对象（2）">
+ <strong>下一篇：</strong><br/> 
+ <span>Python基础-面向对象（2）
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2017/02/27/数字图像处理-二值图像连通区域标记/" data-title="数字图像处理-二值图像连通区域标记" data-url="http://yoursite.com/2017/02/27/数字图像处理-二值图像连通区域标记/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#二值图像连通域标记"><span class="toc-number">1.</span> <span class="toc-text">二值图像连通域标记</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#算法流程"><span class="toc-number">2.</span> <span class="toc-text">算法流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#算法的python实现"><span class="toc-number">3.</span> <span class="toc-text">算法的python实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#处理结果"><span class="toc-number">4.</span> <span class="toc-text">处理结果</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Python/" title="Python">Python<sup>8</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/图像处理/" title="图像处理">图像处理<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/教程/" title="教程">教程<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/线性代数/" title="线性代数">线性代数<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/随笔生活/" title="随笔生活">随笔生活<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/面向对象/" title="面向对象">面向对象<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/博客搭建/" title="博客搭建">博客搭建<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/序列化/" title="序列化">序列化<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/代码碎片/" title="代码碎片">代码碎片<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/容器/" title="容器">容器<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/正则表达式/" title="正则表达式">正则表达式<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/time/" title="time">time<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/高阶函数/" title="高阶函数">高阶函数<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/匿名函数/" title="匿名函数">匿名函数<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/装饰器/" title="装饰器">装饰器<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/偏函数/" title="偏函数">偏函数<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/文件访问/" title="文件访问">文件访问<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/目录操作/" title="目录操作">目录操作<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/函数/" title="函数">函数<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/字符串/" title="字符串">字符串<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/GitHub/" title="GitHub">GitHub<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/递归/" title="递归">递归<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/连通域/" title="连通域">连通域<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://www.nuist.edu.cn/" target="_blank" title="气象人才的摇篮">南京信息工程大学</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2516944510&verifier=3a15cbd5&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Liang Xuewei！ <br/>
+			This is my blog！</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/helloliangxw" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/helloliangxw" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:liangxw1990@163.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
+		
+		<a href="/about" target="_blank" title="liangxw">liangxw</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"helloliangxw"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
