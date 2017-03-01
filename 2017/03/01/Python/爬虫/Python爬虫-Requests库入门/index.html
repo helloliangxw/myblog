@@ -51,7 +51,7 @@ requests.get()
 获取HTML网页的主要方法，对应于H">
 <meta property="og:image" content="http://static.zybuluo.com/liangxw/5vxiyi2cv1blxh48bm2xmabg/image_1ba3qiku919pm38gan11ti5evm.png">
 <meta property="og:image" content="http://static.zybuluo.com/liangxw/48e6g4h8hja2qgp52ccms3gl/image_1ba3r3gmaok12geg8ucd8m0q13.png">
-<meta property="og:updated_time" content="2017-03-01T09:11:33.893Z">
+<meta property="og:updated_time" content="2017-03-01T09:22:34.498Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python爬虫-Requests库入门">
 <meta name="twitter:description" content="Requests库入门安装测试123import requestsr = requests.get(&quot;http://www.baidu.com&quot;)print (r.status_code)
@@ -202,11 +202,9 @@ requests.get()
 </ul>
 <p>通过查看<code>requests.get()</code>的源码可以看出，<code>requests.get()</code>其实还是调用<code>requests.request()</code>。<br>Request库的7个主要方法，其实就是一个方法：<code>requests.request()</code>。为了让他人调用方便，进行了不同的封装。<br><img src="http://static.zybuluo.com/liangxw/48e6g4h8hja2qgp52ccms3gl/image_1ba3r3gmaok12geg8ucd8m0q13.png" alt=""></p>
 <h2 id="Response对象"><a href="#Response对象" class="headerlink" title="Response对象"></a>Response对象</h2><p><code>Response</code>对象包含服务器返回的所有信息，也包含请求的<code>Request</code>信息：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">r = requests.get(<span class="string">"http://www.baidu.com"</span>)</div><div class="line"><span class="keyword">print</span> (type(r))</div><div class="line"><span class="keyword">print</span> (r.status_code)</div><div class="line"><span class="keyword">print</span> (r.headers)</div></pre></td></tr></table></figure>
-<pre><code>&lt;class &apos;requests.models.Response&apos;&gt;
-200
-{&apos;Content-Encoding&apos;: &apos;gzip&apos;, &apos;Transfer-Encoding&apos;: &apos;chunked&apos;, &apos;Set-Cookie&apos;: &apos;BDORZ=27315; max-age=86400; domain=.baidu.com; path=/&apos;, &apos;Server&apos;: &apos;bfe/1.0.8.18&apos;, &apos;Last-Modified&apos;: &apos;Mon, 23 Jan 2017 13:28:36 GMT&apos;, &apos;Connection&apos;: &apos;Keep-Alive&apos;, &apos;Pragma&apos;: &apos;no-cache&apos;, &apos;Cache-Control&apos;: &apos;private, no-cache, no-store, proxy-revalidate, no-transform&apos;, &apos;Date&apos;: &apos;Wed, 01 Mar 2017 02:33:17 GMT&apos;, &apos;Content-Type&apos;: &apos;text/html&apos;}
-</code></pre><h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">r = requests.get(<span class="string">"http://www.baidu.com"</span>)</div><div class="line"><span class="keyword">print</span> (type(r))</div><div class="line"><span class="keyword">print</span> (r.status_code)</div><div class="line"></div><div class="line"><span class="keyword">print</span> (r.headers)</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;class 'requests.models.Response'&gt;</div><div class="line">200</div><div class="line">&#123;'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'Set-Cookie': 'BDORZ=27315; max-age=86400; domain=.baidu.com; path=/', 'Server': 'bfe/1.0.8.18', 'Last-Modified': 'Mon, 23 Jan 2017 13:28:32 GMT', 'Connection': 'Keep-Alive', 'Pragma': 'no-cache', 'Cache-Control': 'private, no-cache, no-store, proxy-revalidate, no-transform', 'Date': 'Wed, 01 Mar 2017 09:18:09 GMT', 'Content-Type': 'text/html'&#125;</div></pre></td></tr></table></figure>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><table>
 <thead>
 <tr>
 <th style="text-align:center">属性</th>
@@ -256,15 +254,11 @@ requests.get()
 </tbody>
 </table>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">r = requests.get(<span class="string">"http://www.baidu.com"</span>)</div><div class="line"><span class="keyword">print</span> (r.encoding)</div><div class="line"><span class="keyword">print</span> (r.apparent_encoding)</div><div class="line"><span class="keyword">print</span> (r.text)</div></pre></td></tr></table></figure>
-<pre><code>ISO-8859-1
-utf-8
-&lt;!DOCTYPE html&gt;
-&lt;!--STATUS OK--&gt;&lt;html&gt; &lt;head&gt;&lt;meta http-equiv=content-type content=text/html;charset=utf-8&gt;&lt;meta http-equiv=X-UA-Compatible content=IE=Edge&gt;&lt;meta content=always name=referrer&gt;&lt;link rel=stylesheet type=text/css href=http://s1.bdstatic.com/r/www/cache/bdorz/baidu.min.css&gt;&lt;title&gt;ç¾åº¦ä¸ä¸ï¼ä½ å°±ç¥é&lt;/title&gt;&lt;/head&gt; &lt;body link=#0000cc&gt; &lt;div id=wrapper&gt; &lt;div id=head&gt; &lt;div class=head_wrapper&gt; &lt;div class=s_form&gt; &lt;div class=s_form_wrapper&gt; &lt;div id=lg&gt; &lt;img hidefocus=true src=//www.baidu.com/img/bd_logo1.png width=270 height=129&gt; &lt;/div&gt; &lt;form id=form name=f action=//www.baidu.com/s class=fm&gt; &lt;input type=hidden name=bdorz_come value=1&gt; &lt;input type=hidden name=ie value=utf-8&gt; &lt;input type=hidden name=f value=8&gt; &lt;input type=hidden name=rsv_bp value=1&gt; &lt;input type=hidden name=rsv_idx value=1&gt; &lt;input type=hidden name=tn value=baidu&gt;&lt;span class=&quot;bg s_ipt_wr&quot;&gt;&lt;input id=kw name=wd class=s_ipt value maxlength=255 autocomplete=off autofocus&gt;&lt;/span&gt;&lt;span class=&quot;bg s_btn_wr&quot;&gt;&lt;input type=submit id=su value=ç¾åº¦ä¸ä¸ class=&quot;bg s_btn&quot;&gt;&lt;/span&gt; &lt;/form&gt; &lt;/div&gt; &lt;/div&gt; &lt;div id=u1&gt; &lt;a href=http://news.baidu.com name=tj_trnews class=mnav&gt;æ°é»&lt;/a&gt; &lt;a href=http://www.hao123.com name=tj_trhao123 class=mnav&gt;hao123&lt;/a&gt; &lt;a href=http://map.baidu.com name=tj_trmap class=mnav&gt;å°å¾&lt;/a&gt; &lt;a href=http://v.baidu.com name=tj_trvideo class=mnav&gt;è§é¢&lt;/a&gt; &lt;a href=http://tieba.baidu.com name=tj_trtieba class=mnav&gt;è´´å§&lt;/a&gt; &lt;noscript&gt; &lt;a href=http://www.baidu.com/bdorz/login.gif?login&amp;amp;tpl=mn&amp;amp;u=http%3A%2F%2Fwww.baidu.com%2f%3fbdorz_come%3d1 name=tj_login class=lb&gt;ç»å½&lt;/a&gt; &lt;/noscript&gt; &lt;script&gt;document.write(&apos;&lt;a href=&quot;http://www.baidu.com/bdorz/login.gif?login&amp;tpl=mn&amp;u=&apos;+ encodeURIComponent(window.location.href+ (window.location.search === &quot;&quot; ? &quot;?&quot; : &quot;&amp;&quot;)+ &quot;bdorz_come=1&quot;)+ &apos;&quot; name=&quot;tj_login&quot; class=&quot;lb&quot;&gt;ç»å½&lt;/a&gt;&apos;);&lt;/script&gt; &lt;a href=//www.baidu.com/more/ name=tj_briicon class=bri style=&quot;display: block;&quot;&gt;æ´å¤äº§å&lt;/a&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div id=ftCon&gt; &lt;div id=ftConw&gt; &lt;p id=lh&gt; &lt;a href=http://home.baidu.com&gt;å³äºç¾åº¦&lt;/a&gt; &lt;a href=http://ir.baidu.com&gt;About Baidu&lt;/a&gt; &lt;/p&gt; &lt;p id=cp&gt;&amp;copy;2017&amp;nbsp;Baidu&amp;nbsp;&lt;a href=http://www.baidu.com/duty/&gt;ä½¿ç¨ç¾åº¦åå¿è¯»&lt;/a&gt;&amp;nbsp; &lt;a href=http://jianyi.baidu.com/ class=cp-feedback&gt;æè§åé¦&lt;/a&gt;&amp;nbsp;äº¬ICPè¯030173å·&amp;nbsp; &lt;img src=//www.baidu.com/img/gs.gif&gt; &lt;/p&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;
-</code></pre><p>使用默认的编码方式有很多的乱码，所以我们需要更改编码方式：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ISO-8859-1</div><div class="line">utf-8</div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;!--STATUS OK--&gt;&lt;html&gt; &lt;head&gt;&lt;meta http-equiv=content-type content=text/html;charset=utf-8&gt;&lt;meta http-equiv=X-UA-Compatible content=IE=Edge&gt;&lt;meta content=always name=referrer&gt;&lt;link rel=stylesheet type=text/css href=http://s1.bdstatic.com/r/www/cache/bdorz/baidu.min.css&gt;&lt;title&gt;ç¾åº¦ä¸ä¸ï¼ä½ å°±ç¥é&lt;/title&gt;&lt;/head&gt; &lt;body link=#0000cc&gt; &lt;div id=wrapper&gt; &lt;div id=head&gt; &lt;div class=head_wrapper&gt; &lt;div class=s_form&gt; &lt;div class=s_form_wrapper&gt; &lt;div id=lg&gt; &lt;img hidefocus=true src=//www.baidu.com/img/bd_logo1.png width=270 height=129&gt; &lt;/div&gt; &lt;form id=form name=f action=//www.baidu.com/s class=fm&gt; &lt;input type=hidden name=bdorz_come value=1&gt; &lt;input type=hidden name=ie value=utf-8&gt; &lt;input type=hidden name=f value=8&gt; &lt;input type=hidden name=rsv_bp value=1&gt; &lt;input type=hidden name=rsv_idx value=1&gt; &lt;input type=hidden name=tn value=baidu&gt;&lt;span class="bg s_ipt_wr"&gt;&lt;input id=kw name=wd class=s_ipt value maxlength=255 autocomplete=off autofocus&gt;&lt;/span&gt;&lt;span class="bg s_btn_wr"&gt;&lt;input type=submit id=su value=ç¾åº¦ä¸ä¸ class="bg s_btn"&gt;&lt;/span&gt; &lt;/form&gt; &lt;/div&gt; &lt;/div&gt; &lt;div id=u1&gt; &lt;a href=http://news.baidu.com name=tj_trnews class=mnav&gt;æ°é»&lt;/a&gt; &lt;a href=http://www.hao123.com name=tj_trhao123 class=mnav&gt;hao123&lt;/a&gt; &lt;a href=http://map.baidu.com name=tj_trmap class=mnav&gt;å°å¾&lt;/a&gt; &lt;a href=http://v.baidu.com name=tj_trvideo class=mnav&gt;è§é¢&lt;/a&gt; &lt;a href=http://tieba.baidu.com name=tj_trtieba class=mnav&gt;è´´å§&lt;/a&gt; &lt;noscript&gt; &lt;a href=http://www.baidu.com/bdorz/login.gif?login&amp;amp;tpl=mn&amp;amp;u=http%3A%2F%2Fwww.baidu.com%2f%3fbdorz_come%3d1 name=tj_login class=lb&gt;ç»å½&lt;/a&gt; &lt;/noscript&gt; &lt;script&gt;document.write('&lt;a href="http://www.baidu.com/bdorz/login.gif?login&amp;tpl=mn&amp;u='+ encodeURIComponent(window.location.href+ (window.location.search === "" ? "?" : "&amp;")+ "bdorz_come=1")+ '" name="tj_login" class="lb"&gt;ç»å½&lt;/a&gt;');&lt;/script&gt; &lt;a href=//www.baidu.com/more/ name=tj_briicon class=bri style="display: block;"&gt;æ´å¤äº§å&lt;/a&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div id=ftCon&gt; &lt;div id=ftConw&gt; &lt;p id=lh&gt; &lt;a href=http://home.baidu.com&gt;å³äºç¾åº¦&lt;/a&gt; &lt;a href=http://ir.baidu.com&gt;About Baidu&lt;/a&gt; &lt;/p&gt; &lt;p id=cp&gt;&amp;copy;2017&amp;nbsp;Baidu&amp;nbsp;&lt;a href=http://www.baidu.com/duty/&gt;ä½¿ç¨ç¾åº¦åå¿è¯»&lt;/a&gt;&amp;nbsp; &lt;a href=http://jianyi.baidu.com/ class=cp-feedback&gt;æè§åé¦&lt;/a&gt;&amp;nbsp;äº¬ICPè¯030173å·&amp;nbsp; &lt;img src=//www.baidu.com/img/gs.gif&gt; &lt;/p&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>使用默认的编码方式有很多的乱码，所以我们需要更改编码方式：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">r.encoding = <span class="string">'utf8'</span></div><div class="line"><span class="keyword">print</span> (r.text)</div></pre></td></tr></table></figure>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;!--STATUS OK--&gt;&lt;html&gt; &lt;head&gt;&lt;meta http-equiv=content-type content=text/html;charset=utf-8&gt;&lt;meta http-equiv=X-UA-Compatible content=IE=Edge&gt;&lt;meta content=always name=referrer&gt;&lt;link rel=stylesheet type=text/css href=http://s1.bdstatic.com/r/www/cache/bdorz/baidu.min.css&gt;&lt;title&gt;百度一下，你就知道&lt;/title&gt;&lt;/head&gt; &lt;body link=#0000cc&gt; &lt;div id=wrapper&gt; &lt;div id=head&gt; &lt;div class=head_wrapper&gt; &lt;div class=s_form&gt; &lt;div class=s_form_wrapper&gt; &lt;div id=lg&gt; &lt;img hidefocus=true src=//www.baidu.com/img/bd_logo1.png width=270 height=129&gt; &lt;/div&gt; &lt;form id=form name=f action=//www.baidu.com/s class=fm&gt; &lt;input type=hidden name=bdorz_come value=1&gt; &lt;input type=hidden name=ie value=utf-8&gt; &lt;input type=hidden name=f value=8&gt; &lt;input type=hidden name=rsv_bp value=1&gt; &lt;input type=hidden name=rsv_idx value=1&gt; &lt;input type=hidden name=tn value=baidu&gt;&lt;span class=&quot;bg s_ipt_wr&quot;&gt;&lt;input id=kw name=wd class=s_ipt value maxlength=255 autocomplete=off autofocus&gt;&lt;/span&gt;&lt;span class=&quot;bg s_btn_wr&quot;&gt;&lt;input type=submit id=su value=百度一下 class=&quot;bg s_btn&quot;&gt;&lt;/span&gt; &lt;/form&gt; &lt;/div&gt; &lt;/div&gt; &lt;div id=u1&gt; &lt;a href=http://news.baidu.com name=tj_trnews class=mnav&gt;新闻&lt;/a&gt; &lt;a href=http://www.hao123.com name=tj_trhao123 class=mnav&gt;hao123&lt;/a&gt; &lt;a href=http://map.baidu.com name=tj_trmap class=mnav&gt;地图&lt;/a&gt; &lt;a href=http://v.baidu.com name=tj_trvideo class=mnav&gt;视频&lt;/a&gt; &lt;a href=http://tieba.baidu.com name=tj_trtieba class=mnav&gt;贴吧&lt;/a&gt; &lt;noscript&gt; &lt;a href=http://www.baidu.com/bdorz/login.gif?login&amp;amp;tpl=mn&amp;amp;u=http%3A%2F%2Fwww.baidu.com%2f%3fbdorz_come%3d1 name=tj_login class=lb&gt;登录&lt;/a&gt; &lt;/noscript&gt; &lt;script&gt;document.write(&apos;&lt;a href=&quot;http://www.baidu.com/bdorz/login.gif?login&amp;tpl=mn&amp;u=&apos;+ encodeURIComponent(window.location.href+ (window.location.search === &quot;&quot; ? &quot;?&quot; : &quot;&amp;&quot;)+ &quot;bdorz_come=1&quot;)+ &apos;&quot; name=&quot;tj_login&quot; class=&quot;lb&quot;&gt;登录&lt;/a&gt;&apos;);&lt;/script&gt; &lt;a href=//www.baidu.com/more/ name=tj_briicon class=bri style=&quot;display: block;&quot;&gt;更多产品&lt;/a&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div id=ftCon&gt; &lt;div id=ftConw&gt; &lt;p id=lh&gt; &lt;a href=http://home.baidu.com&gt;关于百度&lt;/a&gt; &lt;a href=http://ir.baidu.com&gt;About Baidu&lt;/a&gt; &lt;/p&gt; &lt;p id=cp&gt;&amp;copy;2017&amp;nbsp;Baidu&amp;nbsp;&lt;a href=http://www.baidu.com/duty/&gt;使用百度前必读&lt;/a&gt;&amp;nbsp; &lt;a href=http://jianyi.baidu.com/ class=cp-feedback&gt;意见反馈&lt;/a&gt;&amp;nbsp;京ICP证030173号&amp;nbsp; &lt;img src=//www.baidu.com/img/gs.gif&gt; &lt;/p&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;
-</code></pre><h1 id="通用代码框架"><a href="#通用代码框架" class="headerlink" title="通用代码框架"></a><strong>通用代码框架</strong></h1><p><strong>网络连接有风险，异常处理很重要！</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;!--STATUS OK--&gt;&lt;html&gt; &lt;head&gt;&lt;meta http-equiv=content-type content=text/html;charset=utf-8&gt;&lt;meta http-equiv=X-UA-Compatible content=IE=Edge&gt;&lt;meta content=always name=referrer&gt;&lt;link rel=stylesheet type=text/css href=http://s1.bdstatic.com/r/www/cache/bdorz/baidu.min.css&gt;&lt;title&gt;百度一下，你就知道&lt;/title&gt;&lt;/head&gt; &lt;body link=#0000cc&gt; &lt;div id=wrapper&gt; &lt;div id=head&gt; &lt;div class=head_wrapper&gt; &lt;div class=s_form&gt; &lt;div class=s_form_wrapper&gt; &lt;div id=lg&gt; &lt;img hidefocus=true src=//www.baidu.com/img/bd_logo1.png width=270 height=129&gt; &lt;/div&gt; &lt;form id=form name=f action=//www.baidu.com/s class=fm&gt; &lt;input type=hidden name=bdorz_come value=1&gt; &lt;input type=hidden name=ie value=utf-8&gt; &lt;input type=hidden name=f value=8&gt; &lt;input type=hidden name=rsv_bp value=1&gt; &lt;input type=hidden name=rsv_idx value=1&gt; &lt;input type=hidden name=tn value=baidu&gt;&lt;span class="bg s_ipt_wr"&gt;&lt;input id=kw name=wd class=s_ipt value maxlength=255 autocomplete=off autofocus&gt;&lt;/span&gt;&lt;span class="bg s_btn_wr"&gt;&lt;input type=submit id=su value=百度一下 class="bg s_btn"&gt;&lt;/span&gt; &lt;/form&gt; &lt;/div&gt; &lt;/div&gt; &lt;div id=u1&gt; &lt;a href=http://news.baidu.com name=tj_trnews class=mnav&gt;新闻&lt;/a&gt; &lt;a href=http://www.hao123.com name=tj_trhao123 class=mnav&gt;hao123&lt;/a&gt; &lt;a href=http://map.baidu.com name=tj_trmap class=mnav&gt;地图&lt;/a&gt; &lt;a href=http://v.baidu.com name=tj_trvideo class=mnav&gt;视频&lt;/a&gt; &lt;a href=http://tieba.baidu.com name=tj_trtieba class=mnav&gt;贴吧&lt;/a&gt; &lt;noscript&gt; &lt;a href=http://www.baidu.com/bdorz/login.gif?login&amp;amp;tpl=mn&amp;amp;u=http%3A%2F%2Fwww.baidu.com%2f%3fbdorz_come%3d1 name=tj_login class=lb&gt;登录&lt;/a&gt; &lt;/noscript&gt; &lt;script&gt;document.write('&lt;a href="http://www.baidu.com/bdorz/login.gif?login&amp;tpl=mn&amp;u='+ encodeURIComponent(window.location.href+ (window.location.search === "" ? "?" : "&amp;")+ "bdorz_come=1")+ '" name="tj_login" class="lb"&gt;登录&lt;/a&gt;');&lt;/script&gt; &lt;a href=//www.baidu.com/more/ name=tj_briicon class=bri style="display: block;"&gt;更多产品&lt;/a&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div id=ftCon&gt; &lt;div id=ftConw&gt; &lt;p id=lh&gt; &lt;a href=http://home.baidu.com&gt;关于百度&lt;/a&gt; &lt;a href=http://ir.baidu.com&gt;About Baidu&lt;/a&gt; &lt;/p&gt; &lt;p id=cp&gt;&amp;copy;2017&amp;nbsp;Baidu&amp;nbsp;&lt;a href=http://www.baidu.com/duty/&gt;使用百度前必读&lt;/a&gt;&amp;nbsp; &lt;a href=http://jianyi.baidu.com/ class=cp-feedback&gt;意见反馈&lt;/a&gt;&amp;nbsp;京ICP证030173号&amp;nbsp; &lt;img src=//www.baidu.com/img/gs.gif&gt; &lt;/p&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;</div></pre></td></tr></table></figure>
+<h1 id="通用代码框架"><a href="#通用代码框架" class="headerlink" title="通用代码框架"></a><strong>通用代码框架</strong></h1><p><strong>网络连接有风险，异常处理很重要！</strong></p>
 <h2 id="异常类型"><a href="#异常类型" class="headerlink" title="异常类型"></a>异常类型</h2><table>
 <thead>
 <tr>
@@ -302,9 +296,8 @@ utf-8
 <h2 id="异常判断"><a href="#异常判断" class="headerlink" title="异常判断"></a>异常判断</h2><p><code>Requests</code>库提供<code>r.raise_for_status()</code>方法，该方法内部判断r.status_code是否等于200，不需要增加额外的if语句，该语句便于利用try‐except进行异常处理。</p>
 <h2 id="通用代码框架-1"><a href="#通用代码框架-1" class="headerlink" title="通用代码框架"></a>通用代码框架</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getHTMLText</span><span class="params">(url)</span>:</span></div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        r = requests.get(url, timeout = <span class="number">30</span>)</div><div class="line">        r.raise_for_status()</div><div class="line">        r.encoding = r.apparent_encoding</div><div class="line">        <span class="keyword">return</span> r.text</div><div class="line">    <span class="keyword">except</span>:</div><div class="line">        <span class="keyword">return</span> <span class="string">"产生异常"</span></div></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    url = <span class="string">"http://www.baidu.com"</span></div><div class="line">    <span class="keyword">print</span> (getHTMLText(url))</div></pre></td></tr></table></figure>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;!--STATUS OK--&gt;&lt;html&gt; &lt;head&gt;&lt;meta http-equiv=content-type content=text/html;charset=utf-8&gt;&lt;meta http-equiv=X-UA-Compatible content=IE=Edge&gt;&lt;meta content=always name=referrer&gt;&lt;link rel=stylesheet type=text/css href=http://s1.bdstatic.com/r/www/cache/bdorz/baidu.min.css&gt;&lt;title&gt;百度一下，你就知道&lt;/title&gt;&lt;/head&gt; &lt;body link=#0000cc&gt; &lt;div id=wrapper&gt; &lt;div id=head&gt; &lt;div class=head_wrapper&gt; &lt;div class=s_form&gt; &lt;div class=s_form_wrapper&gt; &lt;div id=lg&gt; &lt;img hidefocus=true src=//www.baidu.com/img/bd_logo1.png width=270 height=129&gt; &lt;/div&gt; &lt;form id=form name=f action=//www.baidu.com/s class=fm&gt; &lt;input type=hidden name=bdorz_come value=1&gt; &lt;input type=hidden name=ie value=utf-8&gt; &lt;input type=hidden name=f value=8&gt; &lt;input type=hidden name=rsv_bp value=1&gt; &lt;input type=hidden name=rsv_idx value=1&gt; &lt;input type=hidden name=tn value=baidu&gt;&lt;span class=&quot;bg s_ipt_wr&quot;&gt;&lt;input id=kw name=wd class=s_ipt value maxlength=255 autocomplete=off autofocus&gt;&lt;/span&gt;&lt;span class=&quot;bg s_btn_wr&quot;&gt;&lt;input type=submit id=su value=百度一下 class=&quot;bg s_btn&quot;&gt;&lt;/span&gt; &lt;/form&gt; &lt;/div&gt; &lt;/div&gt; &lt;div id=u1&gt; &lt;a href=http://news.baidu.com name=tj_trnews class=mnav&gt;新闻&lt;/a&gt; &lt;a href=http://www.hao123.com name=tj_trhao123 class=mnav&gt;hao123&lt;/a&gt; &lt;a href=http://map.baidu.com name=tj_trmap class=mnav&gt;地图&lt;/a&gt; &lt;a href=http://v.baidu.com name=tj_trvideo class=mnav&gt;视频&lt;/a&gt; &lt;a href=http://tieba.baidu.com name=tj_trtieba class=mnav&gt;贴吧&lt;/a&gt; &lt;noscript&gt; &lt;a href=http://www.baidu.com/bdorz/login.gif?login&amp;amp;tpl=mn&amp;amp;u=http%3A%2F%2Fwww.baidu.com%2f%3fbdorz_come%3d1 name=tj_login class=lb&gt;登录&lt;/a&gt; &lt;/noscript&gt; &lt;script&gt;document.write(&apos;&lt;a href=&quot;http://www.baidu.com/bdorz/login.gif?login&amp;tpl=mn&amp;u=&apos;+ encodeURIComponent(window.location.href+ (window.location.search === &quot;&quot; ? &quot;?&quot; : &quot;&amp;&quot;)+ &quot;bdorz_come=1&quot;)+ &apos;&quot; name=&quot;tj_login&quot; class=&quot;lb&quot;&gt;登录&lt;/a&gt;&apos;);&lt;/script&gt; &lt;a href=//www.baidu.com/more/ name=tj_briicon class=bri style=&quot;display: block;&quot;&gt;更多产品&lt;/a&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div id=ftCon&gt; &lt;div id=ftConw&gt; &lt;p id=lh&gt; &lt;a href=http://home.baidu.com&gt;关于百度&lt;/a&gt; &lt;a href=http://ir.baidu.com&gt;About Baidu&lt;/a&gt; &lt;/p&gt; &lt;p id=cp&gt;&amp;copy;2017&amp;nbsp;Baidu&amp;nbsp;&lt;a href=http://www.baidu.com/duty/&gt;使用百度前必读&lt;/a&gt;&amp;nbsp; &lt;a href=http://jianyi.baidu.com/ class=cp-feedback&gt;意见反馈&lt;/a&gt;&amp;nbsp;京ICP证030173号&amp;nbsp; &lt;img src=//www.baidu.com/img/gs.gif&gt; &lt;/p&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    url = <span class="string">"www.baidu.com"</span></div><div class="line">    <span class="keyword">print</span> (getHTMLText(url))</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;!--STATUS OK--&gt;&lt;html&gt; &lt;head&gt;&lt;meta http-equiv=content-type content=text/html;charset=utf-8&gt;&lt;meta http-equiv=X-UA-Compatible content=IE=Edge&gt;&lt;meta content=always name=referrer&gt;&lt;link rel=stylesheet type=text/css href=http://s1.bdstatic.com/r/www/cache/bdorz/baidu.min.css&gt;&lt;title&gt;百度一下，你就知道&lt;/title&gt;&lt;/head&gt; &lt;body link=#0000cc&gt; &lt;div id=wrapper&gt; &lt;div id=head&gt; &lt;div class=head_wrapper&gt; &lt;div class=s_form&gt; &lt;div class=s_form_wrapper&gt; &lt;div id=lg&gt; &lt;img hidefocus=true src=//www.baidu.com/img/bd_logo1.png width=270 height=129&gt; &lt;/div&gt; &lt;form id=form name=f action=//www.baidu.com/s class=fm&gt; &lt;input type=hidden name=bdorz_come value=1&gt; &lt;input type=hidden name=ie value=utf-8&gt; &lt;input type=hidden name=f value=8&gt; &lt;input type=hidden name=rsv_bp value=1&gt; &lt;input type=hidden name=rsv_idx value=1&gt; &lt;input type=hidden name=tn value=baidu&gt;&lt;span class="bg s_ipt_wr"&gt;&lt;input id=kw name=wd class=s_ipt value maxlength=255 autocomplete=off autofocus&gt;&lt;/span&gt;&lt;span class="bg s_btn_wr"&gt;&lt;input type=submit id=su value=百度一下 class="bg s_btn"&gt;&lt;/span&gt; &lt;/form&gt; &lt;/div&gt; &lt;/div&gt; &lt;div id=u1&gt; &lt;a href=http://news.baidu.com name=tj_trnews class=mnav&gt;新闻&lt;/a&gt; &lt;a href=http://www.hao123.com name=tj_trhao123 class=mnav&gt;hao123&lt;/a&gt; &lt;a href=http://map.baidu.com name=tj_trmap class=mnav&gt;地图&lt;/a&gt; &lt;a href=http://v.baidu.com name=tj_trvideo class=mnav&gt;视频&lt;/a&gt; &lt;a href=http://tieba.baidu.com name=tj_trtieba class=mnav&gt;贴吧&lt;/a&gt; &lt;noscript&gt; &lt;a href=http://www.baidu.com/bdorz/login.gif?login&amp;amp;tpl=mn&amp;amp;u=http%3A%2F%2Fwww.baidu.com%2f%3fbdorz_come%3d1 name=tj_login class=lb&gt;登录&lt;/a&gt; &lt;/noscript&gt; &lt;script&gt;document.write('&lt;a href="http://www.baidu.com/bdorz/login.gif?login&amp;tpl=mn&amp;u='+ encodeURIComponent(window.location.href+ (window.location.search === "" ? "?" : "&amp;")+ "bdorz_come=1")+ '" name="tj_login" class="lb"&gt;登录&lt;/a&gt;');&lt;/script&gt; &lt;a href=//www.baidu.com/more/ name=tj_briicon class=bri style="display: block;"&gt;更多产品&lt;/a&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div id=ftCon&gt; &lt;div id=ftConw&gt; &lt;p id=lh&gt; &lt;a href=http://home.baidu.com&gt;关于百度&lt;/a&gt; &lt;a href=http://ir.baidu.com&gt;About Baidu&lt;/a&gt; &lt;/p&gt; &lt;p id=cp&gt;&amp;copy;2017&amp;nbsp;Baidu&amp;nbsp;&lt;a href=http://www.baidu.com/duty/&gt;使用百度前必读&lt;/a&gt;&amp;nbsp; &lt;a href=http://jianyi.baidu.com/ class=cp-feedback&gt;意见反馈&lt;/a&gt;&amp;nbsp;京ICP证030173号&amp;nbsp; &lt;img src=//www.baidu.com/img/gs.gif&gt; &lt;/p&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    url = <span class="string">"www.baidu.com"</span></div><div class="line">    <span class="keyword">print</span> (getHTMLText(url))</div></pre></td></tr></table></figure>
 <pre><code>产生异常
 </code></pre><h1 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a><strong>HTTP协议</strong></h1><p><code>HTTP</code>，<code>Hypertext Transfer Protocol</code>，超文本传输协议<br>HTTP是一个基于“请求与响应”模式的、无状态的应用层协议</p>
 <p>HTTP协议采用<code>URL</code>作为定位网络资源的标识，URL格式如下：<br><code>http://host[:port][path]</code></p>
@@ -399,8 +392,8 @@ utf-8
 <p>PATCH的最主要好处：<strong>节省网络带宽</strong></p>
 <h2 id="head"><a href="#head" class="headerlink" title="head()"></a>head()</h2><p>使用很少的流量，获取网络资源的概要信息：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">r = requests.head(<span class="string">"http://httpbin.org/get"</span>)</div><div class="line"><span class="keyword">print</span> (r.headers)</div></pre></td></tr></table></figure>
-<pre><code>{&apos;Content-Length&apos;: &apos;238&apos;, &apos;Server&apos;: &apos;nginx&apos;, &apos;Connection&apos;: &apos;keep-alive&apos;, &apos;Access-Control-Allow-Credentials&apos;: &apos;true&apos;, &apos;Date&apos;: &apos;Wed, 01 Mar 2017 03:16:38 GMT&apos;, &apos;Access-Control-Allow-Origin&apos;: &apos;*&apos;, &apos;Content-Type&apos;: &apos;application/json&apos;}
-</code></pre><h2 id="post"><a href="#post" class="headerlink" title="post()"></a>post()</h2><p>向URL POST一个字典，自动编码为<code>form（表单）</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="string">'Content-Length'</span>: <span class="string">'238'</span>, <span class="string">'Server'</span>: <span class="string">'nginx'</span>, <span class="string">'Connection'</span>: <span class="string">'keep-alive'</span>, <span class="string">'Access-Control-Allow-Credentials'</span>: <span class="string">'true'</span>, <span class="string">'Date'</span>: <span class="string">'Wed, 01 Mar 2017 03:16:38 GMT'</span>, <span class="string">'Access-Control-Allow-Origin'</span>: <span class="string">'*'</span>, <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span>&#125;</div></pre></td></tr></table></figure>
+<h2 id="post"><a href="#post" class="headerlink" title="post()"></a>post()</h2><p>向URL POST一个字典，自动编码为<code>form（表单）</code>：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">payload = &#123;<span class="string">'key1'</span>: <span class="string">'value1'</span>, <span class="string">'key2'</span>: <span class="string">'value2'</span>&#125;</div><div class="line">r = requests.post(<span class="string">'http://httpbin.org/post'</span>, data = payload)</div><div class="line">print(r.text)</div></pre></td></tr></table></figure>
 <pre><code>{
   &quot;args&quot;: {}, 
@@ -587,24 +580,10 @@ utf-8
 </ol>
 <p><strong>总的原则：类人行为可不参考Robots协议</strong></p>
 <h1 id="爬虫实例"><a href="#爬虫实例" class="headerlink" title="爬虫实例"></a><strong>爬虫实例</strong></h1><h2 id="京东商品页面"><a href="#京东商品页面" class="headerlink" title="京东商品页面"></a>京东商品页面</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">url = <span class="string">"http://item.jd.com/2967929.html"</span></div><div class="line"><span class="keyword">try</span>:</div><div class="line">    r = requests.get(<span class="string">"http://item.jd.com/2967929.html"</span>)</div><div class="line">    r.raise_for_status()</div><div class="line">    r.encoding = r.apparent_encoding</div><div class="line">    <span class="keyword">print</span> (r.text[:<span class="number">500</span>])</div><div class="line"><span class="keyword">except</span>:</div><div class="line">    <span class="keyword">print</span> (<span class="string">"异常"</span>)</div></pre></td></tr></table></figure>
-<pre><code>&lt;!DOCTYPE HTML&gt;
-&lt;html lang=&quot;zh-CN&quot;&gt;
-&lt;head&gt;
-    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gbk&quot; /&gt;
-    &lt;title&gt;【华为荣耀8】荣耀8 4GB+64GB 全网通4G手机 魅海蓝【行情 报价 价格 评测】-京东&lt;/title&gt;
-    &lt;meta name=&quot;keywords&quot; content=&quot;HUAWEI荣耀8,华为荣耀8,华为荣耀8报价,HUAWEI荣耀8报价&quot;/&gt;
-    &lt;meta name=&quot;description&quot; content=&quot;【华为荣耀8】京东JD.COM提供华为荣耀8正品行货，全国价格最低，并包括HUAWEI荣耀8网购指南，以及华为荣耀8图片、荣耀8参数、荣耀8评论、荣耀8心得、荣耀8技巧等信息，网购华为荣耀8上京东,放心又轻松&quot; /&gt;
-    &lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot;&gt;
-    &lt;meta http-equiv=&quot;mobile-agent&quot; con
-</code></pre><h2 id="亚马逊商品页面"><a href="#亚马逊商品页面" class="headerlink" title="亚马逊商品页面"></a>亚马逊商品页面</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">url = <span class="string">"https://www.amazon.cn/gp/product/B01M8L5Z3Y"</span></div><div class="line">r = requests.get(url)</div><div class="line"><span class="keyword">print</span> (r.status_code)</div><div class="line"><span class="keyword">print</span> (r.encoding)</div><div class="line">r.encoding = r.apparent_encoding</div><div class="line"><span class="keyword">print</span> (r.text)</div></pre></td></tr></table></figure>
-<pre><code>503
-ISO-8859-1
-&lt;!--
-        To discuss automated access to Amazon data please contact api-services-support@amazon.com.
-        For information about migrating to our APIs refer to our Marketplace APIs at https://developer.amazonservices.com.cn/index.html/ref=rm_5_sv, or our Product Advertising API at https://associates.amazon.cn/gp/advertising/api/detail/main.html/ref=rm_5_ac for advertising use cases.
---&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=utf-8&quot;&gt;&lt;title&gt;亚马逊&lt;/title&gt;&lt;body style=&quot;text-align:center;&quot;&gt;&lt;br&gt;&lt;div style=&quot;width:600px;margin:0 auto;text-align:left;&quot;&gt;&lt;h2&gt;意外错误&lt;/h2&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;width:500px;margin:0 auto;text-align:left;&quot;&gt;&lt;font color=&quot;red&quot;&gt;报歉，由于程序执行时，遇到意外错误，您刚刚操作没有执行成功，请稍后重试。或将此错误报告给我们的客服中心：&lt;a href=&quot;mailto:service_bj@cs.amazon.cn&quot;&gt;service_bj@cs.amazon.cn&lt;/a&gt;&lt;/font&gt;&lt;br&gt;&lt;br&gt;推荐您&lt;a href=&quot;javascript:history.back(1)&quot;&gt;返回上一页&lt;/a&gt;，确认您的操作无误后，再继续其他操作。&lt;br&gt;您可以通过亚马逊&lt;a href=&quot;http://www.amazon.cn/help/ref=cs_503_link/&quot; target=&quot;_blank&quot;&gt;帮助中心&lt;/a&gt;，获得更多的帮助。&lt;br&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;﻿
-</code></pre><p>返回状态码为503，且返回的内容“遇到意外错误”。<br>我们猜测，亚马逊对访问进行了限制。<br>首先看下访问的头部信息：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE HTML&gt;</div><div class="line">&lt;html lang="zh-CN"&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta http-equiv="Content-Type" content="text/html; charset=gbk" /&gt;</div><div class="line">    &lt;title&gt;【华为荣耀8】荣耀8 4GB+64GB 全网通4G手机 魅海蓝【行情 报价 价格 评测】-京东&lt;/title&gt;</div><div class="line">    &lt;meta name="keywords" content="HUAWEI荣耀8,华为荣耀8,华为荣耀8报价,HUAWEI荣耀8报价"/&gt;</div><div class="line">    &lt;meta name="description" content="【华为荣耀8】京东JD.COM提供华为荣耀8正品行货，全国价格最低，并包括HUAWEI荣耀8网购指南，以及华为荣耀8图片、荣耀8参数、荣耀8评论、荣耀8心得、荣耀8技巧等信息，网购华为荣耀8上京东,放心又轻松" /&gt;</div><div class="line">    &lt;meta name="format-detection" content="telephone=no"&gt;</div><div class="line">    &lt;meta http-equiv="mobile-agent" con</div></pre></td></tr></table></figure>
+<h2 id="亚马逊商品页面"><a href="#亚马逊商品页面" class="headerlink" title="亚马逊商品页面"></a>亚马逊商品页面</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">url = <span class="string">"https://www.amazon.cn/gp/product/B01M8L5Z3Y"</span></div><div class="line">r = requests.get(url)</div><div class="line"><span class="keyword">print</span> (r.status_code)</div><div class="line"><span class="keyword">print</span> (r.encoding)</div><div class="line">r.encoding = r.apparent_encoding</div><div class="line"><span class="keyword">print</span> (r.text)</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">503</div><div class="line">ISO-8859-1</div><div class="line">&lt;!--</div><div class="line">        To discuss automated access to Amazon data please contact api-services-support@amazon.com.</div><div class="line">        For information about migrating to our APIs refer to our Marketplace APIs at https://developer.amazonservices.com.cn/index.html/ref=rm_5_sv, or our Product Advertising API at https://associates.amazon.cn/gp/advertising/api/detail/main.html/ref=rm_5_ac for advertising use cases.</div><div class="line">--&gt;</div><div class="line">&lt;html&gt;&lt;head&gt;&lt;meta http-equiv="Content-Type" content="text/html;charset=utf-8"&gt;&lt;title&gt;亚马逊&lt;/title&gt;&lt;body style="text-align:center;"&gt;&lt;br&gt;&lt;div style="width:600px;margin:0 auto;text-align:left;"&gt;&lt;h2&gt;意外错误&lt;/h2&gt;&lt;/div&gt;&lt;br&gt;&lt;div style="width:500px;margin:0 auto;text-align:left;"&gt;&lt;font color="red"&gt;报歉，由于程序执行时，遇到意外错误，您刚刚操作没有执行成功，请稍后重试。或将此错误报告给我们的客服中心：&lt;a href="mailto:service_bj@cs.amazon.cn"&gt;service_bj@cs.amazon.cn&lt;/a&gt;&lt;/font&gt;&lt;br&gt;&lt;br&gt;推荐您&lt;a href="javascript:history.back(1)"&gt;返回上一页&lt;/a&gt;，确认您的操作无误后，再继续其他操作。&lt;br&gt;您可以通过亚马逊&lt;a href="http://www.amazon.cn/help/ref=cs_503_link/" target="_blank"&gt;帮助中心&lt;/a&gt;，获得更多的帮助。&lt;br&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>返回状态码为503，且返回的内容“遇到意外错误”。<br>我们猜测，亚马逊对访问进行了限制。<br>首先看下访问的头部信息：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span> (r.request.headers)</div></pre></td></tr></table></figure>
 <pre><code>{&apos;Connection&apos;: &apos;keep-alive&apos;, &apos;Accept-Encoding&apos;: &apos;gzip, deflate&apos;, &apos;Accept&apos;: &apos;*/*&apos;, &apos;User-Agent&apos;: &apos;python-requests/2.12.4&apos;}
 </code></pre><p>程序忠实地告诉了亚马逊，这次访问是Python的一个库<code>python-requests/2.12.4</code>发起的。因此亚马逊拒绝访问。<br>我们可以通过设置<code>headers</code>参数来模拟真实的浏览器：</p>
@@ -637,24 +616,8 @@ var ue_hob=+new D
 </code></pre><h2 id="IP地址归属地查询"><a href="#IP地址归属地查询" class="headerlink" title="IP地址归属地查询"></a>IP地址归属地查询</h2><p>IP地址库：<a href="http://m.ip138.com/ip.asp?ip=ipaddress" target="_blank" rel="external">http://m.ip138.com/ip.asp?ip=ipaddress</a></p>
 <p>替换其中的’ipaddress’即可。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">url = <span class="string">'http://m.ip138.com/ip.asp?ip='</span></div><div class="line"><span class="keyword">try</span>:</div><div class="line">    r = requests.get(url + <span class="string">'202.204.80.112'</span>)</div><div class="line">    <span class="keyword">print</span> (r.status_code)</div><div class="line">    r.raise_for_status()</div><div class="line">    r.encoding = r.apparent_encoding</div><div class="line">    <span class="keyword">print</span> (r.text[<span class="number">-500</span>:])</div><div class="line"><span class="keyword">except</span>:</div><div class="line">    <span class="keyword">print</span> (<span class="string">"异常"</span>)</div></pre></td></tr></table></figure>
-<pre><code>200
-value=&quot;查询&quot; class=&quot;form-btn&quot; /&gt;
-                    &lt;/form&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;query-hd&quot;&gt;ip138.com IP查询(搜索IP地址的地理位置)&lt;/div&gt;
-                &lt;h1 class=&quot;query&quot;&gt;您查询的IP：202.204.80.112&lt;/h1&gt;&lt;p class=&quot;result&quot;&gt;本站主数据：北京市海淀区 北京理工大学 教育网&lt;/p&gt;&lt;p class=&quot;result&quot;&gt;参考数据一：北京市 北京理工大学&lt;/p&gt;
-
-            &lt;/div&gt;
-        &lt;/div&gt;
-
-        &lt;div class=&quot;footer&quot;&gt;
-            &lt;a href=&quot;http://www.miitbeian.gov.cn/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;沪ICP备10013467号-1&lt;/a&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;script type=&quot;text/javascript&quot; src=&quot;/script/common.js&quot;&gt;&lt;/script&gt;&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>  
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">200</div><div class="line">value="查询" class="form-btn" /&gt;</div><div class="line">					&lt;/form&gt;</div><div class="line">				&lt;/div&gt;</div><div class="line">				&lt;div class="query-hd"&gt;ip138.com IP查询(搜索IP地址的地理位置)&lt;/div&gt;</div><div class="line">				&lt;h1 class="query"&gt;您查询的IP：202.204.80.112&lt;/h1&gt;&lt;p class="result"&gt;本站主数据：北京市海淀区 北京理工大学 教育网&lt;/p&gt;&lt;p class="result"&gt;参考数据一：北京市 北京理工大学&lt;/p&gt;</div><div class="line"></div><div class="line">			&lt;/div&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line"></div><div class="line">		&lt;div class="footer"&gt;</div><div class="line">			&lt;a href="http://www.miitbeian.gov.cn/" rel="nofollow" target="_blank"&gt;沪ICP备10013467号-1&lt;/a&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line"></div><div class="line">	&lt;script type="text/javascript" src="/script/common.js"&gt;&lt;/script&gt;&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -779,15 +742,39 @@ value=&quot;查询&quot; class=&quot;form-btn&quot; /&gt;
 			
 		
 			
-				<li><a href="/tags/装饰器/" title="装饰器">装饰器<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/函数/" title="函数">函数<sup>1</sup></a></li>
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/递归/" title="递归">递归<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/容器/" title="容器">容器<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/正则表达式/" title="正则表达式">正则表达式<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/time/" title="time">time<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/高阶函数/" title="高阶函数">高阶函数<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/匿名函数/" title="匿名函数">匿名函数<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/装饰器/" title="装饰器">装饰器<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/偏函数/" title="偏函数">偏函数<sup>1</sup></a></li>
 			
 		
 			
@@ -807,11 +794,7 @@ value=&quot;查询&quot; class=&quot;form-btn&quot; /&gt;
 			
 		
 			
-				<li><a href="/tags/正则表达式/" title="正则表达式">正则表达式<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
+				<li><a href="/tags/GitHub/" title="GitHub">GitHub<sup>1</sup></a></li>
 			
 		
 			
@@ -819,35 +802,15 @@ value=&quot;查询&quot; class=&quot;form-btn&quot; /&gt;
 			
 		
 			
+				<li><a href="/tags/函数/" title="函数">函数<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/极大值变换/" title="极大值变换">极大值变换<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/连通域/" title="连通域">连通域<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/高阶函数/" title="高阶函数">高阶函数<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/匿名函数/" title="匿名函数">匿名函数<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/time/" title="time">time<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/偏函数/" title="偏函数">偏函数<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/行列式/" title="行列式">行列式<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/子空间/" title="子空间">子空间<sup>1</sup></a></li>
 			
 		
 		</ul>
