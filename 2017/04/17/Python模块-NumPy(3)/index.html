@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>python模块-numpy(3) | helloliangxw</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="NumPy" />
+  
+  
+  
+  
+  <meta name="description" content="随机函数
+
+
+函数
+说明
+
+
+
+
+rand(d0,d1,..,dn)
+根据d0‐dn创建随机数数组，浮点数，[0,1)，均匀分布
+
+
+randn(d0,d1,..,dn)
+根据d0‐dn创建随机数数组，标准正态分布
+
+
+randint(low[,high,shape])
+根据shape创建随机整数或整数数组，范围是[low, high)
+
+
+seed(s)
+随机数种子，s是给定的种子值
+
+
+
+12">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python模块-NumPy(3)">
+<meta property="og:url" content="http://yoursite.com/2017/04/17/Python模块-NumPy(3)/index.html">
+<meta property="og:site_name" content="helloliangxw">
+<meta property="og:description" content="随机函数
+
+
+函数
+说明
+
+
+
+
+rand(d0,d1,..,dn)
+根据d0‐dn创建随机数数组，浮点数，[0,1)，均匀分布
+
+
+randn(d0,d1,..,dn)
+根据d0‐dn创建随机数数组，标准正态分布
+
+
+randint(low[,high,shape])
+根据shape创建随机整数或整数数组，范围是[low, high)
+
+
+seed(s)
+随机数种子，s是给定的种子值
+
+
+
+12">
+<meta property="og:updated_time" content="2017-04-17T13:29:33.016Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python模块-NumPy(3)">
+<meta name="twitter:description" content="随机函数
+
+
+函数
+说明
+
+
+
+
+rand(d0,d1,..,dn)
+根据d0‐dn创建随机数数组，浮点数，[0,1)，均匀分布
+
+
+randn(d0,d1,..,dn)
+根据d0‐dn创建随机数数组，标准正态分布
+
+
+randint(low[,high,shape])
+根据shape创建随机整数或整数数组，范围是[low, high)
+
+
+seed(s)
+随机数种子，s是给定的种子值
+
+
+
+12">
+  
+    <link rel="alternate" href="/atom.xml" title="helloliangxw" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+</head>
+
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "Home"; 
+
+  themeMenus["/archives"] = "Archives"; 
+
+  themeMenus["/categories"] = "Kategorien"; 
+
+  themeMenus["/tags"] = "Tags"; 
+
+  themeMenus["/about"] = "About"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  <header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="helloliangxw" rel="home"> helloliangxw </a>
+            
+          </h1>
+
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+            <div class="clearfix sf-menu">
+
+              <ul id="main-nav" class="nmenu sf-js-enabled">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">Kategorien</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+
+      </div>
+  </div>
+</header>
+
+
+  <div style="background: #fff; width: 100%;">
+
+      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
+        <img width="100%" alt="Hike News" src="/css/images/pose.jpg">
+      </div>
+
+  </div>
+
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Python模块-NumPy(3)" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Python模块-NumPy(3)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2017/04/17/Python模块-NumPy(3)/" class="article-date">
+	  <time datetime="2017-04-17T12:36:00.000Z" itemprop="datePublished">April 17, 2017</time>
+	</a>
+
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="随机函数"><a href="#随机函数" class="headerlink" title="随机函数"></a>随机函数</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">函数</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">rand(d0,d1,..,dn)</td>
+<td style="text-align:center">根据d0‐dn创建随机数数组，浮点数，[0,1)，均匀分布</td>
+</tr>
+<tr>
+<td style="text-align:center">randn(d0,d1,..,dn)</td>
+<td style="text-align:center">根据d0‐dn创建随机数数组，标准正态分布</td>
+</tr>
+<tr>
+<td style="text-align:center">randint(low[,high,shape])</td>
+<td style="text-align:center">根据shape创建随机整数或整数数组，范围是[low, high)</td>
+</tr>
+<tr>
+<td style="text-align:center">seed(s)</td>
+<td style="text-align:center">随机数种子，s是给定的种子值</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line">a = np.random.rand(<span class="number">3</span>, <span class="number">4</span>)</div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>[[ 0.19114922  0.7068554   0.97088057  0.22036382]
+ [ 0.55174823  0.00680082  0.73785489  0.88970624]
+ [ 0.45998671  0.13359651  0.83150316  0.19457805]]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">b = np.random.randn(<span class="number">3</span>, <span class="number">4</span>)</div><div class="line">print(b)</div></pre></td></tr></table></figure>
+<pre><code>[[ 1.12238235  0.27006584  0.63285753  1.08344082]
+ [ 0.75890063 -0.41283425  1.20569367 -0.6684051 ]
+ [-0.9419934   0.40069505 -0.78798551  1.60365521]]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">c = np.random.randint(<span class="number">3</span>, <span class="number">10</span>, (<span class="number">2</span>, <span class="number">3</span>))</div><div class="line">print(c)</div></pre></td></tr></table></figure>
+<pre><code>[[6 5 7]
+ [8 4 8]]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 相同的种子，随机数的值相同</span></div><div class="line">np.random.seed(<span class="number">10</span>)</div><div class="line">d = np.random.randint(<span class="number">3</span>, <span class="number">10</span>, (<span class="number">2</span>, <span class="number">3</span>))</div><div class="line">print(d)</div><div class="line"></div><div class="line">np.random.seed(<span class="number">10</span>)</div><div class="line">e = np.random.randint(<span class="number">3</span>, <span class="number">10</span>, (<span class="number">2</span>, <span class="number">3</span>))</div><div class="line">print(e)</div></pre></td></tr></table></figure>
+<pre><code>[[4 8 7]
+ [3 4 6]]
+[[4 8 7]
+ [3 4 6]]
+</code></pre><table>
+<thead>
+<tr>
+<th style="text-align:center">函数</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">shuffle(a)</td>
+<td style="text-align:center">根据数组a的第1轴进行随排列，改变数组a</td>
+</tr>
+<tr>
+<td style="text-align:center">permutation(a)</td>
+<td style="text-align:center">根据数组a的第1轴产生一个新的乱序数组，不改变数组a</td>
+</tr>
+<tr>
+<td style="text-align:center">choice(a[,size,replace,p])</td>
+<td style="text-align:center">从<strong>一维数组</strong>a中以概率p抽取元素，形成size形状新数组，replace表示是否可以重用元素，默认为False</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># a改变</span></div><div class="line">a = np.arange(<span class="number">18</span>).reshape(<span class="number">6</span>, <span class="number">3</span>)</div><div class="line">print(a)</div><div class="line">np.random.shuffle(a)</div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>[[ 0  1  2]
+ [ 3  4  5]
+ [ 6  7  8]
+ [ 9 10 11]
+ [12 13 14]
+ [15 16 17]]
+[[15 16 17]
+ [ 0  1  2]
+ [ 3  4  5]
+ [12 13 14]
+ [ 6  7  8]
+ [ 9 10 11]]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># a不改变</span></div><div class="line">a = np.arange(<span class="number">18</span>).reshape(<span class="number">6</span>, <span class="number">3</span>)</div><div class="line">print(a)</div><div class="line">b = np.random.permutation(a)</div><div class="line">print(a)</div><div class="line">print(b)</div></pre></td></tr></table></figure>
+<pre><code>[[ 0  1  2]
+ [ 3  4  5]
+ [ 6  7  8]
+ [ 9 10 11]
+ [12 13 14]
+ [15 16 17]]
+[[ 0  1  2]
+ [ 3  4  5]
+ [ 6  7  8]
+ [ 9 10 11]
+ [12 13 14]
+ [15 16 17]]
+[[ 0  1  2]
+ [15 16 17]
+ [ 6  7  8]
+ [ 9 10 11]
+ [ 3  4  5]
+ [12 13 14]]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = np.arange(<span class="number">18</span>)</div><div class="line">b = np.random.choice(a, (<span class="number">3</span>, <span class="number">4</span>), <span class="keyword">True</span>, p = a/np.sum(a))</div><div class="line">print(b)</div></pre></td></tr></table></figure>
+<pre><code>[[ 6 11 15 13]
+ [ 7 16  6  9]
+ [ 5  4 15  2]]
+</code></pre><table>
+<thead>
+<tr>
+<th style="text-align:center">函数</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">uniform(low,high,size)</td>
+<td style="text-align:center">产生具有均匀分布的数组,low起始值,high结束值,size形状</td>
+</tr>
+<tr>
+<td style="text-align:center">normal(loc,scale,size)</td>
+<td style="text-align:center">产生具有正态分布的数组,loc均值,scale标准差,size形状</td>
+</tr>
+<tr>
+<td style="text-align:center">poisson(lam,size)</td>
+<td style="text-align:center">产生具有泊松分布的数组,lam随机事件发生率,size形状</td>
+</tr>
+</tbody>
+</table>
+<h1 id="统计函数"><a href="#统计函数" class="headerlink" title="统计函数"></a>统计函数</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">函数</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">sum(a, axis=None)</td>
+<td style="text-align:center">根据给定轴axis计算数组a相关元素之和，axis整数或元组</td>
+</tr>
+<tr>
+<td style="text-align:center">mean(a, axis=None)</td>
+<td style="text-align:center">根据给定轴axis计算数组a相关元素的期望，axis整数或元组</td>
+</tr>
+<tr>
+<td style="text-align:center">average(a,axis=None,weights=None)</td>
+<td style="text-align:center">根据给定轴axis计算数组a相关元素的加权平均值</td>
+</tr>
+<tr>
+<td style="text-align:center">std(a, axis=None)</td>
+<td style="text-align:center">根据给定轴axis计算数组a相关元素的标准差</td>
+</tr>
+<tr>
+<td style="text-align:center">var(a, axis=None)</td>
+<td style="text-align:center">根据给定轴axis计算数组a相关元素的方差</td>
+</tr>
+</tbody>
+</table>
+<p><strong>axis=None是统计函数的标配参数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = np.arange(<span class="number">15</span>).reshape(<span class="number">3</span>, <span class="number">5</span>)</div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>[[ 0  1  2  3  4]
+ [ 5  6  7  8  9]
+ [10 11 12 13 14]]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(np.sum(a, axis=<span class="number">0</span>))</div></pre></td></tr></table></figure>
+<pre><code>[15 18 21 24 27]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(np.mean(a, axis=<span class="number">1</span>))</div></pre></td></tr></table></figure>
+<pre><code>[  2.   7.  12.]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># axis = 0为列向</span></div><div class="line"><span class="comment"># 以第2列为例</span></div><div class="line"><span class="comment"># (1*10+6*5+11*1)/(10+5+1) = 3.1875</span></div><div class="line">print(np.average(a, axis = <span class="number">0</span>, weights = [<span class="number">10</span>, <span class="number">5</span>, <span class="number">1</span>]))</div></pre></td></tr></table></figure>
+<pre><code>[ 2.1875  3.1875  4.1875  5.1875  6.1875]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(np.std(a), np.var(a))</div></pre></td></tr></table></figure>
+<pre><code>4.32049379894 18.6666666667
+</code></pre><table>
+<thead>
+<tr>
+<th style="text-align:center">函数</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">min(a) max(a)</td>
+<td style="text-align:center">计算数组a中元素的最小值、最大值</td>
+</tr>
+<tr>
+<td style="text-align:center">argmin(a) argmax(a)</td>
+<td style="text-align:center">计算数组a中元素最小值、最大值的降一维后下标</td>
+</tr>
+<tr>
+<td style="text-align:center">unravel_index(index, shape)</td>
+<td style="text-align:center">根据shape将一维下标index转换成多维下标</td>
+</tr>
+<tr>
+<td style="text-align:center">ptp(a)</td>
+<td style="text-align:center">计算数组a中元素最大值与最小值的差</td>
+</tr>
+<tr>
+<td style="text-align:center">median(a)</td>
+<td style="text-align:center">计算数组a中元素的中位数（中值）</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = np.arange(<span class="number">15</span>).reshape(<span class="number">3</span>, <span class="number">5</span>)</div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>[[ 0  1  2  3  4]
+ [ 5  6  7  8  9]
+ [10 11 12 13 14]]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(np.max(a), np.min(a, axis = <span class="number">0</span>))</div></pre></td></tr></table></figure>
+<pre><code>14 [0 1 2 3 4]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(np.argmin(a, axis = <span class="number">0</span>), np.argmax(a, axis = <span class="number">1</span>), np.argmax(a))</div></pre></td></tr></table></figure>
+<pre><code>[0 0 0 0 0] [4 4 4] 14
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(np.unravel_index([<span class="number">14</span>], (<span class="number">3</span>, <span class="number">5</span>)))</div></pre></td></tr></table></figure>
+<pre><code>(array([2], dtype=int64), array([4], dtype=int64))
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(np.ptp(a))</div></pre></td></tr></table></figure>
+<pre><code>14
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(np.median(a))</div></pre></td></tr></table></figure>
+<pre><code>7.0
+</code></pre><h1 id="梯度函数"><a href="#梯度函数" class="headerlink" title="梯度函数"></a>梯度函数</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">函数</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">np.gradient(f)</td>
+<td style="text-align:center">计算数组f中元素的梯度，当f为多维时，返回每个维度梯度</td>
+</tr>
+</tbody>
+</table>
+<p>梯度：连续值之间的变化率，即斜率。<br>XY坐标系中，连续三个X坐标对应的Y轴值为a、b、c，那么b的梯度是：(c‐a)/2  </p>
+<p>对于[a, b, c, d]而言，<br>a的梯度为：(b-a)/1<br>b的梯度为：(c-a)/2<br>c的梯度为：(d-b)/2<br>d的梯度为：(d-c)/1  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = np.random.randint(<span class="number">0</span>, <span class="number">20</span>, (<span class="number">5</span>))</div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>[11 10  9 15 18]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(np.gradient(a))</div></pre></td></tr></table></figure>
+<pre><code>[-1.  -1.   2.5  4.5  3. ]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = np.random.randint(<span class="number">0</span>, <span class="number">20</span>, (<span class="number">3</span>, <span class="number">5</span>))</div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>[[16  7 11 17 14]
+ [ 7 11  1  0 12]
+ [ 5  4  7 18 12]]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 结果分别表示，第0维的梯度和第1维的梯度</span></div><div class="line">print(np.gradient(a))</div></pre></td></tr></table></figure>
+<pre><code>[array([[ -9. ,   4. , -10. , -17. ,  -2. ],
+       [ -5.5,  -1.5,  -2. ,   0.5,  -1. ],
+       [ -2. ,  -7. ,   6. ,  18. ,   0. ]]), array([[ -9. ,  -2.5,   5. ,   1.5,  -3. ],
+       [  4. ,  -3. ,  -5.5,   5.5,  12. ],
+       [ -1. ,   1. ,   7. ,   2.5,  -6. ]])]
+</code></pre>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/Python模块/">Python模块</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NumPy/">NumPy</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yODAyOS80NjA2">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/04/17/Python模块-NumPy(2)/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">Python模块-NumPy(2)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#随机函数"><span class="nav-number">1.</span> <span class="nav-text">随机函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#统计函数"><span class="nav-number">2.</span> <span class="nav-text">统计函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#梯度函数"><span class="nav-number">3.</span> <span class="nav-text">梯度函数</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2017 helloliangxw All Rights Reserved.
+          
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var contentdiv = document.getElementById("content");
+
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>
