@@ -429,8 +429,82 @@ log(x)
 
 
 log10(x)
-\({lo
-          ...
+\({log_{10}}^x\)
+
+
+sqrt(x)
+\(\sqrt{x}\)
+
+
+exp(x)
+\(e^x\)
+
+
+degrees(x)
+弧度\(\rightarrow\)角度
+
+
+radians(x)
+角度\(\rightarrow\)弧度
+
+
+sin(x) cos(x) tan(x)
+三角函数
+
+
+asin(x) acos(x) atan(x)
+反三角函数
+
+
+
+
+random库
+
+
+
+函数名
+说明
+
+
+
+
+seed(x)
+给随机数一个种子值，默认种子为系统时间戳
+
+
+random()
+生成一个[0, 1.0)的随机小数
+
+
+uniform(a, b)
+生成一个a到b的随机小数
+
+
+randint(a, b)
+生成一个a到b的随机整数
+
+
+randrange(a,b,c)
+生成一个区间为[a,b)、步长为c的列表，然后从列表中随机取一个数
+
+
+choice(list)
+从列表中随机取一个元素
+
+
+shuffle(list)
+将列表的元素随机打乱
+
+
+sample(list, k)
+从列表随机获取k个元素
+
+
+
+
+随机种子的作用：设定相同的种子后，每次调用随即函数获得的随机数相同。因为计算机是一个确定设备，无法生成真正的随机数。所以，由计算机产生的随机数都是由一个种子开始的伪随机序列。相同的种子产生相同的伪随机序列，也有利于程序的验证执行。
+
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/20/Python-模块-math和random/#more" rel="contents">
@@ -578,7 +652,20 @@ log10(x)
       
         
           
-          初识绘制蟒蛇1234567891011121314151617181920import turtle as tdef drawSnake(rad, angle, len, neckrad):    for i in range(len):        t.circle(rad, angle)   
+          初识绘制蟒蛇1234567891011121314151617181920import turtle as tdef drawSnake(rad, angle, len, neckrad):    for i in range(len):        t.circle(rad, angle)        t.circle(-rad, angle)    t.circle(rad, angle/2)    t.fd(rad)    t.circle(neckrad+1, 180)    t.fd(rad*2/3)t.setup(1000, 500, 0, 0)t.up()t.goto(-400, 0)t.down()t.pensize(30)t.pencolor('blue')t.seth(-40)drawSnake(40, 80, 5, 15)
+
+函数解析
+turtle.setup()turtle中的turtle.setup()函数用于启动一个图形窗口，它有四个参数turtle.setup(width, height, startx, starty)分别是：启动窗口的宽度，高度，以及窗口左上角在屏幕中的坐标位置。我们所使用的显示屏幕也是一个坐标系，该坐标系以左上角为原点，向右和向下分别是x轴和y轴：
+
+turtle.up()和turtle.down()turtle.up()为提起画笔turtle.down()为放下画笔
+
+turtle.goto()初始时刻，小乌龟在启动窗口的正中央，坐标为(0, 0)（此为画图窗口的原点，而不是屏幕的原点），向右和向上为正方向。通过turtle.goto(x, y)可以将小乌龟移动到(x, y)坐标处。
+
+turtle.pensize()turtle.pensize(size)函数表示小乌龟运动轨迹的宽度，单位为像素。
+
+turtle.pencolor()turtle.pencolor(color)函数表示小乌龟运动轨迹的颜色。turtle采用RGB方式来定义颜色，如turtle.pencolor(“#3B9909”)。
+
+turtle.seth()turtle.seth(angle)函数表示小乌龟初始时运动方向。输入参数是一个角度值，其中0表示向东，90度向北，180度向西，270度向南；负值表示的方向与正值表示的方向关于方向
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -729,7 +816,22 @@ log10(x)
           
           time12345678import timeprint time.time()print time.localtime()for i in range(3):    time.sleep(1) # 单位为s    print "tick!"
 1488184219.92
-time.struct_ti
+time.struct_time(tm_year=2017, tm_mon=2, tm_mday=27, tm_hour=16, tm_min=30, tm_sec=19, tm_wday=0, tm_yday=58, tm_isdst=0)
+tick!
+tick!
+tick!
+datetime12345import datetime as DTprint 'today is: ', DT.date.today()print 'local time now is: ', DT.datetime.now() # 当地时间print 'utc time now is: ', DT.datetime.utcnow()  # utc时间
+today is:  2017-02-27
+time now is:  2017-02-27 16:42:10.219000
+time now is:  2017-02-27 08:42:10.219000
+将数字或字符串转化为相应的日期和时间（转换后的类型为日期类型）：
+12345678910111213import datetime as DTpDate = DT.date(2017, 2, 27)pTime = DT.time(16,32)pDatetime = DT.datetime.strptime('20170227 16:34:11', '%Y%m%d %H:%M:%S')print pDateprint pTimeprint pDatetimeprint '--------------------------------'print type(pDate)print type(pTime)print type(pDatetime)
+2017-02-27
+16:32:00
+2017-02-27 16:34:11
+--------------------------------
+&lt;type &#39;datetime.date&#39;&gt;
+&lt;t
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -879,162 +981,16 @@ time.struct_ti
         
           
           常用字符和语法下图列出了Python支持的正则表达式元字符和语法：
-分组123456import recontactInfo = 'Doe, John: 555-1212'm = re.search(r'(\w+), (\w+): (\S+)', contactInfo)for i in range
-          ...
+分组123456import recontactInfo = 'Doe, John: 555-1212'm = re.search(r'(\w+), (\w+): (\S+)', contactInfo)for i in range(4):    print (m.group(i))
+Doe, John: 555-1212
+Doe
+John
+555-1212
+
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/20/Python-模块-正则表达式/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/20/Python-基础-面向对象-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liangxw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="helloliangxw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/20/Python-基础-面向对象-2/" itemprop="url">
-                  Python-基础-面向对象-2
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-20T09:19:00+08:00">
-                2017-04-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-基础/" itemprop="url" rel="index">
-                    <span itemprop="name">Python-基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          __slot__Python是动态语言，可以对类的实例任意绑定属性。
-通过__slot__就可以限定类的实例能够添加的属性。
-12345678910import tracebackfrom types import MethodTypeclass MyClass(object):    __slot
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/20/Python-基础-面向对象-2/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1179,7 +1135,19 @@ time.struct_ti
       
         
           
-          字符串反转12345678910111213def reverse(lst, start, end):    '''    实现列表反转    '''    while start &lt; end:        lst[start], lst[end] = lst[end], lst[start
+          字符串反转12345678910111213def reverse(lst, start, end):    '''    实现列表反转    '''    while start &lt; end:        lst[start], lst[end] = lst[end], lst[start]        start += 1        end -= 1sentence = '   hello! how are you! Fine.  'reverse(list(sentence), 0, len(strList)-1)print ''.join(strList)
+  .eniF !uoy era woh !olleh   
+快速判断一个数是否为2的幂1234def is_pow2(n):    return (n &amp; (n-1))==0print is_pow2(31)
+False
+螺旋矩阵给定一个\((m×n)\)的矩阵，按照螺旋顺序，返回该矩阵的所有要素。
+如：\(\textbf{A}=\begin{bmatrix}1 &amp; 2 &amp; 3 \\4 &amp; 5 &amp; 6\\7 &amp; 8 &amp; 9\end{bmatrix}\)，返回：\([1, 2, 3, 6, 9, 8, 7, 4, 5]\)。
+思路：
+
+首先打印第一行，去掉第一行后剩余的矩阵记为temp
+将temp逆时针翻转\(90^o\)，打印第一行
+重复1-2步骤，直到矩阵temp的元素个数为0
+
+1234567891011121314151617181920212223242526272829303132333435# 构造矩阵A，方便测试ROW, COL = 4, 3 # 行数，列数listA = [[ i for i in range(0 + j * COL, COL + j * COL)] for j in range(ROW)]# 打印Afor i in listA:    print iprint "----------------------------------------------"listB=[]listTemp = listA    while len(listTemp) &gt; 0:    # 首先加入第一行    li
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1336,11 +1304,188 @@ time.struct_ti
 
 类中方法的第一个参数必须是self 
 
-1234567891011121314#创建类class Person:        # 类的公共属性    n
+1234567891011121314#创建类class Person:        # 类的公共属性    name = 'liangxw'        # 类中的方法    def show(self, city):        print ('my name is %s' %self.name)        print ("i live in &#123;0&#125;".format(city))#根据Person创建对象,记得后面加个括号p = Person()p.show('china')
+my name is liangxw
+i live in china
+self相当于Java中的this关键字。self作为一个代词，并不一定要叫self。可以用其他单词来代替。但是必须得是这个类的所有方法的第一个参数。
+12345678910111213#创建类class Person:        name = 'liangxw'        # 类中的方法    def show(this, city): # self改为this        print ('my name is %s' %this.name)        print ("i live in &#123;0&#125;".format(city))#根据Person创建对象,记得后面加个括号lxw = Person()lxw.show('china')
+my name is liangxw
+i live in china
+构造函数构造函数，是一种特殊的方法。主要用来在创建对象时初始化对象， 即为对象成员变量赋初始值。跟所有OOP语言一样，Python也有构造函数。
+123456789101112131415# 创建类class Person:        def __init__(self):#这就是构造函数，它的职责是在模型创建的初期，就完成一些动作        #简单的说就是，自定义的初始化步骤：        #同样，它需要self来指代本身这个class        self.eye
           ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/20/Python-基础-面向对象-1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/20/Python-基础-面向对象-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liangxw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="helloliangxw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/20/Python-基础-面向对象-2/" itemprop="url">
+                  Python-基础-面向对象-2
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-20T09:19:00+08:00">
+                2017-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python-基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Python-基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          __slot__Python是动态语言，可以对类的实例任意绑定属性。
+通过__slot__就可以限定类的实例能够添加的属性。
+12345678910import tracebackfrom types import MethodTypeclass MyClass(object):    __slots__ = ['name', 'set_name']def set_name(self, name):    self.name = namecls = MyClass()
+__slots__ = [&#39;name&#39;, &#39;set_name&#39;]表明，实例cls只能添加两种属性：name和set_name：
+123456cls.name = 'Tom'cls.set_name = MethodType(set_name, cls)print(cls.name)cls.set_name('Jerry')print(cls.name)
+Tom
+Jerry
+当视图绑定其他属性时，会报错：
+1234try:    cls.age = 30except AttributeError:    traceback.print_exc()
+Traceback (most recent call last):
+  File &quot;&lt;ipython-input-10-04e8bc9eda97&gt;&quot;, line 2, in &lt;module&gt;
+    cls.age = 30
+AttributeError: &#39;MyClass&#39; object has no attribute &#39;age&#39;
+注意：__slots__仅对当前类的实例起作用，对继承的子类是不起作用的：
+123456class ExtMyClass(MyClass):    passext_cls = ExtMyClass()ext_cls.age = 30print(ext_cls.age)
+30
+@property@property可以将Python定义的函数“当做”属性访问，从而提供更加友好访问方式（相当于getter和setter）
+
+只有@property表示只读。
+同时有@property和@x.setter表示可读可写。
+同时有@p
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/20/Python-基础-面向对象-2/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1488,7 +1633,24 @@ time.struct_ti
           高阶函数将其他函数作为参数传入的函数叫高阶函数。
 123456789# 如绝对值函数print abs(-10)# 在Python中一切都是对象print abs# 因此该函数也可以赋值给其他变量myAbs = absprint myAbs(-9)
 10
-&lt;built-in function 
+&lt;built-in function abs&gt;
+9
+既然函数本身就可以作为一个变量，那函数也可以作为另一个函数的参数。
+1234def MyAdd(x, y, op):    return op(x) + op(y)print MyAdd(-10, 9, abs)
+19
+匿名函数Python使用lambda来创建匿名函数。
+
+lambda只是一个表达式，函数体比def简单很多。
+lambda的主体是一个表达式，而不是一个代码块。仅仅能在lambda表达式中封装有限的逻辑进去。
+lambda函数拥有自己的命名空间，且不能访问自有参数列表之外或全局命名空间里的参数。
+虽然lambda函数看起来只能写一行，却不等同于C或C++的内联函数，后者的目的是调用小函数时不占用栈内存从而增加运行效率。
+最重要的一点，lambda表达式可以体现你的逼格。  华尔街和伦敦银行高街最逼的一群人都是自诩用且只用函数式编程的。什么是函数式编程？就是类似于全篇程序都用Python中lambda这样的一行代码来解决问题。为什么他们逼？因为数学家们学编程的时候，脑子还在数学公式这条线上；他们不会写面对对象编程，只会死想出一条条公式来解决问题；其实这是智商堪忧的体现；但是因为投行基金们很倾向于聘用这群数学家转型的半吊子程序员；他们的使用习惯于是成了圈内高逼的体现；恩，葡萄就是这么酸。
+
+语法1lambda [arg1 [,arg2,.....argn]]:expression
+12mySum = lambda arg1, arg2: arg1 + arg2print (mySum(10, 20))
+30
+123# 楼上这个，实际上等同于def mySum(arg1, arg2):    return arg1 + arg2
+reducePython中的reduce()内建函数是一个二元操作函数，他用来将一个数据集合(列表，元组等)中的所有数据进行如下操作：传给reduce()中的函数func() (必须是一个二元操作函数)，先对集合中的
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1639,8 +1801,74 @@ time.struct_ti
           
           使用？显示变量信息变量前或后增加’?’将显示一些通用信息，包括函数对应的源代码。
 12a = [1, 2, 3, '4']a?
-123456Type:       listString form: [1, 2, 3, '4']Length:      4Docstring:  list() -&gt
-          ...
+123456Type:       listString form: [1, 2, 3, '4']Length:      4Docstring:  list() -&gt; new empty listlist(iterable) -&gt; new list initialized from iterable's items
+使用%run运行py脚本1%run demo.py
+魔术命令
+
+
+
+常用命令
+说明
+
+
+
+
+%magic
+显示所有魔术命令
+
+
+%hist
+历史输入命令
+
+
+%pdb
+异常发生后自动进入调试器
+
+
+%reset
+删除当前命名空间中的全部变量或名称
+
+
+%who
+显示当前命名空间中已经定义的变量
+
+
+%time statement
+给出代码的执行时间，statement表示一段代码
+
+
+%timeit statement
+多次执行代码，计算综合平均执行时间
+
+
+
+
+1234import numpy as np a = np.random.randn(1000, 1000)%timeit np.dot(a, a)
+10 loops, best of 3: 52.9 ms per loop
+1%who
+a     np     
+1%hist
+import numpy as np
+
+a = np.array([1, 2, 3])
+import numpy as np
+
+a = np.array([1, 2, 3])
+a?
+a = [1, 2, 3, &#39;4&#39;]
+a?
+a = [1, 2, 3, &#39;4&#39;]
+a?
+变量前或后增加&#39;?&#39;将显示一些通用信息，包括函数对应的源代码。
+import numpy as np 
+
+a = np.random.randn(1000, 1000)
+%timeit np.dot(a, a)
+%who
+%hist
+12
+
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/19/Python-基础-一些技巧/#more" rel="contents">
@@ -1791,7 +2019,22 @@ time.struct_ti
           函数函数定义1234567def func(arg1, arg2):    # 返回元组    return arg1, arg2t = func(1, 2)print(t)print(type(t))
 (1, 2)
 &lt;class &#39;tuple&#39;&gt;
-默认参数1234567
+默认参数123456789101112def func(arg1, arg2 = 200):    return arg1, arg2print(func(1))print(func(1, 2))# 调用时可以改变参数顺序print(func(10, arg2 = 2))print(func(arg2 = 2, arg1 = 1))# 下面这种调用方式会出错# func(arg2 = 2, 10)
+(1, 200)
+(1, 2)
+(10, 2)
+(1, 2)
+变长参数变长参数必须放在参数列表的最后。一共有两种形式。第一种将变长参数包装成tuple：
+12345678def func(name, *args):    # 变长参数自动包装成tuple    print(type(args))    print(args)    print(args[0])func('Tom', 1, 2 ,'abc')
+&lt;class &#39;tuple&#39;&gt;
+(1, 2, &#39;abc&#39;)
+1
+第二种将变长参数包装成dict：
+1234567def func(name, **args):    # 变长参数自动包装成dict    print(type(args))    print(args)    print(args['China'])    func('Tom', China='Beijing', UK='London')
+&lt;class &#39;dict&#39;&gt;
+{&#39;China&#39;: &#39;Beijing&#39;, &#39;UK&#39;: &#39;London&#39;}
+Beijing
+1234567891011121314def func(a, b, c = 0, *args0, **args1):    print(a, b, c)    print(args0)    print(args1)func(1, 2)prin
           ...
           <!--noindex-->
           <div class="post-button text-center">

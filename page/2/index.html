@@ -397,8 +397,17 @@
           条件判断注意判断条件后的冒号
 12345678910# 条件判断a = 100b = 200c = 300if a == 100:    print(a)elif b == 200:    print(b)else:    print(c)
 100
-123456# None的判断x = Noneif
-          ...
+123456# None的判断x = Noneif x is None: #使用 x == None判断也行，但不推荐    print('x is None')elif not x: # 或者x is not None    print('x is not None')
+x is None
+循环12for i in range(1,5,2):    print(i)
+1
+3
+异常处理12345678910try:    inNum = 20/int(input("请输入一个整数："))except ValueError as obj:    print(obj)except ZeroDivisionError:    print("0不能作除数")else:    print("No Exceptions")finally:    print("END")
+请输入一个整数：25
+No Exceptions
+END
+
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/19/Python-基础-判断、循环、异常处理/#more" rel="contents">
@@ -599,7 +608,50 @@ list列表特点：
 
 
 
-app
+append(x)
+列表末尾增加元素x
+
+
+insert(i, x)
+在位置i前添加元素x
+
+
+sort()
+排序
+
+
+count(x)
+列表中x的个数
+
+
+reverse()
+列表反转
+
+
+remove(x)
+删除列表中第一次出现的元素x
+
+
+index(x)
+列表中第一次出现x的位置
+
+
+pop(i)
+取出位置i的元素，并删除这个元素
+
+
+
+
+123456# 可以是任意类型theList = [1, 2, 'a', (1, 2), &#123;1:"one", 2:"two"&#125;]print type(list)print type(theList)theList[0]=2print theList
+&lt;type &#39;type&#39;&gt;
+&lt;type &#39;list&#39;&gt;
+[2, 2, &#39;a&#39;, (1, 2), {1: &#39;one&#39;, 2: &#39;two&#39;}]
+123456# 列表引用theList = [1, 2, 'a', (1, 2), &#123;1:"one", 2:"two"&#125;]print theList[0]print theList[-1]print theList[-2]print theList[::-1] # 列表反转
+1
+{1: &#39;one&#39;, 2: &#39;two&#39;}
+(1, 2)
+[{1: &#39;one&#39;, 2: &#39;two&#39;}, (1, 2), &#39;a&#39;, 2, 1]
+1234567891011# 添加元素theList = [1, 2, 'a', (1, 2), &#123;1:"one", 2:"two"&#125;]theList.append('china') # 添加单个元素print theListtheList.extend([10, 20]) # 添加数组print t
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -753,7 +805,51 @@ app
 中文等非字母符号也可以作为名字。
 
 以下是合法命名的标识符：1234python_is_goodpython_is_not_good_is_it_a_question_ python语言
-赋值同步赋值：1
+赋值同步赋值：123456# 先运算右侧Ｎ个表达式，然后同时将表达式结果赋给左侧a, b, c = 1, 2, 3# 交换a和b的值x = 0y = 1x, y = y, x
+连续赋值：12# 从右到左依次赋值a = b = c = 2
+类型数字三种基本的数字类型：
+
+整数
+浮点数
+复数
+
+整数Python中整数没有取值范围的限制。  
+2进制：0b 0B开头8进制：0o 0O16进制：0x 0X  
+浮点数产看当前计算机浮点数的精度：
+12import sysprint(sys.float_info)
+sys.float_info(max=1.7976931348623157e+308, max_exp=1024, max_10_exp=308, min=2.2250738585072014e-308, min_exp=-1021, min_10_exp=-307, dig=15, mant_dig=53, epsilon=2.220446049250313e-16, radix=2, rounds=1)
+复数a+bj，虚数部分用j或J表示  
+123z = 2 + 3.5jprint("实数部分：", z.real)print("虚数部分：", z.imag)
+实数部分： 2.0
+虚数部分： 3.5
+三种类型的转换使用int(), float(), complex()进行三者的转换整数和浮点数可以相互转换，而复数不能转换成整数或者浮点数   
+123456n = 4f = 3.5z = 1 + 5Jprint(float(n), '  ', complex(n))print(int(f), '  ', complex(f))
+4.0    (4+0j)
+3    (3.5+0j)
+123# 出错# print(int(z))# print(float(z))
+常用运算
+
+
+
+运算符
+说明
+
+
+
+
++ - * /
+加 减 乘 除
+
+
+//
+向下取整
+
+
+%
+求余
+
+
+x**y, pow
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -911,7 +1007,68 @@ app
 Unicode
 跨语言、跨平台进行文本转换和处理
 对每种语言中字符设定统一且唯一的二进制编码
-每
+每个字符两个字节长
+65536 个字符的编码空间
+“严”：Unicode的十六进制数为4E25
+
+UTF-8编码
+可变长度（1个字节至4个字节）的Unicode的实现方式
+“严”：十六进制数为E4B8A5
+
+GBK编码
+双字节编码
+
+文本文件读写直接读入1234567891011121314file1 = open("input.txt") file2 = open("output.txt","w") while True:     line = file1.readline()        #这里可以进行逻辑处理     file2.write(line)     if not line:         break         #记住文件处理完，关闭是个好习惯 file1.close() file2.close()
+读写模式：
+
+
+
+
+打开模式
+说明
+
+
+
+
+r
+只读。如果文件不存在，则输出错误
+
+
+w
+为只写（如果文件不存在，则自动创建文件）
+
+
+a
+表示附加到文件末尾
+
+
+rb
+只读二进制文件。如果文件不存在，则输出错误
+
+
+wb
+只写二进制文件，如果文件不存在，则自动创建文件。
+
+
+ab
+附加到二进制文件末尾
+
+
+r+
+读写
+
+
+
+
+常用模式如:rb,wb,r+b等等。
+读文件有3种方法：
+
+read() 将文本文件所有行读到一个字符串中
+readline() 一行一行的读。 优点：可以在读行过程中跳过特定行。
+readlines() 将文本文件中所有行读到一个list中，文本文件每一行是list的一个元素。 
+
+文件迭代器1234file2 = open("output.txt","w") for line in open("input.txt"):       #这里可以进行逻辑处理     file2.write(line)
+上下文管理器12345678910111213141516171819# with.open自带关闭文本的功能with open
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1065,7 +1222,30 @@ Unicode
  [ 5  6  7  8  9]
  [10 11 12 13 14]
  [15 16 17 18 19]
- [20 21 2
+ [20 21 22 23 24]]
+12a[[0,1]] = a[[1,0]]print (a)
+[[ 5  6  7  8  9]
+ [ 0  1  2  3  4]
+ [10 11 12 13 14]
+ [15 16 17 18 19]
+ [20 21 22 23 24]]
+找出与给定值最接近的数123456789101112b = np.array([[0,2,4,5],[9,7,6,8]])(m, n) = b.shapeprint(b)x = 9.1index = np.abs(b-x).argmin()print(index)## 方法1print(b[int(index/n), index - n*int(index/n)])## 方法2print(b.flatten()[index])
+[[0 2 4 5]
+ [9 7 6 8]]
+4
+9
+9
+判断是否不全为01234z = np.random.randint(0,2,(3,10))print(z)not_all_zero = z.any(axis=0)print(is_zero)
+[[0 1 1 0 1 0 1 0 0 0]
+ [1 1 0 1 0 0 1 0 0 0]
+ [1 1 0 1 0 0 1 1 0 0]]
+[ True False  True  True  True  True  True  True  True  True]
+判断是否没有01234z = np.random.randint(0,2,(3,10))print(z)has_zero = z.all(axis=0)print(has_zero)
+[[0 0 0 1 1 0 1 0 1 1]
+ [0 0 1 1 0 0 0 0 1 0]
+ [1 0 0 0 0 1 0 0 1 0]]
+[False False False False False False False False  True False]
+meshgrid1234x,y = np.
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1233,7 +1413,51 @@ randn(d0,d1,..,dn)
 
 
 randint(low[,high,shape])
-根据shape创建随机整数
+根据shape创建随机整数或整数数组，范围是[low, high)
+
+
+seed(s)
+随机数种子，s是给定的种子值
+
+
+
+
+1234import numpy as npa = np.random.rand(3, 4)print(a)
+[[ 0.19114922  0.7068554   0.97088057  0.22036382]
+ [ 0.55174823  0.00680082  0.73785489  0.88970624]
+ [ 0.45998671  0.13359651  0.83150316  0.19457805]]
+12b = np.random.randn(3, 4)print(b)
+[[ 1.12238235  0.27006584  0.63285753  1.08344082]
+ [ 0.75890063 -0.41283425  1.20569367 -0.6684051 ]
+ [-0.9419934   0.40069505 -0.78798551  1.60365521]]
+12c = np.random.randint(3, 10, (2, 3))print(c)
+[[6 5 7]
+ [8 4 8]]
+12345678# 相同的种子，随机数的值相同np.random.seed(10)d = np.random.randint(3, 10, (2, 3))print(d)np.random.seed(10)e = np.random.randint(3, 10, (2, 3))print(e)
+[[4 8 7]
+ [3 4 6]]
+[[4 8 7]
+ [3 4 6]]
+
+
+
+
+函数
+说明
+
+
+
+
+shuffle(a)
+根据数组a的第1轴进行随排列，改变数组a
+
+
+permutation(a)
+根据数组a的第1轴产生一个新的乱序数组，不改变数组a
+
+
+choice(a[,size,replace,p])
+从一维数组a中以概率p抽取元素，形成size形状新数组，re
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1387,7 +1611,27 @@ randint(low[,high,shape])
 fname文件、字符串或产生器，可以是.gz或.bz2的压缩文件
 array存入文件的数组
 fmt写入文件的格式，例如：%d %.2f %.18e
-delimite
+delimiter分割字符串，默认是任何空格
+
+1234import numpy as npa = np.arange(100).reshape(5, 20)np.savetxt('a.csv', a, fmt='%d', delimiter=',')
+读取-loadtxt1np.loadtxt(fname, dtype=np.float, delimiter=None, unpack=False)
+
+fname文件、字符串或产生器，可以是.gz或.bz2的压缩文件
+dtype数据类型，可选
+delimiter分割字符串，默认是任何空格
+unpack如果True，每一列将分别写入不同变量
+
+12b = np.loadtxt('a.csv', dtype = np.float, delimiter=',')print(b)
+[[  0.   1.   2.   3.   4.   5.   6.   7.   8.   9.  10.  11.  12.  13.
+   14.  15.  16.  17.  18.  19.]
+ [ 20.  21.  22.  23.  24.  25.  26.  27.  28.  29.  30.  31.  32.  33.
+   34.  35.  36.  37.  38.  39.]
+ [ 40.  41.  42.  43.  44.  45.  46.  47.  48.  49.  50.  51.  52.  53.
+   54.  55.  56.  57.  58.  59.]
+ [ 60.  61.  62.  63.  64.  65.  66.  67.  68.  69.  70.  71.  72.  73.
+   74.  75.  76.  77.  78.  79.]
+ [ 80.  81.  82.  83.  84.  85.  86.  87.  88.  89.  90.  91.  92.  93.
+
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1562,7 +1806,96 @@ ndarray对象元素的个数，相当于.shape中n*m的值
 ndarray对象的元素类型
 
 
-.i
+.itemsize
+ndarray对象中每个元素的大小，以字节为单位
+
+
+
+
+12345import numpy as np a = np.array([ [1, 2, 3], [4, 5, 6] ] )print(a)print(a.ndim, a.shape, a.size, a.dtype, a.itemsize)
+[[1 2 3]
+ [4 5 6]]
+2 (2, 3) 6 int32 4
+元素类型
+
+
+
+数据类型
+说明
+
+
+
+
+bool
+布尔类型，True或False
+
+
+intc
+与C语言中的int类型一致，一般是int32或int64
+
+
+intp
+用于索引的整数，与C语言中ssize_t一致，int32或int64
+
+
+int8
+字节长度的整数，取值：[‐128, 127]
+
+
+int16
+16位长度的整数，取值：[‐32768, 32767]
+
+
+int32
+32位长度的整数，取值：[‐2 31 , 2 31 ‐1]
+
+
+int64
+64位长度的整数，取值：[‐2 63 , 2 63 ‐1]
+
+
+uint8
+8位无符号整数，取值：[0, 255]
+
+
+uint16
+16位无符号整数，取值：[0, 65535]
+
+
+uint32
+32位无符号整数，取值：[0, 2 32 ‐1]
+
+
+uint64
+32位无符号整数，取值：[0, 2 64 ‐1]
+
+
+float16
+16位半精度浮点数：1位符号位，5位指数，10位尾数，(符号)尾数 \(*10^{指数}\)
+
+
+float32
+32位半精度浮点数：1位符号位，8位指数，23位尾数
+
+
+float64
+64位半精度浮点数：1位符号位，11位指数，52位尾数
+
+
+complex64
+复数类型，实部和虚部都是32位浮点数
+
+
+complex128
+复数类型，实部和虚部都是64位浮点数
+
+
+
+
+ndarray为什么要支持这么多种元素类型？  
+
+科学计算涉及数据较多，对存储和性能都有较高要求
+对元素类型精细定义，有助于N
           ...
           <!--noindex-->
           <div class="post-button text-center">
