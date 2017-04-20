@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -116,12 +116,12 @@ time.struct_time(tm_year=2017, tm_mon=2, tm_mday=27, tm_hour=16,">
     motion: true,
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
+      applicationID: '6J4PGN3SLX',
+      apiKey: 'd669a6e715e29cc234c71fde690d5960',
+      indexName: 'blog',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -139,7 +139,7 @@ time.struct_time(tm_year=2017, tm_mon=2, tm_mday=27, tm_hour=16,">
   <title> Python-模块-time和datetime | helloliangxw </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -202,27 +202,7 @@ time.struct_time(tm_year=2017, tm_mon=2, tm_mday=27, tm_hour=16,">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            Kategorien
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            Über
+            首页
           </a>
         </li>
       
@@ -232,7 +212,27 @@ time.struct_time(tm_year=2017, tm_mon=2, tm_mday=27, tm_hour=16,">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -245,7 +245,7 @@ time.struct_time(tm_year=2017, tm_mon=2, tm_mday=27, tm_hour=16,">
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Suche
+            搜索
           </a>
         </li>
       
@@ -308,7 +308,7 @@ time.struct_time(tm_year=2017, tm_mon=2, tm_mday=27, tm_hour=16,">
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liangxw">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -337,9 +337,9 @@ time.struct_time(tm_year=2017, tm_mon=2, tm_mday=27, tm_hour=16,">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-20T09:24:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-20T09:24:00+08:00">
                 2017-04-20
               </time>
             
@@ -358,7 +358,7 @@ time.struct_time(tm_year=2017, tm_mon=2, tm_mday=27, tm_hour=16,">
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -413,9 +413,9 @@ time now is:  2017-02-27 08:42:10.219000
 16:32:00
 2017-02-27 16:34:11
 --------------------------------
-&lt;type &apos;datetime.date&apos;&gt;
-&lt;type &apos;datetime.time&apos;&gt;
-&lt;type &apos;datetime.datetime&apos;&gt;
+&lt;type &#39;datetime.date&#39;&gt;
+&lt;type &#39;datetime.time&#39;&gt;
+&lt;type &#39;datetime.datetime&#39;&gt;
 </code></pre><p>也可以进行日期之间的计算：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> datetime <span class="keyword">as</span> DT</div><div class="line"></div><div class="line">pDatetime = DT.datetime.strptime(<span class="string">'20170227 16:37:11'</span>, <span class="string">'%Y%m%d %H:%M:%S'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 计算两个日期之间的天数</span></div><div class="line">days = (  DT.datetime.now()-  pDatetime  ).days</div><div class="line"><span class="keyword">print</span> days</div><div class="line"></div><div class="line"><span class="comment"># 计算儒略日</span></div><div class="line">DOY = (  pDatetime- DT.datetime(pDatetime.year, <span class="number">1</span>, <span class="number">1</span>) ).days + <span class="number">1</span></div><div class="line"><span class="keyword">print</span> DOY</div><div class="line"></div><div class="line"><span class="comment"># 计算1h之后的日期</span></div><div class="line">aftTime = pDatetime + DT.timedelta(hours=<span class="number">1</span>)</div><div class="line"><span class="keyword">print</span> aftTime</div></pre></td></tr></table></figure>
 <pre><code>0
@@ -484,6 +484,12 @@ time now is:  2017-02-27 08:42:10.219000
 
     <div class="post-spread">
       
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
     </div>
   </div>
 
@@ -494,6 +500,8 @@ time now is:  2017-02-27 08:42:10.219000
 
           
   <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yODMwNi80ODc4"></div>
     
   </div>
 
@@ -518,10 +526,10 @@ time now is:  2017-02-27 08:42:10.219000
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            站点概览
           </li>
         </ul>
       
@@ -529,7 +537,7 @@ time now is:  2017-02-27 08:42:10.219000
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg"
                alt="liangxw" />
           <p class="site-author-name" itemprop="name">liangxw</p>
            
@@ -542,7 +550,7 @@ time now is:  2017-02-27 08:42:10.219000
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">18</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
@@ -552,8 +560,8 @@ time now is:  2017-02-27 08:42:10.219000
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">Kategorien</span>
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
               </a>
             </div>
           
@@ -655,11 +663,11 @@ time now is:  2017-02-27 08:42:10.219000
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  Theme -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Pisces
   </a>
@@ -798,6 +806,17 @@ time now is:  2017-02-27 08:42:10.219000
 
 
   
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
 
 
 
@@ -847,7 +866,7 @@ time now is:  2017-02-27 08:42:10.219000
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
   
 
 

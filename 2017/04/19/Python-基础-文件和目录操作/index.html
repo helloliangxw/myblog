@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -119,7 +119,7 @@ Unicode
 “严”：Unicode的十六进制数为4E25
 
 UT">
-<meta property="og:updated_time" content="2017-04-19T09:10:57.362Z">
+<meta property="og:updated_time" content="2017-04-20T03:14:32.583Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python-基础-文件目录操作">
 <meta name="twitter:description" content="常用文件编码ASCII码
@@ -149,12 +149,12 @@ UT">
     motion: true,
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
+      applicationID: '6J4PGN3SLX',
+      apiKey: 'd669a6e715e29cc234c71fde690d5960',
+      indexName: 'blog',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -172,7 +172,7 @@ UT">
   <title> Python-基础-文件目录操作 | helloliangxw </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -235,27 +235,7 @@ UT">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            Kategorien
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            Über
+            首页
           </a>
         </li>
       
@@ -265,7 +245,27 @@ UT">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -278,7 +278,7 @@ UT">
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Suche
+            搜索
           </a>
         </li>
       
@@ -341,7 +341,7 @@ UT">
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liangxw">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -370,9 +370,9 @@ UT">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-19T16:49:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T16:49:00+08:00">
                 2017-04-19
               </time>
             
@@ -391,7 +391,7 @@ UT">
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -452,6 +452,7 @@ UT">
 </ul>
 <h1 id="文本文件读写"><a href="#文本文件读写" class="headerlink" title="文本文件读写"></a><strong>文本文件读写</strong></h1><h2 id="直接读入"><a href="#直接读入" class="headerlink" title="直接读入"></a>直接读入</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">file1 = open(<span class="string">"input.txt"</span>) </div><div class="line">file2 = open(<span class="string">"output.txt"</span>,<span class="string">"w"</span>) </div><div class="line"></div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>: </div><div class="line">    line = file1.readline()</div><div class="line">    </div><div class="line">    <span class="comment">#这里可以进行逻辑处理 </span></div><div class="line">    file2.write(line) </div><div class="line">    <span class="keyword">if</span> <span class="keyword">not</span> line: </div><div class="line">        <span class="keyword">break</span> </div><div class="line">        </div><div class="line"><span class="comment">#记住文件处理完，关闭是个好习惯 </span></div><div class="line">file1.close() </div><div class="line">file2.close()</div></pre></td></tr></table></figure>
 <p><strong>读写模式：</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -490,6 +491,7 @@ UT">
 </tr>
 </tbody>
 </table>
+</div>
 <p>常用模式如:<code>rb</code>,<code>wb</code>,<code>r+b</code>等等。</p>
 <p><strong>读文件有3种方法：</strong></p>
 <ol>
@@ -510,14 +512,14 @@ UT">
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 返回当前目录的绝对路径</span></div><div class="line"><span class="keyword">print</span> os.path.abspath(<span class="string">'.'</span>)</div><div class="line"><span class="keyword">print</span> os.getcwd()</div><div class="line"></div><div class="line"><span class="comment"># 列出当前目录下的所有目录</span></div><div class="line"><span class="keyword">print</span> [x <span class="keyword">for</span> x <span class="keyword">in</span> os.listdir(<span class="string">'.'</span>) <span class="keyword">if</span> os.path.isdir(x)]</div><div class="line"></div><div class="line"><span class="comment"># 列出所有的py文件</span></div><div class="line"><span class="keyword">print</span> [y <span class="keyword">for</span> y <span class="keyword">in</span> os.listdir(<span class="string">'.'</span>) <span class="keyword">if</span> os.path.isfile(y) <span class="keyword">and</span> os.path.splitext(y)[<span class="number">1</span>]==<span class="string">'.txt'</span>]</div></pre></td></tr></table></figure>
 <pre><code>E:\MyDocuments\Jupyter
 E:\MyDocuments\Jupyter
-[&apos;.ipynb_checkpoints&apos;]
-[&apos;a.txt&apos;]
+[&#39;.ipynb_checkpoints&#39;]
+[&#39;a.txt&#39;]
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 创建目录</span></div><div class="line"></div><div class="line"><span class="comment"># 首先把新目录的完整路径表示出来:</span></div><div class="line">myPath = os.path.join(<span class="string">'.'</span>, <span class="string">'Pictures'</span>)</div><div class="line"><span class="keyword">print</span> myPath</div><div class="line"><span class="comment"># 这里你得到的是一个字符串，代表了新的文件夹是这个位置：E:\MyDocuments\Jupyter\Pictures</span></div><div class="line"><span class="comment"># 自己也可以拼起来，但是怕不同操作系统下的区分符问题，最好是用OS接口</span></div><div class="line"></div><div class="line"><span class="comment"># 使用mkdir创建：</span></div><div class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(myPath):<span class="comment"># 判断目录是否存在</span></div><div class="line">    os.mkdir(myPath)</div><div class="line">    </div><div class="line"><span class="comment"># 删除目录</span></div><div class="line">os.rmdir(myPath)</div></pre></td></tr></table></figure>
 <pre><code>.\Pictures
 </code></pre><p>同样的道理，要拆分路径时，也不要直接去拆字符串</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 把一个路径拆分为两部分，第二部分总是最后级别的目录或文件名</span></div><div class="line"><span class="keyword">print</span> (os.path.split(<span class="string">'C:/Users/EDC/Pictures/AJiao.jpg'</span>))</div><div class="line"></div><div class="line"><span class="comment"># 得到文件扩展名</span></div><div class="line"><span class="keyword">print</span> (os.path.splitext(<span class="string">'C:/Users/EDC/Pictures/AJiao.jpg'</span>))</div></pre></td></tr></table></figure>
-<pre><code>(&apos;C:/Users/EDC/Pictures&apos;, &apos;AJiao.jpg&apos;)
-(&apos;C:/Users/EDC/Pictures/AJiao&apos;, &apos;.jpg&apos;)
+<pre><code>(&#39;C:/Users/EDC/Pictures&#39;, &#39;AJiao.jpg&#39;)
+(&#39;C:/Users/EDC/Pictures/AJiao&#39;, &#39;.jpg&#39;)
 </code></pre><p>操作文件</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 文件重命名：</span></div><div class="line">os.rename(<span class="string">'JAV-001.avi'</span>, <span class="string">'学习资料'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 删除文件</span></div><div class="line">os.remove(<span class="string">'学习资料'</span>)</div></pre></td></tr></table></figure>
 <p>尴尬的是。。复制文件并不存在于os里。。(⊙﹏⊙)b<br>原因是复制这个操作，不是由操作系统提供的系统调用。<br>我们可以用上面的代码，读入一个文件，再写入一个文件，来达到复制的目的。<br>当然，Python作为一个<code>Glue Language</code>的调性，总有第三方库来帮我们stay lazy：<br><code>Shutil</code>就是其中一个。基本上可以看做是os的补充。这个库用起来比os爽很多。比较简单易用。<br>它提供<code>copyfile()</code>方法，来复制你的文件。</p>
@@ -525,22 +527,23 @@ E:\MyDocuments\Jupyter
 <h1 id="序列化和反序列化"><a href="#序列化和反序列化" class="headerlink" title="序列化和反序列化"></a><strong>序列化和反序列化</strong></h1><p>什么是序列化？<br>程序运行的过程中，所有变量都是在内存中操作的，程序一旦执行完毕退出后，变量占有的内存就被操作系统回收了。因此我们需要将某些数据持久化存储到磁盘中，下次运行的时候从磁盘中读取相关数据。<br>我们将变量从内存中变成可以存储或传输的过程称之为<strong>序列化</strong>，在Python中叫做<code>pickling</code>，在其它语言中也称之为 serialization、marshaling、flattening等等，说的都是一个意思。 反之，则为<strong>反序列化</strong>，称之为<code>unpickling</code>，把变量内容从序列化的对象重新读取到内存中。</p>
 <h2 id="使用pickle实现序列化"><a href="#使用pickle实现序列化" class="headerlink" title="使用pickle实现序列化"></a>使用pickle实现序列化</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Python 2和Python 3里面的pickle不一样。</span></div><div class="line"><span class="comment"># Python 2中cPickle和pickle是分开的，而Python 3中两者已经合并了</span></div><div class="line"><span class="comment"># 为了保证2，3的和谐，可以用这个方法来保证import正确</span></div><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="keyword">import</span> cPickle <span class="keyword">as</span> pickle</div><div class="line"><span class="keyword">except</span> ImportError:</div><div class="line">    <span class="keyword">import</span> pickle</div><div class="line"></div><div class="line"><span class="comment"># 此处定义一个dict字典对象</span></div><div class="line">d = dict(name=<span class="string">'思聪'</span>, age=<span class="number">29</span>, score=<span class="number">80</span>)</div><div class="line"></div><div class="line"><span class="comment"># 调用pickle的dumps函数进行序列化处理</span></div><div class="line">d2Pkl = pickle.dumps(d)</div><div class="line"><span class="keyword">print</span> (d2Pkl)</div><div class="line"><span class="comment"># 调用pickle的loads函数进行序列化处理</span></div><div class="line">pkl2D = pickle.loads(d2Pkl)</div><div class="line"><span class="keyword">print</span> (pkl2D)</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">print</span> (<span class="string">"----------------------------------------------------------------"</span>)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># 将内容序列化写入到file文件中</span></div><div class="line"><span class="comment"># 定义和创建一个file文件对象，注意设定模式为wb</span></div><div class="line">f = open(<span class="string">'dump.pkl'</span>, <span class="string">'wb'</span>)</div><div class="line">pickle.dump(d, f)</div><div class="line">f.close() <span class="comment"># 最后关闭掉文件资源</span></div><div class="line"></div><div class="line"><span class="comment"># 从之前序列化的dump.pkl文件里边读取内容</span></div><div class="line">f = open(<span class="string">'dump.pkl'</span>, <span class="string">'rb'</span>) <span class="comment"># 设定文件选项模式为rb</span></div><div class="line">d = pickle.load(f) <span class="comment"># 调用load做反序列处理过程</span></div><div class="line">f.close() <span class="comment"># 关闭文件资源</span></div><div class="line"></div><div class="line">print(d)</div><div class="line">print(<span class="string">'name is %s'</span> % d[<span class="string">'name'</span>])</div></pre></td></tr></table></figure>
 <pre><code>(dp1
-S&apos;age&apos;
+S&#39;age&#39;
 p2
 I29
-sS&apos;score&apos;
+sS&#39;score&#39;
 p3
 I80
-sS&apos;name&apos;
+sS&#39;name&#39;
 p4
-S&apos;\xe6\x80\x9d\xe8\x81\xaa&apos;
+S&#39;\xe6\x80\x9d\xe8\x81\xaa&#39;
 p5
 s.
-{&apos;age&apos;: 29, &apos;score&apos;: 80, &apos;name&apos;: &apos;\xe6\x80\x9d\xe8\x81\xaa&apos;}
+{&#39;age&#39;: 29, &#39;score&#39;: 80, &#39;name&#39;: &#39;\xe6\x80\x9d\xe8\x81\xaa&#39;}
 -----------------------------------------------------
-{&apos;age&apos;: 29, &apos;score&apos;: 80, &apos;name&apos;: &apos;\xe6\x80\x9d\xe8\x81\xaa&apos;}
+{&#39;age&#39;: 29, &#39;score&#39;: 80, &#39;name&#39;: &#39;\xe6\x80\x9d\xe8\x81\xaa&#39;}
 name is 思聪
 </code></pre><h2 id="使用JSON实现序列化"><a href="#使用JSON实现序列化" class="headerlink" title="使用JSON实现序列化"></a>使用JSON实现序列化</h2><p>Python的数据结构跟Json有非常完美的兼容：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -575,12 +578,13 @@ name is 思聪
 </tr>
 </tbody>
 </table>
+</div>
 <p>如果你有一个比较结构化的数据想要序列化，并且想要人也能看得懂。那么你可以用JSON来做。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> json</div><div class="line"> </div><div class="line"><span class="comment"># 定义dict字典对象</span></div><div class="line">d = dict(name=<span class="string">'小王'</span>, age=<span class="number">20</span>, score=<span class="number">80</span>)</div><div class="line"></div><div class="line"><span class="comment"># 调用json的dumps函数进行json序列化处理</span></div><div class="line">d2Json = json.dumps(d)</div><div class="line"><span class="keyword">print</span> d2Json</div><div class="line"><span class="comment"># 调用json的loads函数进行反序列化处理</span></div><div class="line">json2D = json.loads(d2Json)</div><div class="line"><span class="keyword">print</span> json2D</div><div class="line"></div><div class="line"><span class="keyword">print</span> (<span class="string">"======================================================"</span>)</div><div class="line"></div><div class="line"><span class="comment"># 序列化到文件中</span></div><div class="line">f = open(<span class="string">'dump.json'</span>, <span class="string">'w'</span>) <span class="comment"># 设定文件选项模式为w</span></div><div class="line">json.dump(d,f)</div><div class="line">f.close</div><div class="line"><span class="comment"># 从文件中反序列化</span></div><div class="line">f = open(<span class="string">'dump.json'</span>, <span class="string">'r'</span>)</div><div class="line">d = json.load(f)</div><div class="line">f.close</div><div class="line"></div><div class="line"><span class="keyword">print</span> d</div><div class="line"><span class="keyword">print</span> d[<span class="string">'name'</span>]</div></pre></td></tr></table></figure>
 <pre><code>{&quot;age&quot;: 20, &quot;score&quot;: 80, &quot;name&quot;: &quot;\u5c0f\u738b&quot;}
-{u&apos;age&apos;: 20, u&apos;score&apos;: 80, u&apos;name&apos;: u&apos;\u5c0f\u738b&apos;}
+{u&#39;age&#39;: 20, u&#39;score&#39;: 80, u&#39;name&#39;: u&#39;\u5c0f\u738b&#39;}
 ======================================================
-{u&apos;age&apos;: 20, u&apos;score&apos;: 80, u&apos;name&apos;: u&apos;\u5c0f\u738b&apos;}
+{u&#39;age&#39;: 20, u&#39;score&#39;: 80, u&#39;name&#39;: u&#39;\u5c0f\u738b&#39;}
 小王
 </code></pre>
       
@@ -628,8 +632,8 @@ name is 思聪
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/19/Python-基础-容器/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/19/Python-基础-变量和类型/" rel="prev" title="Python-基础-变量与类型">
+                Python-基础-变量与类型 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -645,6 +649,12 @@ name is 思聪
 
     <div class="post-spread">
       
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
     </div>
   </div>
 
@@ -655,6 +665,8 @@ name is 思聪
 
           
   <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yODMwNi80ODc4"></div>
     
   </div>
 
@@ -679,10 +691,10 @@ name is 思聪
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            站点概览
           </li>
         </ul>
       
@@ -690,7 +702,7 @@ name is 思聪
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg"
                alt="liangxw" />
           <p class="site-author-name" itemprop="name">liangxw</p>
            
@@ -703,7 +715,7 @@ name is 思聪
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">18</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
@@ -713,8 +725,8 @@ name is 思聪
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">Kategorien</span>
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
               </a>
             </div>
           
@@ -816,11 +828,11 @@ name is 思聪
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  Theme -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Pisces
   </a>
@@ -959,6 +971,17 @@ name is 思聪
 
 
   
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
 
 
 
@@ -1008,7 +1031,7 @@ name is 思聪
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
   
 
 

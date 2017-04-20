@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -106,12 +106,12 @@
     motion: true,
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
+      applicationID: '6J4PGN3SLX',
+      apiKey: 'd669a6e715e29cc234c71fde690d5960',
+      indexName: 'blog',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -129,7 +129,7 @@
   <title> helloliangxw </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -194,27 +194,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            Kategorien
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            Über
+            首页
           </a>
         </li>
       
@@ -224,7 +204,27 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -237,7 +237,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Suche
+            搜索
           </a>
         </li>
       
@@ -295,12 +295,12 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/19/Python-基础-函数与递归/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/19/Python-基础-判断、循环、异常处理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liangxw">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -317,8 +317,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/04/19/Python-基础-函数与递归/" itemprop="url">
-                  Unbenannt
+                <a class="post-title-link" href="/2017/04/19/Python-基础-判断、循环、异常处理/" itemprop="url">
+                  Python-基础-判断、循环、异常处理
                 </a>
               
             
@@ -332,9 +332,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-19T17:34:06+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T17:31:30+08:00">
                 2017-04-19
               </time>
             
@@ -344,6 +344,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python-基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Python-基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -372,14 +394,15 @@
       
         
           
-          
-title: Python-基础-函数与递归date: 2017-04-19 17:33:00mathjax: true
-categories: “Python-基础”函数函数定义1234567def func(arg1, arg2):    # 返回元组    return arg1, arg2
+          条件判断注意判断条件后的冒号
+12345678910# 条件判断a = 100b = 200c = 300if a == 100:    print(a)elif b == 200:    print(b)else:    print(c)
+100
+123456# None的判断x = Noneif
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/19/Python-基础-函数与递归/#more" rel="contents">
-              Weiterlesen &raquo;
+            <a class="btn" href="/2017/04/19/Python-基础-判断、循环、异常处理/#more" rel="contents">
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -429,7 +452,7 @@ categories: “Python-基础”函数函数定义1234567def func(arg1, arg2):   
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liangxw">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -447,7 +470,7 @@ categories: “Python-基础”函数函数定义1234567def func(arg1, arg2):   
               
                 
                 <a class="post-title-link" href="/2017/04/19/Python-基础-容器/" itemprop="url">
-                  Unbenannt
+                  Python-基础-容器
                 </a>
               
             
@@ -461,9 +484,9 @@ categories: “Python-基础”函数函数定义1234567def func(arg1, arg2):   
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-19T17:31:37+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T17:31:00+08:00">
                 2017-04-19
               </time>
             
@@ -473,6 +496,28 @@ categories: “Python-基础”函数函数定义1234567def func(arg1, arg2):   
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python-基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Python-基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -501,9 +546,8 @@ categories: “Python-基础”函数函数定义1234567def func(arg1, arg2):   
       
         
           
-          
-title: Python-基础-容器date: 2017-04-19 17:31:00mathjax: true
-categories: “Python-基础”容器类型
+          容器类型
+
 
 
 -
@@ -526,12 +570,195 @@ set
 可以
 不可以
 可以
-可
+可以
+
+
+是否有序
+有序
+有序
+无序
+无序
+
+
+
+
+list列表特点：
+
+元素类型任意
+支持索引访问
+元素可以修改
+
+常用方法：
+
+
+
+
+方法
+说明
+
+
+
+
+app
           ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/19/Python-基础-容器/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/19/Python-基础-变量和类型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liangxw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="helloliangxw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/19/Python-基础-变量和类型/" itemprop="url">
+                  Python-基础-变量与类型
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T17:30:00+08:00">
+                2017-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python-基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Python-基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          变量命名规则
+大小写字母、数字和下划线的组合，但首字母只能是大小写字母或下划线，不能使用空格。
+中文等非字母符号也可以作为名字。
+
+以下是合法命名的标识符：1234python_is_goodpython_is_not_good_is_it_a_question_ python语言
+赋值同步赋值：1
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/19/Python-基础-变量和类型/#more" rel="contents">
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -581,7 +808,7 @@ set
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liangxw">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -613,9 +840,9 @@ set
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-19T16:49:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T16:49:00+08:00">
                 2017-04-19
               </time>
             
@@ -634,7 +861,7 @@ set
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -689,7 +916,7 @@ Unicode
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/19/Python-基础-文件和目录操作/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -739,7 +966,7 @@ Unicode
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liangxw">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -771,9 +998,9 @@ Unicode
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-18T15:38:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-18T15:38:00+08:00">
                 2017-04-18
               </time>
             
@@ -792,7 +1019,7 @@ Unicode
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -843,7 +1070,7 @@ Unicode
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/18/Python-模块-NumPy-代码碎片/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -893,7 +1120,7 @@ Unicode
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liangxw">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -925,9 +1152,9 @@ Unicode
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-17T20:36:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-17T20:36:00+08:00">
                 2017-04-17
               </time>
             
@@ -946,12 +1173,12 @@ Unicode
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python模块/" itemprop="url" rel="index">
-                    <span itemprop="name">Python模块</span>
+                  <a href="/categories/Python-模块/" itemprop="url" rel="index">
+                    <span itemprop="name">Python-模块</span>
                   </a>
                 </span>
 
@@ -990,6 +1217,7 @@ Unicode
           随机函数
 
 
+
 函数
 说明
 
@@ -1005,12 +1233,12 @@ randn(d0,d1,..,dn)
 
 
 randint(low[,high,shape])
-根据shape创建随机整数或
+根据shape创建随机整数
           ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/17/Python-模块-NumPy-常用函数/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1060,7 +1288,7 @@ randint(low[,high,shape])
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liangxw">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1092,9 +1320,9 @@ randint(low[,high,shape])
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-17T20:07:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-17T20:07:00+08:00">
                 2017-04-17
               </time>
             
@@ -1113,12 +1341,12 @@ randint(low[,high,shape])
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python模块/" itemprop="url" rel="index">
-                    <span itemprop="name">Python模块</span>
+                  <a href="/categories/Python-模块/" itemprop="url" rel="index">
+                    <span itemprop="name">Python-模块</span>
                   </a>
                 </span>
 
@@ -1164,7 +1392,7 @@ delimite
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/17/Python-模块-NumPy-数据存取/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1214,7 +1442,7 @@ delimite
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liangxw">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1246,9 +1474,9 @@ delimite
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-17T19:27:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-17T19:27:00+08:00">
                 2017-04-17
               </time>
             
@@ -1267,7 +1495,7 @@ delimite
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -1311,6 +1539,7 @@ delimite
           N维数组对象ndarrayndarray对象的属性
 
 
+
 属性
 说明
 
@@ -1333,163 +1562,12 @@ ndarray对象元素的个数，相当于.shape中n*m的值
 ndarray对象的元素类型
 
 
-.it
+.i
           ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/17/Python-模块-NumPy-ndarry对象/#more" rel="contents">
-              Weiterlesen &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/26/Python-基础-面向对象-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liangxw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="helloliangxw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/26/Python-基础-面向对象-2/" itemprop="url">
-                  Python-基础-面向对象-2
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-26T14:34:00+08:00">
-                2017-02-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">in</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-基础/" itemprop="url" rel="index">
-                    <span itemprop="name">Python-基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          __slot__Python是动态语言，可以对类的实例任意绑定属性。
-通过__slot__就可以限定类的实例能够添加的属性。
-12345678910import tracebackfrom types import MethodTypeclass MyClass(object):    __slot
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/02/26/Python-基础-面向对象-2/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1562,7 +1640,7 @@ ndarray对象的元素类型
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg"
                alt="liangxw" />
           <p class="site-author-name" itemprop="name">liangxw</p>
            
@@ -1575,7 +1653,7 @@ ndarray对象的元素类型
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">18</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
@@ -1585,8 +1663,8 @@ ndarray对象的元素类型
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">Kategorien</span>
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
               </a>
             </div>
           
@@ -1672,11 +1750,11 @@ ndarray对象的元素类型
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  Theme -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Pisces
   </a>
@@ -1811,6 +1889,17 @@ ndarray对象的元素类型
 
 
   
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
 
 
 
@@ -1860,7 +1949,7 @@ ndarray对象的元素类型
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
   
 
 
