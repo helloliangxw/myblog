@@ -1,0 +1,986 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="高阶函数将其他函数作为参数传入的函数叫高阶函数。
+123456789# 如绝对值函数print abs(-10)# 在Python中一切都是对象print abs# 因此该函数也可以赋值给其他变量myAbs = absprint myAbs(-9)
+10
+&amp;lt;built-in function abs&amp;gt;
+9
+既然函数本身就可以作为一个变量，那函数也可以作为另一个函数的参数。
+1234de">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python-基础-函数进阶">
+<meta property="og:url" content="http://yoursite.com/2017/04/19/Python-基础-函数进阶/index.html">
+<meta property="og:site_name" content="helloliangxw">
+<meta property="og:description" content="高阶函数将其他函数作为参数传入的函数叫高阶函数。
+123456789# 如绝对值函数print abs(-10)# 在Python中一切都是对象print abs# 因此该函数也可以赋值给其他变量myAbs = absprint myAbs(-9)
+10
+&amp;lt;built-in function abs&amp;gt;
+9
+既然函数本身就可以作为一个变量，那函数也可以作为另一个函数的参数。
+1234de">
+<meta property="og:updated_time" content="2017-04-19T09:41:30.129Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python-基础-函数进阶">
+<meta name="twitter:description" content="高阶函数将其他函数作为参数传入的函数叫高阶函数。
+123456789# 如绝对值函数print abs(-10)# 在Python中一切都是对象print abs# 因此该函数也可以赋值给其他变量myAbs = absprint myAbs(-9)
+10
+&amp;lt;built-in function abs&amp;gt;
+9
+既然函数本身就可以作为一个变量，那函数也可以作为另一个函数的参数。
+1234de">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/19/Python-基础-函数进阶/"/>
+
+
+
+
+
+  <title> Python-基础-函数进阶 | helloliangxw </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">helloliangxw</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Über
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Suche
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/19/Python-基础-函数进阶/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liangxw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="helloliangxw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Python-基础-函数进阶
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-19T17:40:00+08:00">
+                2017-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python-基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Python-基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h1><p>将其他函数作为参数传入的函数叫<strong>高阶函数</strong>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 如绝对值函数</span></div><div class="line"><span class="keyword">print</span> abs(<span class="number">-10</span>)</div><div class="line"></div><div class="line"><span class="comment"># 在Python中一切都是对象</span></div><div class="line"><span class="keyword">print</span> abs</div><div class="line"></div><div class="line"><span class="comment"># 因此该函数也可以赋值给其他变量</span></div><div class="line">myAbs = abs</div><div class="line"><span class="keyword">print</span> myAbs(<span class="number">-9</span>)</div></pre></td></tr></table></figure>
+<pre><code>10
+&lt;built-in function abs&gt;
+9
+</code></pre><p>既然函数本身就可以作为一个变量，那函数也可以作为另一个函数的参数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">MyAdd</span><span class="params">(x, y, op)</span>:</span></div><div class="line">    <span class="keyword">return</span> op(x) + op(y)</div><div class="line"></div><div class="line"><span class="keyword">print</span> MyAdd(<span class="number">-10</span>, <span class="number">9</span>, abs)</div></pre></td></tr></table></figure>
+<pre><code>19
+</code></pre><h1 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h1><p>Python使用<code>lambda</code>来创建匿名函数。</p>
+<ul>
+<li>lambda只是一个表达式，函数体比def简单很多。</li>
+<li>lambda的主体是一个表达式，而不是一个代码块。仅仅能在lambda表达式中封装有限的逻辑进去。</li>
+<li>lambda函数拥有自己的命名空间，且不能访问自有参数列表之外或全局命名空间里的参数。</li>
+<li>虽然lambda函数看起来只能写一行，却不等同于C或C++的内联函数，后者的目的是调用小函数时不占用栈内存从而增加运行效率。</li>
+<li>最重要的一点，lambda表达式可以体现你的逼格。<br>  华尔街和伦敦银行高街最逼的一群人都是自诩<strong>用且只用函数式编程</strong>的。什么是函数式编程？就是类似于全篇程序都用Python中lambda这样的一行代码来解决问题。为什么他们逼？因为数学家们学编程的时候，脑子还在数学公式这条线上；他们不会写面对对象编程，只会死想出一条条公式来解决问题；其实这是智商堪忧的体现；但是因为投行基金们很倾向于聘用这群数学家转型的半吊子程序员；他们的使用习惯于是成了圈内高逼的体现；恩，葡萄就是这么酸。</li>
+</ul>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">lambda</span> [arg1 [,arg2,.....argn]]:expression</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mySum = <span class="keyword">lambda</span> arg1, arg2: arg1 + arg2</div><div class="line"><span class="keyword">print</span> (mySum(<span class="number">10</span>, <span class="number">20</span>))</div></pre></td></tr></table></figure>
+<pre><code>30
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 楼上这个，实际上等同于</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">mySum</span><span class="params">(arg1, arg2)</span>:</span></div><div class="line">    <span class="keyword">return</span> arg1 + arg2</div></pre></td></tr></table></figure>
+<h2 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h2><p>Python中的<code>reduce()</code>内建函数是一个二元操作函数，他用来将一个数据集合(列表，元组等)中的所有数据进行如下操作：传给reduce()中的函数func() (必须是一个二元操作函数)，先对集合中的第1，2个数据进行操作，得到的结果再与第3个数据用func()函数运算，以此类推，最后得到一个结果。<br>顾名思义，<code>reduce()</code>就是要把一个list给缩成一个值。所以你必须用二元操作函数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</div><div class="line"></div><div class="line">lst = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</div><div class="line">print(reduce(<span class="keyword">lambda</span> x,y: x + y, lst))</div><div class="line"><span class="comment"># 这里代表着，把list中的值，一个个放进lamda的x,y中</span></div><div class="line"></div><div class="line"><span class="comment"># 如果你给出一个初始值，可以放在list后面</span></div><div class="line">print(reduce(<span class="keyword">lambda</span> x,y: x + y, lst, <span class="number">10</span>))</div><div class="line"><span class="comment"># 这样，x开始的时候被赋值为10，然后依次</span></div></pre></td></tr></table></figure>
+<pre><code>15
+25
+</code></pre><h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><p><code>map()</code>函数应用于每一个可迭代的项，返回的是一个结果list。如果有其他的可迭代参数传进来，map函数则会把每一个参数都以相应的处理函数进行迭代处理。<br><code>map()</code>可以使用任何的lambda函数操作，本质上是把原有的list根据lambda法则变成另外一个list</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Py3里，外面需要套个list：</span></div><div class="line"><span class="comment"># 这是为了让里面的值给显示出来，要不然你会得到这是个map函数</span></div><div class="line"><span class="comment"># 而不是里面的值。</span></div><div class="line"><span class="comment"># Py2不需要</span></div><div class="line">lst = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line">new_list = list(map(<span class="keyword">lambda</span> i: i+<span class="number">1</span>, lst))</div><div class="line">print(new_list)</div><div class="line"></div><div class="line"><span class="comment"># 我们也可以把两个数组搞成一个单独的数组</span></div><div class="line">lst0 = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</div><div class="line">new_list = list(map(<span class="keyword">lambda</span> x,y: x+y, lst, lst0))</div><div class="line">print(new_list)</div></pre></td></tr></table></figure>
+<pre><code>[2, 3, 4]
+[5, 7, 9]
+</code></pre><h2 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h2><p><code>filter()</code>函数可以对序列做过滤处理，就是说可以使用一个自定的函数过滤一个序列。<br>和map()类似，<code>filter()</code>也接收一个函数和一个序列。和map()不同的时，filter()把传入的函数依次作用于每个元素，然后根据返回值是True还是False决定保留还是丢弃该元素。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">lst = [<span class="number">100</span>, <span class="number">20</span>, <span class="number">24</span>, <span class="number">50</span>, <span class="number">110</span>]</div><div class="line">new_list = list(filter(<span class="keyword">lambda</span> x: x &lt; <span class="number">50</span>, lst))</div><div class="line"><span class="comment"># 同理，py3得套个list来转化成list函数，便于打印出来</span></div><div class="line">print(new_list)</div></pre></td></tr></table></figure>
+<pre><code>[20, 24]
+</code></pre><h1 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h1><p>装饰器就是函数的<code>包装</code>。直接上🌰。</p>
+<h2 id="函数装饰器"><a href="#函数装饰器" class="headerlink" title="函数装饰器"></a>函数装饰器</h2><p>博主有个小项目，项目中有个很简单很简单的函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">print</span> <span class="string">'call foo()'</span></div><div class="line"></div><div class="line">foo()</div></pre></td></tr></table></figure>
+<pre><code>call foo()
+</code></pre><p>没错，就是这么简单！</p>
+<p>现在博主想看这个函数的运行时间：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></div><div class="line">    start = time.clock()</div><div class="line">    <span class="keyword">print</span> <span class="string">'call foo()'</span></div><div class="line">    end = time.clock()</div><div class="line">    <span class="keyword">print</span> <span class="string">'time used:'</span>, end - start</div><div class="line"></div><div class="line">foo()</div></pre></td></tr></table></figure>
+<pre><code>call foo()
+time used: 0.000371863878172
+</code></pre><p>很好，功能看起来无懈可击。</p>
+<p>可是DT的博主第二天对<code>foo()</code>不感兴趣了，想看另外一个函数<code>foo2()</code>的运行时间。第三天想看<code>foo3()</code>函数的运行时间。。。</p>
+<p>怎么办呢？如果把<code>foo()</code>的函数体（第6行）换成<code>foo2()</code>或者<code>foo3()</code>的函数体，就犯了大忌了。修改、复制什么的难道不是最讨厌了么！而且，如果博主某天脑抽想看其他100个函数的运行时间呢？要修改复制100次吗？</p>
+<p><strong>以不变应万变！</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> time</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">print</span> <span class="string">'call foo()'</span></div><div class="line">    </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo2</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">print</span> <span class="string">'call foo2()'</span>       </div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">timeit</span><span class="params">(func)</span>:</span></div><div class="line">    start = time.clock()</div><div class="line">    func()</div><div class="line">    end =time.clock()</div><div class="line">    <span class="keyword">print</span> <span class="string">'time used:'</span>, end - start</div><div class="line">    </div><div class="line">timeit(foo)    </div><div class="line">timeit(foo2)</div></pre></td></tr></table></figure>
+<pre><code>call foo()
+time used: 0.000322124124068
+call foo2()
+time used: 1.81589575732e-05
+</code></pre><p>看起来逻辑上并没有问题，一切都很美好并且运作正常！</p>
+<p>但是，我们似乎修改了调用部分的代码。原本我们是这样调用的：<code>foo()</code>，修改以后变成了：<code>timeit(foo)</code>。这样的话，会出现以下的问题：如果项目中<code>foo()</code>在N处都被调用了，就不得不去修改这N处的代码（更极端的，其中某处调用的代码是交给别人写的，无法修改）。</p>
+<p><strong>最大限度的少改动！</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> time</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">print</span> <span class="string">'call foo()'</span></div><div class="line"></div><div class="line"><span class="comment"># 定义一个计时器，传入一个，并返回另一个附加了计时功能的方法</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">timeit</span><span class="params">(func)</span>:</span></div><div class="line">     </div><div class="line">    <span class="comment"># 定义一个内嵌的包装函数，给传入的函数加上计时功能的包装</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">()</span>:</span></div><div class="line">        start = time.clock()</div><div class="line">        func()</div><div class="line">        end =time.clock()</div><div class="line">        <span class="keyword">print</span> <span class="string">'time used:'</span>, end - start</div><div class="line">     </div><div class="line">    <span class="comment"># 将包装后的函数返回</span></div><div class="line">    <span class="keyword">return</span> wrapper</div><div class="line"> </div><div class="line">foo = timeit(foo)</div><div class="line">foo()</div></pre></td></tr></table></figure>
+<pre><code>call foo()
+time used: 0.000342651641404
+</code></pre><p>这样，一个简易的计时器就做好了！我们只需要在调用<code>foo()</code>之前，加上<code>foo = timeit(foo)</code>，就可以达到计时的目的，这也就是<strong>装饰器</strong>的概念，看起来像是<code>foo()</code>被<code>timeit()</code>装饰了。</p>
+<p>上面这段代码看起来似乎已经不能再精简了，Python提供了一个语法糖来降低字符输入量。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> time</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">timeit</span><span class="params">(func)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">()</span>:</span></div><div class="line">        start = time.clock()</div><div class="line">        func()</div><div class="line">        end =time.clock()</div><div class="line">        <span class="keyword">print</span> <span class="string">'used:'</span>, end - start</div><div class="line">    <span class="keyword">return</span> wrapper</div><div class="line"> </div><div class="line"><span class="meta">@timeit</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">print</span> <span class="string">'call foo()'</span></div><div class="line"></div><div class="line">foo()</div></pre></td></tr></table></figure>
+<pre><code>call foo()
+used: 0.000329624563165
+</code></pre><p>重点关注第11行的<code>@timeit</code>，在定义上加上这一行与另外写<code>foo = timeit(foo)</code>完全等价，千万不要以为<code>@</code>有另外的魔力。</p>
+<p>这样除了字符输入少了一些，还有一个额外的好处：看上去更有装饰器的感觉。</p>
+<p>所以，本质上来讲，用装饰器<code>@decorator</code>来装饰某个函数时，其实是做了下面这件事儿：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@decorator</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure>
+<p>变成了：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func = decorator(func)</div></pre></td></tr></table></figure>
+<p>再简单点说，就是<strong>把一个函数传到另外一个函数中，再返回给自己</strong>。</p>
+<p>可以给装饰器带参数：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@decorator(arg1, arg2)</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure></p>
+<p>相当于：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func = decorator(arg1,arg2)(func)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">addWords</span><span class="params">(**kwds)</span>:</span></div><div class="line"></div><div class="line">    <span class="comment"># 对参数进行解析</span></div><div class="line">    pre = <span class="string">"&#123;0&#125;"</span>.format(kwds[<span class="string">"prefix"</span>]) <span class="keyword">if</span> <span class="string">"prefix"</span> <span class="keyword">in</span> kwds <span class="keyword">else</span> <span class="string">""</span></div><div class="line">    suf = <span class="string">"&#123;0&#125;"</span>.format(kwds[<span class="string">"suffix"</span>]) <span class="keyword">if</span> <span class="string">"suffix"</span> <span class="keyword">in</span> kwds <span class="keyword">else</span> <span class="string">""</span></div><div class="line">    </div><div class="line">    <span class="comment"># 真实的装饰器</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">real_decorator</span><span class="params">(func)</span>:</span></div><div class="line">        <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">()</span>:</span></div><div class="line">            <span class="keyword">return</span> pre + <span class="string">" + "</span> + func() + <span class="string">" + "</span> + suf</div><div class="line">        <span class="keyword">return</span> wrapper</div><div class="line">    <span class="keyword">return</span> real_decorator</div><div class="line"></div><div class="line"><span class="meta">@addWords(prefix = 'Good', suffix = "Nice")</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="string">"hello world"</span></div><div class="line"></div><div class="line"><span class="keyword">print</span> foo()</div></pre></td></tr></table></figure>
+<pre><code>Good + hello world + Nice
+</code></pre><p><code>foo()</code>就是一个简单的打印”hello world”的函数。<br>装饰器的功能是在”hello world”的前后各加一个单词，而加什么单词由装饰起的参数而定。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@addWords(prefix = 'LOL', suffix = "SALA")</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="string">"hello world"</span></div><div class="line"></div><div class="line"><span class="keyword">print</span> foo()</div></pre></td></tr></table></figure>
+<pre><code>LOL + hello world + SALA
+</code></pre><p>我们也可以搞多个装饰：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@decorator_one</span></div><div class="line"><span class="meta">@decorator_two</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure>
+<p>相当于：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func = decorator_one(decorator_two(func))</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@addWords(prefix = 'LOL', suffix = "SALA")</span></div><div class="line"><span class="meta">@addWords(prefix = 'DOTA', suffix = "SOLO")</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="string">"hello world"</span></div><div class="line"></div><div class="line"><span class="keyword">print</span> foo()</div></pre></td></tr></table></figure>
+<pre><code>LOL + DOTA + hello world + SOLO + SALA
+</code></pre><p>我们来看个实用的网页编程的case:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">makeHtmlTag</span><span class="params">(tag, **kwds)</span>:</span></div><div class="line">    </div><div class="line">    css_class = <span class="string">" class='&#123;0&#125;'"</span>.format(kwds[<span class="string">"css_class"</span>]) <span class="keyword">if</span> <span class="string">"css_class"</span> <span class="keyword">in</span> kwds <span class="keyword">else</span> <span class="string">""</span></div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">real_decorator</span><span class="params">(fn)</span>:</span></div><div class="line">        <span class="function"><span class="keyword">def</span> <span class="title">wrapped</span><span class="params">()</span>:</span></div><div class="line">            <span class="keyword">return</span> <span class="string">"&lt;"</span> + tag + css_class + <span class="string">"&gt;"</span> + fn() + <span class="string">"&lt;/"</span> + tag + <span class="string">"&gt;"</span></div><div class="line">        <span class="keyword">return</span> wrapped</div><div class="line">    <span class="keyword">return</span> real_decorator</div><div class="line"> </div><div class="line"><span class="meta">@makeHtmlTag(tag="b", css_class="bold_css")</span></div><div class="line"><span class="meta">@makeHtmlTag(tag="i", css_class="italic_css")</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="string">"hello world"</span></div><div class="line"> </div><div class="line">print(hello())</div></pre></td></tr></table></figure>
+<pre><code>&lt;b class=&apos;bold_css&apos;&gt;&lt;i class=&apos;italic_css&apos;&gt;hello world&lt;/i&gt;&lt;/b&gt;
+</code></pre><h2 id="类装饰器"><a href="#类装饰器" class="headerlink" title="类装饰器"></a>类装饰器</h2><p>类装饰器相比函数装饰器，具有灵活度大，高内聚、封装性等优点。其实现起来主要是靠类内部的<code>__call__</code>方法，当使用<code>@</code>形式将装饰器附加到函数上时，就会调用此方法，下面时一个实例:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">decorator</span><span class="params">(object)</span>:</span></div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, fn)</span>:</span></div><div class="line">        print(<span class="string">"1. inside decorator.__init__()"</span>)</div><div class="line">        self.fn = fn</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self)</span>:</span></div><div class="line">        print(<span class="string">"3. inside decorator.__call__()"</span>)</div><div class="line">        self.fn()</div><div class="line"></div><div class="line"><span class="meta">@decorator</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">"4. inside foo()"</span>)</div><div class="line"></div><div class="line">print(<span class="string">"2. Finished decorating foo()"</span>)</div><div class="line"> </div><div class="line">foo()</div></pre></td></tr></table></figure>
+<pre><code>1. inside decorator.__init__()
+2. Finished decorating foo()
+3. inside decorator.__call__()
+4. inside foo()
+</code></pre><p>上面的例子也展示了程序运行的流程。</p>
+<p>类装饰器比函数装饰器看着清楚点儿，这样我们再把刚刚的网页编程那段改一下，就得到：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">makeHtmlTagClass</span><span class="params">(object)</span>:</span></div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, tag, css_class=<span class="string">""</span>)</span>:</span></div><div class="line">        self._tag = tag</div><div class="line">        self._css_class = <span class="string">" class='&#123;0&#125;'"</span>.format(css_class) <span class="keyword">if</span> css_class !=<span class="string">""</span> <span class="keyword">else</span> <span class="string">""</span></div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, fn)</span>:</span></div><div class="line">        <span class="function"><span class="keyword">def</span> <span class="title">wrapped</span><span class="params">(*args)</span>:</span></div><div class="line">            <span class="keyword">return</span> <span class="string">"&lt;"</span> + self._tag + self._css_class + <span class="string">"&gt;"</span>  + fn(*args) + <span class="string">"&lt;/"</span> + self._tag + <span class="string">"&gt;"</span></div><div class="line">        <span class="keyword">return</span> wrapped</div><div class="line"></div><div class="line"><span class="meta">@makeHtmlTagClass(tag="b", css_class="bold_css")</span></div><div class="line"><span class="meta">@makeHtmlTagClass(tag="i", css_class="italic_css")</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">(name)</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="string">"Hello, &#123;&#125;"</span>.format(name)</div><div class="line"> </div><div class="line">print(hello(<span class="string">"Baby"</span>))</div></pre></td></tr></table></figure>
+<pre><code>&lt;b class=&apos;bold_css&apos;&gt;&lt;i class=&apos;italic_css&apos;&gt;Hello, Baby&lt;/i&gt;&lt;/b&gt;
+</code></pre><p>装饰器的副作用：</p>
+<p>因为装饰起的因素，我们原本的<code>hello()</code>函数其实已经变成了一个叫<code>wrapper()</code>函数。</p>
+<p>比如，你再调用<code>__name__</code>的时候，他会告诉你，这是<code>wrapper</code>, 而不是<code>hello</code>:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span> hello.__name__</div></pre></td></tr></table></figure>
+<pre><code>wrapped
+</code></pre><p>当然，虽然功能效果不变，但是有些处女座的童鞋会觉得很不爽。<br>所以，Python的<code>functool</code>包中提供了一个叫<code>wrap</code>的装饰起来消除这样的副作用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">(fn)</span>:</span></div><div class="line"><span class="meta">    @wraps(fn)</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">()</span>:</span></div><div class="line">        print(<span class="string">"hello, %s"</span> % fn.__name__)</div><div class="line">        fn()</div><div class="line">        print(<span class="string">"goodby, %s"</span> % fn.__name__)</div><div class="line">    <span class="keyword">return</span> wrapper</div><div class="line"> </div><div class="line"><span class="meta">@hello</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></div><div class="line">    <span class="string">'''foo help doc'''</span></div><div class="line">    print(<span class="string">"i am foo"</span>)</div><div class="line">    <span class="keyword">pass</span></div><div class="line"> </div><div class="line">foo()</div><div class="line"></div><div class="line"><span class="keyword">print</span> <span class="string">'----------------------'</span></div><div class="line"></div><div class="line">print(foo.__name__)</div><div class="line">print(foo.__doc__)</div></pre></td></tr></table></figure>
+<pre><code>hello, foo
+i am foo
+goodby, foo
+----------------------
+foo
+foo help doc
+</code></pre><h2 id="经典案例"><a href="#经典案例" class="headerlink" title="经典案例"></a>经典案例</h2><p>最后，看一个经典的例子，斐波那契数列：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</div><div class="line"></div><div class="line">cache = &#123;&#125;</div><div class="line">miss = object()</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">memory</span><span class="params">(fn)</span>:</span></div><div class="line"></div><div class="line"><span class="meta">    @wraps(fn)</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args)</span>:</span></div><div class="line">        result = cache.get(args, miss)</div><div class="line">        <span class="keyword">if</span> result <span class="keyword">is</span> miss:</div><div class="line">            result = fn(*args)</div><div class="line">            cache[args] = result</div><div class="line">        <span class="keyword">return</span> result</div><div class="line"> </div><div class="line">    <span class="keyword">return</span> wrapper</div><div class="line"> </div><div class="line"><span class="meta">@memory</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(n)</span>:</span></div><div class="line">    <span class="keyword">if</span> n &lt; <span class="number">2</span>:</div><div class="line">        <span class="keyword">return</span> n</div><div class="line">    <span class="keyword">return</span> fib(n - <span class="number">1</span>) + fib(n - <span class="number">2</span>)</div><div class="line"></div><div class="line"><span class="keyword">print</span> fib(<span class="number">10</span>)</div></pre></td></tr></table></figure>
+<pre><code>55
+</code></pre><p>我们知道，这个递归是相当没有效率的，因为会重复调用。比如：我们要计算fib(5)，于是其分解成fib(4) + fib(3)，而fib(4)分解成fib(3)+fib(2)，fib(3)又分解成fib(2)+fib(1)…… 你可看到，基本上来说，fib(3), fib(2), fib(1)在整个递归过程中被调用了两次。<br>而我们用装饰器，在调用函数前查询一下缓存，如果没有再调用，如果有就从缓存中返回值。<br>这样，这个递归从二叉树式的递归成了线性的递归。</p>
+<h1 id="偏函数"><a href="#偏函数" class="headerlink" title="偏函数"></a>偏函数</h1><p>Python的<code>functools</code>模块提供了很多有用的功能，其中一个就是偏函数（<code>Partial function</code>）。要注意，这里的偏函数和数学意义上的偏函数不一样。</p>
+<p>在介绍函数参数的时候，我们讲到，通过设定参数的默认值，可以降低函数调用的难度。而偏函数也可以做到这一点。举例如下：</p>
+<p><code>int()</code>函数可以把字符串转换为整数，当仅传入字符串时，<code>int()</code>函数默认按十进制转换：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span> int(<span class="string">'110'</span>)</div></pre></td></tr></table></figure>
+<pre><code>110
+</code></pre><p>但<code>int()</code>函数还提供额外的<code>base</code>参数，默认值为10。如果传入<code>base</code>参数，就可以做N进制的转换：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span> int(<span class="string">'110'</span>, base = <span class="number">2</span>)</div></pre></td></tr></table></figure>
+<pre><code>6
+</code></pre><p>假设要转换大量的二进制字符串，每次都传入<code>int(x, base=2)</code>非常麻烦，于是，我们想到，可以定义一个<code>int2()</code>的函数，默认把<code>base=2</code>传进去：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">int2</span><span class="params">(x, base=<span class="number">2</span>)</span>:</span></div><div class="line">    <span class="keyword">return</span> int(x, base)</div><div class="line"></div><div class="line"><span class="keyword">print</span> int2(<span class="string">'1000'</span>)</div><div class="line"><span class="keyword">print</span> int2(<span class="string">'1111'</span>)</div></pre></td></tr></table></figure>
+<pre><code>8
+15
+</code></pre><p><code>functools.partial</code>就是帮助我们创建一个偏函数的，不需要我们自己定义<code>int2()</code>，可以直接使用下面的代码创建一个新的函数<code>int2</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> functools</div><div class="line">int2 = functools.partial(int, base=<span class="number">2</span>)</div><div class="line"><span class="keyword">print</span> int2(<span class="string">'1000000'</span>)</div><div class="line"><span class="keyword">print</span> int2(<span class="string">'1010101'</span>)</div></pre></td></tr></table></figure>
+<pre><code>64
+85
+</code></pre><p>所以，简单总结<code>functools.partial</code>的作用就是，把一个函数的某些参数给固定住（也就是设置默认值），返回一个新的函数，调用这个新函数会更简单。</p>
+<p>注意到上面的新的<code>int2</code>函数，仅仅是把<code>base</code>参数重新设定默认值为2，但也可以在函数调用时传入其他值：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span> int2(<span class="string">'1000000'</span>, base=<span class="number">10</span>)</div></pre></td></tr></table></figure>
+<pre><code>1000000
+</code></pre><p>最后，创建偏函数时，实际上可以接收3个参数：</p>
+<ol>
+<li>函数对象</li>
+<li><code>*args</code></li>
+<li><code>**kwds</code></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">int2 = functools.partial(int, base=<span class="number">2</span>) <span class="comment"># 接收的是**kwds</span></div><div class="line">max10 = functools.partial(max, <span class="number">10</span>) <span class="comment"># 接收的是*args</span></div><div class="line"></div><div class="line"><span class="keyword">print</span> max10(<span class="number">5</span>, <span class="number">7</span>, <span class="number">6</span>)</div></pre></td></tr></table></figure>
+<pre><code>10
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/19/Python-基础-判断、循环、异常处理/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/20/Python-基础-面向对象-1/" rel="prev" title="Python-基础-面向对-1">
+                Python-基础-面向对-1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="liangxw" />
+          <p class="site-author-name" itemprop="name">liangxw</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">Kategorien</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/helloliangxw" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2516944510" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.nuist.edu.cn" title="NUIST" target="_blank">NUIST</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#高阶函数"><span class="nav-number">1.</span> <span class="nav-text">高阶函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#匿名函数"><span class="nav-number">2.</span> <span class="nav-text">匿名函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">2.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reduce"><span class="nav-number">2.2.</span> <span class="nav-text">reduce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#map"><span class="nav-number">2.3.</span> <span class="nav-text">map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#filter"><span class="nav-number">2.4.</span> <span class="nav-text">filter</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#装饰器"><span class="nav-number">3.</span> <span class="nav-text">装饰器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数装饰器"><span class="nav-number">3.1.</span> <span class="nav-text">函数装饰器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类装饰器"><span class="nav-number">3.2.</span> <span class="nav-text">类装饰器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#经典案例"><span class="nav-number">3.3.</span> <span class="nav-text">经典案例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#偏函数"><span class="nav-number">4.</span> <span class="nav-text">偏函数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liangxw</span>
+</div>
+
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

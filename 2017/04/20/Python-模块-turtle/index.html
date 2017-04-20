@@ -1,0 +1,882 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="初识绘制蟒蛇1234567891011121314151617181920import turtle as tdef drawSnake(rad, angle, len, neckrad):    for i in range(len):        t.circle(rad, angle)        t.circle(-rad, angle)    t.circle(rad, angle/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python-模块-turtle">
+<meta property="og:url" content="http://yoursite.com/2017/04/20/Python-模块-turtle/index.html">
+<meta property="og:site_name" content="helloliangxw">
+<meta property="og:description" content="初识绘制蟒蛇1234567891011121314151617181920import turtle as tdef drawSnake(rad, angle, len, neckrad):    for i in range(len):        t.circle(rad, angle)        t.circle(-rad, angle)    t.circle(rad, angle/">
+<meta property="og:image" content="http://static.zybuluo.com/liangxw/gsq7pi4m980n504z25662eg4/image_1bdgci4l11pkhfdomnd1s6g1e6g13.png">
+<meta property="og:image" content="http://static.zybuluo.com/liangxw/cumx458dw2fnaxgxeef3tfm7/image_1bdd4030bge1nh81b1d1j7213q9.png">
+<meta property="og:image" content="http://static.zybuluo.com/liangxw/u7hcs8d5zncanffjmz5qfa67/image_1bde3j2cd1k0av1qth81lqs63n1g.png">
+<meta property="og:image" content="http://static.zybuluo.com/liangxw/l1u4axw8apujrcowd961bxx3/image_1bdgbqdij1fkfkt512e03fh2bk9.png">
+<meta property="og:image" content="http://static.zybuluo.com/liangxw/08toglbs7p9gmwalrrp0bzpn/image_1bdgcfkgaq7u1vmv1o91jlp1rerm.png">
+<meta property="og:image" content="http://static.zybuluo.com/liangxw/6ma6z5beohy4nllngih0ujll/image_1bdgcooht1gdo1nvvtab9eq1vvg1g.png">
+<meta property="og:image" content="http://static.zybuluo.com/liangxw/d8ofm5oyxxaw4hn8nlrsffjc/image_1bdgeoc4i1r6f1etg1m6g5n1mju1t.png">
+<meta property="og:image" content="http://static.zybuluo.com/liangxw/papoae4sr19f1xvrpeayzd19/image_1bdgetuki1r3n180tgfi1bg9k022a.png">
+<meta property="og:image" content="http://static.zybuluo.com/liangxw/45d33fuhv0wq65ks8kh95wzi/image_1bdgfh2ftjiu123ia7p1lk7qdk2n.png">
+<meta property="og:image" content="http://static.zybuluo.com/liangxw/3rl7nq4mlhnztjz11ymm40m8/image_1bdgfvonh1qbe1r0krptcn5rt34.png">
+<meta property="og:image" content="http://static.zybuluo.com/liangxw/hqad3j2dv27ay4w0csx5fap9/image_1bdj2r7l7nho1t7vnva1f3114gg1g.png">
+<meta property="og:updated_time" content="2017-04-20T01:25:33.540Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python-模块-turtle">
+<meta name="twitter:description" content="初识绘制蟒蛇1234567891011121314151617181920import turtle as tdef drawSnake(rad, angle, len, neckrad):    for i in range(len):        t.circle(rad, angle)        t.circle(-rad, angle)    t.circle(rad, angle/">
+<meta name="twitter:image" content="http://static.zybuluo.com/liangxw/gsq7pi4m980n504z25662eg4/image_1bdgci4l11pkhfdomnd1s6g1e6g13.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/20/Python-模块-turtle/"/>
+
+
+
+
+
+  <title> Python-模块-turtle | helloliangxw </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">helloliangxw</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Über
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Suche
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/20/Python-模块-turtle/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liangxw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="helloliangxw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Python-模块-turtle
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-20T09:25:00+08:00">
+                2017-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python-模块/" itemprop="url" rel="index">
+                    <span itemprop="name">Python-模块</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="初识"><a href="#初识" class="headerlink" title="初识"></a>初识</h1><h2 id="绘制蟒蛇"><a href="#绘制蟒蛇" class="headerlink" title="绘制蟒蛇"></a>绘制蟒蛇</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> turtle <span class="keyword">as</span> t</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">drawSnake</span><span class="params">(rad, angle, len, neckrad)</span>:</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len):</div><div class="line">        t.circle(rad, angle)</div><div class="line">        t.circle(-rad, angle)</div><div class="line">    t.circle(rad, angle/<span class="number">2</span>)</div><div class="line">    t.fd(rad)</div><div class="line">    t.circle(neckrad+<span class="number">1</span>, <span class="number">180</span>)</div><div class="line">    t.fd(rad*<span class="number">2</span>/<span class="number">3</span>)</div><div class="line"></div><div class="line"></div><div class="line">t.setup(<span class="number">1000</span>, <span class="number">500</span>, <span class="number">0</span>, <span class="number">0</span>)</div><div class="line">t.up()</div><div class="line">t.goto(<span class="number">-400</span>, <span class="number">0</span>)</div><div class="line">t.down()</div><div class="line">t.pensize(<span class="number">30</span>)</div><div class="line">t.pencolor(<span class="string">'blue'</span>)</div><div class="line">t.seth(<span class="number">-40</span>)</div><div class="line">drawSnake(<span class="number">40</span>, <span class="number">80</span>, <span class="number">5</span>, <span class="number">15</span>)</div></pre></td></tr></table></figure>
+<p><img src="http://static.zybuluo.com/liangxw/gsq7pi4m980n504z25662eg4/image_1bdgci4l11pkhfdomnd1s6g1e6g13.png" alt="蟒蛇"></p>
+<h2 id="函数解析"><a href="#函数解析" class="headerlink" title="函数解析"></a>函数解析</h2><ul>
+<li><p>turtle.setup()<br>turtle中的turtle.setup()函数用于启动一个图形窗口，它有四个参数<code>turtle.setup(width, height, startx, starty)</code><br>分别是：启动窗口的宽度，高度，以及窗口左上角在屏幕中的坐标位置。<br>我们所使用的显示屏幕也是一个坐标系，该坐标系以<strong>左上角</strong>为原点，向右和向下分别是x轴和y轴：<br><img src="http://static.zybuluo.com/liangxw/cumx458dw2fnaxgxeef3tfm7/image_1bdd4030bge1nh81b1d1j7213q9.png" alt="屏幕坐标系统"></p>
+</li>
+<li><p>turtle.up()和turtle.down()<br>turtle.up()为提起画笔<br>turtle.down()为放下画笔</p>
+</li>
+<li><p>turtle.goto()<br>初始时刻，小乌龟在启动窗口的正中央，坐标为(0, 0)（此为画图窗口的原点，而不是屏幕的原点），向右和向上为正方向。<br>通过turtle.goto(x, y)可以将小乌龟移动到(x, y)坐标处。</p>
+</li>
+<li><p>turtle.pensize()<br>turtle.pensize(size)函数表示小乌龟<strong>运动轨迹的宽度</strong>，单位为像素。</p>
+</li>
+<li><p>turtle.pencolor()<br>turtle.pencolor(color)函数表示小乌龟运动轨迹的<strong>颜色</strong>。<br>turtle采用RGB方式来定义颜色，如turtle.pencolor(“#3B9909”)。</p>
+</li>
+<li><p>turtle.seth()<br>turtle.seth(angle)函数表示小乌龟<strong>初始时运动方向</strong>。<br>输入参数是一个角度值，其中0表示向东，90度向北，180度向西，270度向南；负值表示的方向与正值表示的方向关于方向0对称：<br><img src="http://static.zybuluo.com/liangxw/u7hcs8d5zncanffjmz5qfa67/image_1bde3j2cd1k0av1qth81lqs63n1g.png" alt="angle表示方向"></p>
+</li>
+<li><p>turtle.circle()<br>turtle.circle(rad, angle)函数让小乌龟沿着一个<strong>圆形</strong>爬行。<br>参数rad描述圆形轨迹<strong>圆心</strong>的位置，rad&gt;0时，圆心在当前速度方向的左侧；当rad<0时，圆心在当前速度方向的右侧； 参数angle表示小乌龟沿着圆形爬行的角度值，angle="">0表示逆时针运动，angle&lt;0表示顺时针运动。  </0时，圆心在当前速度方向的右侧；></p>
+<blockquote>
+<p>如下图所示，此时rad&gt;0，angle&lt;0<br><img src="http://static.zybuluo.com/liangxw/l1u4axw8apujrcowd961bxx3/image_1bdgbqdij1fkfkt512e03fh2bk9.png" alt=""></p>
+</blockquote>
+</li>
+<li><p>turtle.fd()<br>turtle.fd(distance)或者turtle.forward()表示乌龟沿当前方向<strong>直线</strong>爬行，爬行距离为distance</p>
+</li>
+</ul>
+<h2 id="彩色蟒蛇"><a href="#彩色蟒蛇" class="headerlink" title="彩色蟒蛇"></a>彩色蟒蛇</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> turtle <span class="keyword">as</span> t</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">drawSnake</span><span class="params">(rad, angle, len, neckrad)</span>:</span></div><div class="line">    color = [<span class="string">'red'</span>, <span class="string">'yellow'</span>, <span class="string">'green'</span>, <span class="string">'black'</span>, <span class="string">'blue'</span>]</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len):</div><div class="line">        <span class="comment"># 更改画笔颜色</span></div><div class="line">        t.pencolor(color[i])</div><div class="line">        t.circle(rad, angle)</div><div class="line">        t.circle(-rad, angle)</div><div class="line">    t.pencolor(<span class="string">'purple'</span>)</div><div class="line">    t.circle(rad, angle/<span class="number">2</span>)</div><div class="line">    t.fd(rad)</div><div class="line">    t.circle(neckrad+<span class="number">1</span>, <span class="number">180</span>)</div><div class="line">    t.fd(rad*<span class="number">2</span>/<span class="number">3</span>)</div><div class="line"></div><div class="line"></div><div class="line">t.setup(<span class="number">1000</span>, <span class="number">500</span>, <span class="number">0</span>, <span class="number">0</span>)</div><div class="line">t.up()</div><div class="line">t.goto(<span class="number">-400</span>, <span class="number">0</span>)</div><div class="line">t.down()</div><div class="line">t.pensize(<span class="number">30</span>)</div><div class="line"></div><div class="line">t.seth(<span class="number">-40</span>)</div><div class="line">drawSnake(<span class="number">40</span>, <span class="number">80</span>, <span class="number">5</span>, <span class="number">15</span>)</div></pre></td></tr></table></figure>
+<p><img src="http://static.zybuluo.com/liangxw/08toglbs7p9gmwalrrp0bzpn/image_1bdgcfkgaq7u1vmv1o91jlp1rerm.png" alt="彩色蟒蛇"></p>
+<h1 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h1><h2 id="控制画笔绘制状态的函数"><a href="#控制画笔绘制状态的函数" class="headerlink" title="控制画笔绘制状态的函数"></a>控制画笔绘制状态的函数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pendown() | pd() | down() <span class="comment"># 放下画笔</span></div><div class="line">penup() | pu() | up() <span class="comment"># 提起画笔</span></div><div class="line">pensize(wid) | width(wid)  <span class="comment"># 画笔粗细</span></div></pre></td></tr></table></figure>
+<h2 id="控制画笔颜色和字体函数"><a href="#控制画笔颜色和字体函数" class="headerlink" title="控制画笔颜色和字体函数"></a>控制画笔颜色和字体函数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">color()  reset()</div><div class="line">begin_fill() <span class="comment"># 填充图形前，调用该方法</span></div><div class="line">end_fill() <span class="comment"># 填充图形结束</span></div><div class="line">filling() <span class="comment"># 返回填充的状态，True为填充，False为未填充</span></div><div class="line">clear() <span class="comment"># 清空当前窗口，但不改变当前画笔的位置</span></div><div class="line">screensize() <span class="comment"># 设置画布的长和宽</span></div><div class="line"><span class="comment">## 显示或隐藏小乌龟</span></div><div class="line">showturtle() | st() <span class="comment"># 显示画笔的turtle形状</span></div><div class="line">hideturtle() | ht() <span class="comment"># 隐藏画笔的turtle形状</span></div><div class="line">isvisible() <span class="comment"># 如果turtle 可见，则返回True</span></div><div class="line">write(str, move=<span class="keyword">False</span>, align=<span class="string">"left"</span>, font =(<span class="string">"Arial"</span>,<span class="number">8</span>,<span class="string">"normal"</span>) ) <span class="comment"># 输出font字体的字符串</span></div></pre></td></tr></table></figure>
+<h2 id="控制画笔运动的函数"><a href="#控制画笔运动的函数" class="headerlink" title="控制画笔运动的函数"></a>控制画笔运动的函数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">forward(distance) | fd(distance) <span class="comment"># 前进</span></div><div class="line">backward(distance)| bk(distance) | back(distance) <span class="comment"># 后退</span></div><div class="line">right(angle) | rt(angle) <span class="comment"># 小乌龟向右侧转动一定的角度</span></div><div class="line">left(angle) | lt(angle) <span class="comment"># 小乌龟向左侧转动一定的角度</span></div><div class="line">setheading(to_angle) <span class="comment"># 设置当前朝向为angle角度</span></div><div class="line">position() | pos()</div><div class="line">goto(x,y)</div><div class="line">setposition(x,y) | setpos(x,y)</div><div class="line">circle(radius,extent ,steps)</div><div class="line">dot(r, *color) <span class="comment"># 绘制一个半径 r颜色为color的圆点</span></div><div class="line">radians()</div><div class="line">stamp() </div><div class="line">clearstamp(stamp_id)</div><div class="line">clearstamps(n)</div><div class="line">speed(speed) <span class="comment"># 设置画笔的绘制速度，参数在0-10之间</span></div><div class="line">heading()</div><div class="line">towards(x,y) distance(x,y )</div><div class="line">xcor() ycor()</div><div class="line">setx(x) sety(y)</div><div class="line">home() <span class="comment"># 设置当前画笔位置为原点，朝向东</span></div><div class="line">undo() <span class="comment"># 撤销画笔最后一步动作</span></div><div class="line">degrees(fullcircle = <span class="number">360.0</span>)</div></pre></td></tr></table></figure>
+<h2 id="TurtleScreen-Screen类的函数"><a href="#TurtleScreen-Screen类的函数" class="headerlink" title="TurtleScreen/Screen类的函数"></a>TurtleScreen/Screen类的函数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">bgcolor(*args)</div><div class="line">bgpic(picname)</div><div class="line">clearscreen()</div><div class="line">resetscreen()</div><div class="line">screensize(cwid ,canvh,bg )</div><div class="line">tracer(n ,delay )</div><div class="line">listen(xdummy ,ydummy )</div><div class="line">onkey((fun,key)</div><div class="line">onkeyrelease((fun,key)</div><div class="line">onkeypress(fun,key )</div><div class="line">onscreenclick(fun,btn=<span class="number">1</span>,add)</div><div class="line">getcanvas()</div><div class="line">getshapes()</div><div class="line">turtles()</div><div class="line">window_height()</div><div class="line">window_width()</div><div class="line">bye()</div><div class="line">exitonclick()</div><div class="line">title(titlestring)</div><div class="line">setup(wid = _CFG[<span class="string">"wid"</span>], h = _CFG[<span class="string">"h"</span>], startx = _CFG[<span class="string">"leftright"</span>], starty = _CFG[<span class="string">"topbottom"</span>])</div></pre></td></tr></table></figure>
+<h1 id="应用举例"><a href="#应用举例" class="headerlink" title="应用举例"></a>应用举例</h1><h2 id="绘制等边三角形"><a href="#绘制等边三角形" class="headerlink" title="绘制等边三角形"></a>绘制等边三角形</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> turtle <span class="keyword">as</span> t</div><div class="line"></div><div class="line">t.seth(<span class="number">60</span>)</div><div class="line">t.fd(<span class="number">200</span>)</div><div class="line">t.seth(<span class="number">-60</span>)</div><div class="line">t.fd(<span class="number">200</span>)</div><div class="line">t.seth(<span class="number">-180</span>)</div><div class="line">t.fd(<span class="number">200</span>)</div><div class="line">t.ht()</div></pre></td></tr></table></figure>
+<p><img src="http://static.zybuluo.com/liangxw/6ma6z5beohy4nllngih0ujll/image_1bdgcooht1gdo1nvvtab9eq1vvg1g.png" alt="等边三角形"></p>
+<h2 id="绘制红色五角星"><a href="#绘制红色五角星" class="headerlink" title="绘制红色五角星"></a>绘制红色五角星</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> turtle <span class="keyword">import</span> *</div><div class="line"></div><div class="line">fillcolor(<span class="string">"red"</span>)</div><div class="line">pencolor(<span class="string">"red"</span>)</div><div class="line">begin_fill()</div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    forward(<span class="number">200</span>)</div><div class="line">    right(<span class="number">144</span>)</div><div class="line">    <span class="comment"># abs()是求当前位置离原点的距离</span></div><div class="line">    <span class="keyword">if</span> abs(pos()) &lt; <span class="number">1</span>:</div><div class="line">        <span class="keyword">break</span></div><div class="line">end_fill()</div><div class="line">ht()</div></pre></td></tr></table></figure>
+<p><img src="http://static.zybuluo.com/liangxw/d8ofm5oyxxaw4hn8nlrsffjc/image_1bdgeoc4i1r6f1etg1m6g5n1mju1t.png" alt="五角星"></p>
+<h2 id="绘制太阳花"><a href="#绘制太阳花" class="headerlink" title="绘制太阳花"></a>绘制太阳花</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> turtle <span class="keyword">import</span> *</div><div class="line"><span class="comment">## 第一个为画笔颜色，第二个为填充颜色</span></div><div class="line">color(<span class="string">'red'</span>, <span class="string">'yellow'</span>)</div><div class="line"></div><div class="line">begin_fill()</div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    forward(<span class="number">200</span>)</div><div class="line">    left(<span class="number">170</span>)</div><div class="line">    <span class="keyword">if</span> abs(pos()) &lt; <span class="number">1</span>:</div><div class="line">        <span class="keyword">break</span></div><div class="line">end_fill()</div><div class="line">done()</div></pre></td></tr></table></figure>
+<p><img src="http://static.zybuluo.com/liangxw/papoae4sr19f1xvrpeayzd19/image_1bdgetuki1r3n180tgfi1bg9k022a.png" alt="太阳花"></p>
+<h2 id="绘制螺旋线"><a href="#绘制螺旋线" class="headerlink" title="绘制螺旋线"></a>绘制螺旋线</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> turtle</div><div class="line"></div><div class="line">turtle.speed(<span class="string">"fastest"</span>)</div><div class="line">turtle.pensize(<span class="number">2</span>)</div><div class="line"><span class="comment">## 左侧</span></div><div class="line">turtle.up()</div><div class="line">turtle.goto(<span class="number">-100</span>, <span class="number">0</span>)</div><div class="line">turtle.down()</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">100</span>):</div><div class="line">    turtle.forward(<span class="number">2</span> * x)</div><div class="line">    turtle.left(<span class="number">90</span>)</div><div class="line"><span class="comment">## 右侧</span></div><div class="line">turtle.up()</div><div class="line">turtle.goto(<span class="number">100</span>, <span class="number">0</span>)</div><div class="line">turtle.down()  </div><div class="line">turtle.seth(<span class="number">90</span>)</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">20</span>):</div><div class="line">    turtle.circle(<span class="number">5</span> * x, <span class="number">180</span>)</div></pre></td></tr></table></figure>
+<p><img src="http://static.zybuluo.com/liangxw/45d33fuhv0wq65ks8kh95wzi/image_1bdgfh2ftjiu123ia7p1lk7qdk2n.png" alt="螺旋线"></p>
+<h2 id="彩色螺旋线"><a href="#彩色螺旋线" class="headerlink" title="彩色螺旋线"></a>彩色螺旋线</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> turtle</div><div class="line"><span class="keyword">import</span> time</div><div class="line">turtle.pensize(<span class="number">2</span>)</div><div class="line">turtle.bgcolor(<span class="string">"black"</span>)</div><div class="line">colors = [<span class="string">"red"</span>, <span class="string">"yellow"</span>, <span class="string">'purple'</span>, <span class="string">'blue'</span>]</div><div class="line"><span class="comment">## 延迟更新图纸，可用于加速绘制复杂图形</span></div><div class="line">turtle.tracer(<span class="keyword">False</span>)</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">400</span>):</div><div class="line">    turtle.forward(<span class="number">2</span>*x)</div><div class="line">    turtle.color(colors[x % <span class="number">4</span>])</div><div class="line">    turtle.left(<span class="number">91</span>)</div><div class="line">turtle.tracer(<span class="keyword">True</span>)</div></pre></td></tr></table></figure>
+<p><img src="http://static.zybuluo.com/liangxw/3rl7nq4mlhnztjz11ymm40m8/image_1bdgfvonh1qbe1r0krptcn5rt34.png" alt="彩色螺旋线"></p>
+<h2 id="绘制一颗树"><a href="#绘制一颗树" class="headerlink" title="绘制一颗树"></a>绘制一颗树</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">% matplotlib inline</div><div class="line"><span class="keyword">from</span> turtle <span class="keyword">import</span> Turtle, mainloop</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">tree</span><span class="params">(plist, l, a, f)</span>:</span></div><div class="line">    <span class="string">""" plist是画笔列表</span></div><div class="line">    l是枝干的长度</div><div class="line">    a是相邻两个枝干朝向之间的夹角</div><div class="line">    f是相邻两个枝干长度的比例</div><div class="line">    """</div><div class="line">    <span class="keyword">if</span> l &gt; <span class="number">5</span>: <span class="comment">#</span></div><div class="line">        lst = []</div><div class="line">        <span class="keyword">for</span> p <span class="keyword">in</span> plist:</div><div class="line">            p.forward(l)</div><div class="line">            q = p.clone() <span class="comment"># 对p进行克隆，克隆后的q与p具有相同的属性，包括位置，朝向等</span></div><div class="line">            p.left(a)</div><div class="line">            q.right(a)</div><div class="line">            lst.append(p)</div><div class="line">            lst.append(q)</div><div class="line">        tree(lst, l*f, a, f)</div><div class="line"></div><div class="line">        </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">    p = Turtle()</div><div class="line">    p.color(<span class="string">"green"</span>)</div><div class="line">    p.pensize(<span class="number">5</span>)</div><div class="line">    p.hideturtle() </div><div class="line">    p.speed(<span class="number">10</span>)</div><div class="line">    p.left(<span class="number">90</span>)</div><div class="line"> </div><div class="line">    p.penup() </div><div class="line">    p.goto(<span class="number">0</span>,<span class="number">-200</span>)</div><div class="line">    p.pendown()</div><div class="line"> </div><div class="line">    t = tree([p], <span class="number">200</span>, <span class="number">70</span>, <span class="number">0.63</span>)</div><div class="line"></div><div class="line">main()</div></pre></td></tr></table></figure>
+<p><img src="http://static.zybuluo.com/liangxw/hqad3j2dv27ay4w0csx5fap9/image_1bdj2r7l7nho1t7vnva1f3114gg1g.png" alt="树"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/20/Python-模块-time和datetime/" rel="next" title="Python-模块-time和datetime">
+                <i class="fa fa-chevron-left"></i> Python-模块-time和datetime
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/20/Python-模块-math和random/" rel="prev" title="Python-模块-math和random">
+                Python-模块-math和random <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="liangxw" />
+          <p class="site-author-name" itemprop="name">liangxw</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">Kategorien</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/helloliangxw" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2516944510" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.nuist.edu.cn" title="NUIST" target="_blank">NUIST</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#初识"><span class="nav-number">1.</span> <span class="nav-text">初识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制蟒蛇"><span class="nav-number">1.1.</span> <span class="nav-text">绘制蟒蛇</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数解析"><span class="nav-number">1.2.</span> <span class="nav-text">函数解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#彩色蟒蛇"><span class="nav-number">1.3.</span> <span class="nav-text">彩色蟒蛇</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用函数"><span class="nav-number">2.</span> <span class="nav-text">常用函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#控制画笔绘制状态的函数"><span class="nav-number">2.1.</span> <span class="nav-text">控制画笔绘制状态的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制画笔颜色和字体函数"><span class="nav-number">2.2.</span> <span class="nav-text">控制画笔颜色和字体函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制画笔运动的函数"><span class="nav-number">2.3.</span> <span class="nav-text">控制画笔运动的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TurtleScreen-Screen类的函数"><span class="nav-number">2.4.</span> <span class="nav-text">TurtleScreen/Screen类的函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#应用举例"><span class="nav-number">3.</span> <span class="nav-text">应用举例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制等边三角形"><span class="nav-number">3.1.</span> <span class="nav-text">绘制等边三角形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制红色五角星"><span class="nav-number">3.2.</span> <span class="nav-text">绘制红色五角星</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制太阳花"><span class="nav-number">3.3.</span> <span class="nav-text">绘制太阳花</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制螺旋线"><span class="nav-number">3.4.</span> <span class="nav-text">绘制螺旋线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#彩色螺旋线"><span class="nav-number">3.5.</span> <span class="nav-text">彩色螺旋线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制一颗树"><span class="nav-number">3.6.</span> <span class="nav-text">绘制一颗树</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liangxw</span>
+</div>
+
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
