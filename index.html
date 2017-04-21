@@ -89,7 +89,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="helloliangxw">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://helloliangxw.com/index.html">
 <meta property="og:site_name" content="helloliangxw">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="helloliangxw">
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://helloliangxw.com/"/>
 
 
 
@@ -295,7 +295,176 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/20/Python-模块-math和random/">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/21/机器学习-梯度下降/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liangxw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="helloliangxw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/21/机器学习-梯度下降/" itemprop="url">
+                  机器学习-梯度下降
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-21T10:05:00+08:00">
+                2017-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          数据展示读数据123456import pandas# Read data from csvpga = pandas.read_csv("pga.csv")print(type(pga))print(pga.head())
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+   distance  accuracy
+0     290.3      59.5
+1     302.1      54.7
+2     287.1      62.4
+3     282.7      65.4
+4     299.1      52.8
+数据归一化x' = \frac{x-\mu}{s}\(\mu\)为平均值，\(s\)为标准差或极差。
+1234# Normalize the datapga.distance = (pga.distance - pga.distance.mean()) / pga.distance.std()pga.accuracy = (pga.accuracy - pga.accuracy.mean()) / pga.accuracy.std()print(pga.head())
+   distance  accuracy
+0  0.314379 -0.707727
+1  1.693777 -1.586669
+2 -0.059695 -0.176699
+3 -0.574047  0.372640
+4  1.343083 -1.934584
+数据展示1234567%matplotlib inlineimport matplotlib.pyplot as pltplt.scatter(pga.distance, pga.accuracy)plt.xlabel('normalized distance')plt.ylabel('normalized accuracy')plt.show()
+
+梯度下降计算代价函数cost(theta, X, y)用于计算代价函数\(J(\theta)\)  
+J(\theta) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y^{(i)})^2
+\(theta\)\(theta = [\theta_0, \theta_
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/21/机器学习-梯度下降/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/20/Python-模块-math和random/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liangxw">
@@ -553,7 +722,7 @@ sample(list, k)
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/20/Python-模块-turtle/">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/20/Python-模块-turtle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liangxw">
@@ -715,7 +884,7 @@ turtle.seth()turtle.seth(angle)函数表示小乌龟初始时运动方向。输�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/20/Python-模块-time和datetime/">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/20/Python-模块-time和datetime/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liangxw">
@@ -881,7 +1050,7 @@ time now is:  2017-02-27 08:42:10.219000
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/20/Python-模块-正则表达式/">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/20/Python-模块-正则表达式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liangxw">
@@ -1036,7 +1205,7 @@ John
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/20/Python-代码碎片/">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/20/Python-代码碎片/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liangxw">
@@ -1197,7 +1366,7 @@ False
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/20/Python-基础-面向对象-1/">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/20/Python-基础-面向对象-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liangxw">
@@ -1353,175 +1522,6 @@ i live in china
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/20/Python-基础-面向对象-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liangxw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="helloliangxw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/20/Python-基础-面向对象-2/" itemprop="url">
-                  Python-基础-面向对象-2
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-20T09:19:00+08:00">
-                2017-04-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-基础/" itemprop="url" rel="index">
-                    <span itemprop="name">Python-基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          __slot__Python是动态语言，可以对类的实例任意绑定属性。
-通过__slot__就可以限定类的实例能够添加的属性。
-12345678910import tracebackfrom types import MethodTypeclass MyClass(object):    __slots__ = ['name', 'set_name']def set_name(self, name):    self.name = namecls = MyClass()
-__slots__ = [&#39;name&#39;, &#39;set_name&#39;]表明，实例cls只能添加两种属性：name和set_name：
-123456cls.name = 'Tom'cls.set_name = MethodType(set_name, cls)print(cls.name)cls.set_name('Jerry')print(cls.name)
-Tom
-Jerry
-当视图绑定其他属性时，会报错：
-1234try:    cls.age = 30except AttributeError:    traceback.print_exc()
-Traceback (most recent call last):
-  File &quot;&lt;ipython-input-10-04e8bc9eda97&gt;&quot;, line 2, in &lt;module&gt;
-    cls.age = 30
-AttributeError: &#39;MyClass&#39; object has no attribute &#39;age&#39;
-注意：__slots__仅对当前类的实例起作用，对继承的子类是不起作用的：
-123456class ExtMyClass(MyClass):    passext_cls = ExtMyClass()ext_cls.age = 30print(ext_cls.age)
-30
-@property@property可以将Python定义的函数“当做”属性访问，从而提供更加友好访问方式（相当于getter和setter）
-
-只有@property表示只读。
-同时有@property和@x.setter表示可读可写。
-同时有@p
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/20/Python-基础-面向对象-2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1571,7 +1571,7 @@ AttributeError: &#39;MyClass&#39; object has no attribute &#39;age&#39;
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1582,12 +1582,21 @@ AttributeError: &#39;MyClass&#39; object has no attribute &#39;age&#39;
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
           
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
           
 
         </nav>
