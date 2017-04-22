@@ -412,8 +412,8 @@ y  Y轴数据，列表或数组
 format_string  控制曲线的格式字符串，可选
 **kwargs  第二组或更多(x,y,format_string)
 
-1%matplotlib inline
-123456import matplotlib.pyplot as pltimport numpy as npa = np.arange(10)plt.plot(a, a*1.5, a, a*2, a, a*3, a, a*4)plt.show()
+12%config InlineBackend.figure_format='svg'%matplotlib inline
+123456import matplotlib.pyplot as pltimport numpy as npimport pylab as pla = np.arange(10)plt.plot(a, a*1.5, a, a*2, a, a*3, a, a*4);#plt.show()
 
 format_stringformat_string是控制曲线的格式字符串，可选参数。
 曲线的格式由三部分组成：
@@ -570,7 +570,7 @@ x标记
 
 
 
-123a = np.arange(10)plt.plot(a, a*1.5, 'go-', a, a*2,'r&gt;', a, a*3, '*', a, a*4, '
+123a = np.arange(10)pl
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1134,11 +1134,11 @@ Jupyter中用matplotlib绘制的图片，也需要手动移动到博客的相应
 2 -0.059695 -0.176699
 3 -0.574047  0.372640
 4  1.343083 -1.934584
-展示1234567%matplotlib inlineimport matplotlib.pyplot as pltplt.scatter(pga.distance, pga.accuracy)plt.xlabel('normalized distance')plt.ylabel('normalized accuracy')plt.show()
+展示12%matplotlib inline%config InlineBackend.figure_format="svg"
+123456import matplotlib.pyplot as pltplt.scatter(pga.distance, pga.accuracy)plt.xlabel('normalized distance')plt.ylabel('normalized accuracy')plt.show()
 
 梯度下降代价函数cost(theta, X, y)用于计算代价函数\(J(\theta)\)  
-J(\theta) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y^{(i)})^2
-\(theta\)\(theta = [\theta_0, \theta_1, …
+J(\theta) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y^{(i)})^
           ...
           <!--noindex-->
           <div class="post-button text-center">

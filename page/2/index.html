@@ -460,6 +460,171 @@ John
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/20/Python面向对象基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liangxw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="helloliangxw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/20/Python面向对象基础/" itemprop="url">
+                  Python面向对象基础
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-20T09:19:00+08:00">
+                2017-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Python基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          类和对象按照Python通用规则：
+
+类名用驼峰式表示，如HelloWorld
+其他的属性、方法等，用_隔开，如this_is_object
+
+
+类中方法的第一个参数必须是self 
+
+1234567891011121314#创建类class Person:        # 类的公共属性    name = 'liangxw'        # 类中的方法    def show(self, city):        print ('my name is %s' %self.name)        print ("i live in &#123;0&#125;".format(city))#根据Person创建对象,记得后面加个括号p = Person()p.show('china')
+my name is liangxw
+i live in china
+self相当于Java中的this关键字。self作为一个代词，并不一定要叫self。可以用其他单词来代替。但是必须得是这个类的所有方法的第一个参数。
+12345678910111213#创建类class Person:        name = 'liangxw'        # 类中的方法    def show(this, city): # self改为this        print ('my name is %s' %this.name)        print ("i live in &#123;0&#125;".format(city))#根据Person创建对象,记得后面加个括号lxw = Person()lxw.show('china')
+my name is liangxw
+i live in china
+构造函数构造函数，是一种特殊的方法。主要用来在创建对象时初始化对象， 即为对象成员变量赋初始值。跟所有OOP语言一样，Python也有构造函数。
+123456789101112131415# 创建类class Person:        def __init__(self):#这就是构造函数，它的职责是在模型创建的初期，就完成一些动作        #简单的说就是，自定义的初始化步骤：        #同样，它需要self来指代本身这个class        self.eye
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/20/Python面向对象基础/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/20/Python代码碎片/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -745,171 +910,6 @@ AttributeError: &#39;MyClass&#39; object has no attribute &#39;age&#39;
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/20/Python面向对象进阶/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/20/Python面向对象基础/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liangxw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="helloliangxw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/20/Python面向对象基础/" itemprop="url">
-                  Python面向对象基础
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-20T09:19:00+08:00">
-                2017-04-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python基础/" itemprop="url" rel="index">
-                    <span itemprop="name">Python基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          类和对象按照Python通用规则：
-
-类名用驼峰式表示，如HelloWorld
-其他的属性、方法等，用_隔开，如this_is_object
-
-
-类中方法的第一个参数必须是self 
-
-1234567891011121314#创建类class Person:        # 类的公共属性    name = 'liangxw'        # 类中的方法    def show(self, city):        print ('my name is %s' %self.name)        print ("i live in &#123;0&#125;".format(city))#根据Person创建对象,记得后面加个括号p = Person()p.show('china')
-my name is liangxw
-i live in china
-self相当于Java中的this关键字。self作为一个代词，并不一定要叫self。可以用其他单词来代替。但是必须得是这个类的所有方法的第一个参数。
-12345678910111213#创建类class Person:        name = 'liangxw'        # 类中的方法    def show(this, city): # self改为this        print ('my name is %s' %this.name)        print ("i live in &#123;0&#125;".format(city))#根据Person创建对象,记得后面加个括号lxw = Person()lxw.show('china')
-my name is liangxw
-i live in china
-构造函数构造函数，是一种特殊的方法。主要用来在创建对象时初始化对象， 即为对象成员变量赋初始值。跟所有OOP语言一样，Python也有构造函数。
-123456789101112131415# 创建类class Person:        def __init__(self):#这就是构造函数，它的职责是在模型创建的初期，就完成一些动作        #简单的说就是，自定义的初始化步骤：        #同样，它需要self来指代本身这个class        self.eye
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/20/Python面向对象基础/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
