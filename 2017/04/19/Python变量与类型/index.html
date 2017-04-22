@@ -1,0 +1,1094 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="变量命名规则
+大小写字母、数字和下划线的组合，但首字母只能是大小写字母或下划线，不能使用空格。
+中文等非字母符号也可以作为名字。
+
+以下是合法命名的标识符：1234python_is_goodpython_is_not_good_is_it_a_question_ python语言
+使用？显示变量信息变量前或后增加’?’将显示一些通用信息，包括函数对应的源代码。
+12a = [1, 2, 3, &apos;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python变量与类型">
+<meta property="og:url" content="http://helloliangxw.com/2017/04/19/Python变量与类型/index.html">
+<meta property="og:site_name" content="helloliangxw">
+<meta property="og:description" content="变量命名规则
+大小写字母、数字和下划线的组合，但首字母只能是大小写字母或下划线，不能使用空格。
+中文等非字母符号也可以作为名字。
+
+以下是合法命名的标识符：1234python_is_goodpython_is_not_good_is_it_a_question_ python语言
+使用？显示变量信息变量前或后增加’?’将显示一些通用信息，包括函数对应的源代码。
+12a = [1, 2, 3, &apos;">
+<meta property="og:image" content="http://static.zybuluo.com/liangxw/v0e7unr0hlei6siwjuut2ai5/image_1bdh040udve11red198r1mrjca49.png">
+<meta property="og:image" content="http://static.zybuluo.com/liangxw/ph2ag177wxe85xo0vk8l7qix/image_1bdh12lgk19jp1k9k144ih2a1esh13.png">
+<meta property="og:updated_time" content="2017-04-22T01:49:48.312Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python变量与类型">
+<meta name="twitter:description" content="变量命名规则
+大小写字母、数字和下划线的组合，但首字母只能是大小写字母或下划线，不能使用空格。
+中文等非字母符号也可以作为名字。
+
+以下是合法命名的标识符：1234python_is_goodpython_is_not_good_is_it_a_question_ python语言
+使用？显示变量信息变量前或后增加’?’将显示一些通用信息，包括函数对应的源代码。
+12a = [1, 2, 3, &apos;">
+<meta name="twitter:image" content="http://static.zybuluo.com/liangxw/v0e7unr0hlei6siwjuut2ai5/image_1bdh040udve11red198r1mrjca49.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '6J4PGN3SLX',
+      apiKey: 'd669a6e715e29cc234c71fde690d5960',
+      indexName: 'blog',
+      hits: {"per_page":5},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://helloliangxw.com/2017/04/19/Python变量与类型/"/>
+
+
+
+
+
+  <title> Python变量与类型 | helloliangxw </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">helloliangxw</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/19/Python变量与类型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liangxw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="helloliangxw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Python变量与类型
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T17:30:00+08:00">
+                2017-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Python基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><h2 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h2><ul>
+<li>大小写字母、数字和下划线的组合，但首字母只能是<strong>大小写字母或下划线</strong>，不能使用空格。</li>
+<li><strong>中文</strong>等非字母符号也可以作为名字。</li>
+</ul>
+<p>以下是合法命名的标识符：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">python_is_good</div><div class="line">python_is_not_good</div><div class="line">_is_it_a_question_ </div><div class="line">python语言</div></pre></td></tr></table></figure></p>
+<h2 id="使用？显示变量信息"><a href="#使用？显示变量信息" class="headerlink" title="使用？显示变量信息"></a>使用？显示变量信息</h2><p>变量前或后增加’?’将显示一些通用信息，包括函数对应的源代码。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = [1, 2, 3, '4']</div><div class="line">a?</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Type:       list</div><div class="line">String form: [1, 2, 3, '4']</div><div class="line">Length:      4</div><div class="line">Docstring:  </div><div class="line">list() -&gt; new empty list</div><div class="line">list(iterable) -&gt; new list initialized from iterable's items</div></pre></td></tr></table></figure>
+<h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><p>同步赋值：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 先运算右侧Ｎ个表达式，然后同时将表达式结果赋给左侧</span></div><div class="line">a, b, c = <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span></div><div class="line"><span class="comment"># 交换a和b的值</span></div><div class="line">x = <span class="number">0</span></div><div class="line">y = <span class="number">1</span></div><div class="line">x, y = y, x</div></pre></td></tr></table></figure></p>
+<p>连续赋值：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 从右到左依次赋值</span></div><div class="line">a = b = c = <span class="number">2</span></div></pre></td></tr></table></figure></p>
+<h1 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h1><h2 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h2><p>三种基本的数字类型：</p>
+<ol>
+<li>整数</li>
+<li>浮点数</li>
+<li>复数</li>
+</ol>
+<h3 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h3><p>Python中整数<strong>没有取值范围的限制</strong>。  </p>
+<p>2进制：0b 0B开头<br>8进制：0o 0O<br>16进制：0x 0X  </p>
+<h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><p>产看当前计算机浮点数的精度：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line">print(sys.float_info)</div></pre></td></tr></table></figure>
+<pre><code>sys.float_info(max=1.7976931348623157e+308, max_exp=1024, max_10_exp=308, min=2.2250738585072014e-308, min_exp=-1021, min_10_exp=-307, dig=15, mant_dig=53, epsilon=2.220446049250313e-16, radix=2, rounds=1)
+</code></pre><h3 id="复数"><a href="#复数" class="headerlink" title="复数"></a>复数</h3><p>a+bj，虚数部分用j或J表示  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">z = <span class="number">2</span> + <span class="number">3.5j</span></div><div class="line">print(<span class="string">"实数部分："</span>, z.real)</div><div class="line">print(<span class="string">"虚数部分："</span>, z.imag)</div></pre></td></tr></table></figure>
+<pre><code>实数部分： 2.0
+虚数部分： 3.5
+</code></pre><h3 id="三种类型的转换"><a href="#三种类型的转换" class="headerlink" title="三种类型的转换"></a>三种类型的转换</h3><p>使用int(), float(), complex()进行三者的转换<br>整数和浮点数可以相互转换，而<strong>复数不能转换成整数或者浮点数</strong>   </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">n = <span class="number">4</span></div><div class="line">f = <span class="number">3.5</span></div><div class="line">z = <span class="number">1</span> + <span class="number">5J</span></div><div class="line"></div><div class="line">print(float(n), <span class="string">'  '</span>, complex(n))</div><div class="line">print(int(f), <span class="string">'  '</span>, complex(f))</div></pre></td></tr></table></figure>
+<pre><code>4.0    (4+0j)
+3    (3.5+0j)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 出错</span></div><div class="line"><span class="comment"># print(int(z))</span></div><div class="line"><span class="comment"># print(float(z))</span></div></pre></td></tr></table></figure>
+<h3 id="常用运算"><a href="#常用运算" class="headerlink" title="常用运算"></a>常用运算</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">+ - * /</td>
+<td style="text-align:center">加 减 乘 除</td>
+</tr>
+<tr>
+<td style="text-align:center">//</td>
+<td style="text-align:center">向下取整</td>
+</tr>
+<tr>
+<td style="text-align:center">%</td>
+<td style="text-align:center">求余</td>
+</tr>
+<tr>
+<td style="text-align:center">x**y, pow(x, y)</td>
+<td style="text-align:center">幂运算</td>
+</tr>
+<tr>
+<td style="text-align:center">divmod(x, y)</td>
+<td style="text-align:center">(x//y, x%y)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>字符串就是一个字符序列，索引从0开始，支持负数索引。  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 字符串不能被修改</span></div><div class="line">s=<span class="string">'abc'</span></div><div class="line"><span class="keyword">try</span> :</div><div class="line">    s[<span class="number">0</span>]=<span class="string">'x'</span></div><div class="line"><span class="keyword">except</span> TypeError:</div><div class="line">    print(<span class="string">"Stop!"</span>)</div></pre></td></tr></table></figure>
+<pre><code>Stop!
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 关于单引号和双引号</span></div><div class="line">s0=<span class="string">"a'b'c"</span></div><div class="line">s1=<span class="string">'a\'b\'c'</span></div><div class="line">print(s0)</div><div class="line">print(s1)</div></pre></td></tr></table></figure>
+<pre><code>a&#39;b&#39;c
+a&#39;b&#39;c
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 多行字符</span></div><div class="line">s0=<span class="string">"hello+"</span> \</div><div class="line"><span class="string">"world"</span></div><div class="line">s1=<span class="string">"""hello+</span></div><div class="line">world"""</div><div class="line">print(s0)</div><div class="line">print(<span class="string">"--------------------------------------"</span>)</div><div class="line">print(s1)</div></pre></td></tr></table></figure>
+<pre><code>hello+world
+--------------------------------------
+hello+
+world
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 比较大小</span></div><div class="line">print(<span class="string">'abc'</span> &lt; <span class="string">'ab'</span>)</div></pre></td></tr></table></figure>
+<pre><code>False
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 判断空字符串</span></div><div class="line"><span class="comment"># None是空指针，空字符串在内存中是分配了空间的</span></div><div class="line"><span class="comment"># 空字符串等价于False</span></div><div class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="string">''</span>:</div><div class="line">    <span class="keyword">print</span> (<span class="string">'is empty'</span>)</div></pre></td></tr></table></figure>
+<pre><code>is empty
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 常用判断</span></div><div class="line">print(<span class="string">'abc'</span>.startswith(<span class="string">'a'</span>)) <span class="comment"># 判断字符串开头</span></div><div class="line">print(<span class="string">'def'</span>.endswith(<span class="string">'ef'</span>)) <span class="comment"># 判断字符串结尾</span></div><div class="line">print(<span class="string">'123abc'</span>.isalnum()) <span class="comment"># 是否全是字母和数字，并至少有一个字符。</span></div><div class="line">print(<span class="string">'abc'</span>.isalpha()) <span class="comment"># 是否全是字母，并至少有一个字符。</span></div><div class="line">print(<span class="string">'123'</span>.isdigit()) <span class="comment"># 是否全是数字，并至少有一个字符。</span></div><div class="line">print(<span class="string">' '</span>.isspace()) <span class="comment"># 是否全是空白字符，并至少有一个字符。</span></div><div class="line">print(<span class="string">'abc'</span>.islower()) <span class="comment"># 字母是否全是小写</span></div><div class="line">print(<span class="string">'ABC'</span>.isupper()) <span class="comment"># 字母是否全是大写</span></div><div class="line">print(<span class="string">'Abc'</span>.istitle()) <span class="comment"># 首字母是否大写</span></div></pre></td></tr></table></figure>
+<pre><code>True
+True
+True
+True
+True
+True
+True
+True
+True
+</code></pre><p>常用方法：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">s+t</td>
+<td style="text-align:center">字符串拼接</td>
+</tr>
+<tr>
+<td style="text-align:center">s**n</td>
+<td style="text-align:center">字符串重复n倍</td>
+</tr>
+<tr>
+<td style="text-align:center">len(s)</td>
+<td style="text-align:center">字符串s的长度</td>
+</tr>
+<tr>
+<td style="text-align:center">str(n)</td>
+<td style="text-align:center">数字n转字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">int(s[, base])</td>
+<td style="text-align:center">将字符串s转换为base进制的整数（默认为10进制）</td>
+</tr>
+<tr>
+<td style="text-align:center">s.upper()</td>
+<td style="text-align:center">小写转大写</td>
+</tr>
+<tr>
+<td style="text-align:center">s.lower()</td>
+<td style="text-align:center">大写转小写</td>
+</tr>
+<tr>
+<td style="text-align:center">s.capitalize()</td>
+<td style="text-align:center">首字母大写</td>
+</tr>
+<tr>
+<td style="text-align:center">s.find(‘t’)</td>
+<td style="text-align:center">在字符串s中找到字符串t第一次出现的位置</td>
+</tr>
+<tr>
+<td style="text-align:center">s.strip() s.lstrip() s.rstrip()</td>
+<td style="text-align:center">去掉字符串s两端/左端/右端的空格</td>
+</tr>
+<tr>
+<td style="text-align:center">s.replace(‘a’, ‘A’)</td>
+<td style="text-align:center">将s中的字符a替换为A</td>
+</tr>
+<tr>
+<td style="text-align:center">s.split(‘t’)</td>
+<td style="text-align:center">将s按照字符t分割</td>
+</tr>
+<tr>
+<td style="text-align:center">s.splitlines()</td>
+<td style="text-align:center">将s按行分割，等同于s.split(‘\n’)</td>
+</tr>
+<tr>
+<td style="text-align:center">s.join(list)</td>
+<td style="text-align:center">在列表元素之间以字符串s拼接</td>
+</tr>
+<tr>
+<td style="text-align:center">list(s)</td>
+<td style="text-align:center">将字符串s转换为字符列表</td>
+</tr>
+<tr>
+<td style="text-align:center">for i in s:</td>
+<td style="text-align:center">字符串迭代</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="字符串的格式化"><a href="#字符串的格式化" class="headerlink" title="字符串的格式化"></a>字符串的格式化</h1><ul>
+<li>方法1，使用“%”，类似于C语言；  </li>
+<li>方法2，使用format()。  </li>
+</ul>
+<p>Python推荐使用<strong>第二种</strong>。</p>
+<h2 id="槽和参数的顺序"><a href="#槽和参数的顺序" class="headerlink" title="槽和参数的顺序"></a>槽和参数的顺序</h2><p><img src="http://static.zybuluo.com/liangxw/v0e7unr0hlei6siwjuut2ai5/image_1bdh040udve11red198r1mrjca49.png" alt="槽和参数的顺序">  </p>
+<p>当需要输出大括号时，用\( \{\{ \)表示\(\{ \)，用\(\}\}\)表示\(\}\)。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"&#123;&#123;&#123;&#125;的版本为&#123;&#125;&#125;&#125;"</span>.format(<span class="string">"python"</span>, <span class="string">"2.7"</span>))</div></pre></td></tr></table></figure>
+<pre><code>{python的版本为2.7}
+</code></pre><h2 id="格式控制信息"><a href="#格式控制信息" class="headerlink" title="格式控制信息"></a>格式控制信息</h2><p>槽的内部样式为：<br><strong>{&lt;参数序号&gt;: &lt;格式控制标记&gt;}</strong><br>其中，<strong>格式控制标记</strong>用来控制参数显示时的格式：<br><img src="http://static.zybuluo.com/liangxw/ph2ag177wxe85xo0vk8l7qix/image_1bdh12lgk19jp1k9k144ih2a1esh13.png" alt="格式控制标记"></p>
+<h3 id="宽度和填充"><a href="#宽度和填充" class="headerlink" title="宽度和填充"></a>宽度和填充</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">s = <span class="string">'Python'</span></div><div class="line">print(<span class="string">"&#123;0:30&#125;"</span>.format(s))</div><div class="line"></div><div class="line">print(<span class="string">"&#123;0:&gt;30&#125;"</span>.format(s))</div><div class="line">print(<span class="string">"&#123;0:*^30&#125;"</span>.format(s))</div><div class="line">print(<span class="string">"&#123;0:3&#125;"</span>.format(s))</div></pre></td></tr></table></figure>
+<pre><code>Python                        
+                        Python
+************Python************
+Python
+</code></pre><h3 id="千位分隔符"><a href="#千位分隔符" class="headerlink" title="千位分隔符"></a>千位分隔符</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">n = <span class="number">1234567890</span></div><div class="line">f = <span class="number">12345.7890</span></div><div class="line">print(<span class="string">"&#123;0:-^20,&#125;"</span>.format(n))</div><div class="line">print(<span class="string">"&#123;0:-^20&#125;"</span>.format(n))</div><div class="line">print(<span class="string">"&#123;0:-^20,&#125;"</span>.format(f))</div></pre></td></tr></table></figure>
+<pre><code>---1,234,567,890----
+-----1234567890-----
+-----12,345.789-----
+</code></pre><h3 id="精度"><a href="#精度" class="headerlink" title="精度"></a>精度</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"&#123;0:.2f&#125;"</span>.format(f))</div><div class="line">print(<span class="string">"&#123;0:H^20,.3f&#125;"</span>.format(n))</div><div class="line">print(<span class="string">"&#123;0:.4&#125;"</span>.format(s))</div></pre></td></tr></table></figure>
+<pre><code>12345.79
+H1,234,567,890.000HH
+Pyth
+</code></pre><h3 id="类型-1"><a href="#类型-1" class="headerlink" title="类型"></a>类型</h3><ul>
+<li>b：整数的二进制形式</li>
+<li>c：整数的Unicode字符</li>
+<li>d：整数的十进制形式</li>
+<li>o：整数的八进制形式</li>
+<li>x：整数的小写十六进制形式</li>
+<li>X：整数的大写十六进制形式</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"&#123;0:b&#125;,&#123;0:c&#125;,&#123;0:d&#125;,&#123;0:o&#125;,&#123;0:x&#125;,&#123;0:X&#125;"</span>.format(<span class="number">425</span>))</div></pre></td></tr></table></figure>
+<pre><code>110101001,Ʃ,425,651,1a9,1A9
+</code></pre><ul>
+<li>e: 浮点数对应的小写字母e的指数形式</li>
+<li>E：浮点数对应的大写字母E的指数形式</li>
+<li>f：浮点数的标准浮点形式</li>
+<li>%：浮点数的百分形式</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"&#123;0:e&#125;,&#123;0:E&#125;,&#123;0:f&#125;,&#123;0:%&#125;"</span>.format(<span class="number">3.14</span>))</div><div class="line">print(<span class="string">"&#123;0:.2e&#125;,&#123;0:.2E&#125;,&#123;0:.2f&#125;,&#123;0:.2%&#125;"</span>.format(<span class="number">3.14</span>))</div></pre></td></tr></table></figure>
+<pre><code>3.140000e+00,3.140000E+00,3.140000,314.000000%
+3.14e+00,3.14E+00,3.14,314.00%
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/19/Python文件与目录操作/" rel="next" title="Python文件与目录操作">
+                <i class="fa fa-chevron-left"></i> Python文件与目录操作
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/19/Python容器/" rel="prev" title="Python容器">
+                Python容器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yODMwNi80ODc4"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg"
+               alt="liangxw" />
+          <p class="site-author-name" itemprop="name">liangxw</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/helloliangxw" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2516944510" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.nuist.edu.cn" title="NUIST" target="_blank">NUIST</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#变量"><span class="nav-number">1.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命名规则"><span class="nav-number">1.1.</span> <span class="nav-text">命名规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用？显示变量信息"><span class="nav-number">1.2.</span> <span class="nav-text">使用？显示变量信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#赋值"><span class="nav-number">1.3.</span> <span class="nav-text">赋值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类型"><span class="nav-number">2.</span> <span class="nav-text">类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数字"><span class="nav-number">2.1.</span> <span class="nav-text">数字</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整数"><span class="nav-number">2.1.1.</span> <span class="nav-text">整数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数"><span class="nav-number">2.1.2.</span> <span class="nav-text">浮点数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复数"><span class="nav-number">2.1.3.</span> <span class="nav-text">复数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三种类型的转换"><span class="nav-number">2.1.4.</span> <span class="nav-text">三种类型的转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用运算"><span class="nav-number">2.1.5.</span> <span class="nav-text">常用运算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串"><span class="nav-number">2.2.</span> <span class="nav-text">字符串</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串的格式化"><span class="nav-number">3.</span> <span class="nav-text">字符串的格式化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#槽和参数的顺序"><span class="nav-number">3.1.</span> <span class="nav-text">槽和参数的顺序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式控制信息"><span class="nav-number">3.2.</span> <span class="nav-text">格式控制信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#宽度和填充"><span class="nav-number">3.2.1.</span> <span class="nav-text">宽度和填充</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#千位分隔符"><span class="nav-number">3.2.2.</span> <span class="nav-text">千位分隔符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#精度"><span class="nav-number">3.2.3.</span> <span class="nav-text">精度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型-1"><span class="nav-number">3.2.4.</span> <span class="nav-text">类型</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liangxw</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

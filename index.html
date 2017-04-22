@@ -112,7 +112,7 @@
       applicationID: '6J4PGN3SLX',
       apiKey: 'd669a6e715e29cc234c71fde690d5960',
       indexName: 'blog',
-      hits: {"per_page":10},
+      hits: {"per_page":5},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
@@ -219,6 +219,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
@@ -285,6 +295,720 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/22/Matplotlib.pyplot入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liangxw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="helloliangxw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/22/Matplotlib.pyplot入门/" itemprop="url">
+                  Matplotlib.pyplot入门
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-22T13:12:00+08:00">
+                2017-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python模块/" itemprop="url" rel="index">
+                    <span itemprop="name">Python模块</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Malplotlib图库Matplotlib图库
+调用方式12import matplotlib.pyplot as pltplt.plot(x, y, format_string, **kwargs)
+
+x  X轴数据，列表或数组，可选
+y  Y轴数据，列表或数组
+format_string  控制曲线的格式字符串，可选
+**kwargs  第二组或更多(x,y,format_string)
+
+1%matplotlib inline
+123456import matplotlib.pyplot as pltimport numpy as npa = np.arange(10)plt.plot(a, a*1.5, a, a*2, a, a*3, a, a*4)plt.show()
+
+format_stringformat_string是控制曲线的格式字符串，可选参数。
+曲线的格式由三部分组成：
+
+颜色字符  
+风格字符  
+标记字符
+
+颜色字符
+
+
+
+颜色字符
+说明
+颜色字符
+说明
+
+
+
+
+‘b’
+蓝色
+‘m’
+洋红色 magenta
+
+
+‘g’
+绿色
+‘y’
+黄色
+
+
+‘r’
+红色
+‘k’
+黑色
+
+
+‘c’
+青绿色 cyan
+‘w’
+白色
+
+
+‘#008000’
+RGB某颜色
+‘0.8’
+灰度值字符串
+
+
+
+
+风格字符
+
+
+
+风格字符
+说明
+
+
+
+
+‘‐’
+实线
+
+
+‘‐‐’
+破折线
+
+
+‘‐.’
+点划线
+
+
+‘:’
+虚线
+
+
+‘’ ‘ ‘
+无线条
+
+
+
+
+标记字符
+
+
+
+标记字符
+说明
+标记字符
+说明
+标记字符
+说明
+
+
+
+
+‘.’
+点标记
+‘1’
+下花三角标记
+‘h’
+竖六边形标记
+
+
+‘,’
+像素标记(极小点)
+‘2’
+上花三角标记
+‘H’
+横六边形标记
+
+
+‘o’
+实心圈标记
+‘3’
+左花三角标记
+‘+’
+十字标记
+
+
+‘v’
+倒三角标记
+‘4’
+右花三角标记
+‘x’
+x标记
+
+
+‘^’
+上三角标记
+‘s’
+实心方形标记
+‘D’
+菱形标记
+
+
+‘&gt;’
+右三角标记
+‘p’
+实心五角标记
+‘d’
+瘦菱形标记
+
+
+‘&lt;’
+左三角标记
+‘*‘
+星形标记
+&#124;
+垂直线标记
+
+
+
+
+123a = np.arange(10)plt.plot(a, a*1.5, 'go-', a, a*2,'r&gt;', a, a*3, '*', a, a*4, '
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/22/Matplotlib.pyplot入门/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/22/Jupyter常用配置与使用方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liangxw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="helloliangxw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/22/Jupyter常用配置与使用方法/" itemprop="url">
+                  Jupyter常用配置与使用方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-22T09:19:00+08:00">
+                2017-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Jupyter配置/" itemprop="url" rel="index">
+                    <span itemprop="name">Jupyter配置</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+配置文件路径Windows下配置文件的默认路径为C:\Users\USERNAME\.jupyter\jupyter_notebook_config.py
+如何找到配置文件在cmd中输入jupyter notebook --generate-config如果配置文件已经存在，那么会出现如下信息：
+
+从中可以看到配置文件存放的位置。注意，此时输入n，不要overwrite。 
+更改工作目录在配置文件中修改如下属性：
+1c.NotebookApp.notebook_dir = r'E:\MyDocuments\Jupyter'
+Jupyter快捷键
+
+
+
+快捷键
+说明
+
+
+
+
+Shift + Enter
+执行当前cell，并自动跳到下一个cell
+
+
+Ctrl + Enter
+执行当前cell，执行后不自动调转到下一个cell：
+
+
+Enter
+进入当前cell的编辑模式
+
+
+Esc
+退出当前cell的编辑模式
+
+
+双D
+删除当前的cell
+
+
+L
+为当前的cell加入line number
+
+
+F
+查找
+
+
+1
+将当前的cell转化为具有一级标题的markdown
+
+
+2
+将当前的cell转化为具有二级标题的markdown
+
+
+3
+将当前的cell转化为具有三级标题的markdown
+
+
+Crtl + /
+为一行或者多行添加/取消注释
+
+
+z
+撤销对某个cell的删除
+
+
+Crtl Home
+快速跳转到首个cell
+
+
+Crtl End
+快速跳转到最后一个cell
+
+
+
+
+作为command使用具体方法为：在command命令前加一个感叹号“!”：
+1!dir
+ 驱动器 E 中的卷是 documents
+ 卷的序列号是 8A53-05D4
+
+ E:\MyDocuments\Jupyter\Jupyter 的目录
+
+2017/04/22  09:35    &lt;DIR&gt;          .
+2017/04/22  09:35    &lt;DIR&gt;          ..
+2017/04/22  09:13    &lt;DIR&gt;          .ipynb_checkpoints
+2017/04/22  09:23    &lt;DIR&gt;          Jupyter常用配置_files
+2017/04/22  09:35  
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/22/Jupyter常用配置与使用方法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/22/自定义Jupyter钩子函数，实现保存文件时自动生成md文件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liangxw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="helloliangxw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/22/自定义Jupyter钩子函数，实现保存文件时自动生成md文件/" itemprop="url">
+                  自定义Jupyter钩子函数，实现保存文件时自动生成md文件
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-22T00:30:00+08:00">
+                2017-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Jupyter配置/" itemprop="url" rel="index">
+                    <span itemprop="name">Jupyter配置</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          博主的博客平台是使用Hexo+GitHub搭建的，写文章主要使用Jupyter。Jupyter能够进行交互式的Python科学计算，支持MarkDown、Latex等多种格式，关键还是免费的！
+Hexo要求文章的格式为md（MarkDown），并且所有的文章都是放置在BLOG_ROOT\source\_posts下（其中BLOG_ROOT为博客根目录）。
+问题来了：
+
+Jupyter文件的默认格式为ipynb，每次都需要手动转换为md格式，然后再将md文件剪切到_posts目录下
+Jupyter中用matplotlib绘制的图片，也需要手动移动到博客的相应目录下，才能在最终生成的博客中正常显示
+
+两个字，麻烦！
+有没有什么方法能够在Ctrl+S保存文章时，自动生成md文件，并将相关的文件和文件夹移动到_post目录下？
+ 解决方法：在Jupyter配置文件（Windows下默认路径为C:\Users\USERNAME\.jupyter\jupyter_notebook_config.py）中有一个c.FileContentsManager.post_save_hook属性，通过该属性的名称post_save_hook就可以猜到，它定义了文件保存时的钩子函数。自定义钩子函数，就可以在保存文件时让Jupyter自动实现你所定义的操作。
+开启Hexo资源文件管理功能根据Hexo的对资源文件夹的说明，在站点配置文件_config.yml中找到post_asset_folder，并设置为true：
+12## _config.ymlpost_asset_folder: true
+自定义钩子函数首先在配置文件中找到c.FileContentsManager.post_save_hook属性，打开其注释，并修改为：
+1c.FileContentsManager.post_save_hook = output_post_save
+其中output_post_save即自定义的钩子函数。函数定义如下：
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354import sysimport osimport shutilpjoin = os.pa
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/22/自定义Jupyter钩子函数，实现保存文件时自动生成md文件/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -410,11 +1134,11 @@
 2 -0.059695 -0.176699
 3 -0.574047  0.372640
 4  1.343083 -1.934584
-数据展示1234567%matplotlib inlineimport matplotlib.pyplot as pltplt.scatter(pga.distance, pga.accuracy)plt.xlabel('normalized distance')plt.ylabel('normalized accuracy')plt.show()
+展示1234567%matplotlib inlineimport matplotlib.pyplot as pltplt.scatter(pga.distance, pga.accuracy)plt.xlabel('normalized distance')plt.ylabel('normalized accuracy')plt.show()
 
-梯度下降计算代价函数cost(theta, X, y)用于计算代价函数\(J(\theta)\)  
+梯度下降代价函数cost(theta, X, y)用于计算代价函数\(J(\theta)\)  
 J(\theta) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y^{(i)})^2
-\(theta\)\(theta = [\theta_0, \theta_
+\(theta\)\(theta = [\theta_0, \theta_1, …
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1041,487 +1765,6 @@ time now is:  2017-02-27 08:42:10.219000
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/20/Python-模块-正则表达式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liangxw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="helloliangxw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/20/Python-模块-正则表达式/" itemprop="url">
-                  Python-模块-正则表达式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-20T09:21:00+08:00">
-                2017-04-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-模块/" itemprop="url" rel="index">
-                    <span itemprop="name">Python-模块</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          常用字符和语法下图列出了Python支持的正则表达式元字符和语法：
-分组123456import recontactInfo = 'Doe, John: 555-1212'm = re.search(r'(\w+), (\w+): (\S+)', contactInfo)for i in range(4):    print (m.group(i))
-Doe, John: 555-1212
-Doe
-John
-555-1212
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/20/Python-模块-正则表达式/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/20/Python-代码碎片/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liangxw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="helloliangxw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/20/Python-代码碎片/" itemprop="url">
-                  Python-代码碎片
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-20T09:19:00+08:00">
-                2017-04-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-代码碎片/" itemprop="url" rel="index">
-                    <span itemprop="name">Python-代码碎片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          字符串反转12345678910111213def reverse(lst, start, end):    '''    实现列表反转    '''    while start &lt; end:        lst[start], lst[end] = lst[end], lst[start]        start += 1        end -= 1sentence = '   hello! how are you! Fine.  'reverse(list(sentence), 0, len(strList)-1)print ''.join(strList)
-  .eniF !uoy era woh !olleh   
-快速判断一个数是否为2的幂1234def is_pow2(n):    return (n &amp; (n-1))==0print is_pow2(31)
-False
-螺旋矩阵给定一个\((m×n)\)的矩阵，按照螺旋顺序，返回该矩阵的所有要素。
-如：\(\textbf{A}=\begin{bmatrix}1 &amp; 2 &amp; 3 \\4 &amp; 5 &amp; 6\\7 &amp; 8 &amp; 9\end{bmatrix}\)，返回：\([1, 2, 3, 6, 9, 8, 7, 4, 5]\)。
-思路：
-
-首先打印第一行，去掉第一行后剩余的矩阵记为temp
-将temp逆时针翻转\(90^o\)，打印第一行
-重复1-2步骤，直到矩阵temp的元素个数为0
-
-1234567891011121314151617181920212223242526272829303132333435# 构造矩阵A，方便测试ROW, COL = 4, 3 # 行数，列数listA = [[ i for i in range(0 + j * COL, COL + j * COL)] for j in range(ROW)]# 打印Afor i in listA:    print iprint "----------------------------------------------"listB=[]listTemp = listA    while len(listTemp) &gt; 0:    # 首先加入第一行    li
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/20/Python-代码碎片/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/20/Python-基础-面向对象-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liangxw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="helloliangxw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/20/Python-基础-面向对象-1/" itemprop="url">
-                  Python-基础-面向对象-1
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-20T09:19:00+08:00">
-                2017-04-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-基础/" itemprop="url" rel="index">
-                    <span itemprop="name">Python-基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          类和对象按照Python通用规则：
-
-类名用驼峰式表示，如HelloWorld
-其他的属性、方法等，用_隔开，如this_is_object
-
-
-类中方法的第一个参数必须是self 
-
-1234567891011121314#创建类class Person:        # 类的公共属性    name = 'liangxw'        # 类中的方法    def show(self, city):        print ('my name is %s' %self.name)        print ("i live in &#123;0&#125;".format(city))#根据Person创建对象,记得后面加个括号p = Person()p.show('china')
-my name is liangxw
-i live in china
-self相当于Java中的this关键字。self作为一个代词，并不一定要叫self。可以用其他单词来代替。但是必须得是这个类的所有方法的第一个参数。
-12345678910111213#创建类class Person:        name = 'liangxw'        # 类中的方法    def show(this, city): # self改为this        print ('my name is %s' %this.name)        print ("i live in &#123;0&#125;".format(city))#根据Person创建对象,记得后面加个括号lxw = Person()lxw.show('china')
-my name is liangxw
-i live in china
-构造函数构造函数，是一种特殊的方法。主要用来在创建对象时初始化对象， 即为对象成员变量赋初始值。跟所有OOP语言一样，Python也有构造函数。
-123456789101112131415# 创建类class Person:        def __init__(self):#这就是构造函数，它的职责是在模型创建的初期，就完成一些动作        #简单的说就是，自定义的初始化步骤：        #同样，它需要self来指代本身这个class        self.eye
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/20/Python-基础-面向对象-1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1571,7 +1814,7 @@ i live in china
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1582,7 +1825,7 @@ i live in china
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1592,10 +1835,10 @@ i live in china
             
             
             <div class="site-state-item site-state-tags">
-              
-                <span class="site-state-item-count">1</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
-              
+              </a>
             </div>
           
 

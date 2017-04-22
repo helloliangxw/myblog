@@ -1,0 +1,902 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="博主的博客平台是使用Hexo+GitHub搭建的，写文章主要使用Jupyter。Jupyter能够进行交互式的Python科学计算，支持MarkDown、Latex等多种格式，关键还是免费的！
+Hexo要求文章的格式为md（MarkDown），并且所有的文章都是放置在BLOG_ROOT\source\_posts下（其中BLOG_ROOT为博客根目录）。
+问题来了：
+
+Jupyter文件的默认格式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自定义Jupyter钩子函数，实现保存文件时自动生成md文件">
+<meta property="og:url" content="http://helloliangxw.com/2017/04/22/自定义Jupyter钩子函数，实现保存文件时自动生成md文件/index.html">
+<meta property="og:site_name" content="helloliangxw">
+<meta property="og:description" content="博主的博客平台是使用Hexo+GitHub搭建的，写文章主要使用Jupyter。Jupyter能够进行交互式的Python科学计算，支持MarkDown、Latex等多种格式，关键还是免费的！
+Hexo要求文章的格式为md（MarkDown），并且所有的文章都是放置在BLOG_ROOT\source\_posts下（其中BLOG_ROOT为博客根目录）。
+问题来了：
+
+Jupyter文件的默认格式">
+<meta property="og:updated_time" content="2017-04-22T04:29:09.412Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自定义Jupyter钩子函数，实现保存文件时自动生成md文件">
+<meta name="twitter:description" content="博主的博客平台是使用Hexo+GitHub搭建的，写文章主要使用Jupyter。Jupyter能够进行交互式的Python科学计算，支持MarkDown、Latex等多种格式，关键还是免费的！
+Hexo要求文章的格式为md（MarkDown），并且所有的文章都是放置在BLOG_ROOT\source\_posts下（其中BLOG_ROOT为博客根目录）。
+问题来了：
+
+Jupyter文件的默认格式">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '6J4PGN3SLX',
+      apiKey: 'd669a6e715e29cc234c71fde690d5960',
+      indexName: 'blog',
+      hits: {"per_page":5},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://helloliangxw.com/2017/04/22/自定义Jupyter钩子函数，实现保存文件时自动生成md文件/"/>
+
+
+
+
+
+  <title> 自定义Jupyter钩子函数，实现保存文件时自动生成md文件 | helloliangxw </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">helloliangxw</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/22/自定义Jupyter钩子函数，实现保存文件时自动生成md文件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liangxw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="helloliangxw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                自定义Jupyter钩子函数，实现保存文件时自动生成md文件
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-22T00:30:00+08:00">
+                2017-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Jupyter配置/" itemprop="url" rel="index">
+                    <span itemprop="name">Jupyter配置</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>博主的博客平台是使用Hexo+GitHub搭建的，写文章主要使用Jupyter。Jupyter能够进行交互式的Python科学计算，支持MarkDown、Latex等多种格式，关键还是免费的！</p>
+<p>Hexo要求文章的格式为md（MarkDown），并且所有的文章都是放置在<code>BLOG_ROOT\source\_posts</code>下（其中<code>BLOG_ROOT</code>为博客根目录）。</p>
+<p>问题来了：</p>
+<ol>
+<li>Jupyter文件的默认格式为ipynb，每次都需要手动转换为md格式，然后再将md文件剪切到<code>_posts</code>目录下</li>
+<li>Jupyter中用matplotlib绘制的图片，也需要手动移动到博客的相应目录下，才能在最终生成的博客中正常显示</li>
+</ol>
+<p>两个字，麻烦！</p>
+<p>有没有什么方法能够在Ctrl+S保存文章时，自动生成md文件，并将相关的文件和文件夹移动到<code>_post</code>目录下？</p>
+<p><font color="#ff0000" size="3"> 解决方法：</font><br>在Jupyter配置文件（Windows下默认路径为<code>C:\Users\USERNAME\.jupyter\jupyter_notebook_config.py</code>）中有一个<code>c.FileContentsManager.post_save_hook</code>属性，通过该属性的名称<code>post_save_hook</code>就可以猜到，它定义了文件保存时的钩子函数。自定义钩子函数，就可以在保存文件时让Jupyter自动实现你所定义的操作。</p>
+<h1 id="开启Hexo资源文件管理功能"><a href="#开启Hexo资源文件管理功能" class="headerlink" title="开启Hexo资源文件管理功能"></a>开启Hexo资源文件管理功能</h1><p>根据<a href="https://hexo.io/zh-cn/docs/asset-folders.html" target="_blank" rel="external">Hexo的对资源文件夹的说明</a>，在站点配置文件<code>_config.yml</code>中找到<br><code>post_asset_folder</code>，并设置为<code>true</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## _config.yml</span></div><div class="line">post_asset_folder: true</div></pre></td></tr></table></figure>
+<h1 id="自定义钩子函数"><a href="#自定义钩子函数" class="headerlink" title="自定义钩子函数"></a>自定义钩子函数</h1><p>首先在配置文件中找到<code>c.FileContentsManager.post_save_hook</code>属性，打开其注释，并修改为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">c.FileContentsManager.post_save_hook = output_post_save</div></pre></td></tr></table></figure>
+<p>其中<code>output_post_save</code>即自定义的钩子函数。函数定义如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> shutil</div><div class="line"></div><div class="line">pjoin = os.path.join</div><div class="line"><span class="comment"># 博客的md文章存放目录</span></div><div class="line">_DOCS_ROOT = <span class="string">r'E:\MyDocuments\GitHub\myblog.github.io\source\_posts'</span></div><div class="line"></div><div class="line"><span class="comment">## 钩子函数的函数名可以任意，函数参数及含义请参考Jupyter的配置文件</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">output_post_save</span><span class="params">(model, os_path, contents_manager)</span>:</span></div><div class="line">    <span class="comment">## 获得当前文章的类型</span></div><div class="line">    ftype = model.get(<span class="string">'type'</span>)</div><div class="line">    <span class="comment">## 获得当前文章的名称，包括后缀名</span></div><div class="line">    fname = model.get(<span class="string">'name'</span>)</div><div class="line">    </div><div class="line">    <span class="comment">## 仅处理IPython Notebook</span></div><div class="line">    <span class="keyword">if</span> ftype <span class="keyword">not</span> <span class="keyword">in</span> [<span class="string">'notebook'</span>]:</div><div class="line">        <span class="keyword">return</span></div><div class="line">    </div><div class="line">    <span class="comment">## 未命名文件不处理</span></div><div class="line">    <span class="keyword">if</span> <span class="string">'Untitled'</span> <span class="keyword">in</span> fname:</div><div class="line">        <span class="keyword">return</span></div><div class="line"></div><div class="line">    <span class="comment"># 添加jupyter路径，防止找不到nbconvert命令</span></div><div class="line">    sys.path.append(<span class="string">r"D:\Anaconda3\Scripts"</span>)</div><div class="line">    </div><div class="line">    <span class="comment"># 调用nbconvert命令，将ipynb转换为md文件</span></div><div class="line">    os.system(<span class="string">'jupyter nbconvert --to markdown &#123;&#125; '</span>.format(os_path))</div><div class="line">    </div><div class="line">    <span class="comment"># 移动md文件到_post目录</span></div><div class="line">    md_path = os_path[:<span class="number">-5</span>]+<span class="string">'md'</span></div><div class="line">    os.system(<span class="string">r"move &#123;&#125; &#123;&#125;"</span>.format(md_path, _DOCS_ROOT))</div><div class="line">    </div><div class="line">    <span class="comment"># 移动图片文件夹</span></div><div class="line">    <span class="comment"># 假设当前所写的文章为：first.ipynb，文章中由matplotlib生成了一幅图片my.png</span></div><div class="line">    <span class="comment"># Jupyter会在当前目录下建立一个图片文件夹，命名方式为：文章名称_files，如first_files</span></div><div class="line">    <span class="comment"># 然后将所有的图片都放置在first_files文件夹下</span></div><div class="line">    <span class="comment"># 当文章转换为md时，my.png图片的引用方式为：![png](first_files/my.png)</span></div><div class="line">    <span class="comment"># jupyter_files_path即为Jupyter下图片文件夹绝对路径</span></div><div class="line">    jupyter_files_path = os_path[:<span class="number">-6</span>]+<span class="string">'_files'</span></div><div class="line">    </div><div class="line">    <span class="comment"># 判断图片文件夹是否存在：</span></div><div class="line">    <span class="keyword">if</span> os.path.exists(jupyter_files_path):</div><div class="line">        <span class="comment"># 根据Hexo对资源文件夹的管理方式：</span></div><div class="line">        <span class="comment"># 首先在博客的_posts文件夹下，新建与当前文章名称相同的文件夹，如_post\first</span></div><div class="line">        <span class="comment"># hexo_sources_path即_posts下的资源文件夹的绝对路径</span></div><div class="line">        hexo_sources_path = pjoin(_DOCS_ROOT, fname[:<span class="number">-6</span>])</div><div class="line">        <span class="keyword">if</span> os.path.exists(hexo_sources_path):</div><div class="line">            os.system(<span class="string">r"rd /q/s &#123;&#125;"</span>.format(hexo_sources_path))</div><div class="line">            os.system(<span class="string">r"md &#123;&#125;"</span>.format(hexo_sources_path))</div><div class="line">            </div><div class="line">        <span class="comment"># 最后将Jupyter中的图片文件夹移动到_posts下的资源文件夹中</span></div><div class="line">        hexo_sources_files_path = pjoin(hexo_sources_path, fname[:<span class="number">-6</span>]+<span class="string">'_files'</span>)</div><div class="line">        shutil.copytree(jupyter_files_path, hexo_sources_files_path)</div></pre></td></tr></table></figure>
+<h1 id="主要实现功能"><a href="#主要实现功能" class="headerlink" title="主要实现功能"></a>主要实现功能</h1><p>在进行文章保存时，<code>output_post_save</code>函数主要实现了以下功能：</p>
+<ol>
+<li>将ipynb文件转换为md文件</li>
+<li>将md文件移动到<code>_post</code>目录下</li>
+<li>判断Jupyter目录下是否存在图片文件夹</li>
+<li>如果图片文件夹存在，就在<code>_post</code>下生成资源文件夹，并将图片文件夹移动到资源文件夹中</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/21/机器学习-梯度下降/" rel="next" title="机器学习-梯度下降">
+                <i class="fa fa-chevron-left"></i> 机器学习-梯度下降
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/22/Jupyter常用配置与使用方法/" rel="prev" title="Jupyter常用配置与使用方法">
+                Jupyter常用配置与使用方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yODMwNi80ODc4"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg"
+               alt="liangxw" />
+          <p class="site-author-name" itemprop="name">liangxw</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/helloliangxw" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2516944510" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.nuist.edu.cn" title="NUIST" target="_blank">NUIST</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#开启Hexo资源文件管理功能"><span class="nav-number">1.</span> <span class="nav-text">开启Hexo资源文件管理功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义钩子函数"><span class="nav-number">2.</span> <span class="nav-text">自定义钩子函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主要实现功能"><span class="nav-number">3.</span> <span class="nav-text">主要实现功能</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liangxw</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

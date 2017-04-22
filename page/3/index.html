@@ -112,7 +112,7 @@
       applicationID: '6J4PGN3SLX',
       apiKey: 'd669a6e715e29cc234c71fde690d5960',
       indexName: 'blog',
-      hits: {"per_page":10},
+      hits: {"per_page":5},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
@@ -219,6 +219,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
@@ -295,7 +305,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/19/Python-基础-文件和目录操作/">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/19/Python容器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liangxw">
@@ -317,8 +327,427 @@
             
               
                 
-                <a class="post-title-link" href="/2017/04/19/Python-基础-文件和目录操作/" itemprop="url">
-                  Python-基础-文件目录操作
+                <a class="post-title-link" href="/2017/04/19/Python容器/" itemprop="url">
+                  Python容器
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T17:31:00+08:00">
+                2017-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Python基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          容器类型
+
+
+
+-
+list
+tuple
+dict
+set
+
+
+
+
+元素类型
+任意
+任意
+任意
+任意
+
+
+能否改变
+可以
+不可以
+可以
+可以
+
+
+是否有序
+有序
+有序
+无序
+无序
+
+
+
+
+list列表特点：
+
+元素类型任意
+支持索引访问
+元素可以修改
+
+常用方法：
+
+
+
+
+方法
+说明
+
+
+
+
+append(x)
+列表末尾增加元素x
+
+
+insert(i, x)
+在位置i前添加元素x
+
+
+sort()
+排序
+
+
+count(x)
+列表中x的个数
+
+
+reverse()
+列表反转
+
+
+remove(x)
+删除列表中第一次出现的元素x
+
+
+index(x)
+列表中第一次出现x的位置
+
+
+pop(i)
+取出位置i的元素，并删除这个元素
+
+
+
+
+123456# 可以是任意类型theList = [1, 2, 'a', (1, 2), &#123;1:"one", 2:"two"&#125;]print type(list)print type(theList)theList[0]=2print theList
+&lt;type &#39;type&#39;&gt;
+&lt;type &#39;list&#39;&gt;
+[2, 2, &#39;a&#39;, (1, 2), {1: &#39;one&#39;, 2: &#39;two&#39;}]
+123456# 列表引用theList = [1, 2, 'a', (1, 2), &#123;1:"one", 2:"two"&#125;]print theList[0]print theList[-1]print theList[-2]print theList[::-1] # 列表反转
+1
+{1: &#39;one&#39;, 2: &#39;two&#39;}
+(1, 2)
+[{1: &#39;one&#39;, 2: &#39;two&#39;}, (1, 2), &#39;a&#39;, 2, 1]
+1234567891011# 添加元素theList = [1, 2, 'a', (1, 2), &#123;1:"one", 2:"two"&#125;]theList.append('china') # 添加单个元素print theListtheList.extend([10, 20]) # 添加数组print t
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/19/Python容器/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/19/Python变量与类型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liangxw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="helloliangxw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/19/Python变量与类型/" itemprop="url">
+                  Python变量与类型
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T17:30:00+08:00">
+                2017-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Python基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          变量命名规则
+大小写字母、数字和下划线的组合，但首字母只能是大小写字母或下划线，不能使用空格。
+中文等非字母符号也可以作为名字。
+
+以下是合法命名的标识符：1234python_is_goodpython_is_not_good_is_it_a_question_ python语言
+使用？显示变量信息变量前或后增加’?’将显示一些通用信息，包括函数对应的源代码。
+12a = [1, 2, 3, '4']a?
+123456Type:       listString form: [1, 2, 3, '4']Length:      4Docstring:  list() -&gt; new empty listlist(iterable) -&gt; new list initialized from iterable's items
+赋值同步赋值：123456# 先运算右侧Ｎ个表达式，然后同时将表达式结果赋给左侧a, b, c = 1, 2, 3# 交换a和b的值x = 0y = 1x, y = y, x
+连续赋值：12# 从右到左依次赋值a = b = c = 2
+类型数字三种基本的数字类型：
+
+整数
+浮点数
+复数
+
+整数Python中整数没有取值范围的限制。  
+2进制：0b 0B开头8进制：0o 0O16进制：0x 0X  
+浮点数产看当前计算机浮点数的精度：
+12import sysprint(sys.float_info)
+sys.float_info(max=1.7976931348623157e+308, max_exp=1024, max_10_exp=308, min=2.2250738585072014e-308, min_exp=-1021, min_10_exp=-307, dig=15, mant_dig=53, epsilon=2.220446049250313e-16, radix=2, rounds=1)
+复数a+bj，虚数部分用j或J表示  
+123z = 2 + 3.5jprint("实数部分：", z.real)print("虚数部分：", z.imag)
+实数部分： 2.0
+虚数部分： 3.5
+三种类型的转换使用int(), float(), complex()进行三者的转换整数和浮点数可以相互转换，而复数不能转换成整数或者浮
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/19/Python变量与类型/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/19/Python文件与目录操作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liangxw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="helloliangxw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/19/Python文件与目录操作/" itemprop="url">
+                  Python文件与目录操作
                 </a>
               
             
@@ -357,8 +786,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-基础/" itemprop="url" rel="index">
-                    <span itemprop="name">Python-基础</span>
+                  <a href="/categories/Python基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Python基础</span>
                   </a>
                 </span>
 
@@ -468,7 +897,7 @@ readlines() 将文本文件中所有行读到一个list中，文本文件每一�
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/19/Python-基础-文件和目录操作/#more" rel="contents">
+            <a class="btn" href="/2017/04/19/Python文件与目录操作/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1381,7 +1810,7 @@ ndarray为什么要支持这么多种元素类型？
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1392,7 +1821,7 @@ ndarray为什么要支持这么多种元素类型？
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1402,10 +1831,10 @@ ndarray为什么要支持这么多种元素类型？
             
             
             <div class="site-state-item site-state-tags">
-              
-                <span class="site-state-item-count">1</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
-              
+              </a>
             </div>
           
 

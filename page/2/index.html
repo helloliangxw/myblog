@@ -112,7 +112,7 @@
       applicationID: '6J4PGN3SLX',
       apiKey: 'd669a6e715e29cc234c71fde690d5960',
       indexName: 'blog',
-      hits: {"per_page":10},
+      hits: {"per_page":5},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
@@ -219,6 +219,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
@@ -295,7 +305,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/20/Python-基础-面向对象-2/">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/20/Python-模块-正则表达式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liangxw">
@@ -317,8 +327,163 @@
             
               
                 
-                <a class="post-title-link" href="/2017/04/20/Python-基础-面向对象-2/" itemprop="url">
-                  Python-基础-面向对象-2
+                <a class="post-title-link" href="/2017/04/20/Python-模块-正则表达式/" itemprop="url">
+                  Python-模块-正则表达式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-20T09:21:00+08:00">
+                2017-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python-模块/" itemprop="url" rel="index">
+                    <span itemprop="name">Python-模块</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          常用字符和语法下图列出了Python支持的正则表达式元字符和语法：
+分组123456import recontactInfo = 'Doe, John: 555-1212'm = re.search(r'(\w+), (\w+): (\S+)', contactInfo)for i in range(4):    print (m.group(i))
+Doe, John: 555-1212
+Doe
+John
+555-1212
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/20/Python-模块-正则表达式/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/20/Python代码碎片/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liangxw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="helloliangxw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/20/Python代码碎片/" itemprop="url">
+                  Python代码碎片
                 </a>
               
             
@@ -357,8 +522,169 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-基础/" itemprop="url" rel="index">
-                    <span itemprop="name">Python-基础</span>
+                  <a href="/categories/Python代码/" itemprop="url" rel="index">
+                    <span itemprop="name">Python代码</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          字符串反转12345678910111213def reverse(lst, start, end):    '''    实现列表反转    '''    while start &lt; end:        lst[start], lst[end] = lst[end], lst[start]        start += 1        end -= 1sentence = '   hello! how are you! Fine.  'reverse(list(sentence), 0, len(strList)-1)print ''.join(strList)
+  .eniF !uoy era woh !olleh   
+快速判断一个数是否为2的幂1234def is_pow2(n):    return (n &amp; (n-1))==0print is_pow2(31)
+False
+螺旋矩阵给定一个\((m×n)\)的矩阵，按照螺旋顺序，返回该矩阵的所有要素。
+如：\(\textbf{A}=\begin{bmatrix}1 &amp; 2 &amp; 3 \\4 &amp; 5 &amp; 6\\7 &amp; 8 &amp; 9\end{bmatrix}\)，返回：\([1, 2, 3, 6, 9, 8, 7, 4, 5]\)。
+思路：
+
+首先打印第一行，去掉第一行后剩余的矩阵记为temp
+将temp逆时针翻转\(90^o\)，打印第一行
+重复1-2步骤，直到矩阵temp的元素个数为0
+
+1234567891011121314151617181920212223242526272829303132333435# 构造矩阵A，方便测试ROW, COL = 4, 3 # 行数，列数listA = [[ i for i in range(0 + j * COL, COL + j * COL)] for j in range(ROW)]# 打印Afor i in listA:    print iprint "----------------------------------------------"listB=[]listTemp = listA    while len(listTemp) &gt; 0:    # 首先加入第一行    li
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/20/Python代码碎片/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/20/Python面向对象进阶/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liangxw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="helloliangxw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/20/Python面向对象进阶/" itemprop="url">
+                  Python面向对象进阶
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-20T09:19:00+08:00">
+                2017-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Python基础</span>
                   </a>
                 </span>
 
@@ -418,7 +744,7 @@ AttributeError: &#39;MyClass&#39; object has no attribute &#39;age&#39;
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/20/Python-基础-面向对象-2/#more" rel="contents">
+            <a class="btn" href="/2017/04/20/Python面向对象进阶/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -464,7 +790,7 @@ AttributeError: &#39;MyClass&#39; object has no attribute &#39;age&#39;
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/19/Python-基础-函数进阶/">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/20/Python面向对象基础/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liangxw">
@@ -486,8 +812,173 @@ AttributeError: &#39;MyClass&#39; object has no attribute &#39;age&#39;
             
               
                 
-                <a class="post-title-link" href="/2017/04/19/Python-基础-函数进阶/" itemprop="url">
-                  Python-基础-函数进阶
+                <a class="post-title-link" href="/2017/04/20/Python面向对象基础/" itemprop="url">
+                  Python面向对象基础
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-20T09:19:00+08:00">
+                2017-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Python基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          类和对象按照Python通用规则：
+
+类名用驼峰式表示，如HelloWorld
+其他的属性、方法等，用_隔开，如this_is_object
+
+
+类中方法的第一个参数必须是self 
+
+1234567891011121314#创建类class Person:        # 类的公共属性    name = 'liangxw'        # 类中的方法    def show(self, city):        print ('my name is %s' %self.name)        print ("i live in &#123;0&#125;".format(city))#根据Person创建对象,记得后面加个括号p = Person()p.show('china')
+my name is liangxw
+i live in china
+self相当于Java中的this关键字。self作为一个代词，并不一定要叫self。可以用其他单词来代替。但是必须得是这个类的所有方法的第一个参数。
+12345678910111213#创建类class Person:        name = 'liangxw'        # 类中的方法    def show(this, city): # self改为this        print ('my name is %s' %this.name)        print ("i live in &#123;0&#125;".format(city))#根据Person创建对象,记得后面加个括号lxw = Person()lxw.show('china')
+my name is liangxw
+i live in china
+构造函数构造函数，是一种特殊的方法。主要用来在创建对象时初始化对象， 即为对象成员变量赋初始值。跟所有OOP语言一样，Python也有构造函数。
+123456789101112131415# 创建类class Person:        def __init__(self):#这就是构造函数，它的职责是在模型创建的初期，就完成一些动作        #简单的说就是，自定义的初始化步骤：        #同样，它需要self来指代本身这个class        self.eye
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/20/Python面向对象基础/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/19/Python函数进阶/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liangxw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="helloliangxw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/19/Python函数进阶/" itemprop="url">
+                  Python函数进阶
                 </a>
               
             
@@ -526,8 +1017,8 @@ AttributeError: &#39;MyClass&#39; object has no attribute &#39;age&#39;
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-基础/" itemprop="url" rel="index">
-                    <span itemprop="name">Python-基础</span>
+                  <a href="/categories/Python基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Python基础</span>
                   </a>
                 </span>
 
@@ -587,7 +1078,7 @@ reducePython中的reduce()内建函数是一个二元操作函数，他用来将
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/19/Python-基础-函数进阶/#more" rel="contents">
+            <a class="btn" href="/2017/04/19/Python函数进阶/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -633,7 +1124,7 @@ reducePython中的reduce()内建函数是一个二元操作函数，他用来将
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/19/Python-基础-一些技巧/">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/19/Python函数与递归/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liangxw">
@@ -655,225 +1146,8 @@ reducePython中的reduce()内建函数是一个二元操作函数，他用来将
             
               
                 
-                <a class="post-title-link" href="/2017/04/19/Python-基础-一些技巧/" itemprop="url">
-                  Python-基础-一些技巧
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T17:37:00+08:00">
-                2017-04-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-基础/" itemprop="url" rel="index">
-                    <span itemprop="name">Python-基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          使用？显示变量信息变量前或后增加’?’将显示一些通用信息，包括函数对应的源代码。
-12a = [1, 2, 3, '4']a?
-123456Type:       listString form: [1, 2, 3, '4']Length:      4Docstring:  list() -&gt; new empty listlist(iterable) -&gt; new list initialized from iterable's items
-使用%run运行py脚本1%run demo.py
-魔术命令
-
-
-
-常用命令
-说明
-
-
-
-
-%magic
-显示所有魔术命令
-
-
-%hist
-历史输入命令
-
-
-%pdb
-异常发生后自动进入调试器
-
-
-%reset
-删除当前命名空间中的全部变量或名称
-
-
-%who
-显示当前命名空间中已经定义的变量
-
-
-%time statement
-给出代码的执行时间，statement表示一段代码
-
-
-%timeit statement
-多次执行代码，计算综合平均执行时间
-
-
-
-
-1234import numpy as np a = np.random.randn(1000, 1000)%timeit np.dot(a, a)
-10 loops, best of 3: 52.9 ms per loop
-1%who
-a     np     
-1%hist
-import numpy as np
-
-a = np.array([1, 2, 3])
-import numpy as np
-
-a = np.array([1, 2, 3])
-a?
-a = [1, 2, 3, &#39;4&#39;]
-a?
-a = [1, 2, 3, &#39;4&#39;]
-a?
-变量前或后增加&#39;?&#39;将显示一些通用信息，包括函数对应的源代码。
-import numpy as np 
-
-a = np.random.randn(1000, 1000)
-%timeit np.dot(a, a)
-%who
-%hist
-12
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/19/Python-基础-一些技巧/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/19/Python-基础-函数与递归/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liangxw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="helloliangxw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/19/Python-基础-函数与递归/" itemprop="url">
-                  Python-基础-函数与递归
+                <a class="post-title-link" href="/2017/04/19/Python函数与递归/" itemprop="url">
+                  Python函数与递归
                 </a>
               
             
@@ -912,8 +1186,8 @@ a = np.random.randn(1000, 1000)
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-基础/" itemprop="url" rel="index">
-                    <span itemprop="name">Python-基础</span>
+                  <a href="/categories/Python基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Python基础</span>
                   </a>
                 </span>
 
@@ -971,7 +1245,7 @@ Beijing
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/19/Python-基础-函数与递归/#more" rel="contents">
+            <a class="btn" href="/2017/04/19/Python函数与递归/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1017,7 +1291,7 @@ Beijing
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/19/Python-基础-判断、循环、异常处理/">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/19/Python判断、循环和异常处理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liangxw">
@@ -1039,8 +1313,8 @@ Beijing
             
               
                 
-                <a class="post-title-link" href="/2017/04/19/Python-基础-判断、循环、异常处理/" itemprop="url">
-                  Python-基础-判断、循环、异常处理
+                <a class="post-title-link" href="/2017/04/19/Python判断、循环和异常处理/" itemprop="url">
+                  Python判断、循环和异常处理
                 </a>
               
             
@@ -1079,8 +1353,8 @@ Beijing
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-基础/" itemprop="url" rel="index">
-                    <span itemprop="name">Python-基础</span>
+                  <a href="/categories/Python基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Python基础</span>
                   </a>
                 </span>
 
@@ -1132,450 +1406,7 @@ END
           
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/19/Python-基础-判断、循环、异常处理/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/19/Python-基础-容器/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liangxw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="helloliangxw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/19/Python-基础-容器/" itemprop="url">
-                  Python-基础-容器
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T17:31:00+08:00">
-                2017-04-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-基础/" itemprop="url" rel="index">
-                    <span itemprop="name">Python-基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          容器类型
-
-
-
--
-list
-tuple
-dict
-set
-
-
-
-
-元素类型
-任意
-任意
-任意
-任意
-
-
-能否改变
-可以
-不可以
-可以
-可以
-
-
-是否有序
-有序
-有序
-无序
-无序
-
-
-
-
-list列表特点：
-
-元素类型任意
-支持索引访问
-元素可以修改
-
-常用方法：
-
-
-
-
-方法
-说明
-
-
-
-
-append(x)
-列表末尾增加元素x
-
-
-insert(i, x)
-在位置i前添加元素x
-
-
-sort()
-排序
-
-
-count(x)
-列表中x的个数
-
-
-reverse()
-列表反转
-
-
-remove(x)
-删除列表中第一次出现的元素x
-
-
-index(x)
-列表中第一次出现x的位置
-
-
-pop(i)
-取出位置i的元素，并删除这个元素
-
-
-
-
-123456# 可以是任意类型theList = [1, 2, 'a', (1, 2), &#123;1:"one", 2:"two"&#125;]print type(list)print type(theList)theList[0]=2print theList
-&lt;type &#39;type&#39;&gt;
-&lt;type &#39;list&#39;&gt;
-[2, 2, &#39;a&#39;, (1, 2), {1: &#39;one&#39;, 2: &#39;two&#39;}]
-123456# 列表引用theList = [1, 2, 'a', (1, 2), &#123;1:"one", 2:"two"&#125;]print theList[0]print theList[-1]print theList[-2]print theList[::-1] # 列表反转
-1
-{1: &#39;one&#39;, 2: &#39;two&#39;}
-(1, 2)
-[{1: &#39;one&#39;, 2: &#39;two&#39;}, (1, 2), &#39;a&#39;, 2, 1]
-1234567891011# 添加元素theList = [1, 2, 'a', (1, 2), &#123;1:"one", 2:"two"&#125;]theList.append('china') # 添加单个元素print theListtheList.extend([10, 20]) # 添加数组print t
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/19/Python-基础-容器/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/19/Python-基础-变量和类型/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liangxw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="helloliangxw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/19/Python-基础-变量和类型/" itemprop="url">
-                  Python-基础-变量与类型
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T17:30:00+08:00">
-                2017-04-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-基础/" itemprop="url" rel="index">
-                    <span itemprop="name">Python-基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          变量命名规则
-大小写字母、数字和下划线的组合，但首字母只能是大小写字母或下划线，不能使用空格。
-中文等非字母符号也可以作为名字。
-
-以下是合法命名的标识符：1234python_is_goodpython_is_not_good_is_it_a_question_ python语言
-赋值同步赋值：123456# 先运算右侧Ｎ个表达式，然后同时将表达式结果赋给左侧a, b, c = 1, 2, 3# 交换a和b的值x = 0y = 1x, y = y, x
-连续赋值：12# 从右到左依次赋值a = b = c = 2
-类型数字三种基本的数字类型：
-
-整数
-浮点数
-复数
-
-整数Python中整数没有取值范围的限制。  
-2进制：0b 0B开头8进制：0o 0O16进制：0x 0X  
-浮点数产看当前计算机浮点数的精度：
-12import sysprint(sys.float_info)
-sys.float_info(max=1.7976931348623157e+308, max_exp=1024, max_10_exp=308, min=2.2250738585072014e-308, min_exp=-1021, min_10_exp=-307, dig=15, mant_dig=53, epsilon=2.220446049250313e-16, radix=2, rounds=1)
-复数a+bj，虚数部分用j或J表示  
-123z = 2 + 3.5jprint("实数部分：", z.real)print("虚数部分：", z.imag)
-实数部分： 2.0
-虚数部分： 3.5
-三种类型的转换使用int(), float(), complex()进行三者的转换整数和浮点数可以相互转换，而复数不能转换成整数或者浮点数   
-123456n = 4f = 3.5z = 1 + 5Jprint(float(n), '  ', complex(n))print(int(f), '  ', complex(f))
-4.0    (4+0j)
-3    (3.5+0j)
-123# 出错# print(int(z))# print(float(z))
-常用运算
-
-
-
-运算符
-说明
-
-
-
-
-+ - * /
-加 减 乘 除
-
-
-//
-向下取整
-
-
-%
-求余
-
-
-x**y, pow
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/19/Python-基础-变量和类型/#more" rel="contents">
+            <a class="btn" href="/2017/04/19/Python判断、循环和异常处理/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1661,7 +1492,7 @@ x**y, pow
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1672,7 +1503,7 @@ x**y, pow
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1682,10 +1513,10 @@ x**y, pow
             
             
             <div class="site-state-item site-state-tags">
-              
-                <span class="site-state-item-count">1</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
-              
+              </a>
             </div>
           
 

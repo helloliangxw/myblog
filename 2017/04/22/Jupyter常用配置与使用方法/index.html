@@ -1,0 +1,1050 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="配置文件路径Windows下配置文件的默认路径为C:\Users\USERNAME\.jupyter\jupyter_notebook_config.py
+如何找到配置文件在cmd中输入jupyter notebook --generate-config如果配置文件已经存在，那么会出现如下信息：
+
+从中可以看到配置文件存放的位置。注意，此时输入n，不要overwrite。 
+更改工作目录在配置文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jupyter常用配置与使用方法">
+<meta property="og:url" content="http://helloliangxw.com/2017/04/22/Jupyter常用配置与使用方法/index.html">
+<meta property="og:site_name" content="helloliangxw">
+<meta property="og:description" content="配置文件路径Windows下配置文件的默认路径为C:\Users\USERNAME\.jupyter\jupyter_notebook_config.py
+如何找到配置文件在cmd中输入jupyter notebook --generate-config如果配置文件已经存在，那么会出现如下信息：
+
+从中可以看到配置文件存放的位置。注意，此时输入n，不要overwrite。 
+更改工作目录在配置文">
+<meta property="og:image" content="http://helloliangxw.com/Jupyter常用配置与使用方法_files\配置文件路径.png">
+<meta property="og:updated_time" content="2017-04-22T04:23:03.766Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jupyter常用配置与使用方法">
+<meta name="twitter:description" content="配置文件路径Windows下配置文件的默认路径为C:\Users\USERNAME\.jupyter\jupyter_notebook_config.py
+如何找到配置文件在cmd中输入jupyter notebook --generate-config如果配置文件已经存在，那么会出现如下信息：
+
+从中可以看到配置文件存放的位置。注意，此时输入n，不要overwrite。 
+更改工作目录在配置文">
+<meta name="twitter:image" content="http://helloliangxw.com/Jupyter常用配置与使用方法_files\配置文件路径.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '6J4PGN3SLX',
+      apiKey: 'd669a6e715e29cc234c71fde690d5960',
+      indexName: 'blog',
+      hits: {"per_page":5},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://helloliangxw.com/2017/04/22/Jupyter常用配置与使用方法/"/>
+
+
+
+
+
+  <title> Jupyter常用配置与使用方法 | helloliangxw </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">helloliangxw</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/22/Jupyter常用配置与使用方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liangxw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="helloliangxw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Jupyter常用配置与使用方法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-22T09:19:00+08:00">
+                2017-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Jupyter配置/" itemprop="url" rel="index">
+                    <span itemprop="name">Jupyter配置</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a id="the_destination"></a></p>
+<h1 id="配置文件路径"><a href="#配置文件路径" class="headerlink" title="配置文件路径"></a>配置文件路径</h1><p>Windows下配置文件的默认路径为<code>C:\Users\USERNAME\.jupyter\jupyter_notebook_config.py</code></p>
+<h1 id="如何找到配置文件"><a href="#如何找到配置文件" class="headerlink" title="如何找到配置文件"></a>如何找到配置文件</h1><p>在cmd中输入<code>jupyter notebook --generate-config</code><br>如果配置文件已经存在，那么会出现如下信息：</p>
+<p><img src="Jupyter常用配置与使用方法_files\配置文件路径.png" alt="png"></p>
+<p>从中可以看到配置文件存放的位置。<br>注意，此时输入n，不要overwrite。 </p>
+<h1 id="更改工作目录"><a href="#更改工作目录" class="headerlink" title="更改工作目录"></a>更改工作目录</h1><p>在配置文件中修改如下属性：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">c.NotebookApp.notebook_dir = <span class="string">r'E:\MyDocuments\Jupyter'</span></div></pre></td></tr></table></figure>
+<h1 id="Jupyter快捷键"><a href="#Jupyter快捷键" class="headerlink" title="Jupyter快捷键"></a>Jupyter快捷键</h1><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Shift + Enter</td>
+<td style="text-align:left">执行当前cell，并自动跳到下一个cell</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl + Enter</td>
+<td style="text-align:left">执行当前cell，执行后不自动调转到下一个cell：</td>
+</tr>
+<tr>
+<td style="text-align:left">Enter</td>
+<td style="text-align:left">进入当前cell的编辑模式</td>
+</tr>
+<tr>
+<td style="text-align:left">Esc</td>
+<td style="text-align:left">退出当前cell的编辑模式</td>
+</tr>
+<tr>
+<td style="text-align:left">双D</td>
+<td style="text-align:left">删除当前的cell</td>
+</tr>
+<tr>
+<td style="text-align:left">L</td>
+<td style="text-align:left">为当前的cell加入line number</td>
+</tr>
+<tr>
+<td style="text-align:left">F</td>
+<td style="text-align:left">查找</td>
+</tr>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">将当前的cell转化为具有一级标题的markdown</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">将当前的cell转化为具有二级标题的markdown</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">将当前的cell转化为具有三级标题的markdown</td>
+</tr>
+<tr>
+<td style="text-align:left">Crtl + /</td>
+<td style="text-align:left">为一行或者多行添加/取消注释</td>
+</tr>
+<tr>
+<td style="text-align:left">z</td>
+<td style="text-align:left">撤销对某个cell的删除</td>
+</tr>
+<tr>
+<td style="text-align:left">Crtl Home</td>
+<td style="text-align:left">快速跳转到首个cell</td>
+</tr>
+<tr>
+<td style="text-align:left">Crtl End</td>
+<td style="text-align:left">快速跳转到最后一个cell</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="作为command使用"><a href="#作为command使用" class="headerlink" title="作为command使用"></a>作为command使用</h1><p>具体方法为：在command命令前加一个感叹号“!”：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">!dir</div></pre></td></tr></table></figure>
+<pre><code> 驱动器 E 中的卷是 documents
+ 卷的序列号是 8A53-05D4
+
+ E:\MyDocuments\Jupyter\Jupyter 的目录
+
+2017/04/22  09:35    &lt;DIR&gt;          .
+2017/04/22  09:35    &lt;DIR&gt;          ..
+2017/04/22  09:13    &lt;DIR&gt;          .ipynb_checkpoints
+2017/04/22  09:23    &lt;DIR&gt;          Jupyter常用配置_files
+2017/04/22  09:35             3,591 Untitled.ipynb
+2017/04/22  09:09             6,862 自定义Jupyter钩子函数，实现保存文件时自动生成md文件.ipynb
+               2 个文件         10,453 字节
+               4 个目录 275,366,404,096 可用字节
+</code></pre><h1 id="魔术命令Magic-functions"><a href="#魔术命令Magic-functions" class="headerlink" title="魔术命令Magic functions"></a>魔术命令Magic functions</h1><p>详见<a href="http://nbviewer.jupyter.org/github/ipython/ipython/blob/1.x/examples/notebooks/Cell%20Magics.ipynb#The-cell-magics-in-IPython" target="_blank" rel="external">The cell magics in IPython</a>。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">常用命令</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">%lsmagic</td>
+<td style="text-align:center">显示所有魔术命令</td>
+</tr>
+<tr>
+<td style="text-align:center">%run file.py</td>
+<td style="text-align:center">执行文件file.py</td>
+</tr>
+<tr>
+<td style="text-align:center">%matplotlib inline</td>
+<td style="text-align:center">实现Matplotlib绘图</td>
+</tr>
+<tr>
+<td style="text-align:center">%pwd</td>
+<td style="text-align:center">当前工作目录</td>
+</tr>
+<tr>
+<td style="text-align:center">%load file.py</td>
+<td style="text-align:center">将当前路径下的file.py文件加载到当前cell</td>
+</tr>
+<tr>
+<td style="text-align:center">%hist</td>
+<td style="text-align:center">历史输入命令</td>
+</tr>
+<tr>
+<td style="text-align:center">%pdb</td>
+<td style="text-align:center">异常发生后自动进入调试器</td>
+</tr>
+<tr>
+<td style="text-align:center">%reset</td>
+<td style="text-align:center">删除当前命名空间中的全部变量或名称</td>
+</tr>
+<tr>
+<td style="text-align:center">%who</td>
+<td style="text-align:center">显示当前命名空间中已经定义的变量</td>
+</tr>
+<tr>
+<td style="text-align:center">%time statement</td>
+<td style="text-align:center">给出代码的执行时间，statement表示一段代码</td>
+</tr>
+<tr>
+<td style="text-align:center">%timeit statement</td>
+<td style="text-align:center">多次执行代码，计算综合平均执行时间</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </div><div class="line"></div><div class="line">a = np.random.randn(<span class="number">1000</span>, <span class="number">1000</span>)</div><div class="line">%timeit np.dot(a, a)</div></pre></td></tr></table></figure>
+<pre><code>10 loops, best of 3: 61.1 ms per loop
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">%who</div></pre></td></tr></table></figure>
+<pre><code>a     np     
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">%hist</div></pre></td></tr></table></figure>
+<pre><code>!dir
+%pwd
+%pwd
+import numpy as np 
+
+a = np.random.randn(1000, 1000)
+%timeit np.dot(a, a)
+%who
+%who
+%hist
+</code></pre><h1 id="设置页面跳转"><a href="#设置页面跳转" class="headerlink" title="设置页面跳转"></a>设置页面跳转</h1><ol>
+<li><p>目标位置(the destination)<br> 在目标位置添加下面语句:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a id=&apos;the_destination&apos;&gt;&lt;/a&gt;</div></pre></td></tr></table></figure>
+<p> id可以任意赋值。<br> 本文在标题1（配置文件路径）处添加了该行代码。</p>
+</li>
+<li>跳转位置<br> 在跳转文字后添加目标位置id：<br> <a href="#the_destination">点击跳转</a></li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/22/自定义Jupyter钩子函数，实现保存文件时自动生成md文件/" rel="next" title="自定义Jupyter钩子函数，实现保存文件时自动生成md文件">
+                <i class="fa fa-chevron-left"></i> 自定义Jupyter钩子函数，实现保存文件时自动生成md文件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/22/Matplotlib.pyplot入门/" rel="prev" title="Matplotlib.pyplot入门">
+                Matplotlib.pyplot入门 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yODMwNi80ODc4"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg"
+               alt="liangxw" />
+          <p class="site-author-name" itemprop="name">liangxw</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/helloliangxw" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2516944510" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.nuist.edu.cn" title="NUIST" target="_blank">NUIST</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#配置文件路径"><span class="nav-number">1.</span> <span class="nav-text">配置文件路径</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何找到配置文件"><span class="nav-number">2.</span> <span class="nav-text">如何找到配置文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更改工作目录"><span class="nav-number">3.</span> <span class="nav-text">更改工作目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Jupyter快捷键"><span class="nav-number">4.</span> <span class="nav-text">Jupyter快捷键</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#作为command使用"><span class="nav-number">5.</span> <span class="nav-text">作为command使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#魔术命令Magic-functions"><span class="nav-number">6.</span> <span class="nav-text">魔术命令Magic functions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置页面跳转"><span class="nav-number">7.</span> <span class="nav-text">设置页面跳转</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liangxw</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
