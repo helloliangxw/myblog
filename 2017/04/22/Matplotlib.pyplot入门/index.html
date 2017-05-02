@@ -118,7 +118,7 @@ format_string  控制曲线的格式字符串，可选
 <meta property="og:image" content="http://helloliangxw.com/Matplotlib.pyplot%E5%85%A5%E9%97%A8_files/Matplotlib.pyplot%E5%85%A5%E9%97%A8_28_0.svg">
 <meta property="og:image" content="http://helloliangxw.com/Matplotlib.pyplot%E5%85%A5%E9%97%A8_files/Matplotlib.pyplot%E5%85%A5%E9%97%A8_30_1.svg">
 <meta property="og:image" content="http://helloliangxw.com/Matplotlib.pyplot%E5%85%A5%E9%97%A8_files/Matplotlib.pyplot%E5%85%A5%E9%97%A8_31_0.svg">
-<meta property="og:updated_time" content="2017-04-22T08:49:43.578Z">
+<meta property="og:updated_time" content="2017-05-02T08:07:10.001Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Matplotlib.pyplot入门">
 <meta name="twitter:description" content="Malplotlib图库Matplotlib图库
@@ -722,6 +722,14 @@ format_string  控制曲线的格式字符串，可选
 <td style="text-align:center">对Y轴增加文本标签</td>
 </tr>
 <tr>
+<td style="text-align:center">plt.xticks(原刻度, 新刻度)</td>
+<td style="text-align:center">修改X轴刻度</td>
+</tr>
+<tr>
+<td style="text-align:center">plt.yticks(原刻度, 新刻度)</td>
+<td style="text-align:center">修改Y轴刻度</td>
+</tr>
+<tr>
 <td style="text-align:center">plt.title()</td>
 <td style="text-align:center">对图形整体增加文本标签</td>
 </tr>
@@ -736,7 +744,7 @@ format_string  控制曲线的格式字符串，可选
 </tbody>
 </table>
 </div>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line">a = np.arange(<span class="number">0</span>, <span class="number">5</span>, <span class="number">0.02</span>)</div><div class="line"></div><div class="line">plt.plot(a, np.cos(a*np.pi),<span class="string">'r--'</span>)</div><div class="line">plt.xlabel(<span class="string">'横轴：时间'</span>, fontproperties = <span class="string">'SimHei'</span>, fontsize = <span class="number">15</span>, color = <span class="string">'green'</span>)</div><div class="line">plt.ylabel(<span class="string">'纵轴：振幅'</span>, fontproperties = <span class="string">'SimHei'</span>, fontsize = <span class="number">15</span>)</div><div class="line">plt.title(<span class="string">r'正弦波实例$y = cos(2 \pi x)$'</span>, fontsize = <span class="number">25</span>)</div><div class="line">plt.text(<span class="number">2</span>, <span class="number">1.2</span>, <span class="string">r'$\mu = 100$'</span>, fontsize = <span class="number">15</span>)</div><div class="line">plt.annotate(<span class="string">r'$\pi$'</span>, xy = (<span class="number">3</span>, <span class="number">-1</span>),xytext = (<span class="number">5</span>, <span class="number">-1.5</span>), fontsize = <span class="number">15</span>,</div><div class="line">             arrowprops = dict(facecolor = <span class="string">'blue'</span>, shrink = <span class="number">0</span>, width = <span class="number">5</span>))</div><div class="line">plt.axis([<span class="number">-1</span>, <span class="number">6</span>, <span class="number">-2</span>, <span class="number">2</span>])</div><div class="line">plt.grid(<span class="keyword">True</span>)</div><div class="line">plt.show()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line">a = np.arange(<span class="number">0</span>, <span class="number">5</span>, <span class="number">0.02</span>)</div><div class="line"></div><div class="line">plt.plot(a, np.cos(a*np.pi),<span class="string">'r--'</span>)</div><div class="line">plt.xlabel(<span class="string">'横轴：时间'</span>, fontproperties = <span class="string">'SimHei'</span>, fontsize = <span class="number">15</span>, color = <span class="string">'green'</span>)</div><div class="line">plt.ylabel(<span class="string">'纵轴：振幅'</span>, fontproperties = <span class="string">'SimHei'</span>, fontsize = <span class="number">15</span>)</div><div class="line">plt.title(<span class="string">r'正弦波实例$y = cos(2 \pi x)$'</span>, fontsize = <span class="number">25</span>)</div><div class="line">plt.text(<span class="number">2</span>, <span class="number">1.2</span>, <span class="string">r'$\mu = 100$'</span>, fontsize = <span class="number">15</span>)</div><div class="line">plt.annotate(<span class="string">r'$\pi$'</span>, xy = (<span class="number">3</span>, <span class="number">-1</span>),xytext = (<span class="number">5</span>, <span class="number">-1.5</span>), fontsize = <span class="number">15</span>,</div><div class="line">             arrowprops = dict(facecolor = <span class="string">'blue'</span>, shrink = <span class="number">0</span>, width = <span class="number">5</span>))</div><div class="line">plt.axis([<span class="number">-1</span>, <span class="number">6</span>, <span class="number">-2</span>, <span class="number">2</span>])</div><div class="line"></div><div class="line">plt.xticks(np.arange(<span class="number">0</span>, <span class="number">8</span>, <span class="number">2</span>), [<span class="string">'this is 0'</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>])</div><div class="line"></div><div class="line">plt.grid(<span class="keyword">True</span>)</div><div class="line">plt.show()</div></pre></td></tr></table></figure>
 <p><img src="Matplotlib.pyplot%E5%85%A5%E9%97%A8_files/Matplotlib.pyplot%E5%85%A5%E9%97%A8_16_0.svg" alt="svg"></p>
 <h1 id="子绘图区域"><a href="#子绘图区域" class="headerlink" title="子绘图区域"></a>子绘图区域</h1><h2 id="plt-subplot2grid"><a href="#plt-subplot2grid" class="headerlink" title="plt.subplot2grid"></a>plt.subplot2grid</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plt.subplot2grid(GridSpec, CurSpec, colspan=<span class="number">1</span>, rowspan=<span class="number">1</span>)</div></pre></td></tr></table></figure>
 <p>思想：设定网格，选中网格，确定选中区域行列的数量。编号从0开始。</p>
@@ -874,6 +882,10 @@ format_string  控制曲线的格式字符串，可选
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/04/26/Pandas入门/" rel="prev" title="Pandas入门">
+                Pandas入门 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -952,7 +964,7 @@ format_string  控制曲线的格式字符串，可选
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -974,7 +986,7 @@ format_string  控制曲线的格式字符串，可选
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

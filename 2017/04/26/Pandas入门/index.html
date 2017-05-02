@@ -1,0 +1,1348 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Pandas," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Pandas库1import pandas as pd
+Pandas包括两种数据类型：Series, DataFrame。  
+Pandas基于NumPy实现，常与NumPy和Matplotlib一同使用。与Numpy的比较：
+
+
+
+
+NumPy
+Pandas
+
+
+
+
+基础数据类型
+扩展数据类型
+
+
+关注数据的结构表达
+关注数据的应用表达
+
+
+维度：数据间关系
+数据与索引间关系
+
+
+
+
+Serie">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pandas入门">
+<meta property="og:url" content="http://helloliangxw.com/2017/04/26/Pandas入门/index.html">
+<meta property="og:site_name" content="helloliangxw">
+<meta property="og:description" content="Pandas库1import pandas as pd
+Pandas包括两种数据类型：Series, DataFrame。  
+Pandas基于NumPy实现，常与NumPy和Matplotlib一同使用。与Numpy的比较：
+
+
+
+
+NumPy
+Pandas
+
+
+
+
+基础数据类型
+扩展数据类型
+
+
+关注数据的结构表达
+关注数据的应用表达
+
+
+维度：数据间关系
+数据与索引间关系
+
+
+
+
+Serie">
+<meta property="og:image" content="http://helloliangxw.com/Pandas入门_files\DataFrame类型.JPG">
+<meta property="og:image" content="http://helloliangxw.com/Pandas入门_files/列表类型字典.jpg">
+<meta property="og:updated_time" content="2017-05-02T06:57:20.371Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pandas入门">
+<meta name="twitter:description" content="Pandas库1import pandas as pd
+Pandas包括两种数据类型：Series, DataFrame。  
+Pandas基于NumPy实现，常与NumPy和Matplotlib一同使用。与Numpy的比较：
+
+
+
+
+NumPy
+Pandas
+
+
+
+
+基础数据类型
+扩展数据类型
+
+
+关注数据的结构表达
+关注数据的应用表达
+
+
+维度：数据间关系
+数据与索引间关系
+
+
+
+
+Serie">
+<meta name="twitter:image" content="http://helloliangxw.com/Pandas入门_files\DataFrame类型.JPG">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '6J4PGN3SLX',
+      apiKey: 'd669a6e715e29cc234c71fde690d5960',
+      indexName: 'blog',
+      hits: {"per_page":5},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://helloliangxw.com/2017/04/26/Pandas入门/"/>
+
+
+
+
+
+  <title> Pandas入门 | helloliangxw </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">helloliangxw</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/04/26/Pandas入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liangxw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="helloliangxw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Pandas入门
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-26T13:00:00+08:00">
+                2017-04-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python模块/" itemprop="url" rel="index">
+                    <span itemprop="name">Python模块</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Pandas库"><a href="#Pandas库" class="headerlink" title="Pandas库"></a>Pandas库</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div></pre></td></tr></table></figure>
+<p>Pandas包括两种数据类型：<strong>Series</strong>, <strong>DataFrame</strong>。  </p>
+<p>Pandas基于NumPy实现，常与NumPy和Matplotlib一同使用。<br>与Numpy的比较：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">NumPy</th>
+<th style="text-align:center">Pandas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">基础数据类型</td>
+<td style="text-align:center">扩展数据类型</td>
+</tr>
+<tr>
+<td style="text-align:center">关注数据的结构表达</td>
+<td style="text-align:center">关注数据的应用表达</td>
+</tr>
+<tr>
+<td style="text-align:center">维度：数据间关系</td>
+<td style="text-align:center">数据与索引间关系</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="Series类型"><a href="#Series类型" class="headerlink" title="Series类型"></a>Series类型</h1><h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>Series类型由一组数据及与之相关的数据索引组成：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = pd.Series([<span class="number">9</span>, <span class="number">8</span>, <span class="number">6</span>, <span class="number">7</span>])</div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>0    9
+1    8
+2    6
+3    7
+dtype: int64
+</code></pre><p>第一列即为<strong>自动索引</strong>，第二列为数据。<br>我们也可以<strong>自定义索引</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a = pd.Series([<span class="number">9</span>, <span class="number">8</span>, <span class="number">6</span>, <span class="number">7</span>], index = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>])</div><div class="line"><span class="comment"># index可以省略</span></div><div class="line"><span class="comment"># a = pd.Series([9, 8, 6, 7], ['a', 'b', 'c', 'd'])</span></div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>a    9
+b    8
+c    6
+d    7
+dtype: int64
+</code></pre><h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><p>Series类型可以由如下类型创建：</p>
+<ul>
+<li>Python列表，index与列表元素个数一致</li>
+<li>标量值，index表达Series类型的尺寸</li>
+<li>Python字典，键值对中的“键”是索引，index从字典中进行选择操作</li>
+<li>ndarray，索引和数据都可以通过ndarray类型创建</li>
+<li>其他函数，range()函数等</li>
+</ul>
+<h3 id="Python列表"><a href="#Python列表" class="headerlink" title="Python列表"></a>Python列表</h3><p>如上。</p>
+<h3 id="标量"><a href="#标量" class="headerlink" title="标量"></a>标量</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = pd.Series(<span class="number">25</span>, index=[<span class="string">'a'</span>, <span class="string">'b'</span>])</div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>a    25
+b    25
+dtype: int64
+</code></pre><h3 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = pd.Series(&#123;<span class="string">'a'</span>:<span class="number">25</span>, <span class="string">'b'</span>:<span class="number">30</span>&#125;)</div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>a    25
+b    30
+dtype: int64
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = pd.Series(&#123;<span class="string">'a'</span>:<span class="number">25</span>, <span class="string">'b'</span>:<span class="number">30</span>&#125;, index = [<span class="string">'c'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>])</div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>c     NaN
+b    30.0
+a    25.0
+dtype: float64
+</code></pre><h3 id="ndarray类型"><a href="#ndarray类型" class="headerlink" title="ndarray类型"></a>ndarray类型</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line">a = pd.Series(np.arange(<span class="number">5</span>))</div><div class="line">b = pd.Series(np.arange(<span class="number">5</span>), index=np.arange(<span class="number">9</span>, <span class="number">4</span>, <span class="number">-1</span>))</div><div class="line">print(a)</div><div class="line">print(b)</div></pre></td></tr></table></figure>
+<pre><code>0    0
+1    1
+2    2
+3    3
+4    4
+dtype: int32
+9    0
+8    1
+7    2
+6    3
+5    4
+dtype: int32
+</code></pre><h3 id="其他函数"><a href="#其他函数" class="headerlink" title="其他函数"></a>其他函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line">a = pd.Series(range(<span class="number">6</span>))</div><div class="line">b = pd.Series(range(<span class="number">5</span>), index=np.arange(<span class="number">9</span>, <span class="number">4</span>, <span class="number">-1</span>))</div><div class="line">print(a)</div><div class="line">print(b)</div></pre></td></tr></table></figure>
+<pre><code>0    0
+1    1
+2    2
+3    3
+4    4
+5    5
+dtype: int32
+9    0
+8    1
+7    2
+6    3
+5    4
+dtype: int32
+</code></pre><h2 id="name属性"><a href="#name属性" class="headerlink" title="name属性"></a>name属性</h2><p>Series对象和索引都可以有一个名字，存储在属性<code>.name</code>中</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = pd.Series([<span class="number">25</span>, <span class="number">30</span>, <span class="number">6</span>, <span class="number">12</span>, <span class="number">1</span>], index=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>])</div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>a    25
+b    30
+c     6
+d    12
+e     1
+dtype: int64
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a.name = <span class="string">'一个Series对象'</span></div><div class="line">a.index.name = <span class="string">'索引'</span></div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>索引
+a    25
+b    30
+c     6
+d    12
+e     1
+Name: 一个Series对象, dtype: int64
+</code></pre><h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><p>Series类型包括index和values两部分，Series类型的操作类似ndarray类型和Python字典类型</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = pd.Series([<span class="number">25</span>,<span class="number">30</span>,<span class="number">6</span>], index=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>])</div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>a    25
+b    30
+c     6
+dtype: int64
+</code></pre><p>通过<code>.index</code>获得索引，通过<code>.values</code>获得数据。索引的类型为<code>Index</code>，数据的类型即<code>ndarray</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">print(a.index)</div><div class="line">print(type(a.index))</div><div class="line">print(a.values)</div><div class="line">print(type(a.values))</div></pre></td></tr></table></figure>
+<pre><code>Index([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], dtype=&#39;object&#39;)
+&lt;class &#39;pandas.indexes.base.Index&#39;&gt;
+[25 30  6]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+</code></pre><h3 id="操作类似ndarray类型"><a href="#操作类似ndarray类型" class="headerlink" title="操作类似ndarray类型"></a>操作类似ndarray类型</h3><ul>
+<li>索引方法相同，采用[]</li>
+<li>NumPy中运算和操作可用于Series类型</li>
+<li>可以通过自定义索引的列表进行切片</li>
+<li>可以通过自动索引进行切片，如果存在自定义索引，则一同被切片</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a = pd.Series([<span class="number">25</span>, <span class="number">30</span>, <span class="number">6</span>, <span class="number">12</span>, <span class="number">1</span>], index=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>])</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">print(a[<span class="number">3</span>])</div><div class="line">print(a[:<span class="number">2</span>])</div></pre></td></tr></table></figure>
+<pre><code>12
+a    25
+b    30
+dtype: int64
+a    25
+d    12
+dtype: int64
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">print(a[a &gt; <span class="number">10</span>])</div><div class="line">print(a[a &lt; a.median()])</div></pre></td></tr></table></figure>
+<pre><code>a    25
+b    30
+d    12
+dtype: int64
+c    6
+e    1
+dtype: int64
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(np.exp(a))</div></pre></td></tr></table></figure>
+<pre><code>a    7.200490e+10
+b    1.068647e+13
+c    4.034288e+02
+d    1.627548e+05
+e    2.718282e+00
+dtype: float64
+</code></pre><h3 id="操作类似Python字典类型"><a href="#操作类似Python字典类型" class="headerlink" title="操作类似Python字典类型"></a>操作类似Python字典类型</h3><ul>
+<li>通过自定义索引访问</li>
+<li>保留字in操作</li>
+<li>使用.get()方法</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a = pd.Series([<span class="number">25</span>, <span class="number">30</span>, <span class="number">6</span>, <span class="number">12</span>, <span class="number">1</span>], index=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>])</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 获取数据时自动索引和自定义索引都可以使用</span></div><div class="line"><span class="comment"># 但不要混合使用</span></div><div class="line">print(a[[<span class="string">'a'</span>, <span class="string">'d'</span>]])</div></pre></td></tr></table></figure>
+<pre><code>a    25
+d    12
+dtype: int64
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">'d'</span> <span class="keyword">in</span> a)</div></pre></td></tr></table></figure>
+<pre><code>True
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(a.get(<span class="string">'c'</span>, <span class="number">100</span>))</div></pre></td></tr></table></figure>
+<pre><code>6
+</code></pre><h3 id="操作特性"><a href="#操作特性" class="headerlink" title="操作特性"></a>操作特性</h3><p><strong>对齐</strong>：Series类型在运算中会自动对齐不同索引的数据</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a = pd.Series([<span class="number">25</span>, <span class="number">30</span>, <span class="number">6</span>, <span class="number">12</span>, <span class="number">1</span>], index=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>])</div><div class="line">b = pd.Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>], index=[<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'a'</span>,<span class="string">'b'</span>])</div><div class="line">print(a+b)</div><div class="line">print(a*b)</div></pre></td></tr></table></figure>
+<pre><code>a    28.0
+b    35.0
+c     7.0
+d    14.0
+e     NaN
+dtype: float64
+a     75.0
+b    150.0
+c      6.0
+d     24.0
+e      NaN
+dtype: float64
+</code></pre><p><strong>立即生效</strong>：Series对象可以随时修改并即刻生效</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a = pd.Series([<span class="number">25</span>, <span class="number">30</span>, <span class="number">6</span>, <span class="number">12</span>, <span class="number">1</span>], index=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>])</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a[<span class="string">'a'</span>,<span class="string">'e'</span>] = <span class="number">100</span></div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>a    100
+b     30
+c      6
+d     12
+e    100
+dtype: int64
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a[<span class="number">2</span>:<span class="number">4</span>] = <span class="number">-1</span></div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>a    100
+b     30
+c     -1
+d     -1
+e    100
+dtype: int64
+</code></pre><h1 id="DataFrame类型"><a href="#DataFrame类型" class="headerlink" title="DataFrame类型"></a>DataFrame类型</h1><p>DataFrame类型是由具有相同索引的一组列组成，每列值的类型可以不同。</p>
+<p>DataFrame是一个表格型的数据类型，既有行索引、也有列索引，常用于表达二维数据，也可以表达多维数据。</p>
+<p><img src="Pandas入门_files\DataFrame类型.JPG" alt=""></p>
+<h2 id="创建-1"><a href="#创建-1" class="headerlink" title="创建"></a>创建</h2><p>DataFrame类型可以由如下类型创建：  </p>
+<ul>
+<li><strong>二维ndarray</strong>对象</li>
+<li><strong>字典</strong><br>  由以下类型构成的字典<ul>
+<li>一维ndarray</li>
+<li>列表</li>
+<li>字典</li>
+<li>元组</li>
+<li>Series</li>
+</ul>
+</li>
+<li><strong>Series</strong>类型</li>
+<li>其他的DataFrame类型</li>
+</ul>
+<h3 id="二维ndarray对象"><a href="#二维ndarray对象" class="headerlink" title="二维ndarray对象"></a>二维ndarray对象</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line">a = pd.DataFrame(np.arange(<span class="number">20</span>, <span class="number">10</span>, <span class="number">-1</span>).reshape(<span class="number">2</span>,<span class="number">5</span>))</div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>    0   1   2   3   4
+0  20  19  18  17  16
+1  15  14  13  12  11
+</code></pre><p>其中第一列的“0 1”为<strong>自动行索引</strong>，第一行“0 1 2 3 4”为<strong>自动列索引</strong></p>
+<h3 id="字典-1"><a href="#字典-1" class="headerlink" title="字典"></a>字典</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## Series类型的字典</span></div><div class="line">dt = &#123;<span class="string">'column_1'</span>:pd.Series([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], index=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]),</div><div class="line">      <span class="string">'column_2'</span>:pd.Series([<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>], index=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>]),</div><div class="line">      <span class="string">'column_3'</span>:pd.Series([<span class="number">-2</span>, <span class="number">-3</span>, <span class="number">-4</span>], index=[<span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>])&#125;</div><div class="line">a = pd.DataFrame(dt)</div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>   column_1  column_2  column_3
+a       1.0        10       NaN
+b       2.0        20      -2.0
+c       3.0        30      -3.0
+d       NaN        40      -4.0
+</code></pre><p>数据根据行列索引自动补齐：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">b = pd.DataFrame(dt, index=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>], columns=[<span class="string">'column_1'</span>, <span class="string">'column_3'</span>])</div><div class="line">print(b)</div></pre></td></tr></table></figure>
+<pre><code>   column_1  column_3
+a         1       NaN
+b         2      -2.0
+c         3      -3.0
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## 列表类型的字典</span></div><div class="line">dt = &#123;<span class="string">'column_1'</span>:[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>,<span class="number">4</span>], <span class="string">'column_2'</span>:[<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>], <span class="string">'column_3'</span>:[<span class="number">-1</span>,<span class="number">-2</span>, <span class="number">-3</span>, <span class="number">-4</span>]&#125;</div><div class="line">a = pd.DataFrame(dt, index=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>])</div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>   column_1  column_2  column_3
+a         1        10        -1
+b         2        20        -2
+c         3        30        -3
+d         4        40        -4
+</code></pre><p><img src="Pandas入门_files/列表类型字典.jpg" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">dt = &#123;<span class="string">'城市'</span>:[<span class="string">'北京'</span>, <span class="string">'上海'</span>, <span class="string">'广州'</span>, <span class="string">'深圳'</span>, <span class="string">'沈阳'</span>], </div><div class="line">     <span class="string">'环比'</span>:[<span class="number">101.5</span>, <span class="number">101.2</span>, <span class="number">101.3</span>, <span class="number">102.0</span>, <span class="number">100.1</span>],</div><div class="line">     <span class="string">'同比'</span>:[<span class="number">120.7</span>, <span class="number">127.3</span>, <span class="number">119.4</span>, <span class="number">140.9</span>, <span class="number">101.4</span>],</div><div class="line">     <span class="string">'定基'</span>:[<span class="number">121.4</span>, <span class="number">127.8</span>, <span class="number">120.0</span>, <span class="number">145.5</span>, <span class="number">101.6</span>]&#125;</div><div class="line">a = pd.DataFrame(dt, index=[<span class="string">'r1'</span>, <span class="string">'r2'</span>, <span class="string">'r3'</span>, <span class="string">'r4'</span>, <span class="string">'r5'</span>])</div><div class="line">print(a)</div><div class="line">print(<span class="string">'-------------'</span>)</div><div class="line">print(a.index)</div><div class="line">print(<span class="string">'-------------'</span>)</div><div class="line">print(a.columns)</div><div class="line">print(<span class="string">'-------------'</span>)</div><div class="line">print(a.values)</div></pre></td></tr></table></figure>
+<pre><code>       同比  城市     定基     环比
+r1  120.7  北京  121.4  101.5
+r2  127.3  上海  127.8  101.2
+r3  119.4  广州  120.0  101.3
+r4  140.9  深圳  145.5  102.0
+r5  101.4  沈阳  101.6  100.1
+-------------
+Index([&#39;r1&#39;, &#39;r2&#39;, &#39;r3&#39;, &#39;r4&#39;, &#39;r5&#39;], dtype=&#39;object&#39;)
+-------------
+Index([&#39;同比&#39;, &#39;城市&#39;, &#39;定基&#39;, &#39;环比&#39;], dtype=&#39;object&#39;)
+-------------
+[[120.7 &#39;北京&#39; 121.4 101.5]
+ [127.3 &#39;上海&#39; 127.8 101.2]
+ [119.4 &#39;广州&#39; 120.0 101.3]
+ [140.9 &#39;深圳&#39; 145.5 102.0]
+ [101.4 &#39;沈阳&#39; 101.6 100.1]]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">print(a[<span class="string">'同比'</span>])</div><div class="line">print(<span class="string">'-------------'</span>)</div><div class="line">print(a[<span class="string">'同比'</span>][<span class="string">'r2'</span>])</div><div class="line">print(<span class="string">'-------------'</span>)</div><div class="line">print(a[<span class="string">'同比'</span>][<span class="number">3</span>])</div></pre></td></tr></table></figure>
+<pre><code>r1    120.7
+r2    127.3
+r3    119.4
+r4    140.9
+r5    101.4
+Name: 同比, dtype: float64
+-------------
+127.3
+-------------
+140.9
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">print(a.loc[<span class="string">'r2'</span>])</div><div class="line">print(<span class="string">'-------------'</span>)</div><div class="line">print(a.loc[<span class="string">'r2'</span>][<span class="string">'环比'</span>])</div></pre></td></tr></table></figure>
+<pre><code>同比    127.3
+城市       上海
+定基    127.8
+环比    101.2
+Name: r2, dtype: object
+-------------
+101.2
+</code></pre><h1 id="索引-1"><a href="#索引-1" class="headerlink" title="索引"></a>索引</h1><h2 id="索引类型"><a href="#索引类型" class="headerlink" title="索引类型"></a>索引类型</h2><p>Series和DataFrame的索引是<code>Index类型</code>，Index对象是不可修改类型</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">dt = &#123;<span class="string">'城市'</span>:[<span class="string">'北京'</span>, <span class="string">'上海'</span>, <span class="string">'广州'</span>, <span class="string">'深圳'</span>, <span class="string">'沈阳'</span>], </div><div class="line">      <span class="string">'环比'</span>:[<span class="number">101.5</span>, <span class="number">101.2</span>, <span class="number">101.3</span>, <span class="number">102.0</span>, <span class="number">100.1</span>],</div><div class="line">      <span class="string">'同比'</span>:[<span class="number">120.7</span>, <span class="number">127.3</span>, <span class="number">119.4</span>, <span class="number">140.9</span>, <span class="number">101.4</span>],</div><div class="line">      <span class="string">'定基'</span>:[<span class="number">121.4</span>, <span class="number">127.8</span>, <span class="number">120.0</span>, <span class="number">145.5</span>, <span class="number">101.6</span>]&#125;</div><div class="line">a = pd.DataFrame(dt, index=[<span class="string">'r1'</span>, <span class="string">'r2'</span>, <span class="string">'r3'</span>, <span class="string">'r4'</span>, <span class="string">'r5'</span>])</div><div class="line">print(a.columns)</div><div class="line"></div><div class="line"><span class="comment"># 自定义Index类型</span></div><div class="line">cols = pd.Index([<span class="string">'同比'</span>, <span class="string">'城市'</span>, <span class="string">'定基'</span>, <span class="string">'环比'</span>])</div><div class="line">print(cols)</div></pre></td></tr></table></figure>
+<pre><code>Index([&#39;同比&#39;, &#39;城市&#39;, &#39;定基&#39;, &#39;环比&#39;], dtype=&#39;object&#39;)
+Index([&#39;同比&#39;, &#39;城市&#39;, &#39;定基&#39;, &#39;环比&#39;], dtype=&#39;object&#39;)
+</code></pre><h2 id="索引元素修改"><a href="#索引元素修改" class="headerlink" title="索引元素修改"></a>索引元素修改</h2><p>Index类型的常用方法：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.append(idx)</td>
+<td style="text-align:center">连接另一个Index对象，产生新的Index对象</td>
+</tr>
+<tr>
+<td style="text-align:center">.diff(idx)</td>
+<td style="text-align:center">计算差集，产生新的Index对象</td>
+</tr>
+<tr>
+<td style="text-align:center">.intersection(idx)</td>
+<td style="text-align:center">计算交集</td>
+</tr>
+<tr>
+<td style="text-align:center">.union(idx)</td>
+<td style="text-align:center">计算并集</td>
+</tr>
+<tr>
+<td style="text-align:center">.delete(loc)</td>
+<td style="text-align:center">删除loc位置处的元素</td>
+</tr>
+<tr>
+<td style="text-align:center">.insert(loc,e)</td>
+<td style="text-align:center">在loc位置增加一个元素e</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 索引中增加元素</span></div><div class="line">nc = a.columns.insert(<span class="number">2</span>, <span class="string">'newcol'</span>)</div><div class="line">print(nc)</div></pre></td></tr></table></figure>
+<pre><code>Index([&#39;同比&#39;, &#39;城市&#39;, &#39;newcol&#39;, &#39;定基&#39;, &#39;环比&#39;], dtype=&#39;object&#39;)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 索引中删除元素</span></div><div class="line">ni = a.index.delete(<span class="number">2</span>)</div><div class="line">print(ni)</div></pre></td></tr></table></figure>
+<pre><code>Index([&#39;r5&#39;, &#39;r4&#39;, &#39;r2&#39;, &#39;r1&#39;], dtype=&#39;object&#39;)
+</code></pre><h2 id="索引顺序修改"><a href="#索引顺序修改" class="headerlink" title="索引顺序修改"></a>索引顺序修改</h2><p><code>.reindex()</code>能够对Series和DataFrame索引进行重拍</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 重排行索引</span></div><div class="line">a = a.reindex(index=[<span class="string">'r5'</span>, <span class="string">'r4'</span>, <span class="string">'r3'</span>, <span class="string">'r2'</span>, <span class="string">'r1'</span>])</div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>       同比  城市     定基     环比
+r5  101.4  沈阳  101.6  100.1
+r4  140.9  深圳  145.5  102.0
+r3  119.4  广州  120.0  101.3
+r2  127.3  上海  127.8  101.2
+r1  120.7  北京  121.4  101.5
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 重排列索引</span></div><div class="line">a = a.reindex(columns=[ <span class="string">'环比'</span>, <span class="string">'城市'</span>, <span class="string">'同比'</span>, <span class="string">'定基'</span>])</div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>       环比  城市     同比     定基
+r5  100.1  沈阳  101.4  101.6
+r4  102.0  深圳  140.9  145.5
+r3  101.3  广州  119.4  120.0
+r2  101.2  上海  127.3  127.8
+r1  101.5  北京  120.7  121.4
+</code></pre><p><code>.reindex()</code>的参数：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">index, columns</td>
+<td style="text-align:center">新的行列自定义索引</td>
+</tr>
+<tr>
+<td style="text-align:center">fill_value</td>
+<td style="text-align:center">重新索引中，用于填充缺失位置的值</td>
+</tr>
+<tr>
+<td style="text-align:center">method</td>
+<td style="text-align:center">填充方法, ffill当前值向前填充，bfill向后填充</td>
+</tr>
+<tr>
+<td style="text-align:center">limit</td>
+<td style="text-align:center">最大填充量</td>
+</tr>
+<tr>
+<td style="text-align:center">copy</td>
+<td style="text-align:center">默认True，生成新的对象，False时，新旧相等不复制</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>首先修改索引元素，再使用.reindex()应用修改后的索引</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 增加一列索引</span></div><div class="line">b = a.reindex(columns=pd.Index([<span class="string">'同比'</span>, <span class="string">'城市'</span>, <span class="string">'定基'</span>, <span class="string">'环比'</span>, <span class="string">'new'</span>]), fill_value=<span class="number">-1</span>)</div><div class="line">print(b)</div></pre></td></tr></table></figure>
+<pre><code>       同比  城市     定基     环比  new
+r5  101.4  沈阳  101.6  100.1   -1
+r4  140.9  深圳  145.5  102.0   -1
+r3  119.4  广州  120.0  101.3   -1
+r2  127.3  上海  127.8  101.2   -1
+r1  120.7  北京  121.4  101.5   -1
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 删除一行索引，增加一列索引</span></div><div class="line">b = a.reindex(index=a.index.delete(<span class="number">2</span>), columns=a.columns.insert(<span class="number">2</span>, <span class="string">'newcol'</span>), fill_value=<span class="number">100</span>)</div><div class="line">print(b)</div></pre></td></tr></table></figure>
+<pre><code>       环比  城市  newcol     同比     定基
+r5  100.1  沈阳     100  101.4  101.6
+r4  102.0  深圳     100  140.9  145.5
+r2  101.2  上海     100  127.3  127.8
+r1  101.5  北京     100  120.7  121.4
+</code></pre><h2 id="删除索引"><a href="#删除索引" class="headerlink" title="删除索引"></a>删除索引</h2><p>删除某一行或者列时，可以首先修改（即删除）索引元素，再使用<code>.reindex()</code>应用修改后的索引。<br>也可以直接使用<code>.drop()</code>删除行或列索引。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">dt = &#123;<span class="string">'城市'</span>:[<span class="string">'北京'</span>, <span class="string">'上海'</span>, <span class="string">'广州'</span>, <span class="string">'深圳'</span>, <span class="string">'沈阳'</span>], </div><div class="line">      <span class="string">'环比'</span>:[<span class="number">101.5</span>, <span class="number">101.2</span>, <span class="number">101.3</span>, <span class="number">102.0</span>, <span class="number">100.1</span>],</div><div class="line">      <span class="string">'同比'</span>:[<span class="number">120.7</span>, <span class="number">127.3</span>, <span class="number">119.4</span>, <span class="number">140.9</span>, <span class="number">101.4</span>],</div><div class="line">      <span class="string">'定基'</span>:[<span class="number">121.4</span>, <span class="number">127.8</span>, <span class="number">120.0</span>, <span class="number">145.5</span>, <span class="number">101.6</span>]&#125;</div><div class="line">a = pd.DataFrame(dt, index=[<span class="string">'r1'</span>, <span class="string">'r2'</span>, <span class="string">'r3'</span>, <span class="string">'r4'</span>, <span class="string">'r5'</span>])</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">b = a.drop([<span class="string">'r1'</span>, <span class="string">'r3'</span>])</div><div class="line">print(b)</div></pre></td></tr></table></figure>
+<pre><code>       同比  城市     定基     环比
+r2  127.3  上海  127.8  101.2
+r4  140.9  深圳  145.5  102.0
+r5  101.4  沈阳  101.6  100.1
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># axis默认为0</span></div><div class="line">b = a.drop([<span class="string">'同比'</span>, <span class="string">'环比'</span>], axis = <span class="number">1</span>)</div><div class="line">print(b)</div></pre></td></tr></table></figure>
+<pre><code>    城市     定基
+r1  北京  121.4
+r2  上海  127.8
+r3  广州  120.0
+r4  深圳  145.5
+r5  沈阳  101.6
+</code></pre><h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p><strong>Series</strong> = 索引 + 一维数据<br><strong>DataFrame</strong> = 行列索引 + 二维数据</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Pandas/" rel="tag"># Pandas</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/22/Matplotlib.pyplot入门/" rel="next" title="Matplotlib.pyplot入门">
+                <i class="fa fa-chevron-left"></i> Matplotlib.pyplot入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/02/Pandas数据特征分析/" rel="prev" title="Pandas数据特征分析">
+                Pandas数据特征分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yODMwNi80ODc4"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg"
+               alt="liangxw" />
+          <p class="site-author-name" itemprop="name">liangxw</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/helloliangxw" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2516944510" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.nuist.edu.cn" title="NUIST" target="_blank">NUIST</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas库"><span class="nav-number">1.</span> <span class="nav-text">Pandas库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Series类型"><span class="nav-number">2.</span> <span class="nav-text">Series类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#索引"><span class="nav-number">2.1.</span> <span class="nav-text">索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建"><span class="nav-number">2.2.</span> <span class="nav-text">创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python列表"><span class="nav-number">2.2.1.</span> <span class="nav-text">Python列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标量"><span class="nav-number">2.2.2.</span> <span class="nav-text">标量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字典"><span class="nav-number">2.2.3.</span> <span class="nav-text">字典</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ndarray类型"><span class="nav-number">2.2.4.</span> <span class="nav-text">ndarray类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他函数"><span class="nav-number">2.2.5.</span> <span class="nav-text">其他函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#name属性"><span class="nav-number">2.3.</span> <span class="nav-text">name属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本操作"><span class="nav-number">2.4.</span> <span class="nav-text">基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#操作类似ndarray类型"><span class="nav-number">2.4.1.</span> <span class="nav-text">操作类似ndarray类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作类似Python字典类型"><span class="nav-number">2.4.2.</span> <span class="nav-text">操作类似Python字典类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作特性"><span class="nav-number">2.4.3.</span> <span class="nav-text">操作特性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DataFrame类型"><span class="nav-number">3.</span> <span class="nav-text">DataFrame类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建-1"><span class="nav-number">3.1.</span> <span class="nav-text">创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二维ndarray对象"><span class="nav-number">3.1.1.</span> <span class="nav-text">二维ndarray对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字典-1"><span class="nav-number">3.1.2.</span> <span class="nav-text">字典</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#索引-1"><span class="nav-number">4.</span> <span class="nav-text">索引</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#索引类型"><span class="nav-number">4.1.</span> <span class="nav-text">索引类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#索引元素修改"><span class="nav-number">4.2.</span> <span class="nav-text">索引元素修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#索引顺序修改"><span class="nav-number">4.3.</span> <span class="nav-text">索引顺序修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除索引"><span class="nav-number">4.4.</span> <span class="nav-text">删除索引</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小结"><span class="nav-number">5.</span> <span class="nav-text">小结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liangxw</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1259 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Pandas," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="数据运算算术运算算术运算根据行列索引，补齐后运算，运算默认产生浮点数。补齐时缺项填充NaN (空值)二维和一维、一维和零维间为广播运算采用+, ‐, *, /符号进行的二元运算产生新的对象
+1234import pandas as pdimport numpy as npa = pd.DataFrame(np.arange(12).reshape(3, 4))b = pd.DataFrame(np">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pandas数据特征分析">
+<meta property="og:url" content="http://helloliangxw.com/2017/05/02/Pandas数据特征分析/index.html">
+<meta property="og:site_name" content="helloliangxw">
+<meta property="og:description" content="数据运算算术运算算术运算根据行列索引，补齐后运算，运算默认产生浮点数。补齐时缺项填充NaN (空值)二维和一维、一维和零维间为广播运算采用+, ‐, *, /符号进行的二元运算产生新的对象
+1234import pandas as pdimport numpy as npa = pd.DataFrame(np.arange(12).reshape(3, 4))b = pd.DataFrame(np">
+<meta property="og:image" content="http://helloliangxw.com/Pandas%E6%95%B0%E6%8D%AE%E7%89%B9%E5%BE%81%E5%88%86%E6%9E%90_files/Pandas%E6%95%B0%E6%8D%AE%E7%89%B9%E5%BE%81%E5%88%86%E6%9E%90_43_0.svg">
+<meta property="og:updated_time" content="2017-05-02T08:13:15.359Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pandas数据特征分析">
+<meta name="twitter:description" content="数据运算算术运算算术运算根据行列索引，补齐后运算，运算默认产生浮点数。补齐时缺项填充NaN (空值)二维和一维、一维和零维间为广播运算采用+, ‐, *, /符号进行的二元运算产生新的对象
+1234import pandas as pdimport numpy as npa = pd.DataFrame(np.arange(12).reshape(3, 4))b = pd.DataFrame(np">
+<meta name="twitter:image" content="http://helloliangxw.com/Pandas%E6%95%B0%E6%8D%AE%E7%89%B9%E5%BE%81%E5%88%86%E6%9E%90_files/Pandas%E6%95%B0%E6%8D%AE%E7%89%B9%E5%BE%81%E5%88%86%E6%9E%90_43_0.svg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '6J4PGN3SLX',
+      apiKey: 'd669a6e715e29cc234c71fde690d5960',
+      indexName: 'blog',
+      hits: {"per_page":5},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://helloliangxw.com/2017/05/02/Pandas数据特征分析/"/>
+
+
+
+
+
+  <title> Pandas数据特征分析 | helloliangxw </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">helloliangxw</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://helloliangxw.com/2017/05/02/Pandas数据特征分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liangxw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="helloliangxw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Pandas数据特征分析
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-02T14:39:00+08:00">
+                2017-05-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python模块/" itemprop="url" rel="index">
+                    <span itemprop="name">Python模块</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="数据运算"><a href="#数据运算" class="headerlink" title="数据运算"></a>数据运算</h1><h2 id="算术运算"><a href="#算术运算" class="headerlink" title="算术运算"></a>算术运算</h2><p>算术运算根据行列索引，补齐后运算，运算默认产生浮点数。<br>补齐时缺项填充NaN (空值)<br>二维和一维、一维和零维间为<strong>广播运算</strong><br>采用+, ‐, *, /符号进行的二元运算产生<strong>新的对象</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line">a = pd.DataFrame(np.arange(<span class="number">12</span>).reshape(<span class="number">3</span>, <span class="number">4</span>))</div><div class="line">b = pd.DataFrame(np.arange(<span class="number">20</span>).reshape(<span class="number">4</span>, <span class="number">5</span>))</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## 自动补齐，缺项补NaN</span></div><div class="line">print(a+b)</div><div class="line">print(a*b)</div></pre></td></tr></table></figure>
+<pre><code>      0     1     2     3   4
+0   0.0   2.0   4.0   6.0 NaN
+1   9.0  11.0  13.0  15.0 NaN
+2  18.0  20.0  22.0  24.0 NaN
+3   NaN   NaN   NaN   NaN NaN
+      0     1      2      3   4
+0   0.0   1.0    4.0    9.0 NaN
+1  20.0  30.0   42.0   56.0 NaN
+2  80.0  99.0  120.0  143.0 NaN
+3   NaN   NaN    NaN    NaN NaN
+</code></pre><p>也可以使用方法形式的运算</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.add(d, **argws)</td>
+<td style="text-align:center">类型间加法运算，可选参数</td>
+</tr>
+<tr>
+<td style="text-align:center">.sub(d, **argws)</td>
+<td style="text-align:center">类型间减法运算，可选参数</td>
+</tr>
+<tr>
+<td style="text-align:center">.mul(d, **argws)</td>
+<td style="text-align:center">类型间乘法运算，可选参数</td>
+</tr>
+<tr>
+<td style="text-align:center">.div(d, **argws)</td>
+<td style="text-align:center">类型间除法运算，可选参数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(a.add(b, fill_value=<span class="number">100</span>))</div></pre></td></tr></table></figure>
+<pre><code>       0      1      2      3      4
+0    0.0    2.0    4.0    6.0  104.0
+1    9.0   11.0   13.0   15.0  109.0
+2   18.0   20.0   22.0   24.0  114.0
+3  115.0  116.0  117.0  118.0  119.0
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(a.mul(b, fill_value=<span class="number">0</span>))</div></pre></td></tr></table></figure>
+<pre><code>      0     1      2      3    4
+0   0.0   1.0    4.0    9.0  0.0
+1  20.0  30.0   42.0   56.0  0.0
+2  80.0  99.0  120.0  143.0  0.0
+3   0.0   0.0    0.0    0.0  0.0
+</code></pre><p>不同维度间为广播运算，一维Series默认在<strong>axis=1</strong>参与运算</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">c = pd.Series([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</div><div class="line">print(b)</div><div class="line">print(<span class="string">'---------'</span>)</div><div class="line">print(c)</div></pre></td></tr></table></figure>
+<pre><code>    0   1   2   3   4
+0   0   1   2   3   4
+1   5   6   7   8   9
+2  10  11  12  13  14
+3  15  16  17  18  19
+---------
+0    0
+1    1
+2    2
+3    3
+4    4
+dtype: int64
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(c - <span class="number">10</span>)</div></pre></td></tr></table></figure>
+<pre><code>0   -10
+1    -9
+2    -8
+3    -7
+4    -6
+dtype: int64
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 第一列-0，第二列-1，。。。</span></div><div class="line">print(b-c)</div></pre></td></tr></table></figure>
+<pre><code>    0   1   2   3   4
+0   0   0   0   0   0
+1   5   5   5   5   5
+2  10  10  10  10  10
+3  15  15  15  15  15
+</code></pre><h2 id="比较运算"><a href="#比较运算" class="headerlink" title="比较运算"></a>比较运算</h2><p>比较运算只能比较<strong>相同索引</strong>的元素，不进行补齐<br>二维和一维、一维和零维间为广播运算<br>采用&gt;, &lt;, &gt;=, &lt;=, ==, !=等符号进行的二元运算产生布尔对象</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a = pd.DataFrame(np.arange(<span class="number">12</span>).reshape(<span class="number">3</span>, <span class="number">4</span>))</div><div class="line">b = pd.DataFrame(np.arange(<span class="number">12</span>, <span class="number">0</span>, <span class="number">-1</span>).reshape(<span class="number">3</span>, <span class="number">4</span>))</div><div class="line">print(a)</div><div class="line">print(b)</div></pre></td></tr></table></figure>
+<pre><code>   0  1   2   3
+0  0  1   2   3
+1  4  5   6   7
+2  8  9  10  11
+    0   1   2  3
+0  12  11  10  9
+1   8   7   6  5
+2   4   3   2  1
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(a &gt; b)</div></pre></td></tr></table></figure>
+<pre><code>       0      1      2      3
+0  False  False  False  False
+1  False  False  False   True
+2   True   True   True   True
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(a == b)</div></pre></td></tr></table></figure>
+<pre><code>       0      1      2      3
+0  False  False  False  False
+1  False  False   True  False
+2  False  False  False  False
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(a &gt; <span class="number">6</span>)</div></pre></td></tr></table></figure>
+<pre><code>       0      1      2      3
+0  False  False  False  False
+1  False  False  False   True
+2   True   True   True   True
+</code></pre><h1 id="数据排序"><a href="#数据排序" class="headerlink" title="数据排序"></a>数据排序</h1><p><code>.sort_index()</code>方法在指定轴上根据<strong>索引</strong>进行排序，默认升序</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.sort_index(axis=<span class="number">0</span>, ascending=<span class="keyword">True</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = pd.DataFrame(np.arange(<span class="number">12</span>, <span class="number">0</span>, <span class="number">-1</span>).reshape(<span class="number">4</span>, <span class="number">3</span>), index=[<span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>])</div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>    0   1   2
+c  12  11  10
+d   9   8   7
+b   6   5   4
+a   3   2   1
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(a.sort_index())</div></pre></td></tr></table></figure>
+<pre><code>    0   1   2
+a   3   2   1
+b   6   5   4
+c  12  11  10
+d   9   8   7
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(a.sort_index(axis=<span class="number">1</span>, ascending = <span class="keyword">False</span>))</div></pre></td></tr></table></figure>
+<pre><code>    2   1   0
+c  10  11  12
+d   7   8   9
+b   4   5   6
+a   1   2   3
+</code></pre><p><code>.sort_values()</code>方法在指定轴上根据<strong>数值</strong>进行排序，默认升序  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Series.sort_values(axis=<span class="number">0</span>, ascending=<span class="keyword">True</span>)</div><div class="line"><span class="comment"># by: axis轴上的某个索引或索引列表</span></div><div class="line">DataFrame.sort_values(by, axis=<span class="number">0</span>, ascending=<span class="keyword">True</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">a = pd.DataFrame(np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">8</span>],</div><div class="line">                          [<span class="number">3</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">10</span>, <span class="number">12</span>],</div><div class="line">                          [<span class="number">9</span>, <span class="number">10</span>, <span class="number">12</span>, <span class="number">52</span>, <span class="number">14</span>],</div><div class="line">                          [<span class="number">11</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">3</span>, <span class="number">6</span>]]).reshape(<span class="number">4</span>, <span class="number">5</span>), index=[<span class="string">'c'</span>, <span class="string">'a'</span>, <span class="string">'d'</span>, <span class="string">'b'</span>])</div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>    0   1   2   3   4
+c   1   2   9   5   8
+a   3   5   6  10  12
+d   9  10  12  52  14
+b  11   2   0   3   6
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 根据列索引为2的列的值进行排序</span></div><div class="line">print(a.sort_values(<span class="number">2</span>, ascending=<span class="keyword">False</span>))</div></pre></td></tr></table></figure>
+<pre><code>    0   1   2   3   4
+d   9  10  12  52  14
+c   1   2   9   5   8
+a   3   5   6  10  12
+b  11   2   0   3   6
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 根据行索引为'a'的行的值进行排序</span></div><div class="line">print(a.sort_values(<span class="string">'a'</span>, axis = <span class="number">1</span>, ascending=<span class="keyword">False</span>))</div></pre></td></tr></table></figure>
+<pre><code>    4   3   2   1   0
+c   8   5   9   2   1
+a  12  10   6   5   3
+d  14  52  12  10   9
+b   6   3   0   2  11
+</code></pre><p><code>NaN</code>统一放到排序末尾</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a = pd.DataFrame(np.arange(<span class="number">12</span>).reshape(<span class="number">3</span>, <span class="number">4</span>))</div><div class="line">b = pd.DataFrame(np.arange(<span class="number">20</span>).reshape(<span class="number">4</span>, <span class="number">5</span>))</div><div class="line">c = a+b</div><div class="line">print(c)</div></pre></td></tr></table></figure>
+<pre><code>      0     1     2     3   4
+0   0.0   2.0   4.0   6.0 NaN
+1   9.0  11.0  13.0  15.0 NaN
+2  18.0  20.0  22.0  24.0 NaN
+3   NaN   NaN   NaN   NaN NaN
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(c.sort_values(<span class="number">2</span>, ascending=<span class="keyword">False</span>))</div></pre></td></tr></table></figure>
+<pre><code>      0     1     2     3   4
+2  18.0  20.0  22.0  24.0 NaN
+1   9.0  11.0  13.0  15.0 NaN
+0   0.0   2.0   4.0   6.0 NaN
+3   NaN   NaN   NaN   NaN NaN
+</code></pre><h1 id="数据的统计分析"><a href="#数据的统计分析" class="headerlink" title="数据的统计分析"></a>数据的统计分析</h1><h2 id="基本统计分析"><a href="#基本统计分析" class="headerlink" title="基本统计分析"></a>基本统计分析</h2><p>适用于Series和DataFrame类型：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.describe()</td>
+<td style="text-align:center">统计汇总，针对<strong>第0轴（各列）</strong>，下同</td>
+</tr>
+<tr>
+<td style="text-align:center">.sum()</td>
+<td style="text-align:center">计算数据的总和</td>
+</tr>
+<tr>
+<td style="text-align:center">.count()</td>
+<td style="text-align:center">非NaN值的数量</td>
+</tr>
+<tr>
+<td style="text-align:center">.mean() .median()</td>
+<td style="text-align:center">计算数据的算术平均值、算术中位数</td>
+</tr>
+<tr>
+<td style="text-align:center">.var()  .std()</td>
+<td style="text-align:center">计算数据的方差、标准差</td>
+</tr>
+<tr>
+<td style="text-align:center">.min() .max()</td>
+<td style="text-align:center">计算数据的最小值、最大值</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>适用于Series类型:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.argmin()  .argmax()</td>
+<td style="text-align:center">计算数据最大值、最小值所在位置的索引位置（自动索引）</td>
+</tr>
+<tr>
+<td style="text-align:center">.idxmin()  .idxmax()</td>
+<td style="text-align:center">计算数据最大值、最小值所在位置的索引（自定义索引）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a = pd.DataFrame(np.arange(<span class="number">12</span>).reshape(<span class="number">3</span>, <span class="number">4</span>))</div><div class="line">print(a)</div><div class="line">print(a.describe())</div><div class="line">print(type(a.describe()))</div></pre></td></tr></table></figure>
+<pre><code>   0  1   2   3
+0  0  1   2   3
+1  4  5   6   7
+2  8  9  10  11
+         0    1     2     3
+count  3.0  3.0   3.0   3.0
+mean   4.0  5.0   6.0   7.0
+std    4.0  4.0   4.0   4.0
+min    0.0  1.0   2.0   3.0
+25%    2.0  3.0   4.0   5.0
+50%    4.0  5.0   6.0   7.0
+75%    6.0  7.0   8.0   9.0
+max    8.0  9.0  10.0  11.0
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">print(a.describe()[<span class="number">0</span>])</div><div class="line">print(a.describe().loc[<span class="string">'max'</span>])</div></pre></td></tr></table></figure>
+<pre><code>count    3.0
+mean     4.0
+std      4.0
+min      0.0
+25%      2.0
+50%      4.0
+75%      6.0
+max      8.0
+Name: 0, dtype: float64
+0     8.0
+1     9.0
+2    10.0
+3    11.0
+Name: max, dtype: float64
+</code></pre><h2 id="累计统计分析"><a href="#累计统计分析" class="headerlink" title="累计统计分析"></a>累计统计分析</h2><p>适用于Series和DataFrame类型，累计计算：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.cumsum()</td>
+<td style="text-align:center">依次给出前1、2、…、n个数的和</td>
+</tr>
+<tr>
+<td style="text-align:center">.cumprod()</td>
+<td style="text-align:center">依次给出前1、2、…、n个数的积</td>
+</tr>
+<tr>
+<td style="text-align:center">.cummax()</td>
+<td style="text-align:center">依次给出前1、2、…、n个数的最大值</td>
+</tr>
+<tr>
+<td style="text-align:center">.cummin()</td>
+<td style="text-align:center">依次给出前1、2、…、n个数的最小值</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = pd.DataFrame(np.arange(<span class="number">12</span>).reshape(<span class="number">3</span>, <span class="number">4</span>))</div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<pre><code>   0  1   2   3
+0  0  1   2   3
+1  4  5   6   7
+2  8  9  10  11
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(a.cumsum())</div></pre></td></tr></table></figure>
+<pre><code>    0   1   2   3
+0   0   1   2   3
+1   4   6   8  10
+2  12  15  18  21
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(a.cumprod())</div></pre></td></tr></table></figure>
+<pre><code>   0   1    2    3
+0  0   1    2    3
+1  0   5   12   21
+2  0  45  120  231
+</code></pre><p>适用于Series和DataFrame类型，滚动计算（窗口计算）：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.rolling(w).sum()</td>
+<td style="text-align:center">依次计算相邻w个元素的和</td>
+</tr>
+<tr>
+<td style="text-align:center">.rolling(w).mean()</td>
+<td style="text-align:center">依次计算相邻w个元素的算术平均值</td>
+</tr>
+<tr>
+<td style="text-align:center">.rolling(w).var()</td>
+<td style="text-align:center">依次计算相邻w个元素的方差</td>
+</tr>
+<tr>
+<td style="text-align:center">.rolling(w).std()</td>
+<td style="text-align:center">依次计算相邻w个元素的标准差</td>
+</tr>
+<tr>
+<td style="text-align:center">.rolling(w).min() .rolling(w).max()</td>
+<td style="text-align:center">依次计算相邻w个元素的最小值和最大值</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = pd.DataFrame(np.arange(<span class="number">20</span>).reshape(<span class="number">5</span>, <span class="number">4</span>))</div><div class="line">print(a)</div><div class="line">print(a.rolling(<span class="number">2</span>).sum())</div></pre></td></tr></table></figure>
+<pre><code>    0   1   2   3
+0   0   1   2   3
+1   4   5   6   7
+2   8   9  10  11
+3  12  13  14  15
+4  16  17  18  19
+      0     1     2     3
+0   NaN   NaN   NaN   NaN
+1   4.0   6.0   8.0  10.0
+2  12.0  14.0  16.0  18.0
+3  20.0  22.0  24.0  26.0
+4  28.0  30.0  32.0  34.0
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(a.rolling(<span class="number">3</span>).sum())</div></pre></td></tr></table></figure>
+<pre><code>      0     1     2     3
+0   NaN   NaN   NaN   NaN
+1   NaN   NaN   NaN   NaN
+2  12.0  15.0  18.0  21.0
+3  24.0  27.0  30.0  33.0
+4  36.0  39.0  42.0  45.0
+</code></pre><h1 id="相关分析"><a href="#相关分析" class="headerlink" title="相关分析"></a>相关分析</h1><p>协方差：</p>
+<script type="math/tex; mode=display">cov(X, Y)=\frac{\sum_{i=1}^{n}(X_i-\bar{X})(Y_i-\bar{Y})}{n-1}</script><ul>
+<li>协方差&gt;0, X和Y正相关</li>
+<li>协方差&lt;0, X和Y负相关</li>
+<li>协方差=0, X和Y独立无关</li>
+</ul>
+<p>Pearson相关系数：</p>
+<script type="math/tex; mode=display">r=\frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})} {\sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2} \sqrt{\sum_{i=1}^{n}(y_i-\bar{y})^2} }</script><ul>
+<li>0.8‐1.0 极强相关</li>
+<li>0.6‐0.8 强相关</li>
+<li>0.4‐0.6 中等程度相关</li>
+<li>0.2‐0.4 弱相关</li>
+<li>0.0‐0.2 极弱相关或无相关</li>
+</ul>
+<p>适用于Series和DataFrame类型:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.cov()</td>
+<td style="text-align:center">计算协方差矩阵</td>
+</tr>
+<tr>
+<td style="text-align:center">.corr()</td>
+<td style="text-align:center">计算相关系数矩阵, Pearson、Spearman、Kendall等系数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">%config InlineBackend.figure_format=<span class="string">"svg"</span></div><div class="line">%matplotlib inline</div><div class="line"></div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">import</span> matplotlib</div><div class="line"></div><div class="line">matplotlib.rcParams[<span class="string">'font.family'</span>] = <span class="string">'STSong'</span></div><div class="line">matplotlib.rcParams[<span class="string">'font.size'</span>] = <span class="number">20</span></div><div class="line"></div><div class="line">hprice = pd.Series([<span class="number">3.04</span>, <span class="number">22.93</span>, <span class="number">12.73</span>, <span class="number">22.6</span>, <span class="number">12.33</span>], index=[<span class="string">'2008'</span>, <span class="string">'2009'</span>, <span class="string">'2010'</span>, <span class="string">'2011'</span>, <span class="string">'2012'</span>])</div><div class="line">m2 = pd.Series([<span class="number">8.18</span>, <span class="number">18.38</span>, <span class="number">9.13</span>, <span class="number">7.83</span>, <span class="number">6.69</span>], index=[<span class="string">'2008'</span>, <span class="string">'2009'</span>, <span class="string">'2010'</span>, <span class="string">'2011'</span>, <span class="string">'2012'</span>])</div><div class="line"></div><div class="line">plt.plot(hprice, <span class="string">'*-'</span>)</div><div class="line">plt.plot(m2, <span class="string">'.-'</span>);</div><div class="line"></div><div class="line">plt.xticks(np.arange(<span class="number">2008</span>, <span class="number">2013</span>), [<span class="string">'2008年'</span>, <span class="string">'2009年'</span>, <span class="string">'2010年'</span>, <span class="string">'2011年'</span>, <span class="string">'2012年'</span>])</div><div class="line">plt.show()</div></pre></td></tr></table></figure>
+<p><img src="Pandas%E6%95%B0%E6%8D%AE%E7%89%B9%E5%BE%81%E5%88%86%E6%9E%90_files/Pandas%E6%95%B0%E6%8D%AE%E7%89%B9%E5%BE%81%E5%88%86%E6%9E%90_43_0.svg" alt="svg"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(hprice.corr(m2))</div></pre></td></tr></table></figure>
+<pre><code>0.524613062629
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(hprice.cov(m2))</div></pre></td></tr></table></figure>
+<pre><code>20.649685
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Pandas/" rel="tag"># Pandas</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/26/Pandas入门/" rel="next" title="Pandas入门">
+                <i class="fa fa-chevron-left"></i> Pandas入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yODMwNi80ODc4"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://static.zybuluo.com/liangxw/909qgldfu9vfcecupbk45vb2/20140826173406_irGfu.jpeg"
+               alt="liangxw" />
+          <p class="site-author-name" itemprop="name">liangxw</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/helloliangxw" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2516944510" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.nuist.edu.cn" title="NUIST" target="_blank">NUIST</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据运算"><span class="nav-number">1.</span> <span class="nav-text">数据运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#算术运算"><span class="nav-number">1.1.</span> <span class="nav-text">算术运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比较运算"><span class="nav-number">1.2.</span> <span class="nav-text">比较运算</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据排序"><span class="nav-number">2.</span> <span class="nav-text">数据排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据的统计分析"><span class="nav-number">3.</span> <span class="nav-text">数据的统计分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本统计分析"><span class="nav-number">3.1.</span> <span class="nav-text">基本统计分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#累计统计分析"><span class="nav-number">3.2.</span> <span class="nav-text">累计统计分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关分析"><span class="nav-number">4.</span> <span class="nav-text">相关分析</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liangxw</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
